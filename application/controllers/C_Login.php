@@ -35,7 +35,7 @@ class C_Login extends CI_Controller
                 foreach ($cek->result() as $dat) {
                     $sess_data['isLogin'] = TRUE;
                     $sess_data['id_user'] = $dat->id_user;
-                    $sess_data['nama_user'] = $dat->nama;
+                    $sess_data['nama_user'] = $dat->username;
                     $sess_data['email_user'] = $dat->email;
                     $sess_data['password'] = $dat->password;
                     $this->session->set_userdata($sess_data);
@@ -46,5 +46,10 @@ class C_Login extends CI_Controller
                 $this->load->view('dashboard_page/sign/V_In',$data);
             }
         }
+    }
+
+    function signout(){
+        $this->session->sess_destroy();
+        redirect('');
     }
 }
