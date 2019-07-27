@@ -5,10 +5,10 @@
 
         <!--logo and iconic logo start-->
         <div class="logo">
-            <h1><a href="<?php echo base_url()?>assets/main_page/index.html">Mosai<span>c</span></a></h1>
+            <h1><a href="<?php echo base_url()?>">Mosai<span>c</span></a></h1>
         </div>
         <div class="logo-icon text-center">
-            <a href="<?php echo base_url()?>assets/main_page/index.html">M </a>
+            <a href="<?php echo base_url()?>">M</a>
         </div>
         <!-- /w3l-agile -->
         <!--logo and iconic logo end-->
@@ -16,7 +16,7 @@
 
             <!--sidebar nav start-->
             <ul class="nav nav-pills nav-stacked custom-nav">
-                <li class="active"><a href="<?php echo base_url()?>assets/main_page/index.html"><i class="lnr lnr-home"></i><span>Home</span></a></li>
+                <li class="active"><a href="<?php echo base_url()?>"><i class="lnr lnr-home"></i><span>Home</span></a></li>
                 <li><a href="<?php echo base_url()?>assets/main_page/radio.html"><i class="camera"></i> <span>Radio</span></a></li>
                 <li><a href="#" data-toggle="modal" data-target="#myModal1"><i class="fa fa-th"></i><span>Apps</span></a></li>
                 <li><a href="<?php echo base_url()?>assets/main_page/radio.html"><i class="lnr lnr-users"></i> <span>Artists</span></a></li>

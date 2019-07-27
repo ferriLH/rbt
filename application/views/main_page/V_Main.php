@@ -67,7 +67,8 @@ $this->load->view('main_page/parts/V_Navigation');
                     </div>
                     <div class="col-md-4 login-pop">
                         <div id="loginpop">
-                            <a href="<?php echo base_url('login')?>"><span>Login
+                            <a href="<?php echo base_url('login')?>">
+                                <span>Login
 <!--                            <div id="loginBox">-->
 <!--                                <form action="#" method="post" id="loginForm">-->
 <!--                                    <fieldset id="body">-->
@@ -85,8 +86,9 @@ $this->load->view('main_page/parts/V_Navigation');
 <!--                                    <span><a href="#">Forgot your password?</a></span>-->
 <!--                                </form>-->
 <!--                            </div>-->
+                                </span>
+                            </a>
                         </div>
-
                     </div>
                     <div class="clearfix"> </div>
                 </div>
