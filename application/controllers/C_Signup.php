@@ -36,7 +36,7 @@ class C_Signup extends CI_Controller
             $d['email'] = $this->input->post('email');
             $d['password'] = sha1($this->input->post('password'));
             $this->M_Signup->daftar($d);
-            $this->session->set_flashdata('success');
+            $this->session->set_flashdata('successsignup');
             redirect('login');
         }
 
