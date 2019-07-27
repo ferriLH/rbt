@@ -1,7 +1,18 @@
 <?php
 $this->load->view('dashboard_page/parts/V_Header');
 ?>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 <body>
+<?php if ($this->session->flashdata('success')) {
+    ?>
+    <script>
+        Swal.fire(
+            'Pendaftaran Berhasil!',
+            'Silahkan Konfirmasi Email Anda!',
+            'success'
+        )
+    </script>
+<?php } ?>
 <div class="container-scroller">
     <div class="container-fluid page-body-wrapper full-page-wrapper">
         <div class="content-wrapper d-flex align-items-center auth px-0">
@@ -38,7 +49,7 @@ $this->load->view('dashboard_page/parts/V_Header');
                                 </button>
                             </div>
                             <div class="text-center mt-4 font-weight-light">
-                                Don't have an account? <a href="<?php echo base_url()?>assets/dashboard_page/pages/samples/register.html" class="text-primary">Create</a>
+                                Don't have an account? <a href="<?php echo base_url('signup')?>" class="text-primary">Create</a>
                             </div>
                         </form>
                     </div>

@@ -51,6 +51,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['default_controller']    = 'C_Main_page';
 $route['login']                 = 'C_Login';
+$route['signup']                = 'C_Signup';
+$route['signup/confirm']        = 'C_Signup/confirm';
 $route['dashboard']             = 'C_Dashboard';
 $route['404_override']          = '';
 $route['translate_uri_dashes']  = FALSE;
