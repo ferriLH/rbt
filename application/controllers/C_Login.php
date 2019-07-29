@@ -34,13 +34,21 @@ class C_Login extends CI_Controller
             if ($cek->num_rows() != 0) {
                 foreach ($cek->result() as $dat) {
                     $sess_data['isLogin'] = TRUE;
-                    $sess_data['id_user'] = $dat->id_user;
-                    $sess_data['nama_user'] = $dat->username;
+                    $sess_data['id_user'] = $dat->id_pengguna;
+                    $sess_data['nama_user'] = $dat->nama_pengguna;
                     $sess_data['email_user'] = $dat->email;
-                    $sess_data['password'] = $dat->password;
+                    $sess_data['no_telpon'] = $dat->no_telpon;
+                    $sess_data['jk'] = $dat->jk;
+                    $sess_data['alamat'] = $dat->alamat;
+                    $sess_data['hak'] = $dat->hak_akses;
+//                    $sess_data['id_artist'] = $dat->id_artist;
+//                    $sess_data['nama_artist'] = $dat->nama_artist;
+//                    $sess_data['bio'] = $dat->bio;
+//                    $sess_data['picture_artist'] = $dat->picture_artist;
                     $this->session->set_userdata($sess_data);
                 }
-                redirect('dashboard/');
+                $this->session->set_flashdata('sukses', 'sukses');
+                redirect('dashboard');
             } else {
                 $this->session->set_flashdata('failed', '<br>Username atau Password yang anda masukkan salah!');
                 $this->load->view('dashboard_page/sign/V_In',$data);
@@ -50,6 +58,6 @@ class C_Login extends CI_Controller
 
     function signout(){
         $this->session->sess_destroy();
-        redirect('');
+        redirect('login');
     }
 }

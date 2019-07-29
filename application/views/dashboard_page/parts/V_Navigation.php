@@ -134,10 +134,28 @@ $name = $this->session->userdata('nama_user');
                             <i class="mdi mdi-settings text-primary"></i>
                             Settings
                         </a>
-                        <a class="dropdown-item" href="<?php echo base_url('logout')?>">
-                            <i class="mdi mdi-logout text-primary"></i>
+                        <a class="dropdown-item" onclick="functionLogout()">
+                            <i class="mdi mdi-logout-variant text-primary"></i>
                             Logout
                         </a>
+                        <script>
+                                function functionLogout() {
+                                    const href = '<?php echo base_url()?>logout';
+                                    Swal.fire({
+                                    title: 'Are you sure?',
+                                    text: "You will log out from this page!",
+                                    type: 'warning',
+                                    showCancelButton: true,
+                                    confirmButtonColor: '#3085d6',
+                                    cancelButtonColor: '#d33',
+                                    confirmButtonText: "Yes, i'm sure!"
+                                }).then((result) => {
+                                    if (result.value) {
+                                        document.location.href = href;
+                                    }
+                                })
+                            }
+                        </script>
                     </div>
                 </li>
             </ul>

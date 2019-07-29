@@ -9,11 +9,12 @@ class M_Login extends CI_Model
     }
 
     function cek ($user,$pass){
-        $tbl = "t_user";
         $this->db->select("*");
-        $this->db->from($tbl);
-        $this->db->where("email = '$user'");
+        $this->db->from("t_pengguna");
+//        $this->db->join('t_artist a', 'p.id_pengguna = a.user_id','inner');
+        $this->db->where("email",$user);
         $this->db->where("password",$pass);
         return $this->db->get();
     }
+
 }

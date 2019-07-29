@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title><?php echo $title;?></title>
+    <title><?php echo $title." | Page";?></title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="<?php echo base_url()?>assets/dashboard_page/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="<?php echo base_url()?>assets/dashboard_page/vendors/base/vendor.bundle.base.css">
@@ -17,4 +17,6 @@
     <link rel="stylesheet" href="<?php echo base_url()?>assets/dashboard_page/css/style.css">
     <!-- endinject -->
     <link rel="shortcut icon" href="<?php echo base_url()?>assets/dashboard_page/images/favicon.png" />
+    <script src="<?php echo base_url()?>assets/dashboard_page/js/sweetalert/sweetalert2.all.min.js"></script>
+
 </head>

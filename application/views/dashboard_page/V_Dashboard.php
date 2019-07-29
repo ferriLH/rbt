@@ -2,6 +2,15 @@
 $this->load->view('dashboard_page/parts/V_Header');
 $this->load->view('dashboard_page/parts/V_Navigation');
 ?>
+<?php if($this->session->flashdata('sukses')){?>
+    <script>
+        Swal.fire(
+            'Login Success!',
+            'You clicked the button!',
+            'success'
+        )
+    </script>
+<?php }?>
     <!-- partial -->
     <div class="main-panel">
         <div class="content-wrapper">
