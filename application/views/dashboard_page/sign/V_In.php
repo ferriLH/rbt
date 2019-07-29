@@ -31,10 +31,10 @@ $this->load->view('dashboard_page/parts/V_Header');
                                 </script>
                             <?php }?>
                             <div class="form-group">
-                                <input value="ferrilasmihalim@email.unikom.ac.id" type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Email" name="email">
+                                <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Email" name="email">
                             </div>
                             <div class="form-group">
-                                <input value="user" type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password" name="password">
+                                <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password" name="password">
                             </div>
                             <div class="mt-3">
                                 <input class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" type="submit" value="Log In">

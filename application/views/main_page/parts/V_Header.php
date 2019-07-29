@@ -19,6 +19,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!-- //lined-icons -->
     <!-- Meters graphs -->
     <script src="<?php echo base_url()?>assets/main_page/js/jquery-2.1.4.js"></script>
+    <script src="<?php echo base_url()?>assets/dashboard_page/js/sweetalert/sweetalert2.all.min.js"></script>
 
 
 </head>

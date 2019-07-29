@@ -195,7 +195,7 @@ $this->load->view('main_page/parts/V_Navigation');
                     <div class="albums">
                         <div class="tittle-head">
                             <h3 class="tittle">New Releases <span class="new">New</span></h3>
-                            <a href="<?php echo base_url()?>assets/main_page/index.html"><h4 class="tittle">See all</h4></a>
+                            <a href="<?php echo base_url()?>"><h4 class="tittle">See all</h4></a>
                             <div class="clearfix"> </div>
                         </div>
                         <div class="col-md-3 content-grid">
@@ -488,13 +488,23 @@ $this->load->view('main_page/parts/V_Navigation');
 
                     <!--//video-main-->
                     <!--/app_store-->
+                    <!-- Modal -->
+                    <script>
+                        function ComingSoon() {
+                            Swal.fire(
+                                'Coming Soon!',
+                                'we hope we can launch soon',
+                                'info'
+                            )
+                        }
+                    </script>
                     <div class="apps">
-                        <h3 class="hd-tittle">Mosaic now available in</h3>
+                        <h3 class="hd-tittle">Our Apps </h3>
                         <div class="banner-button">
-                            <a href="#"><img src="<?php echo base_url()?>assets/main_page/images/1.png" alt=""></a>
+                            <a onclick="ComingSoon()"><img src="<?php echo base_url()?>assets/main_page/images/1.png" alt=""></a>
                         </div>
                         <div class="banner-button green-button">
-                            <a href="#"><img src="<?php echo base_url()?>assets/main_page/images/2.png" alt=""></a>
+                            <a onclick="ComingSoon()"><img src="<?php echo base_url()?>assets/main_page/images/2.png" alt=""></a>
                         </div>
                         <div class="clearfix"></div>
                     </div>
@@ -502,7 +512,7 @@ $this->load->view('main_page/parts/V_Navigation');
                     <!--/start-paricing-tables-->
                     <div class="price-section">
                         <div class="pricing-inner">
-                            <h3 class="hd-tittle">Upgrade your Plan</h3>
+                            <h3 class="hd-tittle">Side Banner</h3>
                             <div class="pricing">
                                 <div class="price-top">
                                     <h3><span>$20</span></h3>

@@ -55,7 +55,7 @@
 </div>
 <!--footer section start-->
 <footer>
-    <p>&copy 2016. All Rights Reserved | Design by <a href="https://w3layouts.com/" target="_blank">w3layouts.</a></p>
+    <p>&copy 2019. All Rights Reserved | Design by <a href="https://w3layouts.com/" target="_blank">Mosaic w3layouts.</a></p>
 </footer>
 <!--footer section end-->
 <!-- /w3l-agile -->
