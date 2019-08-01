@@ -1,6 +1,7 @@
 <?php
 $this->load->view('main_page/parts/V_Header');
 $this->load->view('main_page/parts/V_Navigation');
+$islogin =  $this->session->userdata('isLogin');
 ?>
     <!-- main content start-->
     <div class="main-content">
@@ -16,7 +17,7 @@ $this->load->view('main_page/parts/V_Navigation');
                         <div style="padding-bottom: 10px" id="sb-search" class="sb-search">
                             <form action="#" method="post">
 
-                                <input style="padding: 20%;" class="sb-search-input" placeholder="Search" type="search" name="search" id="search">
+                                <input class="sb-search-input" placeholder="Search" type="search" name="search" id="search">
                                 <input class="sb-search-submit" type="submit" value="">
                                 <span class="sb-icon-search"> </span>
                             </form>
@@ -65,10 +66,17 @@ $this->load->view('main_page/parts/V_Navigation');
 <!---->
 <!--                        </ul>-->
 <!--                    </div>-->
+                    <?php if ($islogin == FALSE) {?>
                     <div style="padding-right: 20%;float: right; padding-bottom: 10px;clear: right;" class="col-md-4 login-pop">
                         <div id="loginpop">
                             <a href="<?php echo base_url('login')?>">
                                 <span>Login
+                    <?php } else{?>
+                            <div style="padding-right: 25%;float: right; padding-bottom: 10px;clear: right;" class="col-md-4 login-pop">
+                        <div id="loginpop">
+                            <a href="<?php echo base_url('dashboard')?>">
+                                <span>Dashboard
+                                    <?php }?>
 <!--                            <div id="loginBox">-->
 <!--                                <form action="#" method="post" id="loginForm">-->
 <!--                                    <fieldset id="body">-->
