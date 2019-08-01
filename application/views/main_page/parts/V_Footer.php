@@ -27,7 +27,7 @@ $login = $this->session->userdata('isLogin');
             <li><a href="<?php echo base_url()?>assets/main_page/contact.html">Site Map</a></li>
             <li><a href="#">Search Terms</a></li>
             <li><a href="#" data-toggle="modal" data-target="#myModal1">Mobile</a></li>
-            <li><a href="<?php echo base_url()?>assets/main_page/contact.html">Contact Us</a></li>
+            <li><a href="<?php echo base_url('contact')?>">Contact  Us</a></li>
         </ul>
     </div>
     <div class="footer-grid">
@@ -42,10 +42,11 @@ $login = $this->session->userdata('isLogin');
     </div>
     <div class="footer-grid footer-grid_last">
         <h3>About Us</h3>
+    <h1><img src="<?php echo base_url('assets/main_page/images/')?>Homelogo.png"></h1>
         <p class="footer_desc">Alpha Omega Wahana Nusantara
             Jl. Kuningan Barat Raya No.8, RT.1/RW.3, Kuningan Bar., Kec. Mampang Prpt., Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12710</p>
         <p class="f_text">Phone:  &nbsp;&nbsp;&nbsp;0000000000000000</p>
-        <p class="email">Email : &nbsp;<span><a href="mailto:mail@example.com">info(at)mailing.com</a></span></p>
+        <p class="email">Email : &nbsp;<span><a href="mailto:support@alpha-omega.co.id">support@alpha-omega.co.id</a></span></p>
     </div>
     <div class="clearfix"> </div>
 </div>

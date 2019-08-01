@@ -5,7 +5,7 @@
 
         <!--logo and iconic logo start-->
         <div class="logo">
-            <h1><img src="<?php echo base_url('assets/main_page/images/')?>Homelogo.png" </h1>
+            <h1><a href="<?php echo base_url('')?>"><span>T</span>it<span>T</span>at<span>T</span>ut</a></h1>
         </div>
         <div class="logo-icon text-center">
             <a href="<?php echo base_url()?>">A</a>

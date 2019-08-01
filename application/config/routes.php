@@ -60,5 +60,6 @@ $route['dashboard/bio/(:any)']  = 'C_Dashboard/bio/$1';
 $route['partner']             	= 'C_Partner';
 $route['music']             	= 'C_Music';
 $route['promo']             	= 'C_Promo';
+$route['contact']             	= 'C_Contact';
 $route['404_override']          = '';
 $route['translate_uri_dashes']  = FALSE;
