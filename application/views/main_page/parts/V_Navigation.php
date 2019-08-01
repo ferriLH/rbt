@@ -59,8 +59,8 @@
                                 <p>Download and Avail Special Songs Videos and Audios.</p>
                                 <div class="app-devices">
                                     <h5>Gets the app from</h5>
-                                    <a href="#"><img src="<?php echo base_url()?>assets/main_page/images/1.png" alt=""></a>
-                                    <a href="#"><img src="<?php echo base_url()?>assets/main_page/images/2.png" alt=""></a>
+                                    <a onclick="ComingSoon()" href="#"><img src="<?php echo base_url()?>assets/main_page/images/1.png" alt=""></a>
+                                    <a onclick="ComingSoon()" href="#"><img src="<?php echo base_url()?>assets/main_page/images/2.png" alt=""></a>
                                     <div class="clearfix"> </div>
                                 </div>
                             </div>

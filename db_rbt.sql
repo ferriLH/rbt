@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 01, 2019 at 08:44 AM
+-- Generation Time: Aug 01, 2019 at 11:29 AM
 -- Server version: 10.3.16-MariaDB
 -- PHP Version: 7.3.7
 
@@ -129,6 +129,7 @@ CREATE TABLE `t_pesan` (
   `nama_pengirim` varchar(30) NOT NULL,
   `email_pengirim` varchar(35) NOT NULL,
   `kontak_pengirim` varchar(15) NOT NULL,
+  `isi_pesan` text NOT NULL,
   `baca` tinyint(1) NOT NULL,
   `hapus` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -144,6 +145,7 @@ CREATE TABLE `t_promo` (
   `nama_promo` varchar(25) NOT NULL,
   `mekanisme` text NOT NULL,
   `periode` varchar(50) NOT NULL,
+  `banner` varchar(35) NOT NULL,
   `aktif` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
