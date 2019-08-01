@@ -1,25 +1,24 @@
+<?php
+$login = $this->session->userdata('isLogin');
+?>
 <div class="footer">
     <div class="footer-grid">
         <h3>Navigation</h3>
         <ul class="list1">
             <li><a href="<?php echo base_url()?>assets/main_page/index.html">Home</a></li>
-            <li><a href="<?php echo base_url()?>assets/main_page/radio.html">All Songs</a></li>
             <li><a href="<?php echo base_url()?>assets/main_page/browse.html">Albums</a></li>
             <li><a href="<?php echo base_url()?>assets/main_page/radio.html">New Collections</a></li>
-            <li><a href="<?php echo base_url()?>assets/main_page/blog.html">Blog</a></li>
             <li><a href="<?php echo base_url()?>assets/main_page/contact.html">Contact</a></li>
         </ul>
     </div>
     <div class="footer-grid">
         <h3>Our Account</h3>
         <ul class="list1">
-            <li><a href="#" data-toggle="modal" data-target="#myModal5">Your Account</a></li>
-            <li><a href="#">Personal information</a></li>
-            <li><a href="#">Addresses</a></li>
-            <li><a href="#">Discount</a></li>
-            <li><a href="#">Orders history</a></li>
-            <li><a href="#">Addresses</a></li>
-            <li><a href="#">Search Terms</a></li>
+            <?php if ($login == TRUE){?>
+            <li><a href="<?php echo base_url('dashboard')?>" >Your Account</a></li>
+            <?php } else {?>
+            <li><a href="<?php echo base_url('login')?>" >Your Account</a></li>
+            <?php  }?>
         </ul>
     </div>
     <div class="footer-grid">
@@ -27,16 +26,13 @@
         <ul class="list1">
             <li><a href="<?php echo base_url()?>assets/main_page/contact.html">Site Map</a></li>
             <li><a href="#">Search Terms</a></li>
-            <li><a href="#">Advanced Search</a></li>
-            <li><a href="#">Mobile</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#myModal1">Mobile</a></li>
             <li><a href="<?php echo base_url()?>assets/main_page/contact.html">Contact Us</a></li>
-            <li><a href="#">Mobile</a></li>
-            <li><a href="#">Addresses</a></li>
         </ul>
     </div>
     <div class="footer-grid">
         <h3>Newsletter</h3>
-        <p class="footer_desc">Nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat</p>
+        <p class="footer_desc">Jika anda ingin kabar terbaru tentang kami, maka silahkan masukan email anda dibawah ini</p>
         <div class="search_footer">
             <form>
                 <input type="text" placeholder="Email...." required="">
@@ -46,8 +42,9 @@
     </div>
     <div class="footer-grid footer-grid_last">
         <h3>About Us</h3>
-        <p class="footer_desc">Diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat enim ad minim veniam,.</p>
-        <p class="f_text">Phone:  &nbsp;&nbsp;&nbsp;00-250-2131</p>
+        <p class="footer_desc">Alpha Omega Wahana Nusantara
+            Jl. Kuningan Barat Raya No.8, RT.1/RW.3, Kuningan Bar., Kec. Mampang Prpt., Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12710</p>
+        <p class="f_text">Phone:  &nbsp;&nbsp;&nbsp;0000000000000000</p>
         <p class="email">Email : &nbsp;<span><a href="mailto:mail@example.com">info(at)mailing.com</a></span></p>
     </div>
     <div class="clearfix"> </div>
@@ -55,7 +52,7 @@
 </div>
 <!--footer section start-->
 <footer>
-    <p>&copy 2019. All Rights Reserved | Design by <a href="https://w3layouts.com/" target="_blank">Mosaic w3layouts.</a></p>
+    <p>&copy 2019. AlphaOmega All Rights Reserved </p>
 </footer>
 <!--footer section end-->
 <!-- /w3l-agile -->

@@ -2,10 +2,9 @@
 <html>
 <head>
     <title><?php echo $title." | Page";?></title>
+    <link rel="shortcut icon" type="image/png" href="<?php echo base_url('assets/main_page/images')?>/favicon.png"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="keywords" content="Mosaic Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
     <!-- Bootstrap Core CSS -->
     <link href="<?php echo base_url()?>assets/main_page/css/bootstrap.css" rel='stylesheet' type='text/css' />

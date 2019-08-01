@@ -5,10 +5,10 @@
 
         <!--logo and iconic logo start-->
         <div class="logo">
-            <h1><a href="<?php echo base_url()?>">Mosai<span>c</span></a></h1>
+            <h1><img src="<?php echo base_url('assets/main_page/images/')?>Homelogo.png" </h1>
         </div>
         <div class="logo-icon text-center">
-            <a href="<?php echo base_url()?>">M</a>
+            <a href="<?php echo base_url()?>">A</a>
         </div>
         <!-- /w3l-agile -->
         <!--logo and iconic logo end-->
@@ -17,7 +17,7 @@
             <!--sidebar nav start-->
             <ul class="nav nav-pills nav-stacked custom-nav">
                 <li class="active"><a href="<?php echo base_url()?>"><i class="lnr lnr-home"></i><span>Home</span></a></li>
-                <li><a href="<?php echo base_url()?>assets/main_page/radio.html"><i class="camera"></i> <span>Radio</span></a></li>
+<!--                <li><a href="--><?php //echo base_url()?><!--assets/main_page/radio.html"><i class="camera"></i> <span>Radio</span></a></li>-->
                 <li><a href="#" data-toggle="modal" data-target="#myModal1"><i class="fa fa-th"></i><span>Apps</span></a></li>
                 <li><a href="<?php echo base_url()?>assets/main_page/radio.html"><i class="lnr lnr-users"></i> <span>Artists</span></a></li>
                 <li><a href="<?php echo base_url()?>assets/main_page/browse.html"><i class="lnr lnr-music-note"></i> <span>Albums</span></a></li>
@@ -27,8 +27,8 @@
                         <li><a href="<?php echo base_url()?>assets/main_page/404.html">Services</a> </li>
                     </ul>
                 </li>
-                <li><a href="<?php echo base_url()?>assets/main_page/blog.html"><i class="lnr lnr-book"></i><span>Blog</span></a></li>
-                <li><a href="<?php echo base_url()?>assets/main_page/typography.html"><i class="lnr lnr-pencil"></i> <span>Typography</span></a></li>
+<!--                <li><a href="--><?php //echo base_url()?><!--assets/main_page/blog.html"><i class="lnr lnr-book"></i><span>Blog</span></a></li>-->
+<!--                <li><a href="--><?php //echo base_url()?><!--assets/main_page/typography.html"><i class="lnr lnr-pencil"></i> <span>Typography</span></a></li>-->
                 <li class="menu-list"><a href="#"><i class="lnr lnr-heart"></i>  <span>My Favourities</span></a>
                     <ul class="sub-menu-list">
                         <li><a href="<?php echo base_url()?>assets/main_page/radio.html">All Songs</a></li>

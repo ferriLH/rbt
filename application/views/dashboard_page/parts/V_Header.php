@@ -6,6 +6,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title><?php echo $title." | Page";?></title>
+    <link rel="shortcut icon" type="image/png" href="<?php echo base_url('assets/main_page/images')?>/favicon.png"/>
+
     <!-- plugins:css -->
     <link rel="stylesheet" href="<?php echo base_url()?>assets/dashboard_page/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="<?php echo base_url()?>assets/dashboard_page/vendors/base/vendor.bundle.base.css">
