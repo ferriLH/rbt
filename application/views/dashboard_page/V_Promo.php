@@ -21,10 +21,8 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 							</div>
 						</div>
 						<div class="d-flex justify-content-between align-items-end flex-wrap">
-							<button class="btn btn-primary mt-2 mt-xl-0"><i class="mdi mdi-album"></i> Add New Album</button>&nbsp;
-							<button class="btn btn-primary mt-2 mt-xl-0"><i class="mdi mdi-music-circle"></i> Add New Song</button>&nbsp;
-							<button class="btn btn-primary mt-2 mt-xl-0"><i class="mdi mdi-plus-circle"></i> Add New Genre</button>
 
+							<button class="btn btn-primary mt-2 mt-xl-0"><i class="mdi mdi-plus-circle"></i> Add New <?php echo $title?></button>
 						</div>
 					</div>
 				</div>
@@ -38,12 +36,10 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 								<table id="recent-purchases-listing" class="table">
 									<thead>
 									<tr>
-										<th>Artist</th>
-										<th>Album</th>
-										<th>Judul</th>
-										<th>Harga</th>
-										<th>Genre</th>
-										<th>Kode Registrasi</th>
+										<th>Nama Promo</th>
+										<th>Mekanisme</th>
+										<th>Periode</th>
+										<th>Banner</th>
 										<th>Action</th>
 									</tr>
 									</thead>
@@ -53,8 +49,6 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 										<td>Levelled up</td>
 										<td>Catalinaborough</td>
 										<td>$790</td>
-										<td>06 Jan 2018</td>
-										<td>$2274253</td>
 										<td>
 											<a href="<?php echo base_url('');echo "";?>" class="btn btn-warning btn-icon-split">
                                             <span class="icon text-white">

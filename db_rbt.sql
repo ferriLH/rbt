@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 29, 2019 at 05:35 PM
+-- Generation Time: Aug 01, 2019 at 08:44 AM
 -- Server version: 10.3.16-MariaDB
 -- PHP Version: 7.3.7
 
@@ -21,6 +21,27 @@ SET time_zone = "+00:00";
 --
 -- Database: `db_rbt`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `t_admin`
+--
+
+CREATE TABLE `t_admin` (
+  `id_admin` int(11) NOT NULL,
+  `nama_admin` varchar(30) NOT NULL,
+  `email_admin` varchar(35) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `aktif` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `t_admin`
+--
+
+INSERT INTO `t_admin` (`id_admin`, `nama_admin`, `email_admin`, `password`, `aktif`) VALUES
+(1, 'Ferri', 'ferrilasmihalim@gmail.com', 'd033e22ae348aeb5660fc2140aec35850c4da997', 1);
 
 -- --------------------------------------------------------
 
@@ -45,19 +66,12 @@ CREATE TABLE `t_album` (
 
 CREATE TABLE `t_artist` (
   `id_artists` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
+  `partner_id` int(11) NOT NULL,
   `nama_artist` varchar(25) NOT NULL,
   `bio` text NOT NULL,
   `picture_artist` varchar(30) NOT NULL,
   `aktif` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `t_artist`
---
-
-INSERT INTO `t_artist` (`id_artists`, `user_id`, `nama_artist`, `bio`, `picture_artist`, `aktif`) VALUES
-(1, 2, 'Joji', 'George Miller (born 18 September 1992), better known by his stage name Joji and formerly by his YouTube username Filthy Frank, is a Japanese singer, songwriter, rapper, record producer, and former Internet personality and comedian.', '', 1);
 
 -- --------------------------------------------------------
 
@@ -90,29 +104,34 @@ CREATE TABLE `t_lagu` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `t_pengguna`
+-- Table structure for table `t_partner`
 --
 
-CREATE TABLE `t_pengguna` (
-  `id_pengguna` int(11) NOT NULL,
+CREATE TABLE `t_partner` (
+  `id_partner` int(11) NOT NULL,
   `nomor_induk` varchar(16) DEFAULT NULL,
-  `nama_pengguna` varchar(25) NOT NULL,
-  `email` varchar(50) NOT NULL,
+  `nama_partner` varchar(25) NOT NULL,
+  `email_partner` varchar(50) NOT NULL,
   `no_telpon` varchar(13) NOT NULL,
   `jk` enum('pria','wanita') NOT NULL,
   `alamat` varchar(150) NOT NULL,
-  `password` varchar(100) NOT NULL,
-  `hak_akses` tinyint(1) NOT NULL,
   `aktif` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `t_pengguna`
+-- Table structure for table `t_pesan`
 --
 
-INSERT INTO `t_pengguna` (`id_pengguna`, `nomor_induk`, `nama_pengguna`, `email`, `no_telpon`, `jk`, `alamat`, `password`, `hak_akses`, `aktif`) VALUES
-(1, '1112233', 'admin', 'ferrilasmihalim@gmail.com', '62', 'pria', 'Cipedes Tengah', 'd033e22ae348aeb5660fc2140aec35850c4da997', 1, 1),
-(2, '445566', 'user', 'ferrilasmihalim@email.unikom.ac.id', '62', 'pria', 'Dipatiukur', '12dea96fec20593566ab75692c9949596833adc9', 0, 1);
+CREATE TABLE `t_pesan` (
+  `id_pesan` int(11) NOT NULL,
+  `nama_pengirim` varchar(30) NOT NULL,
+  `email_pengirim` varchar(35) NOT NULL,
+  `kontak_pengirim` varchar(15) NOT NULL,
+  `baca` tinyint(1) NOT NULL,
+  `hapus` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -133,6 +152,12 @@ CREATE TABLE `t_promo` (
 --
 
 --
+-- Indexes for table `t_admin`
+--
+ALTER TABLE `t_admin`
+  ADD PRIMARY KEY (`id_admin`);
+
+--
 -- Indexes for table `t_album`
 --
 ALTER TABLE `t_album`
@@ -144,7 +169,7 @@ ALTER TABLE `t_album`
 --
 ALTER TABLE `t_artist`
   ADD PRIMARY KEY (`id_artists`),
-  ADD KEY `user_id` (`user_id`);
+  ADD KEY `partner_id` (`partner_id`);
 
 --
 -- Indexes for table `t_genre`
@@ -161,10 +186,16 @@ ALTER TABLE `t_lagu`
   ADD KEY `genre_id` (`genre_id`);
 
 --
--- Indexes for table `t_pengguna`
+-- Indexes for table `t_partner`
 --
-ALTER TABLE `t_pengguna`
-  ADD PRIMARY KEY (`id_pengguna`);
+ALTER TABLE `t_partner`
+  ADD PRIMARY KEY (`id_partner`);
+
+--
+-- Indexes for table `t_pesan`
+--
+ALTER TABLE `t_pesan`
+  ADD PRIMARY KEY (`id_pesan`);
 
 --
 -- Indexes for table `t_promo`
@@ -175,6 +206,12 @@ ALTER TABLE `t_promo`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `t_admin`
+--
+ALTER TABLE `t_admin`
+  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `t_album`
@@ -201,10 +238,16 @@ ALTER TABLE `t_lagu`
   MODIFY `id_lagu` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `t_pengguna`
+-- AUTO_INCREMENT for table `t_partner`
 --
-ALTER TABLE `t_pengguna`
-  MODIFY `id_pengguna` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE `t_partner`
+  MODIFY `id_partner` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `t_pesan`
+--
+ALTER TABLE `t_pesan`
+  MODIFY `id_pesan` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `t_promo`
@@ -226,7 +269,7 @@ ALTER TABLE `t_album`
 -- Constraints for table `t_artist`
 --
 ALTER TABLE `t_artist`
-  ADD CONSTRAINT `t_artist_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `t_pengguna` (`id_pengguna`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `t_artist_ibfk_1` FOREIGN KEY (`partner_id`) REFERENCES `t_partner` (`id_partner`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `t_lagu`

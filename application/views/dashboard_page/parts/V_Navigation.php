@@ -2,7 +2,7 @@
 <body>
 
 <?php
-$name = $this->session->userdata('nama_user');
+$name = $this->session->userdata('nama_admin');
 ?>
 
 <div class="container-scroller">
@@ -10,8 +10,8 @@ $name = $this->session->userdata('nama_user');
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div class="navbar-brand-wrapper d-flex justify-content-center">
             <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">
-                <a class="navbar-brand brand-logo" href="<?php echo base_url()?>dashboard/"><img src="<?php echo base_url()?>assets/dashboard_page/images/Homelogo1.png" alt="logo"/></a>
-                <a class="navbar-brand brand-logo-mini" href="<?php echo base_url()?>dashboard/"><img src="<?php echo base_url()?>assets/dashboard_page/images/logo-mini.png" alt="logo"/></a>
+                <a class="navbar-brand brand-logo" href="<?php echo base_url()?>dashboard"><img src="<?php echo base_url()?>assets/dashboard_page/images/Homelogo1.png" alt="logo"/></a>
+                <a class="navbar-brand brand-logo-mini" href="<?php echo base_url()?>dashboard"><img src="<?php echo base_url()?>assets/dashboard_page/images/logo-mini.png" alt="logo"/></a>
                 <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
                     <span class="mdi mdi-sort-variant"></span>
                 </button>
@@ -130,7 +130,7 @@ $name = $this->session->userdata('nama_user');
                         <span class="nav-profile-name"><?php echo $name;?></span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-                        <a class="dropdown-item">
+                        <a class="dropdown-item" href="<?php echo base_url('dashboard/bio/').$this->session->userdata('id_admin');?>">
                             <i class="mdi mdi-settings text-primary"></i>
                             Settings
                         </a>
@@ -183,7 +183,7 @@ $name = $this->session->userdata('nama_user');
 					</a>
 					<div class="collapse" id="auth">
 						<ul class="nav flex-column sub-menu">
-							<li class="nav-item <?php if($this->uri->segment(1)=="dashboard"){echo "active";}?>"> <a class="nav-link" href="<?php echo base_url()?>dashboard/">Backend</a></li>
+							<li class="nav-item <?php if($this->uri->segment(1)=="dashboard"){echo "active";}?>"> <a class="nav-link" href="<?php echo base_url()?>dashboard">Backend</a></li>
 							<li class="nav-item"> <a class="nav-link" target="_blank" href="<?php echo base_url()?>">Frontend</a></li>
 						</ul>
 					</div>
@@ -202,7 +202,13 @@ $name = $this->session->userdata('nama_user');
 						<span class="menu-title">Music Pages</span>
 					</a>
 				</li>
-
+				<!--Navbar CRUD Promo-->
+				<li class="nav-item <?php if($this->uri->segment(1)=="promo"){echo "active";}?>">
+					<a class="nav-link" href="<?php echo base_url()?>promo/">
+						<i class="mdi mdi-image-area menu-icon"></i>
+						<span class="menu-title">Promo Pages</span>
+					</a>
+				</li>
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo base_url()?>assets/dashboard_page/documentation/documentation.html">
                         <i class="mdi mdi-file-document-box-outline menu-icon"></i>
