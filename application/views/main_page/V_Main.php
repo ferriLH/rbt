@@ -12,11 +12,11 @@ $this->load->view('main_page/parts/V_Navigation');
             <!--notification menu start -->
             <div class="menu-right">
                 <div class="profile_details">
-                    <div class="col-md-4 serch-part">
-                        <div id="sb-search" class="sb-search">
+                    <div style="float: right; padding-left: 5px" class="col-md-4 serch-part">
+                        <div style="padding-bottom: 10px" id="sb-search" class="sb-search">
                             <form action="#" method="post">
 
-                                <input class="sb-search-input" placeholder="Search" type="search" name="search" id="search">
+                                <input style="padding: 20%;" class="sb-search-input" placeholder="Search" type="search" name="search" id="search">
                                 <input class="sb-search-submit" type="submit" value="">
                                 <span class="sb-icon-search"> </span>
                             </form>
@@ -30,42 +30,42 @@ $this->load->view('main_page/parts/V_Navigation');
                     </script>
                     <!-- //search-scripts -->
                     <!---->
-                    <div class="col-md-4 player">
-                        <div class="audio-player">
-                            <audio id="audio-player"  controls="controls">
-                                <source src="<?php echo base_url()?>assets/main_page/media/Blue Browne.ogg" type="audio/ogg"></source>
-                                <source src="<?php echo base_url()?>assets/main_page/media/Blue Browne.mp3" type="audio/mpeg"></source>
-                                <source src="<?php echo base_url()?>assets/main_page/media/Georgia.ogg" type="audio/ogg"></source>
-                                <source src="<?php echo base_url()?>assets/main_page/media/Georgia.mp3" type="audio/mpeg"></source>
-                            </audio>
-                        </div>
+<!--                    <div class="col-md-4 player">-->
+<!--                        <div class="audio-player">-->
+<!--                            <audio id="audio-player"  controls="controls">-->
+<!--                                <source src="--><?php //echo base_url()?><!--assets/main_page/media/Blue Browne.ogg" type="audio/ogg"></source>-->
+<!--                                <source src="--><?php //echo base_url()?><!--assets/main_page/media/Blue Browne.mp3" type="audio/mpeg"></source>-->
+<!--                                <source src="--><?php //echo base_url()?><!--assets/main_page/media/Georgia.ogg" type="audio/ogg"></source>-->
+<!--                                <source src="--><?php //echo base_url()?><!--assets/main_page/media/Georgia.mp3" type="audio/mpeg"></source>-->
+<!--                            </audio>-->
+<!--                        </div>-->
                         <!---->
-                        <script type="text/javascript">
-                            $(function(){
-                                $('#audio-player').mediaelementplayer({
-                                    alwaysShowControls: true,
-                                    features: ['playpause','progress','volume'],
-                                    audioVolume: 'horizontal',
-                                    iPadUseNativeControls: true,
-                                    iPhoneUseNativeControls: true,
-                                    AndroidUseNativeControls: true
-                                });
-                            });
-                        </script>
+<!--                        <script type="text/javascript">-->
+<!--                            $(function(){-->
+<!--                                $('#audio-player').mediaelementplayer({-->
+<!--                                    alwaysShowControls: true,-->
+<!--                                    features: ['playpause','progress','volume'],-->
+<!--                                    audioVolume: 'horizontal',-->
+<!--                                    iPadUseNativeControls: true,-->
+<!--                                    iPhoneUseNativeControls: true,-->
+<!--                                    AndroidUseNativeControls: true-->
+<!--                                });-->
+<!--                            });-->
+<!--                        </script>-->
                         <!--audio-->
-                        <link rel="stylesheet" type="text/css" media="all" href="<?php echo base_url()?>assets/main_page/css/audio.css">
-                        <script type="text/javascript" src="<?php echo base_url()?>assets/main_page/js/mediaelement-and-player.min.js"></script>
+<!--                        <link rel="stylesheet" type="text/css" media="all" href="--><?php //echo base_url()?><!--assets/main_page/css/audio.css">-->
+<!--                        <script type="text/javascript" src="--><?php //echo base_url()?><!--assets/main_page/js/mediaelement-and-player.min.js"></script>-->
                         <!---->
 
 
                         <!--//-->
-                        <ul class="next-top">
-                            <li><a class="ar" href="#"> <img src="<?php echo base_url()?>assets/main_page/images/arrow.png" alt=""/></a></li>
-                            <li><a class="ar2" href="#"><img src="<?php echo base_url()?>assets/main_page/images/arrow2.png" alt=""/></i></a></li>
-
-                        </ul>
-                    </div>
-                    <div class="col-md-4 login-pop">
+<!--                        <ul class="next-top">-->
+<!--                            <li><a class="ar" href="#"> <img src="--><?php //echo base_url()?><!--assets/main_page/images/arrow.png" alt=""/></a></li>-->
+<!--                            <li><a class="ar2" href="#"><img src="--><?php //echo base_url()?><!--assets/main_page/images/arrow2.png" alt=""/></i></a></li>-->
+<!---->
+<!--                        </ul>-->
+<!--                    </div>-->
+                    <div style="padding-right: 20%;float: right; padding-bottom: 10px;clear: right;" class="col-md-4 login-pop">
                         <div id="loginpop">
                             <a href="<?php echo base_url('login')?>">
                                 <span>Login

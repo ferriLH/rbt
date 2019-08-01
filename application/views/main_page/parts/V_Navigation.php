@@ -8,7 +8,7 @@
             <h1><a href="<?php echo base_url('')?>"><span>T</span>it<span>T</span>at<span>T</span>ut</a></h1>
         </div>
         <div class="logo-icon text-center">
-            <a href="<?php echo base_url()?>">A</a>
+            <a href="<?php echo base_url()?>">T</a>
         </div>
         <!-- /w3l-agile -->
         <!--logo and iconic logo end-->
