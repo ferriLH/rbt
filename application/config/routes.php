@@ -56,5 +56,7 @@ $route['logout']                = 'C_Login/signout';
 $route['signup']                = 'C_Signup';
 $route['signup/confirm']        = 'C_Signup/confirm';
 $route['dashboard']             = 'C_Dashboard';
+$route['partner']             	= 'C_Partner';
+$route['music']             	= 'C_Music';
 $route['404_override']          = '';
 $route['translate_uri_dashes']  = FALSE;

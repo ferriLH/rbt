@@ -48,7 +48,7 @@ class C_Login extends CI_Controller
                     $this->session->set_userdata($sess_data);
                 }
                 $this->session->set_flashdata('sukses', 'sukses');
-                redirect('dashboard');
+                redirect('dashboard/');
             } else {
                 $this->session->set_flashdata('failed', '<br>Username atau Password yang anda masukkan salah!');
                 $this->load->view('dashboard_page/sign/V_In',$data);
