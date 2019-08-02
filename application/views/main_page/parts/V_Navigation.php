@@ -1,9 +1,7 @@
 <?php
 $islogin =  $this->session->userdata('isLogin');
 ?>
-
-
-<body class="sticky-header left-side-collapsed"  onload="initMap()">
+<body class="sticky-header left-side-collapsed" onload="initMap()">
 <section>
     <!-- left side start-->
     <div class="left-side sticky-left-side">
@@ -39,9 +37,9 @@ $islogin =  $this->session->userdata('isLogin');
                         <li><a href="<?php echo base_url()?>assets/main_page/radio.html">All Songs</a></li>
                     </ul>
                 </li>
-                <li class="menu-list"><a href="<?php echo base_url()?>assets/main_page/contact.html"><i class="fa fa-thumb-tack"></i><span>Contact</span></a>
+                <li class="menu-list"><a href="<?php echo base_url()?>contact"><i class="fa fa-thumb-tack"></i><span>Contact</span></a>
                     <ul class="sub-menu-list">
-                        <li><a href="<?php echo base_url()?>assets/main_page/contact.html">Location</a> </li>
+                        <li><a href="<?php echo base_url()?>contact">Location</a> </li>
                     </ul>
                 </li>
             </ul>
@@ -82,42 +80,42 @@ $islogin =  $this->session->userdata('isLogin');
     <!-- //app-->
     <!-- /w3l-agile -->
     <!-- signup -->
-    <div class="modal fade" id="myModal5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content modal-info">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                </div>
-                <div class="modal-body modal-spa">
-                    <div class="sign-grids">
-                        <div class="sign">
-                            <div class="sign-left">
-                                <ul>
-                                    <li><a class="fb" href="#"><i></i>Sign in with Facebook</a></li>
-                                    <li><a class="goog" href="#"><i></i>Sign in with Google</a></li>
-                                    <li><a class="linkin" href="#"><i></i>Sign in with Linkedin</a></li>
-                                </ul>
-                            </div>
-                            <div class="sign-right">
-                                <form action="#" method="post">
-
-                                    <h3>Create your account </h3>
-                                    <input type="text" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}" required="">
-                                    <input type="text" value="Mobile number" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Mobile number';}" required="">
-                                    <input type="text" value="Email id" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email id';}" required="">
-                                    <input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required="">
-
-                                    <input type="submit" value="CREATE ACCOUNT" >
-                                </form>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                        <p>By logging in you agree to our <span>Terms and Conditions</span> and <span>Privacy Policy</span></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<!--    <div class="modal fade" id="myModal5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">-->
+<!--        <div class="modal-dialog" role="document">-->
+<!--            <div class="modal-content modal-info">-->
+<!--                <div class="modal-header">-->
+<!--                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
+<!--                </div>-->
+<!--                <div class="modal-body modal-spa">-->
+<!--                    <div class="sign-grids">-->
+<!--                        <div class="sign">-->
+<!--                            <div class="sign-left">-->
+<!--                                <ul>-->
+<!--                                    <li><a class="fb" href="#"><i></i>Sign in with Facebook</a></li>-->
+<!--                                    <li><a class="goog" href="#"><i></i>Sign in with Google</a></li>-->
+<!--                                    <li><a class="linkin" href="#"><i></i>Sign in with Linkedin</a></li>-->
+<!--                                </ul>-->
+<!--                            </div>-->
+<!--                            <div class="sign-right">-->
+<!--                                <form action="#" method="post">-->
+<!---->
+<!--                                    <h3>Create your account </h3>-->
+<!--                                    <input type="text" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}" required="">-->
+<!--                                    <input type="text" value="Mobile number" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Mobile number';}" required="">-->
+<!--                                    <input type="text" value="Email id" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email id';}" required="">-->
+<!--                                    <input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required="">-->
+<!---->
+<!--                                    <input type="submit" value="CREATE ACCOUNT" >-->
+<!--                                </form>-->
+<!--                            </div>-->
+<!--                            <div class="clearfix"></div>-->
+<!--                        </div>-->
+<!--                        <p>By logging in you agree to our <span>Terms and Conditions</span> and <span>Privacy Policy</span></p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
     <!-- //signup -->
     <!-- /w3l-agile -->
     <!-- left side end-->
@@ -131,7 +129,7 @@ $islogin =  $this->session->userdata('isLogin');
             <!--notification menu start -->
             <div class="menu-right">
                 <div class="profile_details">
-                    <div style="float: right; padding-left: 5px" class="col-md-4 serch-part">
+                    <div style="" class="col-md-4 serch-part">
                         <div  id="sb-search" class="sb-search">
                             <form action="#" method="post">
 
@@ -147,71 +145,17 @@ $islogin =  $this->session->userdata('isLogin');
                     <script>
                         new UISearch( document.getElementById( 'sb-search' ) );
                     </script>
-                    <!-- //search-scripts -->
-                    <!---->
-                    <!--                    <div class="col-md-4 player">-->
-                    <!--                        <div class="audio-player">-->
-                    <!--                            <audio id="audio-player"  controls="controls">-->
-                    <!--                                <source src="--><?php //echo base_url()?><!--assets/main_page/media/Blue Browne.ogg" type="audio/ogg"></source>-->
-                    <!--                                <source src="--><?php //echo base_url()?><!--assets/main_page/media/Blue Browne.mp3" type="audio/mpeg"></source>-->
-                    <!--                                <source src="--><?php //echo base_url()?><!--assets/main_page/media/Georgia.ogg" type="audio/ogg"></source>-->
-                    <!--                                <source src="--><?php //echo base_url()?><!--assets/main_page/media/Georgia.mp3" type="audio/mpeg"></source>-->
-                    <!--                            </audio>-->
-                    <!--                        </div>-->
-                    <!---->
-                    <!--                        <script type="text/javascript">-->
-                    <!--                            $(function(){-->
-                    <!--                                $('#audio-player').mediaelementplayer({-->
-                    <!--                                    alwaysShowControls: true,-->
-                    <!--                                    features: ['playpause','progress','volume'],-->
-                    <!--                                    audioVolume: 'horizontal',-->
-                    <!--                                    iPadUseNativeControls: true,-->
-                    <!--                                    iPhoneUseNativeControls: true,-->
-                    <!--                                    AndroidUseNativeControls: true-->
-                    <!--                                });-->
-                    <!--                            });-->
-                    <!--                        </script>-->
-                    <!--audio-->
-                    <!--                        <link rel="stylesheet" type="text/css" media="all" href="--><?php //echo base_url()?><!--assets/main_page/css/audio.css">-->
-                    <!--                        <script type="text/javascript" src="--><?php //echo base_url()?><!--assets/main_page/js/mediaelement-and-player.min.js"></script>-->
-                    <!---->
-
-
-                    <!--//-->
-                    <!--                        <ul class="next-top">-->
-                    <!--                            <li><a class="ar" href="#"> <img src="--><?php //echo base_url()?><!--assets/main_page/images/arrow.png" alt=""/></a></li>-->
-                    <!--                            <li><a class="ar2" href="#"><img src="--><?php //echo base_url()?><!--assets/main_page/images/arrow2.png" alt=""/></i></a></li>-->
-                    <!---->
-                    <!--                        </ul>-->
-                    <!--                    </div>-->
                     <?php if ($islogin == FALSE) {?>
                     <div style="padding-right: 20%;float: right; padding-bottom: 10px;clear: right;" class="col-md-4 login-pop">
                         <div id="loginpop">
                             <a href="<?php echo base_url('login')?>">
                                 <span>Login
                     <?php } else{?>
-                            <div style="padding-right: 25%;float: right; padding-bottom: 10px;clear: right;" class="col-md-4 login-pop">
+                            <div style="padding-right: 0%;float: right; padding-bottom: 10px;clear: right;" class="col-md-4 login-pop">
                         <div id="loginpop">
                             <a href="<?php echo base_url('dashboard')?>">
                                 <span>Dashboard
                                     <?php }?>
-<!--                            <div id="loginBox">-->
-                                    <!--                                <form action="#" method="post" id="loginForm">-->
-                                    <!--                                    <fieldset id="body">-->
-                                    <!--                                        <fieldset>-->
-                                    <!--                                            <label for="email">Email Address</label>-->
-                                    <!--                                            <input type="text" name="email" id="email">-->
-                                    <!--                                        </fieldset>-->
-                                    <!--                                        <fieldset>-->
-                                    <!--                                            <label for="password">Password</label>-->
-                                    <!--                                            <input type="password" name="password" id="password">-->
-                                    <!--                                        </fieldset>-->
-                                    <!--                                        <input type="submit" id="login" value="Sign in">-->
-                                    <!--                                        <label for="checkbox"><input type="checkbox" id="checkbox"> <i>Remember me</i></label>-->
-                                    <!--                                    </fieldset>-->
-                                    <!--                                    <span><a href="#">Forgot your password?</a></span>-->
-                                    <!--                                </form>-->
-                                    <!--                            </div>-->
                                 </span>
                             </a>
                         </div>

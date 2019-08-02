@@ -50,11 +50,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['default_controller']    = 'C_Main_page';
+
 $route['login']                 = 'C_Login';
 $route['login/auth']            = 'C_Login/auth';
 $route['logout']                = 'C_Login/signout';
 $route['signup']                = 'C_Signup';
 $route['signup/confirm']        = 'C_Signup/confirm';
+
 $route['dashboard']             = 'C_Dashboard';
 $route['dashboard/bio/(:any)']  = 'C_Dashboard/bio/$1';
 $route['partner']             	= 'C_Partner';
@@ -62,5 +64,7 @@ $route['music']             	= 'C_Music';
 $route['promo']             	= 'C_Promo';
 $route['contact']             	= 'C_Contact';
 $route['artist']             	= 'C_Artist';
+$route['contact/kirim']         = 'C_Contact/kirim';
+$route['inbox']             	= 'C_Inbox';
 $route['404_override']          = '';
 $route['translate_uri_dashes']  = FALSE;

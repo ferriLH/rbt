@@ -19,11 +19,16 @@ class C_Contact extends CI_Controller
 
     function kirim()
     {
-        $d['nama'] = $this->input->post('nama');
-        $d['email'] = $this->input->post('email');
-        $d['nohp'] = ($this->input->post('nohp'));
-        $d['pesan'] = ($this->input->post('pesan'));
-        $this->M_Contact->feedback($d);
+		date_default_timezone_set('Asia/Jakarta');
+		$t = date('Y/m/d H:i:s');
+		$d['nama_pengirim'] 	= $this->input->post('nama');
+        $d['email_pengirim'] 	= $this->input->post('email');
+        $d['kontak_pengirim'] 	= $this->input->post('notelp');
+        $d['isi_pesan'] 		= $this->input->post('pesan');
+		$d['baca'] 				= false;
+		$d['hapus'] 			= false;
+		$d['waktu_kirim'] 		= $t;
+		$this->M_Contact->feedback($d);
         $this->session->set_flashdata('sukses','sukses');
         redirect('contact');
     }

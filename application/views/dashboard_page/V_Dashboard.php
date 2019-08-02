@@ -44,8 +44,8 @@ $this->load->view('dashboard_page/parts/V_Navigation');
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-12 grid-margin stretch-card">
+<!--            <div class="row">-->
+<!--                <div class="col-md-12 grid-margin stretch-card">-->
 <!--                    <div class="card">-->
 <!--                        <div class="card-body dashboard-tabs p-0">-->
 <!--                            <ul class="nav nav-tabs px-4" role="tablist">-->
@@ -207,9 +207,9 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 <!--                            </div>-->
 <!--                        </div>-->
 <!--                    </div>-->
-                </div>
-            </div>
-            <div class="row">
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="row">-->
 <!--                <div class="col-md-7 grid-margin stretch-card">-->
 <!--                    <div class="card">-->
 <!--                        <div class="card-body">-->
@@ -232,8 +232,8 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 <!--                        <canvas id="total-sales-chart"></canvas>-->
 <!--                    </div>-->
 <!--                </div>-->
-            </div>
-            <div class="row">
+<!--            </div>-->
+<!--            <div class="row">-->
 <!--                <div class="col-md-12 stretch-card">-->
 <!--                    <div class="card">-->
 <!--                        <div class="card-body">-->
@@ -321,7 +321,7 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 <!--                        </div>-->
 <!--                    </div>-->
 <!--                </div>-->
-            </div>
+<!--            </div>-->
         </div>
         <!-- content-wrapper ends -->
 

@@ -12,7 +12,8 @@ class C_Dashboard extends CI_Controller
     public function index()
     {
         $data = array(
-            "title" => "Dashboard",
+            "title" 		=> "Dashboard",
+			"getNewInbox"	=> $this->M_Dashboard->getNewInbox(),
         );
         if ($this->session->userdata('isLogin') == TRUE) {
             $this->load->view('dashboard_page/V_Dashboard',$data);
@@ -24,6 +25,7 @@ class C_Dashboard extends CI_Controller
 	{
 		$data = array(
 			"title" => "Bio",
+			"getNewInbox"	=> $this->M_Dashboard->getNewInbox(),
 		);
 		if ($this->session->userdata('isLogin') == TRUE) {
 			$this->load->view('dashboard_page/V_Bio',$data);

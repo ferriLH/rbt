@@ -327,7 +327,7 @@ $this->load->view('main_page/parts/V_Navigation');
                                     artist:"",
                                     mp4: "<?php echo base_url()?>assets/main_page/video/Ellie-Goulding.mp4",
                                     ogv: "<?php echo base_url()?>assets/main_page/video/Ellie-Goulding.ogv",
-                                    webmv: "<?php echo base_url()?>assets/main_page/video/Ellie-Goulding.webm",
+                                    //webmv: "<?php //echo base_url()?>//assets/main_page/video/Ellie-Goulding.webm",
                                     poster:"<?php echo base_url()?>assets/main_page/video/play1.png"
                                 },
                                 {

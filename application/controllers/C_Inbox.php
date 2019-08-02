@@ -1,24 +1,23 @@
 <?php
 
 
-class C_Promo extends CI_Controller
+class C_Inbox extends CI_Controller
 
 {
 	function __construct()
 	{
 		parent::__construct();
-		$this->load->model('M_Promo');
+		$this->load->model('M_Inbox');
 		$this->load->model('M_Dashboard');
 	}
 	public function index()
 	{
 		$data = array(
-			"title" => "Promo",
+			"title" 		=> "Inbox",
 			"getNewInbox"	=> $this->M_Dashboard->getNewInbox(),
-
 		);
 		if ($this->session->userdata('isLogin') == TRUE) {
-			$this->load->view('dashboard_page/V_Promo',$data);
+			$this->load->view('dashboard_page/V_Inbox',$data);
 		}else{
 			redirect('login');
 		}

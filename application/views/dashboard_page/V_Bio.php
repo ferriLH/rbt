@@ -10,7 +10,10 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 				<div class="d-flex justify-content-between flex-wrap">
 					<div class="d-flex align-items-end flex-wrap">
 						<div class="d-flex">
-							<i class="mdi mdi-home text-muted hover-cursor"></i>&nbsp;/&nbsp;
+							<i class="mdi mdi-home text-muted hover-cursor"></i>
+							<p class="text-muted mb-0 hover-cursor">
+								&nbsp;/&nbsp;<a href="<?php echo base_url('dashboard')?>"><?php echo "Dashboard";?></a>&nbsp;/&nbsp;
+							</p>
 							<p class="text-primary mb-0 hover-cursor">
 								<a href="<?php echo base_url().$this->uri->segment(1)."/bio/".$this->session->userdata('id_admin')?>"><?php echo $title;?></a>
 							</p>

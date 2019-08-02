@@ -3,6 +3,30 @@ $this->load->view('main_page/parts/V_Header');
 $this->load->view('main_page/parts/V_Navigation');
 ?>
 
+
+<!-- main content start-->
+<div class="main-content">
+    <!-- header-starts -->
+    <div class="header-section">
+        <!--toggle button start-->
+        <a class="toggle-btn  menu-collapsed"><i class="fa fa-bars"></i></a>
+        <!--toggle button end-->
+        <!--notification menu start -->
+        <div class="menu-right">
+            <div class="profile_details">
+                <div style="float: right; padding-bottom: 10px" class="col-md-6 login-pop">
+                    <div id="loginpop">
+                        <a href="<?php echo base_url('login');?>">
+                            <span>Login</span></a>
+                    </div>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+            <!-------->
+            <!-- /w3l-agile -->
+        </div>
+        <div class="clearfix"></div>
+    </div>
     <!--notification menu end -->
     <!-- //header-ends -->
 
