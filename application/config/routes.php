@@ -61,5 +61,6 @@ $route['partner']             	= 'C_Partner';
 $route['music']             	= 'C_Music';
 $route['promo']             	= 'C_Promo';
 $route['contact']             	= 'C_Contact';
+$route['artist']             	= 'C_Artist';
 $route['404_override']          = '';
 $route['translate_uri_dashes']  = FALSE;
