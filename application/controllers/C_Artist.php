@@ -13,6 +13,8 @@ class C_Artist extends CI_Controller
     {
         $data = array(
             "title" => "Artist",
+            "artist" => $this->M_Artist->get_artist(),
+            "genre" => $this->M_Artist->get_genre()
         );
         $this->load->view('main_page/V_Artist',$data);
     }

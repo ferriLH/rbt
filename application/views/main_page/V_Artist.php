@@ -36,440 +36,383 @@
                         <a href="<?php echo base_url('assets/main_page/')?>browse.html"><h4 class="tittle third">See all</h4></a>
                         <div class="clearfix"> </div>
                     </div>
+
+
                     <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
                         <ul id="myTab" class="nav nav-tabs" role="tablist">
-                            <li role="presentation" class="active"><a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">Telugu</a></li>
-                            <li role="presentation" class=""><a href="#profile" role="tab" id="profile-tab" data-toggle="tab" aria-controls="profile" aria-expanded="false">Hindi</a></li>
-                            <li role="presentation" class="dropdown">
-                                <a href="#" id="myTabDrop1" class="dropdown-toggle" data-toggle="dropdown" aria-controls="myTabDrop1-contents" aria-expanded="false">English <span class="caret"></span></a>
-                                <ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1" id="myTabDrop1-contents">
-                                    <li><a href="#dropdown1" tabindex="-1" role="tab" id="dropdown1-tab" data-toggle="tab" aria-controls="dropdown1">Melody</a></li>
-                                    <li><a href="#dropdown2" tabindex="-1" role="tab" id="dropdown2-tab" data-toggle="tab" aria-controls="dropdown2">Classic</a></li>
-                                </ul>
-                            </li>
-                            <li role="presentation"><a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">Tamil</a></li>
-                            <li role="presentation" class=""><a href="#profile" role="tab" id="profile-tab" data-toggle="tab" aria-controls="profile" aria-expanded="false">Malayalam</a></li>
+                            <?php foreach($genre as $g) {?>
+                            <li role="presentation" ><a href="#<?php echo $g->id;?>" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true"><?php echo $g->genre;?></a></li>
+                            <?php }?>
                         </ul>
+
+                        <?php foreach($artist as $a) {?>
                         <div id="myTabContent" class="tab-content">
-                            <div role="tabpanel" class="tab-pane fade active in" id="home" aria-labelledby="home-tab">
+                            <div role="tabpanel" class="tab-pane fade active in" id="<?php echo $a->genre_id;?>" aria-labelledby="home-tab">
                                 <div class="browse-inner">
                                     <!-- /agileits -->
 
                                     <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a3.jpg" title="allbum-name"></a>
+                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/foto_artis/');echo $a->picture_artist;?>" title="allbum-name"></a>
                                         <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">Sukhwinder singh</a>
+                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html"><?php echo $a->nama_artist;?></a>
                                     </div>
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a6.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">Shekhar Ravjiani</a>
-                                    </div>
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a7.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">Shalmali</a>
-                                    </div>
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a4.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">Sajid-Wajid</a>
-                                    </div>
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a5.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">Atif Aslam</a>
-                                    </div>
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a1.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">A R Rahman</a>
-                                    </div>
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a2.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">Shreya Ghoshal</a>
-                                    </div>
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a8.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">Lata Mangeshkar</a>
-                                    </div>
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a9.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">Arijit Sing</a>
-                                    </div>
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a10.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">Sunidhi Chauhan</a>
-                                    </div>
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a11.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">Yo Yo Honey Singh</a>
-                                    </div>
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a12.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">Neeti Mohan</a>
-                                    </div>
+                                    <?php }?>
                                     <div class="clearfix"> </div>
                                 </div>
                             </div>
-                            <div role="tabpanel" class="tab-pane fade" id="profile" aria-labelledby="profile-tab">
-                                <div class="browse-inner">
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a9.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">Arijit Sing</a>
-                                    </div>
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a10.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">Sunidhi Chauhan</a>
-                                    </div>
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a11.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">Yo Yo Honey Singh</a>
-                                    </div>
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a12.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">Neeti Mohan</a>
-                                    </div>
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a1.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">A R Rahman</a>
-                                    </div>
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a2.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">Shreya Ghoshal</a>
-                                    </div>
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a3.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">Sukhwinder singh</a>
-                                    </div>
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a6.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">Shekhar Ravjiani</a>
-                                    </div>
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a7.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">Shalmali</a>
-                                    </div>
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a4.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">Sajid-Wajid</a>
-                                    </div>
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a5.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">Atif Aslam</a>
-                                    </div>
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a8.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">Lata Mangeshkar</a>
-                                    </div>
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a9.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">Arijit Sing</a>
-                                    </div>
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a10.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">Sunidhi Chauhan</a>
-                                    </div>
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a11.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">Yo Yo Honey Singh</a>
-                                    </div>
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a12.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">Neeti Mohan</a>
-                                    </div>
-                                    <div class="clearfix"> </div>
-                                </div>
-                            </div>
-                            <div role="tabpanel" class="tab-pane fade" id="dropdown1" aria-labelledby="dropdown1-tab">
-                                <div class="browse-inner">
 
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a1.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">A R Rahman</a>
-                                    </div>
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a2.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">Shreya Ghoshal</a>
-                                    </div>
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a3.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">Sukhwinder singh</a>
-                                    </div>
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a6.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">Shekhar Ravjiani</a>
-                                    </div>
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a7.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">Shalmali</a>
-                                    </div>
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a4.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">Sajid-Wajid</a>
-                                    </div>
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a5.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">Atif Aslam</a>
-                                    </div>
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a8.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">Lata Mangeshkar</a>
-                                    </div>
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a9.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">Arijit Sing</a>
-                                    </div>
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a10.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">Sunidhi Chauhan</a>
-                                    </div>
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a11.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">Yo Yo Honey Singh</a>
-                                    </div>
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a12.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">Neeti Mohan</a>
-                                    </div>
-                                    <div class="clearfix"> </div>
-                                </div>
-                            </div>
-                            <div role="tabpanel" class="tab-pane fade" id="dropdown2" aria-labelledby="dropdown2-tab">
-                                <div class="browse-inner">
-
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a1.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">A R Rahman</a>
-                                    </div>
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a2.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">Shreya Ghoshal</a>
-                                    </div>
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a3.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">Sukhwinder singh</a>
-                                    </div>
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a6.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">Shekhar Ravjiani</a>
-                                    </div>
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a7.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">Shalmali</a>
-                                    </div>
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a4.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">Sajid-Wajid</a>
-                                    </div>
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a5.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">Atif Aslam</a>
-                                    </div>
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a8.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">Lata Mangeshkar</a>
-                                    </div>
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a9.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">Arijit Sing</a>
-                                    </div>
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a10.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">Sunidhi Chauhan</a>
-                                    </div>
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a11.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">Yo Yo Honey Singh</a>
-                                    </div>
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a12.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">Neeti Mohan</a>
-                                    </div>
-                                    <div class="clearfix"> </div>
-                                </div>
-                            </div>
-                            <div role="tabpanel" class="tab-pane fade active in" id="home" aria-labelledby="home-tab">
-                                <div class="browse-inner">
-
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a2.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">Shreya Ghoshal</a>
-                                    </div>
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a8.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">Lata Mangeshkar</a>
-                                    </div>
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a9.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">Arijit Sing</a>
-                                    </div>
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a10.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">Sunidhi Chauhan</a>
-                                    </div>
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a11.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">Yo Yo Honey Singh</a>
-                                    </div>
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a12.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">Neeti Mohan</a>
-                                    </div>
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a3.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">Sukhwinder singh</a>
-                                    </div>
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a6.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">Shekhar Ravjiani</a>
-                                    </div>
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a7.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">Shalmali</a>
-                                    </div>
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a4.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">Sajid-Wajid</a>
-                                    </div>
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a5.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">Atif Aslam</a>
-                                    </div>
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a1.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">A R Rahman</a>
-                                    </div>
-
-                                    <div class="clearfix"> </div>
-                                </div>
-                            </div>
-                            <div role="tabpanel" class="tab-pane fade" id="profile" aria-labelledby="profile-tab">
-                                <div class="browse-inner">
-
-
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a3.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">Sukhwinder singh</a>
-                                    </div>
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a6.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">Shekhar Ravjiani</a>
-                                    </div>
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a7.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">Shalmali</a>
-                                    </div>
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a4.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">Sajid-Wajid</a>
-                                    </div>
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a5.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">Atif Aslam</a>
-                                    </div>
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a1.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">A R Rahman</a>
-                                    </div>
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a2.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">Shreya Ghoshal</a>
-                                    </div>
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a8.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">Lata Mangeshkar</a>
-                                    </div>
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a9.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">Arijit Sing</a>
-                                    </div>
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a10.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">Sunidhi Chauhan</a>
-                                    </div>
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a11.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">Yo Yo Honey Singh</a>
-                                    </div>
-                                    <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/a12.jpg" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html">Neeti Mohan</a>
-                                    </div>
-                                    <div class="clearfix"> </div>
-                                </div>
-                            </div>
-                        </div>
+<!--                            <div role="tabpanel" class="tab-pane fade" id="profile" aria-labelledby="profile-tab">-->
+<!--                                <div class="browse-inner">-->
+<!--                                    <div class="col-md-3 artist-grid">-->
+<!--                                        <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/a9.jpg" title="allbum-name"></a>-->
+<!--                                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                                        <a class="art" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Arijit Sing</a>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-3 artist-grid">-->
+<!--                                        <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/a10.jpg" title="allbum-name"></a>-->
+<!--                                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                                        <a class="art" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Sunidhi Chauhan</a>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-3 artist-grid">-->
+<!--                                        <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/a11.jpg" title="allbum-name"></a>-->
+<!--                                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                                        <a class="art" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Yo Yo Honey Singh</a>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-3 artist-grid">-->
+<!--                                        <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/a12.jpg" title="allbum-name"></a>-->
+<!--                                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                                        <a class="art" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Neeti Mohan</a>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-3 artist-grid">-->
+<!--                                        <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/a1.jpg" title="allbum-name"></a>-->
+<!--                                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                                        <a class="art" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">A R Rahman</a>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-3 artist-grid">-->
+<!--                                        <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/a2.jpg" title="allbum-name"></a>-->
+<!--                                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                                        <a class="art" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Shreya Ghoshal</a>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-3 artist-grid">-->
+<!--                                        <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/a3.jpg" title="allbum-name"></a>-->
+<!--                                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                                        <a class="art" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Sukhwinder singh</a>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-3 artist-grid">-->
+<!--                                        <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/a6.jpg" title="allbum-name"></a>-->
+<!--                                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                                        <a class="art" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Shekhar Ravjiani</a>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-3 artist-grid">-->
+<!--                                        <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/a7.jpg" title="allbum-name"></a>-->
+<!--                                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                                        <a class="art" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Shalmali</a>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-3 artist-grid">-->
+<!--                                        <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/a4.jpg" title="allbum-name"></a>-->
+<!--                                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                                        <a class="art" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Sajid-Wajid</a>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-3 artist-grid">-->
+<!--                                        <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/a5.jpg" title="allbum-name"></a>-->
+<!--                                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                                        <a class="art" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Atif Aslam</a>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-3 artist-grid">-->
+<!--                                        <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/a8.jpg" title="allbum-name"></a>-->
+<!--                                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                                        <a class="art" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Lata Mangeshkar</a>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-3 artist-grid">-->
+<!--                                        <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/a9.jpg" title="allbum-name"></a>-->
+<!--                                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                                        <a class="art" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Arijit Sing</a>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-3 artist-grid">-->
+<!--                                        <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/a10.jpg" title="allbum-name"></a>-->
+<!--                                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                                        <a class="art" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Sunidhi Chauhan</a>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-3 artist-grid">-->
+<!--                                        <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/a11.jpg" title="allbum-name"></a>-->
+<!--                                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                                        <a class="art" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Yo Yo Honey Singh</a>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-3 artist-grid">-->
+<!--                                        <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/a12.jpg" title="allbum-name"></a>-->
+<!--                                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                                        <a class="art" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Neeti Mohan</a>-->
+<!--                                    </div>-->
+<!--                                    <div class="clearfix"> </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div role="tabpanel" class="tab-pane fade" id="dropdown1" aria-labelledby="dropdown1-tab">-->
+<!--                                <div class="browse-inner">-->
+<!---->
+<!--                                    <div class="col-md-3 artist-grid">-->
+<!--                                        <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/a1.jpg" title="allbum-name"></a>-->
+<!--                                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                                        <a class="art" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">A R Rahman</a>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-3 artist-grid">-->
+<!--                                        <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/a2.jpg" title="allbum-name"></a>-->
+<!--                                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                                        <a class="art" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Shreya Ghoshal</a>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-3 artist-grid">-->
+<!--                                        <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/a3.jpg" title="allbum-name"></a>-->
+<!--                                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                                        <a class="art" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Sukhwinder singh</a>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-3 artist-grid">-->
+<!--                                        <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/a6.jpg" title="allbum-name"></a>-->
+<!--                                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                                        <a class="art" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Shekhar Ravjiani</a>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-3 artist-grid">-->
+<!--                                        <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/a7.jpg" title="allbum-name"></a>-->
+<!--                                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                                        <a class="art" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Shalmali</a>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-3 artist-grid">-->
+<!--                                        <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/a4.jpg" title="allbum-name"></a>-->
+<!--                                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                                        <a class="art" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Sajid-Wajid</a>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-3 artist-grid">-->
+<!--                                        <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/a5.jpg" title="allbum-name"></a>-->
+<!--                                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                                        <a class="art" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Atif Aslam</a>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-3 artist-grid">-->
+<!--                                        <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/a8.jpg" title="allbum-name"></a>-->
+<!--                                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                                        <a class="art" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Lata Mangeshkar</a>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-3 artist-grid">-->
+<!--                                        <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/a9.jpg" title="allbum-name"></a>-->
+<!--                                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                                        <a class="art" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Arijit Sing</a>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-3 artist-grid">-->
+<!--                                        <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/a10.jpg" title="allbum-name"></a>-->
+<!--                                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                                        <a class="art" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Sunidhi Chauhan</a>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-3 artist-grid">-->
+<!--                                        <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/a11.jpg" title="allbum-name"></a>-->
+<!--                                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                                        <a class="art" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Yo Yo Honey Singh</a>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-3 artist-grid">-->
+<!--                                        <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/a12.jpg" title="allbum-name"></a>-->
+<!--                                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                                        <a class="art" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Neeti Mohan</a>-->
+<!--                                    </div>-->
+<!--                                    <div class="clearfix"> </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div role="tabpanel" class="tab-pane fade" id="dropdown2" aria-labelledby="dropdown2-tab">-->
+<!--                                <div class="browse-inner">-->
+<!---->
+<!--                                    <div class="col-md-3 artist-grid">-->
+<!--                                        <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/a1.jpg" title="allbum-name"></a>-->
+<!--                                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                                        <a class="art" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">A R Rahman</a>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-3 artist-grid">-->
+<!--                                        <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/a2.jpg" title="allbum-name"></a>-->
+<!--                                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                                        <a class="art" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Shreya Ghoshal</a>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-3 artist-grid">-->
+<!--                                        <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/a3.jpg" title="allbum-name"></a>-->
+<!--                                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                                        <a class="art" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Sukhwinder singh</a>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-3 artist-grid">-->
+<!--                                        <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/a6.jpg" title="allbum-name"></a>-->
+<!--                                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                                        <a class="art" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Shekhar Ravjiani</a>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-3 artist-grid">-->
+<!--                                        <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/a7.jpg" title="allbum-name"></a>-->
+<!--                                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                                        <a class="art" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Shalmali</a>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-3 artist-grid">-->
+<!--                                        <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/a4.jpg" title="allbum-name"></a>-->
+<!--                                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                                        <a class="art" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Sajid-Wajid</a>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-3 artist-grid">-->
+<!--                                        <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/a5.jpg" title="allbum-name"></a>-->
+<!--                                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                                        <a class="art" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Atif Aslam</a>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-3 artist-grid">-->
+<!--                                        <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/a8.jpg" title="allbum-name"></a>-->
+<!--                                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                                        <a class="art" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Lata Mangeshkar</a>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-3 artist-grid">-->
+<!--                                        <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/a9.jpg" title="allbum-name"></a>-->
+<!--                                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                                        <a class="art" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Arijit Sing</a>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-3 artist-grid">-->
+<!--                                        <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/a10.jpg" title="allbum-name"></a>-->
+<!--                                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                                        <a class="art" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Sunidhi Chauhan</a>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-3 artist-grid">-->
+<!--                                        <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/a11.jpg" title="allbum-name"></a>-->
+<!--                                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                                        <a class="art" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Yo Yo Honey Singh</a>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-3 artist-grid">-->
+<!--                                        <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/a12.jpg" title="allbum-name"></a>-->
+<!--                                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                                        <a class="art" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Neeti Mohan</a>-->
+<!--                                    </div>-->
+<!--                                    <div class="clearfix"> </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div role="tabpanel" class="tab-pane fade active in" id="home" aria-labelledby="home-tab">-->
+<!--                                <div class="browse-inner">-->
+<!---->
+<!--                                    <div class="col-md-3 artist-grid">-->
+<!--                                        <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/a2.jpg" title="allbum-name"></a>-->
+<!--                                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                                        <a class="art" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Shreya Ghoshal</a>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-3 artist-grid">-->
+<!--                                        <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/a8.jpg" title="allbum-name"></a>-->
+<!--                                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                                        <a class="art" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Lata Mangeshkar</a>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-3 artist-grid">-->
+<!--                                        <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/a9.jpg" title="allbum-name"></a>-->
+<!--                                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                                        <a class="art" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Arijit Sing</a>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-3 artist-grid">-->
+<!--                                        <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/a10.jpg" title="allbum-name"></a>-->
+<!--                                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                                        <a class="art" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Sunidhi Chauhan</a>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-3 artist-grid">-->
+<!--                                        <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/a11.jpg" title="allbum-name"></a>-->
+<!--                                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                                        <a class="art" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Yo Yo Honey Singh</a>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-3 artist-grid">-->
+<!--                                        <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/a12.jpg" title="allbum-name"></a>-->
+<!--                                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                                        <a class="art" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Neeti Mohan</a>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-3 artist-grid">-->
+<!--                                        <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/a3.jpg" title="allbum-name"></a>-->
+<!--                                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                                        <a class="art" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Sukhwinder singh</a>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-3 artist-grid">-->
+<!--                                        <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/a6.jpg" title="allbum-name"></a>-->
+<!--                                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                                        <a class="art" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Shekhar Ravjiani</a>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-3 artist-grid">-->
+<!--                                        <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/a7.jpg" title="allbum-name"></a>-->
+<!--                                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                                        <a class="art" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Shalmali</a>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-3 artist-grid">-->
+<!--                                        <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/a4.jpg" title="allbum-name"></a>-->
+<!--                                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                                        <a class="art" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Sajid-Wajid</a>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-3 artist-grid">-->
+<!--                                        <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/a5.jpg" title="allbum-name"></a>-->
+<!--                                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                                        <a class="art" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Atif Aslam</a>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-3 artist-grid">-->
+<!--                                        <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/a1.jpg" title="allbum-name"></a>-->
+<!--                                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                                        <a class="art" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">A R Rahman</a>-->
+<!--                                    </div>-->
+<!---->
+<!--                                    <div class="clearfix"> </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div role="tabpanel" class="tab-pane fade" id="profile" aria-labelledby="profile-tab">-->
+<!--                                <div class="browse-inner">-->
+<!---->
+<!---->
+<!--                                    <div class="col-md-3 artist-grid">-->
+<!--                                        <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/a3.jpg" title="allbum-name"></a>-->
+<!--                                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                                        <a class="art" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Sukhwinder singh</a>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-3 artist-grid">-->
+<!--                                        <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/a6.jpg" title="allbum-name"></a>-->
+<!--                                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                                        <a class="art" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Shekhar Ravjiani</a>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-3 artist-grid">-->
+<!--                                        <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/a7.jpg" title="allbum-name"></a>-->
+<!--                                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                                        <a class="art" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Shalmali</a>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-3 artist-grid">-->
+<!--                                        <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/a4.jpg" title="allbum-name"></a>-->
+<!--                                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                                        <a class="art" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Sajid-Wajid</a>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-3 artist-grid">-->
+<!--                                        <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/a5.jpg" title="allbum-name"></a>-->
+<!--                                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                                        <a class="art" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Atif Aslam</a>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-3 artist-grid">-->
+<!--                                        <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/a1.jpg" title="allbum-name"></a>-->
+<!--                                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                                        <a class="art" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">A R Rahman</a>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-3 artist-grid">-->
+<!--                                        <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/a2.jpg" title="allbum-name"></a>-->
+<!--                                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                                        <a class="art" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Shreya Ghoshal</a>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-3 artist-grid">-->
+<!--                                        <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/a8.jpg" title="allbum-name"></a>-->
+<!--                                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                                        <a class="art" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Lata Mangeshkar</a>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-3 artist-grid">-->
+<!--                                        <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/a9.jpg" title="allbum-name"></a>-->
+<!--                                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                                        <a class="art" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Arijit Sing</a>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-3 artist-grid">-->
+<!--                                        <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/a10.jpg" title="allbum-name"></a>-->
+<!--                                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                                        <a class="art" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Sunidhi Chauhan</a>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-3 artist-grid">-->
+<!--                                        <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/a11.jpg" title="allbum-name"></a>-->
+<!--                                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                                        <a class="art" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Yo Yo Honey Singh</a>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-3 artist-grid">-->
+<!--                                        <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/a12.jpg" title="allbum-name"></a>-->
+<!--                                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                                        <a class="art" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Neeti Mohan</a>-->
+<!--                                    </div>-->
+<!--                                    <div class="clearfix"> </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
                     </div>
                     <!-- /agileinfo -->
                 </div>
