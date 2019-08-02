@@ -15,6 +15,7 @@ class C_Inbox extends CI_Controller
 		$data = array(
 			"title" 		=> "Inbox",
 			"getNewInbox"	=> $this->M_Dashboard->getNewInbox(),
+			"getReadInbox"	=>  $this->M_Inbox->getReadInbox(),
 		);
 		if ($this->session->userdata('isLogin') == TRUE) {
 			$this->load->view('dashboard_page/V_Inbox',$data);

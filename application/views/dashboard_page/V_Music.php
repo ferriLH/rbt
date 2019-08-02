@@ -34,7 +34,7 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 						<div class="card-body">
 							<p class="card-title">Data <?php echo $title?></p>
 							<div class="table-responsive">
-								<table id="recent-purchases-listing" class="table">
+								<table id="music" class="table table-hover table-striped">
 									<thead>
 									<tr>
 										<th>Artist</th>
@@ -47,13 +47,15 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 									</tr>
 									</thead>
 									<tbody>
+									<?php
+									foreach ($getMusic as $m){?>
 									<tr>
-										<td>Jeremy Ortega</td>
-										<td>Levelled up</td>
-										<td>Catalinaborough</td>
-										<td>$790</td>
-										<td>06 Jan 2018</td>
-										<td>$2274253</td>
+										<td><?php echo $m->nama_artist?></td>
+										<td><?php echo $m->nama_album?></td>
+										<td><?php echo $m->judul?></td>
+										<td><?php echo "Rp. ".$m->harga?></td>
+										<td><?php echo $m->genre?></td>
+										<td><?php echo $m->ketik?></td>
 										<td>
 											<a href="<?php echo base_url('');echo "";?>" class="btn btn-warning btn-icon-split">
                                             <span class="icon text-white">
@@ -69,6 +71,9 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 											</a>
 										</td>
 									</tr>
+									<?php
+									}
+									?>
 									</tbody>
 								</table>
 							</div>

@@ -46,13 +46,15 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 									</tr>
 									</thead>
 									<tbody>
+									<?php
+									foreach ($getPartner as $p){?>
 									<tr>
-										<td>Jeremy Ortega</td>
-										<td>Levelled up</td>
-										<td>Catalinaborough</td>
-										<td>$790</td>
-										<td>06 Jan 2018</td>
-										<td>$2274253</td>
+										<td><?php echo $p->nomor_induk?></td>
+										<td><?php echo $p->nama_partner?></td>
+										<td><?php echo $p->email_partner?></td>
+										<td><?php echo $p->no_telpon?></td>
+										<td><?php echo $p->alamat?></td>
+										<td><?php echo $p->nama_artist?></td>
 										<td>
 											<a href="<?php echo base_url('');echo "";?>" class="btn btn-warning btn-icon-split">
                                             <span class="icon text-white">
@@ -68,6 +70,10 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 											</a>
 										</td>
 									</tr>
+										<?php
+									}
+									?>
+									</tbody>
 									</tbody>
 								</table>
 							</div>

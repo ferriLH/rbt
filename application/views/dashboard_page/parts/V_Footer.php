@@ -33,6 +33,22 @@
 <script src="<?php echo base_url()?>assets/dashboard_page/js/jquery.dataTables.js"></script>
 <script src="<?php echo base_url()?>assets/dashboard_page/js/dataTables.bootstrap4.js"></script>
 <!-- End custom js for this page-->
+<script>
+    $(function () {
+        $('#inboxUnRead').DataTable()
+        $('#inboxRead').DataTable()
+        $('#music').DataTable()
+        $('#admin').DataTable({
+            'paging'      : true,
+            'lengthChange': false,
+            'searching'   : true,
+            'ordering'    : true,
+            'info'        : true,
+            'autoWidth'   : true
+        })
+        $('#owner').DataTable()
+    })
+</script>
 </body>
 
 </html>

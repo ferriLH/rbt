@@ -37,13 +37,87 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 						</ul>
 						<div class="tab-content py-0 px-0">
 							<div class="tab-pane fade show active" id="unread" role="tabpanel" aria-labelledby="unread-tab">
-								<div class="d-flex flex-wrap justify-content-xl-between">
-
+								<div class="d-flex flex-wrap justify-content-xl-between" style="padding: 10px 10px">
+									<table id="inboxUnRead" class="table table-hover table-striped" >
+										<thead>
+										<tr>
+											<th>Nama Pengirim</th>
+											<th>Email Pengirim</th>
+											<th>Kontak Pengirim</th>
+											<th>Isi Pesan</th>
+											<th>Action</th>
+										</tr>
+										</thead>
+										<tbody>
+										 <?php
+                                    		foreach ($getNewInbox as $ni){?>
+										<tr>
+											<td><?php echo $ni->nama_pengirim?></td>
+											<td><?php echo $ni->email_pengirim?></td>
+											<td><?php echo $ni->kontak_pengirim?></td>
+											<td><?php echo mb_strimwidth($ni->isi_pesan, 0, 10, "...")?></td>
+											<td>
+												<a href="<?php echo base_url('');echo "";?>" class="btn btn-primary btn-icon-split">
+                                            <span class="icon text-white">
+                                                <i class="mdi mdi-read"></i>
+                                            </span>
+													<span class="text">Baca</span>
+												</a>
+												<a href="<?php echo base_url('');echo "";?>" class="btn btn-danger btn-icon-split">
+                                            <span class="icon text-white">
+                                                <i class="mdi mdi-delete"></i>
+                                            </span>
+													<span class="text">Hapus</span>
+												</a>
+											</td>
+										</tr>
+										 <?php
+											}
+										 ?>
+										</tbody>
+									</table>
 								</div>
 							</div>
 							<div class="tab-pane fade" id="read" role="tabpanel" aria-labelledby="read-tab">
-								<div class="d-flex flex-wrap justify-content-xl-between">
-
+								<div class="d-flex flex-wrap justify-content-xl-between" style="padding: 10px 10px">
+									<table id="inboxRead" class="table table-hover table-striped" >
+										<thead>
+										<tr>
+											<th>Nama Pengirim</th>
+											<th>Email Pengirim</th>
+											<th>Kontak Pengirim</th>
+											<th>Isi Pesan</th>
+											<th>Action</th>
+										</tr>
+										</thead>
+										<tbody>
+										<?php
+										foreach ($getReadInbox as $ri){?>
+											<tr>
+												<td><?php echo $ri->nama_pengirim?></td>
+												<td><?php echo $ri->email_pengirim?></td>
+												<td><?php echo $ri->kontak_pengirim?></td>
+												<td><?php echo mb_strimwidth($ri->isi_pesan, 0, 10, "...")?></td>
+												<td>
+													<a href="<?php echo base_url('');echo "";?>" class="btn btn-primary btn-icon-split">
+                                            <span class="icon text-white">
+                                                <i class="mdi mdi-read"></i>
+                                            </span>
+														<span class="text">Baca</span>
+													</a>
+													<a href="<?php echo base_url('');echo "";?>" class="btn btn-danger btn-icon-split">
+                                            <span class="icon text-white">
+                                                <i class="mdi mdi-delete"></i>
+                                            </span>
+														<span class="text">Hapus</span>
+													</a>
+												</td>
+											</tr>
+											<?php
+										}
+										?>
+										</tbody>
+									</table>
 								</div>
 							</div>
 						</div>

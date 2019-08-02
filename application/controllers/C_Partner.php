@@ -15,6 +15,7 @@ class C_Partner extends CI_Controller
 		$data = array(
 			"title" => "Partner",
 			"getNewInbox"	=> $this->M_Dashboard->getNewInbox(),
+			"getPartner"	=> $this->M_Partner->getPartner(),
 		);
 		if ($this->session->userdata('isLogin') == TRUE) {
 			$this->load->view('dashboard_page/V_Partner',$data);

@@ -61,7 +61,7 @@ $name = $this->session->userdata('nama_admin');
 							if (++$x == 4) break;
 						}
 						?>
-                    </div>
+					</div>
                 </li>
                 <li class="nav-item nav-profile dropdown">
                     <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
@@ -152,7 +152,10 @@ $name = $this->session->userdata('nama_admin');
 				<li class="nav-item <?php if($this->uri->segment(1)=="inbox"){echo "active";}?>">
 					<a class="nav-link" href="<?php echo base_url()?>inbox/">
 						<i class="mdi mdi-message menu-icon"></i>
-						<span class="menu-title">Inbox Pages</span>
+						<span class="menu-title">
+							Inbox Pages
+							<label class="badge badge-primary"><?php echo count($getNewInbox)?></label>
+						</span>
 					</a>
 				</li>
             </ul>

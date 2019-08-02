@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 01, 2019 at 11:29 AM
--- Server version: 10.3.16-MariaDB
--- PHP Version: 7.3.7
+-- Waktu pembuatan: 02 Agu 2019 pada 09.03
+-- Versi server: 10.1.38-MariaDB
+-- Versi PHP: 7.3.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `t_admin`
+-- Struktur dari tabel `t_admin`
 --
 
 CREATE TABLE `t_admin` (
@@ -37,7 +37,7 @@ CREATE TABLE `t_admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `t_admin`
+-- Dumping data untuk tabel `t_admin`
 --
 
 INSERT INTO `t_admin` (`id_admin`, `nama_admin`, `email_admin`, `password`, `aktif`) VALUES
@@ -46,7 +46,7 @@ INSERT INTO `t_admin` (`id_admin`, `nama_admin`, `email_admin`, `password`, `akt
 -- --------------------------------------------------------
 
 --
--- Table structure for table `t_album`
+-- Struktur dari tabel `t_album`
 --
 
 CREATE TABLE `t_album` (
@@ -58,10 +58,19 @@ CREATE TABLE `t_album` (
   `aktif` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data untuk tabel `t_album`
+--
+
+INSERT INTO `t_album` (`id_album`, `artist_id`, `nama_album`, `picture_album`, `directory`, `aktif`) VALUES
+(1, 7, 'Album 1', 'v6.jpeg', 'dolor sit amet', 1),
+(2, 8, 'Album Krisna Set', 'v9.jpg', 'Dolor Sit Amet', 1),
+(3, 5, 'Dangdut Pantura', 'v21.jpg', 'Om Krisna', 1);
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `t_artist`
+-- Struktur dari tabel `t_artist`
 --
 
 CREATE TABLE `t_artist` (
@@ -70,13 +79,23 @@ CREATE TABLE `t_artist` (
   `nama_artist` varchar(25) NOT NULL,
   `bio` text NOT NULL,
   `picture_artist` varchar(30) NOT NULL,
-  `aktif` tinyint(1) NOT NULL DEFAULT 0
+  `aktif` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `t_artist`
+--
+
+INSERT INTO `t_artist` (`id_artists`, `partner_id`, `nama_artist`, `bio`, `picture_artist`, `aktif`) VALUES
+(5, 1, 'Via Vallen', 'Dolor Sit Amet, Dolor Amet sit amet sit dolor, dolor sit amet Dolor Sit Amet, Dolor Amet sit amet sit dolor, dolor sit amet. Dolor Sit Amet, Dolor Amet sit amet sit dolor, dolor sit amet', 'a7.jpg', 1),
+(6, 1, 'Mahatma Ghandi', 'Dolor Sit Amet, Dolor Amet sit amet sit dolor, dolor sit amet Dolor Sit Amet, Dolor Amet sit amet sit dolor, dolor sit amet. Dolor Sit Amet, Dolor Amet sit amet sit dolor, dolor sit amet', 'a8.jpg', 1),
+(7, 1, 'Dr. Ken Jeong', 'Dolor Sit Amet, Dolor Amet sit amet sit dolor, dolor sit amet Dolor Sit Amet, Dolor Amet sit amet sit dolor, dolor sit amet. Dolor Sit Amet, Dolor Amet sit amet sit dolor, dolor sit amet', 'a9.jpg', 1),
+(8, 1, 'Krisna Setiadi', 'Dolor Sit Amet, Dolor Amet sit amet sit dolor, dolor sit amet Dolor Sit Amet, Dolor Amet sit amet sit dolor, dolor sit amet. Dolor Sit Amet, Dolor Amet sit amet sit dolor, dolor sit amet', 'a11.jpg', 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `t_genre`
+-- Struktur dari tabel `t_genre`
 --
 
 CREATE TABLE `t_genre` (
@@ -84,10 +103,20 @@ CREATE TABLE `t_genre` (
   `genre` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data untuk tabel `t_genre`
+--
+
+INSERT INTO `t_genre` (`id`, `genre`) VALUES
+(1, 'Pop'),
+(2, 'Rock'),
+(3, 'Dangdut'),
+(4, 'Indie');
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `t_lagu`
+-- Struktur dari tabel `t_lagu`
 --
 
 CREATE TABLE `t_lagu` (
@@ -101,10 +130,19 @@ CREATE TABLE `t_lagu` (
   `aktif` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data untuk tabel `t_lagu`
+--
+
+INSERT INTO `t_lagu` (`id_lagu`, `album_id`, `genre_id`, `judul`, `harga`, `file`, `ketik`, `aktif`) VALUES
+(1, 3, 3, 'Aselole 2019', 2000, 'Georgia.mp3', 'REG_K', 1),
+(2, 2, 4, 'Suasana Cokil Pagi Hari', 30000, 'Georgia.mp3', 'REG_A', 1),
+(3, 1, 1, 'Senja Dimalam Hari', 40000, 'Georigia.mp3', 'REG_S', 1);
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `t_partner`
+-- Struktur dari tabel `t_partner`
 --
 
 CREATE TABLE `t_partner` (
@@ -115,13 +153,20 @@ CREATE TABLE `t_partner` (
   `no_telpon` varchar(13) NOT NULL,
   `jk` enum('pria','wanita') NOT NULL,
   `alamat` varchar(150) NOT NULL,
-  `aktif` tinyint(1) NOT NULL DEFAULT 0
+  `aktif` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `t_partner`
+--
+
+INSERT INTO `t_partner` (`id_partner`, `nomor_induk`, `nama_partner`, `email_partner`, `no_telpon`, `jk`, `alamat`, `aktif`) VALUES
+(1, '3203232506980005', 'Director Ferri', 'ferrilasmi@gmail.com', '081220979733', 'pria', 'Dolor Sit Amet, Dolor Amet', 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `t_pesan`
+-- Struktur dari tabel `t_pesan`
 --
 
 CREATE TABLE `t_pesan` (
@@ -130,6 +175,7 @@ CREATE TABLE `t_pesan` (
   `email_pengirim` varchar(35) NOT NULL,
   `kontak_pengirim` varchar(15) NOT NULL,
   `isi_pesan` text NOT NULL,
+  `waktu_kirim` datetime NOT NULL,
   `baca` tinyint(1) NOT NULL,
   `hapus` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -137,7 +183,7 @@ CREATE TABLE `t_pesan` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `t_promo`
+-- Struktur dari tabel `t_promo`
 --
 
 CREATE TABLE `t_promo` (
@@ -145,7 +191,6 @@ CREATE TABLE `t_promo` (
   `nama_promo` varchar(25) NOT NULL,
   `mekanisme` text NOT NULL,
   `periode` varchar(50) NOT NULL,
-  `banner` varchar(35) NOT NULL,
   `aktif` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -154,33 +199,33 @@ CREATE TABLE `t_promo` (
 --
 
 --
--- Indexes for table `t_admin`
+-- Indeks untuk tabel `t_admin`
 --
 ALTER TABLE `t_admin`
   ADD PRIMARY KEY (`id_admin`);
 
 --
--- Indexes for table `t_album`
+-- Indeks untuk tabel `t_album`
 --
 ALTER TABLE `t_album`
   ADD PRIMARY KEY (`id_album`),
   ADD KEY `artist_id` (`artist_id`);
 
 --
--- Indexes for table `t_artist`
+-- Indeks untuk tabel `t_artist`
 --
 ALTER TABLE `t_artist`
   ADD PRIMARY KEY (`id_artists`),
   ADD KEY `partner_id` (`partner_id`);
 
 --
--- Indexes for table `t_genre`
+-- Indeks untuk tabel `t_genre`
 --
 ALTER TABLE `t_genre`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `t_lagu`
+-- Indeks untuk tabel `t_lagu`
 --
 ALTER TABLE `t_lagu`
   ADD PRIMARY KEY (`id_lagu`),
@@ -188,93 +233,93 @@ ALTER TABLE `t_lagu`
   ADD KEY `genre_id` (`genre_id`);
 
 --
--- Indexes for table `t_partner`
+-- Indeks untuk tabel `t_partner`
 --
 ALTER TABLE `t_partner`
   ADD PRIMARY KEY (`id_partner`);
 
 --
--- Indexes for table `t_pesan`
+-- Indeks untuk tabel `t_pesan`
 --
 ALTER TABLE `t_pesan`
   ADD PRIMARY KEY (`id_pesan`);
 
 --
--- Indexes for table `t_promo`
+-- Indeks untuk tabel `t_promo`
 --
 ALTER TABLE `t_promo`
   ADD PRIMARY KEY (`id_promo`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `t_admin`
+-- AUTO_INCREMENT untuk tabel `t_admin`
 --
 ALTER TABLE `t_admin`
   MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `t_album`
+-- AUTO_INCREMENT untuk tabel `t_album`
 --
 ALTER TABLE `t_album`
-  MODIFY `id_album` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_album` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `t_artist`
+-- AUTO_INCREMENT untuk tabel `t_artist`
 --
 ALTER TABLE `t_artist`
-  MODIFY `id_artists` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_artists` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT for table `t_genre`
+-- AUTO_INCREMENT untuk tabel `t_genre`
 --
 ALTER TABLE `t_genre`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `t_lagu`
+-- AUTO_INCREMENT untuk tabel `t_lagu`
 --
 ALTER TABLE `t_lagu`
-  MODIFY `id_lagu` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_lagu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `t_partner`
+-- AUTO_INCREMENT untuk tabel `t_partner`
 --
 ALTER TABLE `t_partner`
-  MODIFY `id_partner` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_partner` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `t_pesan`
+-- AUTO_INCREMENT untuk tabel `t_pesan`
 --
 ALTER TABLE `t_pesan`
   MODIFY `id_pesan` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `t_promo`
+-- AUTO_INCREMENT untuk tabel `t_promo`
 --
 ALTER TABLE `t_promo`
   MODIFY `id_promo` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- Constraints for dumped tables
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Constraints for table `t_album`
+-- Ketidakleluasaan untuk tabel `t_album`
 --
 ALTER TABLE `t_album`
   ADD CONSTRAINT `t_album_ibfk_1` FOREIGN KEY (`artist_id`) REFERENCES `t_artist` (`id_artists`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `t_artist`
+-- Ketidakleluasaan untuk tabel `t_artist`
 --
 ALTER TABLE `t_artist`
   ADD CONSTRAINT `t_artist_ibfk_1` FOREIGN KEY (`partner_id`) REFERENCES `t_partner` (`id_partner`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `t_lagu`
+-- Ketidakleluasaan untuk tabel `t_lagu`
 --
 ALTER TABLE `t_lagu`
   ADD CONSTRAINT `t_lagu_ibfk_1` FOREIGN KEY (`album_id`) REFERENCES `t_album` (`id_album`) ON DELETE CASCADE ON UPDATE CASCADE,
