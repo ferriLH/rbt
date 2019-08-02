@@ -14,7 +14,7 @@
     <link href="<?php echo base_url()?>assets/main_page/css/font-awesome.css" rel="stylesheet">
     <!-- jQuery -->
     <!-- lined-icons -->
-    <link rel="stylesheet" href="<?php echo base_url()?>assets/main_page/css/icon-font.css" type='text/css' />
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
     <!-- //lined-icons -->
     <!-- Meters graphs -->
     <script src="<?php echo base_url()?>assets/main_page/js/jquery-2.1.4.js"></script>
