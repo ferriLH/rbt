@@ -25,13 +25,13 @@ class C_Inbox extends CI_Controller
 	}
 	public function baca($id)
 	{
+		$this->M_Inbox->setReadInbox($id);
 		$data = array(
 			"title" 		=> "Inbox",
 			"getNewInbox"	=> $this->M_Dashboard->getNewInbox(),
 			"getReadInbox"	=>  $this->M_Inbox->getReadInbox(),
 			"getInbox"		=>  $this->M_Inbox->getInbox($id),
 		);
-		$this->M_Inbox->setReadInbox($id);
 		if ($this->session->userdata('isLogin') == TRUE) {
 			$this->load->view('dashboard_page/V_InboxBaca',$data);
 		}else{

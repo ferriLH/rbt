@@ -39,12 +39,14 @@ $name = $this->session->userdata('nama_admin');
 						<?php endif ?>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="notificationDropdown">
-                        <p class="mb-0 font-weight-normal float-left dropdown-header">Notifications</p>
+						<a href="<?php echo base_url('inbox')?>">
+							<p class="mb-0 font-weight-normal float-left dropdown-header">Notifications show all</p>
+						</a>
 						<?php
 						$x = 0;
 						foreach ($getNewInbox as $ni){
 							?>
-                        <a class="dropdown-item">
+                        <a class="dropdown-item" href="<?php echo base_url('inbox');echo "/baca/".$ni->id_pesan;?>">
                             <div class="item-thumbnail">
                                 <div class="item-icon bg-info">
                                     <i class="mdi mdi-message mx-0"></i>
