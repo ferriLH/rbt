@@ -66,5 +66,8 @@ $route['contact']             	= 'C_Contact';
 $route['artist']             	= 'C_Artist';
 $route['contact/kirim']         = 'C_Contact/kirim';
 $route['inbox']             	= 'C_Inbox';
+$route['inbox/baca/(:any)']     = 'C_Inbox/baca/$1';
+$route['inbox/delete/(:any)']   = 'C_Inbox/delete/$1';
+
 $route['404_override']          = '';
 $route['translate_uri_dashes']  = FALSE;

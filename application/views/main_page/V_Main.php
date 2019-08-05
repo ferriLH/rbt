@@ -572,6 +572,5 @@ $this->load->view('main_page/parts/V_Navigation');
         <!-- /w3l-agile -->
     </div>
     <!--body wrapper end-->
-
 <?php
 $this->load->view('main_page/parts/V_Footer');

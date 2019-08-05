@@ -57,16 +57,16 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 											<td><?php echo $ni->kontak_pengirim?></td>
 											<td><?php echo mb_strimwidth($ni->isi_pesan, 0, 10, "...")?></td>
 											<td>
-												<a href="<?php echo base_url('');echo "";?>" class="btn btn-primary btn-icon-split">
-                                            <span class="icon text-white">
-                                                <i class="mdi mdi-read"></i>
-                                            </span>
+												<a href="<?php echo base_url('inbox');echo "/baca/".$ni->id_pesan;?>" class="btn btn-primary btn-icon-split">
+													<span class="icon text-white">
+														<i class="mdi mdi-read"></i>
+													</span>
 													<span class="text">Baca</span>
 												</a>
-												<a href="<?php echo base_url('');echo "";?>" class="btn btn-danger btn-icon-split">
-                                            <span class="icon text-white">
-                                                <i class="mdi mdi-delete"></i>
-                                            </span>
+												<a onclick="functionDelete()" class="btn btn-danger btn-icon-split">
+													<span class="icon text-white">
+														<i class="mdi mdi-delete"></i>
+													</span>
 													<span class="text">Hapus</span>
 												</a>
 											</td>
@@ -99,16 +99,16 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 												<td><?php echo $ri->kontak_pengirim?></td>
 												<td><?php echo mb_strimwidth($ri->isi_pesan, 0, 10, "...")?></td>
 												<td>
-													<a href="<?php echo base_url('');echo "";?>" class="btn btn-primary btn-icon-split">
-                                            <span class="icon text-white">
-                                                <i class="mdi mdi-read"></i>
-                                            </span>
+													<a href="<?php echo base_url('inbox');echo "/baca/".$ri->id_pesan;?>" class="btn btn-primary btn-icon-split">
+													<span class="icon text-white">
+														<i class="mdi mdi-read"></i>
+													</span>
 														<span class="text">Baca</span>
 													</a>
-													<a href="<?php echo base_url('');echo "";?>" class="btn btn-danger btn-icon-split">
-                                            <span class="icon text-white">
-                                                <i class="mdi mdi-delete"></i>
-                                            </span>
+													<a onclick="functionDelete()" class="btn btn-danger btn-icon-split">
+													<span class="icon text-white">
+														<i class="mdi mdi-delete"></i>
+													</span>
 														<span class="text">Hapus</span>
 													</a>
 												</td>
@@ -117,6 +117,24 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 										}
 										?>
 										</tbody>
+										<script>
+                                            function functionDelete() {
+                                                const href = '<?php echo base_url()."inbox/delete/".$ri->id_pesan;?>';
+                                                Swal.fire({
+                                                    title: 'Are you sure?',
+                                                    text: "You will delete this message forever!",
+                                                    type: 'warning',
+                                                    showCancelButton: true,
+                                                    confirmButtonColor: '#3085d6',
+                                                    cancelButtonColor: '#d33',
+                                                    confirmButtonText: "Yes, i'm sure!"
+                                                }).then((result) => {
+                                                    if (result.value) {
+                                                        document.location.href = href;
+                                                    }
+                                                })
+                                            }
+										</script>
 									</table>
 								</div>
 							</div>
