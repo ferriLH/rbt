@@ -24,6 +24,14 @@ $this->load->view('main_page/parts/V_Navigation');
 				<h3>Contact Us With <span>Any questions</span></h3>
 				<form action="<?php echo base_url('contact/kirim')?>" method="post">
 					<div style="content: 'center';" class="in-left">
+                        <?php if(validation_errors()||$this->session->flashdata('failed')){ ?>
+                        <div class="alert alert-danger">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <strong>Warning</strong>
+                            <?php echo validation_errors(); ?>
+                            <?php echo $this->session->flashdata('failed'); ?>
+                        </div>
+                        <?php }?>
                             <?php if($this->session->flashdata('sukses')){?>
                                 <script>
                                     Swal.fire(

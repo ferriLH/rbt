@@ -19,6 +19,17 @@ class C_Contact extends CI_Controller
 
     function kirim()
     {
+        $data = array(
+            "title" => "Contact Us",
+        );
+        $this->form_validation->set_rules('nama', 'Nama', 'required');
+        $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
+        $this->form_validation->set_rules('notelp', 'No Handphone', 'required|min_length[12]|max_length[13]');
+
+
+        if ($this->form_validation->run() == FALSE) {
+            $this->load->view('main_page/V_Contact',$data);
+        } else {
 		date_default_timezone_set('Asia/Jakarta');
 		$t = date('Y/m/d H:i:s');
 		$d['nama_pengirim'] 	= $this->input->post('nama');
@@ -31,6 +42,6 @@ class C_Contact extends CI_Controller
 		$this->M_Contact->feedback($d);
         $this->session->set_flashdata('sukses','sukses');
         redirect('contact');
+        }
     }
-
 }

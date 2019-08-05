@@ -33,67 +33,68 @@ $this->load->view('main_page/parts/V_Navigation');
                     <a href="<?php echo base_url('assets/main_page/')?>browse.html"><h4 class="tittle third">See all</h4></a>
                     <div class="clearfix"> </div>
                 </div>
-
+                <?php foreach ($album as $a){?>
                 <div class="col-md-3 browse-grid">
-                    <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/v11.jpg" title="allbum-name"></a>
+                    <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/<?php echo $a->picture_album?>" title="allbum-name"></a>
                     <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                    <a class="sing" href="<?php echo base_url('assets/main_page/')?>single.html">Lootera</a>
+                    <a class="sing" href="<?php echo base_url('assets/main_page/')?>single.html"><?php echo $a->nama_album?></a>
                 </div>
-                <div class="col-md-3 browse-grid">
-                    <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/v22.jpg" title="allbum-name"></a>
-                    <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                    <a class="sing" href="<?php echo base_url('assets/main_page/')?>single.html">Jaremy Cam</a>
-                </div>
-                <div class="col-md-3 browse-grid">
-                    <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/v33.jpg" title="allbum-name"></a>
-                    <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                    <a class="sing" href="<?php echo base_url('assets/main_page/')?>single.html">Selah</a>
-                </div>
-                <div class="col-md-3 browse-grid">
-                    <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/v44.jpg" title="allbum-name"></a>
-                    <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                    <a class="sing" href="<?php echo base_url('assets/main_page/')?>single.html">Jim Brickman</a>
-                </div>
-                <div class="col-md-3 browse-grid">
-                    <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/v1.jpg" title="allbum-name"></a>
-                    <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                    <a class="sing" href="<?php echo base_url('assets/main_page/')?>single.html">Adele21</a>
-                </div>
-                <div class="col-md-3 browse-grid">
-                    <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/v55.jpg" title="allbum-name"></a>
-                    <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                    <a class="sing" href="<?php echo base_url('assets/main_page/')?>single.html">Party Night</a>
-                </div>
-                <div class="col-md-3 browse-grid">
-                    <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/v6.jpg" title="allbum-name"></a>
-                    <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                    <a class="sing" href="<?php echo base_url('assets/main_page/')?>single.html">Ellie Goluding</a>
-                </div>
-                <div class="col-md-3 browse-grid">
-                    <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/v66.jpg" title="allbum-name"></a>
-                    <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                    <a class="sing" href="<?php echo base_url('assets/main_page/')?>single.html">Diana</a>
-                </div>
-                <div class="col-md-3 browse-grid">
-                    <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/v6.jpeg" title="allbum-name"></a>
-                    <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                    <a class="sing" href="<?php echo base_url('assets/main_page/')?>single.html">Fifty Shades</a>
-                </div>
-                <div class="col-md-3 browse-grid">
-                    <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/v2.jpg" title="allbum-name"></a>
-                    <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                    <a class="sing" href="<?php echo base_url('assets/main_page/')?>single.html">Shomlock</a>
-                </div>
-                <div class="col-md-3 browse-grid">
-                    <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/v3.jpg" title="allbum-name"></a>
-                    <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                    <a class="sing" href="<?php echo base_url('assets/main_page/')?>single.html">Lootera</a>
-                </div>
-                <div class="col-md-3 browse-grid">
-                    <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/v4.jpg" title="allbum-name"></a>
-                    <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                    <a class="sing" href="<?php echo base_url('assets/main_page/')?>single.html">Stuck on a feeling</a>
-                </div>
+                <?php } ?>
+<!--                <div class="col-md-3 browse-grid">-->
+<!--                    <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/v22.jpg" title="allbum-name"></a>-->
+<!--                    <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                    <a class="sing" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Jaremy Cam</a>-->
+<!--                </div>-->
+<!--                <div class="col-md-3 browse-grid">-->
+<!--                    <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/v33.jpg" title="allbum-name"></a>-->
+<!--                    <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                    <a class="sing" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Selah</a>-->
+<!--                </div>-->
+<!--                <div class="col-md-3 browse-grid">-->
+<!--                    <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/v44.jpg" title="allbum-name"></a>-->
+<!--                    <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                    <a class="sing" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Jim Brickman</a>-->
+<!--                </div>-->
+<!--                <div class="col-md-3 browse-grid">-->
+<!--                    <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/v1.jpg" title="allbum-name"></a>-->
+<!--                    <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                    <a class="sing" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Adele21</a>-->
+<!--                </div>-->
+<!--                <div class="col-md-3 browse-grid">-->
+<!--                    <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/v55.jpg" title="allbum-name"></a>-->
+<!--                    <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                    <a class="sing" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Party Night</a>-->
+<!--                </div>-->
+<!--                <div class="col-md-3 browse-grid">-->
+<!--                    <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/v6.jpg" title="allbum-name"></a>-->
+<!--                    <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                    <a class="sing" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Ellie Goluding</a>-->
+<!--                </div>-->
+<!--                <div class="col-md-3 browse-grid">-->
+<!--                    <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/v66.jpg" title="allbum-name"></a>-->
+<!--                    <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                    <a class="sing" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Diana</a>-->
+<!--                </div>-->
+<!--                <div class="col-md-3 browse-grid">-->
+<!--                    <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/v6.jpeg" title="allbum-name"></a>-->
+<!--                    <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                    <a class="sing" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Fifty Shades</a>-->
+<!--                </div>-->
+<!--                <div class="col-md-3 browse-grid">-->
+<!--                    <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/v2.jpg" title="allbum-name"></a>-->
+<!--                    <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                    <a class="sing" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Shomlock</a>-->
+<!--                </div>-->
+<!--                <div class="col-md-3 browse-grid">-->
+<!--                    <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/v3.jpg" title="allbum-name"></a>-->
+<!--                    <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                    <a class="sing" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Lootera</a>-->
+<!--                </div>-->
+<!--                <div class="col-md-3 browse-grid">-->
+<!--                    <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/v4.jpg" title="allbum-name"></a>-->
+<!--                    <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+<!--                    <a class="sing" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Stuck on a feeling</a>-->
+<!--                </div>-->
                 <div class="clearfix"> </div>
             </div>
             <!--//End-albums-->
@@ -278,10 +279,9 @@ $this->load->view('main_page/parts/V_Navigation');
     <!--body wrapper end-->
     <!-- /w3l-agile-info -->
 </div>
-<!--body wrapper end-->
-
-
 
 <?php
 $this->load->view('main_page/parts/V_Footer');
 ?>
+
+
