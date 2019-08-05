@@ -45,9 +45,9 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 										<th>Action</th>
 									</tr>
 									</thead>
-									<tbody>
 									<?php
 									foreach ($getPartner as $p){?>
+									<tbody>
 									<tr>
 										<td><?php echo $p->nomor_induk?></td>
 										<td><?php echo $p->nama_partner?></td>
@@ -62,7 +62,7 @@ $this->load->view('dashboard_page/parts/V_Navigation');
                                             </span>
 												<span class="text">Edit</span>
 											</a>
-											<a href="<?php echo base_url('');echo "";?>" class="btn btn-danger btn-icon-split">
+											<a onclick="functionDelete()" class="btn btn-danger btn-icon-split">
                                             <span class="icon text-white">
                                                 <i class="mdi mdi-delete"></i>
                                             </span>
@@ -70,11 +70,33 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 											</a>
 										</td>
 									</tr>
+									</tbody>
 										<?php
 									}
 									?>
-									</tbody>
-									</tbody>
+									<script>
+                                        function functionDelete() {
+                                            const href = '<?php echo base_url()."partner/delete/".$p->id_partner;?>';
+                                            Swal.fire({
+                                                title: 'Are you sure?',
+                                                text: "You will delete this message forever!",
+                                                type: 'warning',
+                                                showCancelButton: true,
+                                                confirmButtonColor: '#3085d6',
+                                                cancelButtonColor: '#d33',
+                                                confirmButtonText: "Yes, i'm sure!"
+                                            }).then((result) => {
+                                                if (result.value) {
+                                                    Swal.fire(
+                                                        'Deleted!',
+                                                        'Your file has been deleted.',
+                                                        'success',
+                                                    )
+                                                    document.location.href = href;
+                                                }
+                                            })
+                                        }
+									</script>
 								</table>
 							</div>
 						</div>

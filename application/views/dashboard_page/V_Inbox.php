@@ -63,12 +63,6 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 													</span>
 													<span class="text">Baca</span>
 												</a>
-												<a onclick="functionDelete()" class="btn btn-danger btn-icon-split">
-													<span class="icon text-white">
-														<i class="mdi mdi-delete"></i>
-													</span>
-													<span class="text">Hapus</span>
-												</a>
 											</td>
 										</tr>
 										 <?php
@@ -105,36 +99,12 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 													</span>
 														<span class="text">Baca</span>
 													</a>
-													<a onclick="functionDelete()" class="btn btn-danger btn-icon-split">
-													<span class="icon text-white">
-														<i class="mdi mdi-delete"></i>
-													</span>
-														<span class="text">Hapus</span>
-													</a>
 												</td>
 											</tr>
 											<?php
 										}
 										?>
 										</tbody>
-										<script>
-                                            function functionDelete() {
-                                                const href = '<?php echo base_url()."inbox/delete/".$ri->id_pesan;?>';
-                                                Swal.fire({
-                                                    title: 'Are you sure?',
-                                                    text: "You will delete this message forever!",
-                                                    type: 'warning',
-                                                    showCancelButton: true,
-                                                    confirmButtonColor: '#3085d6',
-                                                    cancelButtonColor: '#d33',
-                                                    confirmButtonText: "Yes, i'm sure!"
-                                                }).then((result) => {
-                                                    if (result.value) {
-                                                        document.location.href = href;
-                                                    }
-                                                })
-                                            }
-										</script>
 									</table>
 								</div>
 							</div>

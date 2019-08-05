@@ -62,6 +62,11 @@ $this->load->view('dashboard_page/parts/V_Navigation');
                                 }).then((result) => {
                                     if (result.value) {
                                         document.location.href = href;
+                                        Swal.fire(
+                                            'Deleted!',
+                                            'Your file has been deleted.',
+                                            'success'
+                                        )
                                     }
                                 })
                             }
