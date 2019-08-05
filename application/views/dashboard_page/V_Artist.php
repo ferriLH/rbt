@@ -14,6 +14,9 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 							<p class="text-muted mb-0 hover-cursor">
 								&nbsp;/&nbsp;<a href="<?php echo base_url('dashboard')?>"><?php echo "Dashboard";?></a>&nbsp;/&nbsp;
 							</p>
+							<p class="text-muted mb-0 hover-cursor">
+								<a href="<?php echo base_url('partner')?>"><?php echo "Partner";?></a>&nbsp;/&nbsp;
+							</p>
 							<p class="text-primary mb-0 hover-cursor">
 								<a href="<?php echo base_url().$this->uri->segment(1)?>"><?php echo $title;?></a>
 							</p>
@@ -35,32 +38,22 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 							<table id="data-music" class="table table-hover table-striped">
 								<thead>
 								<tr>
-									<th>Nomor Induk</th>
 									<th>Nama Partner</th>
-									<th>Email Partner</th>
-									<th>No Telpon</th>
-									<th>Jenis Kelamin</th>
-									<th>Alamat</th>
+									<th>Nama Artist</th>
+									<th>Bio</th>
+									<th>Picture Artist</th>
 									<th>Action</th>
 								</tr>
 								</thead>
 								<tbody>
 								<?php
-								foreach ($getPartner as $p){?>
+								foreach ($getArtistPartner as $a){?>
 									<tr>
-										<td><?php echo $p->nomor_induk?></td>
-										<td><?php echo $p->nama_partner?></td>
-										<td><?php echo mb_strimwidth($p->email_partner,0,15,'...')?></td>
-										<td><?php echo $p->no_telpon?></td>
-										<td><?php echo $p->jk?></td>
-										<td><?php echo mb_strimwidth($p->alamat,0,15,'...')?></td>
+										<td><?php echo $a->nama_partner?></td>
+										<td><?php echo $a->nama_artist?></td>
+										<td><?php echo mb_strimwidth($a->bio, 0, 20, "...")?></td>
+										<td><?php echo $a->picture_artist?></td>
 										<td>
-											<a href="<?php echo base_url('data-artist/').$p->id_partner;?>" class="btn btn-primary btn-icon-split">
-                                            <span class="icon text-white">
-                                                <i class="mdi mdi-account"></i>
-                                            </span>
-												<span class="text">Artist</span>
-											</a>
 											<a href="<?php echo base_url('');echo "";?>" class="btn btn-warning btn-icon-split">
                                             <span class="icon text-white">
                                                 <i class="mdi mdi-playlist-edit"></i>

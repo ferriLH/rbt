@@ -19,7 +19,15 @@ class M_Artist extends CI_Model
         $this->db->where('t_artist.aktif',TRUE);
         return $this->db->get()->result();
     }
-
+	function getArtistPartner($id)
+	{
+		$this->db->select('*');
+		$this->db->from('t_artist');
+		$this->db->join('t_partner','t_artist.partner_id=t_partner.id_partner');
+		$this->db->where('t_artist.aktif',TRUE);
+		$this->db->where('t_artist.partner_id',$id);
+		return $this->db->get()->result();
+	}
     function get_genre()
     {
         $this->db->select('*');

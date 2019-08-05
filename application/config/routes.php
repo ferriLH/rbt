@@ -60,6 +60,7 @@ $route['signup/confirm']        = 'C_Signup/confirm';
 $route['dashboard']             = 'C_Dashboard';
 $route['dashboard/bio/(:any)']  = 'C_Dashboard/bio/$1';
 $route['partner']             	= 'C_Partner';
+$route['data-artist/(:any)']    = 'C_Artist/dataArtist/$1';
 $route['music']             	= 'C_Music';
 $route['promo']             	= 'C_Promo';
 $route['contact']             	= 'C_Contact';

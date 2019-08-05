@@ -35,9 +35,11 @@
 <!-- End custom js for this page-->
 <script>
     $(function () {
-        $('#inboxUnRead').DataTable()
-        $('#inboxRead').DataTable()
-        $('#music').DataTable()
+        $('#inboxUnRead').DataTable();
+        $('#inboxRead').DataTable();
+        $('#data-music').DataTable();
+        $('#data-partner').DataTable();
+        $('#data-artist').DataTable();
         $('#admin').DataTable({
             'paging'      : true,
             'lengthChange': false,
@@ -45,8 +47,7 @@
             'ordering'    : true,
             'info'        : true,
             'autoWidth'   : true
-        })
-        $('#owner').DataTable()
+        });
     })
 </script>
 </body>
