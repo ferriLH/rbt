@@ -38,19 +38,19 @@
                     </div>
 
 
-                    <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
-                        <ul id="myTab" class="nav nav-tabs" role="tablist">
+                    <div class="bs-example bs-example-tabs" >
+                        <ul id="myTab" class="nav nav-tabs" >
                             <?php foreach($genre as $g) {?>
-                            <li role="presentation" ><a href="#<?php echo $g->id;?>" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true"><?php echo $g->genre;?></a></li>
+                            <li ><a data-toggle="tab" href="#<?php echo $g->id;?>"><?php echo $g->genre;?></a></li>
                             <?php }?>
                         </ul>
 
-                        <?php foreach($artist as $a) {?>
-                        <div id="myTabContent" class="tab-content">
-                            <div role="tabpanel" class="tab-pane fade active in" id="<?php echo $a->genre_id;?>" aria-labelledby="home-tab">
+
+                        <div class="tab-content">
+                            <div id="<?php echo $g->id;?>" class="tab-pane fade in active">
                                 <div class="browse-inner">
                                     <!-- /agileits -->
-
+                                    <?php foreach($artist as $a) {?>
                                     <div class="col-md-3 artist-grid">
                                         <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/foto_artis/');echo $a->picture_artist;?>" title="allbum-name"></a>
                                         <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
@@ -60,6 +60,8 @@
                                     <div class="clearfix"> </div>
                                 </div>
                             </div>
+                        </div>
+
 
 <!--                            <div role="tabpanel" class="tab-pane fade" id="profile" aria-labelledby="profile-tab">-->
 <!--                                <div class="browse-inner">-->

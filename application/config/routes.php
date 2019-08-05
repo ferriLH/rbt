@@ -64,6 +64,7 @@ $route['music']             	= 'C_Music';
 $route['promo']             	= 'C_Promo';
 $route['contact']             	= 'C_Contact';
 $route['artist']             	= 'C_Artist';
+$route['album']             	= 'C_Album';
 $route['contact/kirim']         = 'C_Contact/kirim';
 $route['inbox']             	= 'C_Inbox';
 $route['inbox/baca/(:any)']     = 'C_Inbox/baca/$1';

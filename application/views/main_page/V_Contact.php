@@ -48,11 +48,12 @@ $this->load->view('main_page/parts/V_Navigation');
 				<div class="clearfix"> </div>
                 <!-- //contact -->
                 <!-- /wthree-agile -->
-			</div>
-		</div>
-		<div class="clearfix"> </div>
-		<!--body wrapper end-->
-	</div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <!--body wrapper end-->
+
+    </div>
     <!--body wrapper end-->
 
 <?php

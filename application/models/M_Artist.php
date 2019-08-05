@@ -26,4 +26,9 @@ class M_Artist extends CI_Model
         $this->db->from('t_genre');
         return $this->db->get()->result();
     }
+
+    function jumlah_data()
+    {
+        return $this->db->get('t_artist')->num_rows();
+    }
 }
