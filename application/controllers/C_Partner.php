@@ -37,4 +37,17 @@ class C_Partner extends CI_Controller
 			redirect('login');
 		}
 	}
+	public function addPartner()
+	{
+		if ($this->session->userdata('isLogin') == TRUE) {
+			$data = array(
+				"title" => "Partner",
+				"getNewInbox"	=> $this->M_Dashboard->getNewInbox(),
+				"getPartner"	=> $this->M_Partner->getPartner(),
+			);
+			$this->load->view('dashboard_page/V_Add_Partner',$data);
+		}else{
+			redirect('login');
+		}
+	}
 }

@@ -74,4 +74,50 @@ class C_Music extends CI_Controller
 			redirect('login');
 		}
 	}
+	public function addGenre()
+	{
+		if ($this->session->userdata('isLogin') == TRUE) {
+//			$this->M_Music->addGenre();
+			$data = array(
+				"title" => "Genre",
+				"getNewInbox"	=> $this->M_Dashboard->getNewInbox(),
+				"getSong"		=> $this->M_Music->getSong(),
+				"getAlbum"		=> $this->M_Music->getAlbum(),
+				"getGenre"		=> $this->M_Music->getGenre(),
+			);
+			$this->load->view('dashboard_page/V_Add_Genre',$data);
+		}else{
+			redirect('login');
+		}
+	}
+	public function addAlbum()
+	{
+		if ($this->session->userdata('isLogin') == TRUE) {
+			$data = array(
+				"title" => "Album",
+				"getNewInbox"	=> $this->M_Dashboard->getNewInbox(),
+				"getSong"		=> $this->M_Music->getSong(),
+				"getAlbum"		=> $this->M_Music->getAlbum(),
+				"getGenre"		=> $this->M_Music->getGenre(),
+			);
+			$this->load->view('dashboard_page/V_Add_Album',$data);
+		}else{
+			redirect('login');
+		}
+	}
+	public function addSong()
+	{
+		if ($this->session->userdata('isLogin') == TRUE) {
+			$data = array(
+				"title" => "Song",
+				"getNewInbox"	=> $this->M_Dashboard->getNewInbox(),
+				"getSong"		=> $this->M_Music->getSong(),
+				"getAlbum"		=> $this->M_Music->getAlbum(),
+				"getGenre"		=> $this->M_Music->getGenre(),
+			);
+			$this->load->view('dashboard_page/V_Add_Song',$data);
+		}else{
+			redirect('login');
+		}
+	}
 }

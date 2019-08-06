@@ -72,4 +72,16 @@ class C_Artist extends CI_Controller
 			redirect('login');
 		}
 	}
+	public function addArtist()
+	{
+		if ($this->session->userdata('isLogin') == TRUE) {
+			$data = array(
+				"title" => "Artist",
+				"getNewInbox"	=> $this->M_Dashboard->getNewInbox(),
+			);
+			$this->load->view('dashboard_page/V_Add_Artist',$data);
+		}else{
+			redirect('login');
+		}
+	}
 }

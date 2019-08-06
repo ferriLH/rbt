@@ -59,20 +59,31 @@ $route['signup/confirm']        = 'C_Signup/confirm';
 
 $route['dashboard']             = 'C_Dashboard';
 $route['dashboard/bio/(:any)']  = 'C_Dashboard/bio/$1';
+
 $route['partner']             	= 'C_Partner';
-$route['delete-partner/(:any)'] = 'C_Partner/deletePartner/$1';
+$route['artist/add']            = 'C_Artist/addArtist';
+$route['partner/add']           = 'C_Partner/addPartner';
 $route['delete-partner/(:any)'] = 'C_Partner/deletePartner/$1';
 $route['data-artist/(:any)']    = 'C_Artist/dataArtist/$1';
 $route['delete-artist/(:any)/(:any)']  = 'C_Artist/deleteArtist/$1/$2';
+
 $route['music/(:any)']          = 'C_Music/index/$1';
 $route['music']          		= 'C_Music/index/song';
+$route['music/song']          	= 'C_Music/index/song';
+$route['music/genre']          	= 'C_Music/index/genre';
+$route['music/album']          	= 'C_Music/index/album';
+
 $route['delete-song/(:any)'] 	= 'C_Music/deleteSong/$1';
 $route['delete-album/(:any)'] 	= 'C_Music/deleteAlbum/$1';
 $route['delete-genre/(:any)'] 	= 'C_Music/deleteGenre/$1';
+
+$route['genre/add'] 			= 'C_Music/addGenre';
+$route['song/add'] 				= 'C_Music/addSong';
+$route['album/add'] 			= 'C_Music/addAlbum';
+
 $route['promo']             	= 'C_Promo';
 $route['promo/addpromo']       	= 'C_Promo/addpromo';
 $route['promo/confirm']       	= 'C_Promo/confirm';
-
 
 $route['contact']             	= 'C_Contact';
 $route['artist']             	= 'C_Artist';
@@ -80,6 +91,7 @@ $route['paging/(:any)']         = 'C_Artist';
 $route['paging']                = 'C_Artist';
 $route['album']             	= 'C_Album';
 $route['contact/kirim']         = 'C_Contact/kirim';
+
 $route['inbox']             	= 'C_Inbox';
 $route['inbox/baca/(:any)']     = 'C_Inbox/baca/$1';
 $route['inbox/delete/(:any)']   = 'C_Inbox/delete/$1';
