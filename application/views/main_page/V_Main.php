@@ -14,43 +14,37 @@ $this->load->view('main_page/parts/V_Navigation');
                     <div class="banner-section">
                         <div class="banner">
                             <div class="callbacks_container">
+								<?php if (empty($getPromo)){?>
+									<ul class="rslides callbacks callbacks1" id="slider4">
+										<li>
+											<div class="banner-img">
+												<img src="<?php echo base_url()?>assets/foto_promo/empty_promo.jpg" class="img-responsive" alt="">
+											</div>
+											<div class="banner-info">
+												<a class="trend" href="<?php echo base_url();?>">PROMO</a>
+												<h3>Belum Ada Promo</h3>
+												<p>Periode Promo :</p><span>Belum Ada Promo</span></p>
+											</div>
+										</li>
+									</ul>
+									<?php } else { ?>
+
                                 <ul class="rslides callbacks callbacks1" id="slider4">
+									<?php foreach ($getPromo as $promo){?>
                                     <li>
                                         <div class="banner-img">
-                                            <img src="<?php echo base_url()?>assets/main_page/images/11.jpg" class="img-responsive" alt="">
+                                            <img src="<?php echo base_url()?>assets/foto_promo/<?php echo $promo->file_promo; ?>" class="img-responsive" alt="">
                                         </div>
                                         <div class="banner-info">
-                                            <a class="trend" href="<?php echo base_url()?>assets/main_page/single.html">TRENDING</a>
-                                            <h3>Let Your Home</h3>
-                                            <p>Album by <span>Rock star</span></p>
+                                            <a class="trend" href="#">PROMO</a>
+                                            <h3><?php echo $promo->nama_promo?></h3>
+                                            <p>Periode Promo :</p><span><?php echo $promo->periode?></span></p>
                                         </div>
-
                                     </li>
-                                    <li>
-                                        <div class="banner-img">
-                                            <img src="<?php echo base_url()?>assets/main_page/images/22.jpg" class="img-responsive" alt="">
-                                        </div>
-                                        <div class="banner-info">
-                                            <a class="trend" href="<?php echo base_url()?>assets/main_page/single.html">TRENDING</a>
-                                            <h3>Charis Brown feet</h3>
-                                            <p>Album by <span>Rock star</span></p>
-                                        </div>
-
-
-                                    </li>
-                                    <li>
-                                        <div class="banner-img">
-                                            <img src="<?php echo base_url()?>assets/main_page/images/33.jpg" class="img-responsive" alt="">
-                                        </div>
-                                        <div class="banner-info">
-                                            <a class="trend" href="<?php echo base_url()?>assets/main_page/single.html">TRENDING</a>
-                                            <h3>Let Your Home</h3>
-                                            <p>Album by <span>Rock star</span></p>
-                                        </div>
-
-                                        <!-- /w3layouts-agileits -->
-                                    </li>
+									<?php }?>
                                 </ul>
+
+								<?php }?>
                             </div>
                             <!--banner-->
                             <script src="<?php echo base_url()?>assets/main_page/js/responsiveslides.min.js"></script>
