@@ -22,5 +22,12 @@ class M_Partner extends CI_Model
 		$query = $this->db->get();
 		return $query->result();
 	}
+	function setDeletePartner($id){
+		$data = array(
+			'aktif'=>0,
+		);
+		$this->db->where('id_partner',$id);
+		$this->db->update('t_partner',$data);
+	}
 
 }

@@ -67,17 +67,45 @@ $this->load->view('dashboard_page/parts/V_Navigation');
                                             </span>
 												<span class="text">Edit</span>
 											</a>
-											<a href="<?php echo base_url('');echo "";?>" class="btn btn-danger btn-icon-split">
+											<button data-target="<?php echo base_url('delete-partner/');echo $p->id_partner;?>"
+													class="btn btn-danger btn-icon-split delete-partner">
                                             <span class="icon text-white">
                                                 <i class="mdi mdi-delete"></i>
                                             </span>
 												<span class="text">Hapus</span>
-											</a>
+											</button>
 										</td>
 									</tr>
 									<?php
 								}
 								?>
+								<script>
+                                    $(function() {
+                                        $('.delete-partner').click(function(e) {
+                                            e.preventDefault();
+                                            var href = $(this).attr('data-target');
+                                            //var image = $(this).attr('data-image');
+                                            Swal.fire({
+                                                title: 'Are you sure?',
+                                                text: "You will delete this forever!",
+                                                type: 'warning',
+                                                showCancelButton: true,
+                                                confirmButtonColor: '#3085d6',
+                                                cancelButtonColor: '#d33',
+                                                confirmButtonText: "Yes, i'm sure!"
+                                            }).then((result) => {
+                                                if (result.value) {
+                                                    Swal.fire(
+                                                        'Deleted!',
+                                                        'Your file has been deleted.',
+                                                        'success'
+                                                    )
+                                                    document.location.href = href;
+                                                }
+                                            })
+                                        });
+                                    });
+								</script>
 								</tbody>
 							</table>
 						</div>

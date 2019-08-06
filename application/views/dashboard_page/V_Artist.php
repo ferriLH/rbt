@@ -62,17 +62,45 @@ $this->load->view('dashboard_page/parts/V_Navigation');
                                             </span>
 												<span class="text">Edit</span>
 											</a>
-											<a href="<?php echo base_url('delete-artist/');echo $a->id_artists."/".$a->partner_id;?>" class="btn btn-danger btn-icon-split">
+											<button data-target="<?php echo base_url('delete-artist/');echo $a->id_artists."/".$a->partner_id;?>"
+											   class="btn btn-danger btn-icon-split delete-artist">
                                             <span class="icon text-white">
                                                 <i class="mdi mdi-delete"></i>
                                             </span>
 												<span class="text">Hapus</span>
-											</a>
+											</button>
 										</td>
 									</tr>
 									<?php
 								}
 								?>
+								<script>
+                                    $(function() {
+                                        $('.delete-artist').click(function(e) {
+                                            e.preventDefault();
+                                            var href = $(this).attr('data-target');
+                                            //var image = $(this).attr('data-image');
+                                            Swal.fire({
+                                                title: 'Are you sure?',
+                                                text: "You will delete this forever!",
+                                                type: 'warning',
+                                                showCancelButton: true,
+                                                confirmButtonColor: '#3085d6',
+                                                cancelButtonColor: '#d33',
+                                                confirmButtonText: "Yes, i'm sure!"
+                                            }).then((result) => {
+                                                if (result.value) {
+                                                    document.location.href = href;
+                                                    Swal.fire(
+                                                        'Deleted!',
+                                                        'Your file has been deleted.',
+                                                        'success'
+                                                    )
+                                                }
+                                            })
+                                        });
+                                    });
+								</script>
 								</tbody>
 							</table>
 						</div>

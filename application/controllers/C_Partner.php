@@ -23,4 +23,18 @@ class C_Partner extends CI_Controller
 			redirect('login');
 		}
 	}
+	public function deletePartner($id)
+	{
+		if ($this->session->userdata('isLogin') == TRUE) {
+			$this->M_Partner->setDeletePartner($id);
+			$data = array(
+				"title" 		=> "Partner",
+				"getNewInbox"	=> $this->M_Dashboard->getNewInbox(),
+				"getPartner"	=> $this->M_Partner->getPartner(),
+			);
+			redirect('partner');
+		}else{
+			redirect('login');
+		}
+	}
 }

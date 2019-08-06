@@ -20,5 +20,6 @@
     <!-- endinject -->
     <link rel="shortcut icon" href="<?php echo base_url()?>assets/dashboard_page/images/favicon.png" />
     <script src="<?php echo base_url()?>assets/dashboard_page/js/sweetalert/sweetalert2.all.min.js"></script>
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 
 </head>
