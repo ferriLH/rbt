@@ -65,6 +65,10 @@ $route['data-artist/(:any)']    = 'C_Artist/dataArtist/$1';
 $route['delete-artist/(:any)/(:any)']  = 'C_Artist/deleteArtist/$1/$2';
 $route['music']             	= 'C_Music';
 $route['promo']             	= 'C_Promo';
+$route['promo/addpromo']       	= 'C_Promo/addpromo';
+$route['promo/confirm']       	= 'C_Promo/confirm';
+
+
 $route['contact']             	= 'C_Contact';
 $route['artist']             	= 'C_Artist';
 $route['paging/(:any)']         = 'C_Artist';

@@ -21,7 +21,7 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 						</div>
 						<div class="d-flex justify-content-between align-items-end flex-wrap">
 
-							<button class="btn btn-primary mt-2 mt-xl-0"><i class="mdi mdi-plus-circle"></i> Add New <?php echo $title?></button>
+							<button class="btn btn-primary mt-2 mt-xl-0"> <a href="<?php echo base_url('promo/addpromo')?>"><i class="mdi mdi-plus-circle"></i> Add New <?php echo $title?></a></button>
 						</div>
 					</div>
 				</div>
