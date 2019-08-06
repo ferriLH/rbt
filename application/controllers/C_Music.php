@@ -120,4 +120,28 @@ class C_Music extends CI_Controller
 			redirect('login');
 		}
 	}
+	function addGenreAuth()
+	{
+		if ($this->session->userdata('isLogin') == TRUE) {
+			$data = array(
+				"title" => "Genre",
+				"getNewInbox" => $this->M_Dashboard->getNewInbox()
+			);
+
+			//form validation
+			$this->form_validation->set_rules('nama_genre', 'Nama Genre', 'required');
+
+			if ($this->form_validation->run() == FALSE) {
+				$this->session->set_flashdata('failed', 'gagal');
+				$this->load->view('dashboard_page/V_Add_Genre',$data);
+			} else {
+				$d['genre'] = ($this->input->post('nama_genre'));
+				$this->M_Music->add_new_genre($d);
+				$this->session->set_flashdata('sukses', 'sukses');
+				redirect('music/genre');
+			}
+		}else{
+			redirect('login');
+		}
+	}
 }
