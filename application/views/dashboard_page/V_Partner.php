@@ -84,7 +84,6 @@ $this->load->view('dashboard_page/parts/V_Navigation');
                                         $('.delete-partner').click(function(e) {
                                             e.preventDefault();
                                             var href = $(this).attr('data-target');
-                                            //var image = $(this).attr('data-image');
                                             Swal.fire({
                                                 title: 'Are you sure?',
                                                 text: "You will delete this forever!",

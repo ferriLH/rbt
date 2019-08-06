@@ -12,12 +12,12 @@ class C_Promo extends CI_Controller
 	}
 	public function index()
 	{
-		$data = array(
-			"title" => "Promo",
-			"getNewInbox"	=> $this->M_Dashboard->getNewInbox(),
-
-		);
 		if ($this->session->userdata('isLogin') == TRUE) {
+			$data = array(
+				"title" => "Promo",
+				"getNewInbox"	=> $this->M_Dashboard->getNewInbox(),
+
+			);
 			$this->load->view('dashboard_page/V_Promo',$data);
 		}else{
 			redirect('login');

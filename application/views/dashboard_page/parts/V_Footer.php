@@ -37,9 +37,11 @@
     $(function () {
         $('#inboxUnRead').DataTable();
         $('#inboxRead').DataTable();
-        $('#data-music').DataTable();
         $('#data-partner').DataTable();
         $('#data-artist').DataTable();
+        $('#table-song').DataTable();
+        $('#table-album').DataTable();
+        $('#table-genre').DataTable();
         $('#admin').DataTable({
             'paging'      : true,
             'lengthChange': false,
