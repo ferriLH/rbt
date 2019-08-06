@@ -43,6 +43,7 @@ class C_Promo extends CI_Controller
 			"getNewInbox" => $this->M_Dashboard->getNewInbox()
 		);
 
+			// Upload file to server
 		//form validation
 		$this->form_validation->set_rules('nama_promo', 'Nama Promo', 'required');
 		$this->form_validation->set_rules('mekanisme_promo', 'Mekanisme Promo', 'required');
@@ -56,8 +57,8 @@ class C_Promo extends CI_Controller
 			$d['mekanisme'] = $this->input->post('mekanisme_promo');
 			$d['periode'] = $this->input->post('periode_promo');
 			$d['aktif'] = ($this->input->post('status_promo'));
-
 			//upload protocol
+
 
 			$uploadPath = './assets/foto_promo/';
 			// File upload configuration
@@ -67,9 +68,8 @@ class C_Promo extends CI_Controller
 			$this->load->library('upload', $config_u);
 			$this->upload->initialize($config_u);
 
-			// Upload file to server
-			$this->upload->do_upload('file_promo');
 			$fileData = $this->upload->data();
+			$this->upload->do_upload('file_promo');
 			$d['file_promo'] = $fileData['file_name'];
 
 			$this->M_Promo->add_new_promo($d);
