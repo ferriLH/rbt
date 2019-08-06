@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 02 Agu 2019 pada 09.03
+-- Waktu pembuatan: 06 Agu 2019 pada 05.19
 -- Versi server: 10.1.38-MariaDB
 -- Versi PHP: 7.3.3
 
@@ -90,7 +90,13 @@ INSERT INTO `t_artist` (`id_artists`, `partner_id`, `nama_artist`, `bio`, `pictu
 (5, 1, 'Via Vallen', 'Dolor Sit Amet, Dolor Amet sit amet sit dolor, dolor sit amet Dolor Sit Amet, Dolor Amet sit amet sit dolor, dolor sit amet. Dolor Sit Amet, Dolor Amet sit amet sit dolor, dolor sit amet', 'a7.jpg', 1),
 (6, 1, 'Mahatma Ghandi', 'Dolor Sit Amet, Dolor Amet sit amet sit dolor, dolor sit amet Dolor Sit Amet, Dolor Amet sit amet sit dolor, dolor sit amet. Dolor Sit Amet, Dolor Amet sit amet sit dolor, dolor sit amet', 'a8.jpg', 1),
 (7, 1, 'Dr. Ken Jeong', 'Dolor Sit Amet, Dolor Amet sit amet sit dolor, dolor sit amet Dolor Sit Amet, Dolor Amet sit amet sit dolor, dolor sit amet. Dolor Sit Amet, Dolor Amet sit amet sit dolor, dolor sit amet', 'a9.jpg', 1),
-(8, 1, 'Krisna Setiadi', 'Dolor Sit Amet, Dolor Amet sit amet sit dolor, dolor sit amet Dolor Sit Amet, Dolor Amet sit amet sit dolor, dolor sit amet. Dolor Sit Amet, Dolor Amet sit amet sit dolor, dolor sit amet', 'a11.jpg', 1);
+(8, 1, 'Krisna Setiadi', 'Dolor Sit Amet, Dolor Amet sit amet sit dolor, dolor sit amet Dolor Sit Amet, Dolor Amet sit amet sit dolor, dolor sit amet. Dolor Sit Amet, Dolor Amet sit amet sit dolor, dolor sit amet', 'a11.jpg', 1),
+(9, 1, 'Jajang Kesbor', 'Lorem Ipsum', 'a11.jpg', 1),
+(10, 1, 'Nandang Maulana', 'Lorem Ipsum Dolor', 'a11.jpg', 1),
+(11, 1, 'Jason Numero', 'Dolor Sit Amet, ', 'a11.jpg', 1),
+(12, 1, 'Jason duo', 'Dolor Sit Amet, ', 'a11.jpg', 1),
+(13, 1, 'Jason Trio', 'Dolor Sit Amet, ', 'a11.jpg', 1),
+(14, 1, 'Jason Palio', 'Dolor Sit Amet, ', 'a11.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -191,8 +197,18 @@ CREATE TABLE `t_promo` (
   `nama_promo` varchar(25) NOT NULL,
   `mekanisme` text NOT NULL,
   `periode` varchar(50) NOT NULL,
+  `file_promo` varchar(255) NOT NULL,
   `aktif` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `t_promo`
+--
+
+INSERT INTO `t_promo` (`id_promo`, `nama_promo`, `mekanisme`, `periode`, `file_promo`, `aktif`) VALUES
+(1, 'Promo 1', 'Lorem Ipsum', '06 Agustus 2019 - Selamanya', 'Promo_test.jpg', 0),
+(2, 'Promo 2', 'Lorem Ipsum', 'Kemarin Sore - Besok Siang', 'Promo_test.jpg', 0),
+(3, 'Promo 3', 'Lorem Ipsum', 'Zaman Jahiliyah - Zaman Pelangi', 'Promo_test.jpg', 0);
 
 --
 -- Indexes for dumped tables
@@ -270,7 +286,7 @@ ALTER TABLE `t_album`
 -- AUTO_INCREMENT untuk tabel `t_artist`
 --
 ALTER TABLE `t_artist`
-  MODIFY `id_artists` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_artists` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT untuk tabel `t_genre`
@@ -300,7 +316,7 @@ ALTER TABLE `t_pesan`
 -- AUTO_INCREMENT untuk tabel `t_promo`
 --
 ALTER TABLE `t_promo`
-  MODIFY `id_promo` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_promo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
