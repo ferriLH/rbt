@@ -12,12 +12,12 @@ class C_Partner extends CI_Controller
 	}
 	public function index()
 	{
-		$data = array(
-			"title" => "Partner",
-			"getNewInbox"	=> $this->M_Dashboard->getNewInbox(),
-			"getPartner"	=> $this->M_Partner->getPartner(),
-		);
 		if ($this->session->userdata('isLogin') == TRUE) {
+			$data = array(
+				"title" => "Partner",
+				"getNewInbox"	=> $this->M_Dashboard->getNewInbox(),
+				"getPartner"	=> $this->M_Partner->getPartner(),
+			);
 			$this->load->view('dashboard_page/V_Partner',$data);
 		}else{
 			redirect('login');

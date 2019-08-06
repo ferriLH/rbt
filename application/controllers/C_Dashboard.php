@@ -11,11 +11,11 @@ class C_Dashboard extends CI_Controller
     }
     public function index()
     {
-        $data = array(
-            "title" 		=> "Dashboard",
-			"getNewInbox"	=> $this->M_Dashboard->getNewInbox(),
-        );
         if ($this->session->userdata('isLogin') == TRUE) {
+			$data = array(
+				"title" 		=> "Dashboard",
+				"getNewInbox"	=> $this->M_Dashboard->getNewInbox(),
+			);
             $this->load->view('dashboard_page/V_Dashboard',$data);
         }else{
             redirect('login');
@@ -23,11 +23,11 @@ class C_Dashboard extends CI_Controller
     }
     public function bio()
 	{
-		$data = array(
-			"title" => "Bio",
-			"getNewInbox"	=> $this->M_Dashboard->getNewInbox(),
-		);
 		if ($this->session->userdata('isLogin') == TRUE) {
+			$data = array(
+				"title" => "Bio",
+				"getNewInbox"	=> $this->M_Dashboard->getNewInbox(),
+			);
 			$this->load->view('dashboard_page/V_Bio',$data);
 		}else{
 			redirect('login');
