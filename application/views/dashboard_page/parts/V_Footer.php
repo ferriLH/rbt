@@ -39,6 +39,7 @@
         $('#inboxRead').DataTable();
         $('#data-partner').DataTable();
         $('#data-artist').DataTable();
+        $('#data-promo').DataTable();
         $('#table-song').DataTable();
         $('#table-album').DataTable();
         $('#table-genre').DataTable();

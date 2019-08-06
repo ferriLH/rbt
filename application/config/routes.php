@@ -84,6 +84,7 @@ $route['album/add'] 			= 'C_Music/addAlbum';
 $route['promo']             	= 'C_Promo';
 $route['promo/addpromo']       	= 'C_Promo/addpromo';
 $route['promo/confirm']       	= 'C_Promo/confirm';
+$route['delete-promo/(:any)'] 	= 'C_Promo/deletePromo/$1';
 
 $route['contact']             	= 'C_Contact';
 $route['artist']             	= 'C_Artist';
