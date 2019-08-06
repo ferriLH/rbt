@@ -52,7 +52,9 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 										<td><?php echo $a->nama_partner?></td>
 										<td><?php echo $a->nama_artist?></td>
 										<td><?php echo mb_strimwidth($a->bio, 0, 20, "...")?></td>
-										<td><?php echo $a->picture_artist?></td>
+										<td>
+											<img class="img-responsive center-block" src="<?php echo base_url('assets/foto_artis/').$a->picture_artist?>" alt="Pucture Artist">
+										</td>
 										<td>
 											<a href="<?php echo base_url('');echo "";?>" class="btn btn-warning btn-icon-split">
                                             <span class="icon text-white">
