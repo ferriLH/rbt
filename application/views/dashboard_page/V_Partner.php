@@ -32,7 +32,7 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 					<div class="card-body">
 						<p class="card-title">Data <?php echo $title?></p>
 						<div class="table-responsive">
-							<table id="data-music" class="table table-hover table-striped">
+							<table id="data-partner" class="table table-hover table-striped">
 								<thead>
 								<tr>
 									<th>Nomor Induk</th>

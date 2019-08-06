@@ -35,7 +35,7 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 					<div class="card-body">
 						<p class="card-title">Data <?php echo $title?></p>
 						<div class="table-responsive">
-							<table id="data-music" class="table table-hover table-striped">
+							<table id="data-artist" class="table table-hover table-striped">
 								<thead>
 								<tr>
 									<th>Nama Partner</th>
@@ -62,7 +62,7 @@ $this->load->view('dashboard_page/parts/V_Navigation');
                                             </span>
 												<span class="text">Edit</span>
 											</a>
-											<a href="<?php echo base_url('');echo "";?>" class="btn btn-danger btn-icon-split">
+											<a href="<?php echo base_url('delete-artist/');echo $a->id_artists."/".$a->partner_id;?>" class="btn btn-danger btn-icon-split">
                                             <span class="icon text-white">
                                                 <i class="mdi mdi-delete"></i>
                                             </span>

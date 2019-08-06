@@ -49,4 +49,11 @@ class M_Artist extends CI_Model
     {
         return $this->db->get('t_artist')->num_rows();
     }
+	function setDeleteArtist($id){
+		$data = array(
+			'aktif'=>0,
+		);
+		$this->db->where('id_artists',$id);
+		$this->db->update('t_artist',$data);
+	}
 }
