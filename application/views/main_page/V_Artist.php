@@ -38,26 +38,41 @@
                     </div>
 
 
-                    <div class="bs-example bs-example-tabs" >
-                        <ul id="myTab" class="nav nav-tabs" >
-                            <?php foreach($genre as $g) {?>
-                            <li ><a data-toggle="tab" href="#<?php echo $g->id;?>"><?php echo $g->genre;?></a></li>
-                            <?php }?>
-                        </ul>
+<!--                    <div class="bs-example bs-example-tabs" >-->
+<!--                        <ul id="myTab" class="nav nav-tabs" >-->
+<!--                            --><?php //foreach($genre as $g) {?>
+<!--                            <li ><a data-toggle="tab" href="#--><?php //echo $g->id;?><!--">--><?php //echo $g->genre;?><!--</a></li>-->
+<!--                            --><?php //}?>
+<!--                        </ul>-->
 
 
                         <div class="tab-content">
-                            <div id="<?php echo $g->id;?>" class="tab-pane fade in active">
+                            <div id="" class="tab-pane fade in active">
                                 <div class="browse-inner">
                                     <!-- /agileits -->
-                                    <?php foreach($artist as $a) {?>
+                                    <?php if (isset($data)) {
+                                    foreach ($data as $dat) {
+                                        $id = $dat->id_artists;
+                                        ?>
                                     <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/foto_artis/');echo $a->picture_artist;?>" title="allbum-name"></a>
+                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/foto_artis/');echo $dat->picture_artist;?>" title="allbum-name"></a>
                                         <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html"><?php echo $a->nama_artist;?></a>
+                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html"><?php echo $dat->nama_artist;?></a>
                                     </div>
                                     <?php }?>
+                                    <?php
+                                        //if (++$x == 5) break;
+                                    }
+                                else {
+                                    echo "<div>Kosong.</div>";
+                                }
+                                ?>
+                            </ul>
+                            <?php if (isset($pagination)) { ?>
+                                <?php echo $pagination ?>
+                            <?php } ?>
                                     <div class="clearfix"> </div>
+
                                 </div>
                             </div>
                         </div>
@@ -421,62 +436,62 @@
                 <!--//End-albums-->
 
                 <!--//discover-view-->
-                <div class="albums fourth">
-                    <div class="tittle-head two">
-                        <h3 class="tittle">Discover <span class="new">View</span></h3>
-                        <a href="<?php echo base_url('assets/main_page/')?>browse.html"><h4 class="tittle third">See all</h4></a>
-                        <div class="clearfix"> </div>
-                    </div>
-                    <div class="col-md-3 artist-grid">
-                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/v11.jpg" title="allbum-name"></a>
-                        <div class="inner-info"><h5>Pop</h5></div>
-                    </div>
-                    <div class="col-md-3 artist-grid">
-                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/v22.jpg" title="allbum-name"></a>
-                        <div class="inner-info"><h5>Pop</h5></div>
-                    </div>
-                    <div class="col-md-3 artist-grid">
-                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/v33.jpg" title="allbum-name"></a>
-                        <div class="inner-info"><h5>Pop</h5></div>
-                    </div>
-                    <div class="col-md-3 artist-grid last-grid">
-                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/v44.jpg" title="allbum-name"></a>
-                        <div class="inner-info"><h5>Pop</h5></div>
-                    </div>
-                    <div class="col-md-3 artist-grid">
-                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/v55.jpg" title="allbum-name"></a>
-                        <div class="inner-info"><h5>Pop</h5></div>
-                    </div>
-                    <div class="col-md-3 artist-grid">
-                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/v66.jpg" title="allbum-name"></a>
-                        <div class="inner-info"><h5>Pop</h5></div>
-                    </div>
-                    <div class="col-md-3 artist-grid">
-                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/v77.jpg" title="allbum-name"></a>
-                        <div class="inner-info"><h5>Pop</h5></div>
-                    </div>
-                    <div class="col-md-3 artist-grid last-grid">
-                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/v88.jpg" title="allbum-name"></a>
-                        <div class="inner-info"><h5>Pop</h5></div>
-                    </div>
-                    <div class="col-md-3 artist-grid">
-                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/v99.jpg" title="allbum-name"></a>
-                        <div class="inner-info"><h5>Pop</h5></div>
-                    </div>
-                    <div class="col-md-3 artist-grid">
-                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/v9.jpg" title="allbum-name"></a>
-                        <div class="inner-info"><h5>Pop</h5></div>
-                    </div>
-                    <div class="col-md-3 artist-grid">
-                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/v21.jpg" title="allbum-name"></a>
-                        <div class="inner-info"><h5>Pop</h5></div>
-                    </div>
-                    <div class="col-md-3 artist-grid">
-                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/v5.jpg" title="allbum-name"></a>
-                        <div class="inner-info"><h5>Pop</h5></div>
-                    </div>
-                    <div class="clearfix"> </div>
-                </div>
+<!--                <div class="albums fourth">-->
+<!--                    <div class="tittle-head two">-->
+<!--                        <h3 class="tittle">Discover <span class="new">View</span></h3>-->
+<!--                        <a href="--><?php //echo base_url('assets/main_page/')?><!--browse.html"><h4 class="tittle third">See all</h4></a>-->
+<!--                        <div class="clearfix"> </div>-->
+<!--                    </div>-->
+<!--                    <div class="col-md-3 artist-grid">-->
+<!--                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/v11.jpg" title="allbum-name"></a>-->
+<!--                        <div class="inner-info"><h5>Pop</h5></div>-->
+<!--                    </div>-->
+<!--                    <div class="col-md-3 artist-grid">-->
+<!--                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/v22.jpg" title="allbum-name"></a>-->
+<!--                        <div class="inner-info"><h5>Pop</h5></div>-->
+<!--                    </div>-->
+<!--                    <div class="col-md-3 artist-grid">-->
+<!--                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/v33.jpg" title="allbum-name"></a>-->
+<!--                        <div class="inner-info"><h5>Pop</h5></div>-->
+<!--                    </div>-->
+<!--                    <div class="col-md-3 artist-grid last-grid">-->
+<!--                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/v44.jpg" title="allbum-name"></a>-->
+<!--                        <div class="inner-info"><h5>Pop</h5></div>-->
+<!--                    </div>-->
+<!--                    <div class="col-md-3 artist-grid">-->
+<!--                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/v55.jpg" title="allbum-name"></a>-->
+<!--                        <div class="inner-info"><h5>Pop</h5></div>-->
+<!--                    </div>-->
+<!--                    <div class="col-md-3 artist-grid">-->
+<!--                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/v66.jpg" title="allbum-name"></a>-->
+<!--                        <div class="inner-info"><h5>Pop</h5></div>-->
+<!--                    </div>-->
+<!--                    <div class="col-md-3 artist-grid">-->
+<!--                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/v77.jpg" title="allbum-name"></a>-->
+<!--                        <div class="inner-info"><h5>Pop</h5></div>-->
+<!--                    </div>-->
+<!--                    <div class="col-md-3 artist-grid last-grid">-->
+<!--                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/v88.jpg" title="allbum-name"></a>-->
+<!--                        <div class="inner-info"><h5>Pop</h5></div>-->
+<!--                    </div>-->
+<!--                    <div class="col-md-3 artist-grid">-->
+<!--                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/v99.jpg" title="allbum-name"></a>-->
+<!--                        <div class="inner-info"><h5>Pop</h5></div>-->
+<!--                    </div>-->
+<!--                    <div class="col-md-3 artist-grid">-->
+<!--                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/v9.jpg" title="allbum-name"></a>-->
+<!--                        <div class="inner-info"><h5>Pop</h5></div>-->
+<!--                    </div>-->
+<!--                    <div class="col-md-3 artist-grid">-->
+<!--                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/v21.jpg" title="allbum-name"></a>-->
+<!--                        <div class="inner-info"><h5>Pop</h5></div>-->
+<!--                    </div>-->
+<!--                    <div class="col-md-3 artist-grid">-->
+<!--                        <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/v5.jpg" title="allbum-name"></a>-->
+<!--                        <div class="inner-info"><h5>Pop</h5></div>-->
+<!--                    </div>-->
+<!--                    <div class="clearfix"> </div>-->
+<!--                </div>-->
             </div>
             <!--//discover-view-->
             <!--//music-left-->

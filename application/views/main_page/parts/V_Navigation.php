@@ -7,8 +7,8 @@ $islogin =  $this->session->userdata('isLogin');
     <div class="left-side sticky-left-side">
 
         <!--logo and iconic logo start-->
-        <div class="logo">
-            <h1><a href="<?php echo base_url('')?>"><span>T</span>it<span>T</span>at<span>T</span>ut</a></h1>
+        <div class="logo" style="padding-bottom: 8px">
+            <a href="<?php echo base_url('')?>"><img src="<?php echo base_url('assets/main_page/images/logotatitut.png')?>">
         </div>
         <div class="logo-icon text-center">
             <a href="<?php echo base_url()?>">T</a>
