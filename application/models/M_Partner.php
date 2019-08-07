@@ -33,4 +33,17 @@ class M_Partner extends CI_Model
 	{
 		$this->db->insert('t_partner',$data);
 	}
+	function getPartnerEdit($id){
+		$this->db->select("*");
+		$this->db->from("t_partner");
+		$this->db->where("id_partner",$id);
+		$this->db->where("aktif",true);
+		$query = $this->db->get();
+		return $query->result_array();
+	}
+	function update_partner($id,$data)
+	{
+		$this->db->where('id_partner',$id);
+		$this->db->update('t_partner',$data);
+	}
 }

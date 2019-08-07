@@ -86,4 +86,53 @@ class C_Partner extends CI_Controller
 			redirect('login');
 		}
 	}
+	public function editPartner($id)
+	{
+		if ($this->session->userdata('isLogin') == TRUE) {
+			$data = array(
+				"title" => "Partner",
+				"getNewInbox"	=> $this->M_Dashboard->getNewInbox(),
+				"getPartnerEdit"=> $this->M_Partner->getPartnerEdit($id),
+			);
+			$this->load->view('dashboard_page/V_Edit_Partner',$data);
+		}else{
+			redirect('login');
+		}
+	}
+	function editPartnerAuth($id)
+	{
+		if ($this->session->userdata('isLogin') == TRUE) {
+			$data = array(
+				"title" => "Partner",
+				"getNewInbox" => $this->M_Dashboard->getNewInbox(),
+				"getPartner"	=> $this->M_Partner->getPartner(),
+			);
+
+			//form validation
+			$this->form_validation->set_rules('nomor_induk', 	'Nomor Induk',	'required');
+			$this->form_validation->set_rules('nama_partner', 	'Nama Partner',	'required');
+			$this->form_validation->set_rules('email_partner', 	'Email Partner','required');
+			$this->form_validation->set_rules('no_telpon', 		'Nomor Telpon',	'required');
+			$this->form_validation->set_rules('jk', 			'Jenis Kelamin','required');
+			$this->form_validation->set_rules('alamat', 		'Alamat', 		'required');
+
+			if ($this->form_validation->run() == FALSE) {
+				$this->session->set_flashdata('failed', 'gagal');
+				$this->load->view('dashboard_page/V_Add_Partner',$data);
+			} else {
+				$d['nomor_induk'] 		= ($this->input->post('nomor_induk'));
+				$d['nama_partner'] 		= ($this->input->post('nama_partner'));
+				$d['email_partner'] 	= ($this->input->post('email_partner'));
+				$d['no_telpon']			= ($this->input->post('no_telpon'));
+				$d['jk'] 				= ($this->input->post('jk'));
+				$d['alamat']			= ($this->input->post('alamat'));
+
+				$this->M_Partner->update_partner($id,$d);
+				$this->session->set_flashdata('sukses', 'sukses');
+				redirect('partner');
+			}
+		}else{
+			redirect('login');
+		}
+	}
 }

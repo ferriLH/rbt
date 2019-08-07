@@ -72,7 +72,7 @@ $this->load->view('dashboard_page/parts/V_Navigation');
                                             </span>
 												<span class="text">Artist</span>
 											</a>
-											<a href="<?php echo base_url('');echo "";?>" class="btn btn-warning btn-icon-split">
+											<a href="<?php echo base_url('partner/edit/');echo $p->id_partner;?>" class="btn btn-warning btn-icon-split">
                                             <span class="icon text-white">
                                                 <i class="mdi mdi-playlist-edit"></i>
                                             </span>
