@@ -45,8 +45,8 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 							<?php if(validation_errors()||$this->session->flashdata('failed')){ ?>
 								<div class="alert alert-danger">
 									<button type="button" class="close" data-dismiss="alert">&times;</button>
-									<strong>Warning</strong>
-									<?php echo validation_errors(); ?>
+									<strong>Warning</strong><br>
+									<?php echo validation_errors(); ?><br>
 									<?php echo $this->session->flashdata('failed'); ?>
 								</div>
 							<?php }?>

@@ -12,7 +12,7 @@ class C_Main_page extends CI_Controller
     public function index()
     {
 		$data = array(
-			"title" => "Artist",
+			"title" => "TitTatTut Main",
 			"getPromo"		=> $this->M_Main_page->get_datapromo()
 		);
         $this->load->view('main_page/V_Main',$data);

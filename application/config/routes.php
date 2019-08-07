@@ -62,7 +62,9 @@ $route['dashboard/bio/(:any)']  = 'C_Dashboard/bio/$1';
 
 $route['partner']             	= 'C_Partner';
 $route['artist/add']            = 'C_Artist/addArtist';
+$route['artist/add/auth']       = 'C_Artist/addArtistAuth';
 $route['partner/add']           = 'C_Partner/addPartner';
+$route['partner/add/auth']      = 'C_Partner/addPartnerAuth';
 $route['delete-partner/(:any)'] = 'C_Partner/deletePartner/$1';
 $route['data-artist/(:any)']    = 'C_Artist/dataArtist/$1';
 $route['delete-artist/(:any)/(:any)']  = 'C_Artist/deleteArtist/$1/$2';

@@ -9,6 +9,7 @@ class C_Artist extends CI_Controller
         $this->load->model('M_Artist');
         $this->load->library('pagination');
 		$this->load->model('M_Dashboard');
+		$this->load->model('M_Partner');
     }
 
     function index()
@@ -62,7 +63,10 @@ class C_Artist extends CI_Controller
 	public function deleteArtist($id,$idp)
 	{
 		if ($this->session->userdata('isLogin') == TRUE) {
+			$photo_name = $this->M_Artist->getPhotoArtist($id);
 			$this->M_Artist->setDeleteArtist($id);
+			echo $photo_name;
+			unlink( FCPATH . "assets/foto_artis/" .$photo_name  );
 			$data = array(
 				"title" 		=> "Artist",
 				"getNewInbox"		=> $this->M_Dashboard->getNewInbox(),
@@ -79,8 +83,59 @@ class C_Artist extends CI_Controller
 			$data = array(
 				"title" => "Artist",
 				"getNewInbox"	=> $this->M_Dashboard->getNewInbox(),
+				"getPartner"	=> $this->M_Partner->getPartner(),
 			);
 			$this->load->view('dashboard_page/V_Add_Artist',$data);
+		}else{
+			redirect('login');
+		}
+	}
+	function addArtistAuth()
+	{
+		if ($this->session->userdata('isLogin') == TRUE) {
+			$data = array(
+				"title" => "Artist",
+				"getNewInbox" => $this->M_Dashboard->getNewInbox()
+			);
+
+			//form validation
+			$this->form_validation->set_rules('nama_artist', 	'Nama Artist', 	'required');
+			$this->form_validation->set_rules('bio', 			'Bio', 			'required');
+			//$this->form_validation->set_rules('photo_artist', 	'Photo Artist', 'required');
+			$this->form_validation->set_rules('partner', 		'Partner', 		'required');
+
+			if ($this->form_validation->run() == FALSE) {
+				$this->session->set_flashdata('failed', 'gagal');
+				$this->load->view('dashboard_page/V_Add_Artist',$data);
+			} else {
+				$d['partner_id'] 		= ($this->input->post('partner'));
+				$d['nama_artist'] 		= ($this->input->post('nama_artist'));
+				$d['bio'] 				= ($this->input->post('bio'));
+				//upload protocol
+				if(!empty($_FILES['photo_artist']['name'])){
+					$config['upload_path'] 		= 'assets/foto_artis/';
+					$config['allowed_types'] 	= 'jpg|jpeg|png|gif';
+					$config['file_name'] 		= $_FILES['photo_artist']['name'];
+					$config_u['max_size']       = 2000;
+					//Load upload library and initialize configuration
+					$this->load->library('upload',$config);
+					$this->upload->initialize($config);
+					if($this->upload->do_upload('photo_artist')){
+						$uploadData = $this->upload->data();
+						$picture = $uploadData['file_name'];
+					}else{
+						$picture = '';
+					}
+				}else{
+					$picture = '';
+				}
+				$d['picture_artist'] 	= $picture;
+				$d['aktif'] 			= true;
+
+				$this->M_Artist->add_new_artist($d);
+				$this->session->set_flashdata('sukses', 'sukses');
+				redirect('data-artist/'.$this->input->post('partner'));
+			}
 		}else{
 			redirect('login');
 		}

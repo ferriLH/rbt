@@ -38,11 +38,13 @@ class M_Artist extends CI_Model
 		$this->db->where('t_artist.partner_id',$id);
 		return $this->db->get()->result();
 	}
-    function get_genre()
+    function getPhotoArtist($id)
     {
-        $this->db->select('*');
-        $this->db->from('t_genre');
-        return $this->db->get()->result();
+        $this->db->select('picture_artist');
+        $this->db->from('t_artist');
+        $this->db->where('id_artists',$id);
+        $query = $this->db->get();
+        return $query->row('picture_artist');
     }
 
     function jumlah_data()
@@ -51,6 +53,7 @@ class M_Artist extends CI_Model
     }
 	function setDeleteArtist($id){
 		$data = array(
+			'picture_artist'=>'',
 			'aktif'=>0,
 		);
 		$this->db->where('id_artists',$id);
@@ -65,5 +68,9 @@ class M_Artist extends CI_Model
 		$this->db->order_by('id_artists','DESC');
 		$this->db->limit('10');
 		return $this->db->get()->result();
+	}
+	function add_new_artist($data)
+	{
+		$this->db->insert('t_artist',$data);
 	}
 }

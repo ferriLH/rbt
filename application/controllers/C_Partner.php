@@ -50,4 +50,33 @@ class C_Partner extends CI_Controller
 			redirect('login');
 		}
 	}
+	function addPartnerAuth()
+	{
+		if ($this->session->userdata('isLogin') == TRUE) {
+			$data = array(
+				"title" => "Partner",
+				"getNewInbox" => $this->M_Dashboard->getNewInbox()
+			);
+
+			//form validation
+			$this->form_validation->set_rules('nomor_induk', 	'Nomor Induuk',	'required');
+			$this->form_validation->set_rules('nama_partner', 	'Nama Partner',	'required');
+			$this->form_validation->set_rules('email_partner', 	'Email Partner','required');
+			$this->form_validation->set_rules('no_telpon', 		'Nomor Telpon',	'required');
+			$this->form_validation->set_rules('jk', 			'Jenis Kelamin','required');
+			$this->form_validation->set_rules('alamat', 		'Alamat', 		'required');
+
+			if ($this->form_validation->run() == FALSE) {
+				$this->session->set_flashdata('failed', 'gagal');
+				$this->load->view('dashboard_page/V_Add_Partner',$data);
+			} else {
+
+				$this->M_Partner->add_new_partner();
+				$this->session->set_flashdata('sukses', 'sukses');
+				redirect('data-partner');
+			}
+		}else{
+			redirect('login');
+		}
+	}
 }

@@ -38,7 +38,15 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 				<div class="card">
 					<div class="card-body">
 						<h4 class="card-title"> Form Add <?php echo $title?></h4>
-						<form class="forms-sample" action="" method="post" enctype="multipart/form-data">
+						<form class="forms-sample" action="<?php echo base_url('artist/add/auth')?>" method="post" enctype="multipart/form-data">
+							<?php if(validation_errors()||$this->session->flashdata('failed')){ ?>
+								<div class="alert alert-danger">
+									<button type="button" class="close" data-dismiss="alert">&times;</button>
+									<strong>Warning</strong><br>
+									<?php echo validation_errors(); ?><br>
+									<?php echo $this->session->flashdata('failed'); ?>
+								</div>
+							<?php }?>
 							<div class="form-group">
 								<label for="nama_artist">Nama Artist</label>
 								<input type="text" class="form-control" id="nama_artist" placeholder="Nama Artist" name="nama_artist">
@@ -60,11 +68,16 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 							<div class="form-group">
 								<label for="partner">Partner</label>
 								<select class="form-control" id="partner" name="partner">
-									<option>1</option>
-									<option>2</option>
-									<option>3</option>
-									<option>4</option>
-									<option>5</option>
+									<option value="0">- choose -</option>
+									<?php
+									foreach ($getPartner as $p){
+										?>
+										<option
+											value="<?php echo $p->id_partner;?>"
+											label="<?php echo $p->nama_partner;?>"
+										>
+										</option>
+									<?php } ?>
 								</select>
 							</div>
 							<button type="submit" class="btn btn-primary mr-2">Submit</button>
