@@ -41,7 +41,15 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 				<div class="card">
 					<div class="card-body">
 						<h4 class="card-title"> Form Add <?php echo $title?></h4>
-						<form class="forms-sample" action="" method="post" enctype="multipart/form-data">
+						<form class="forms-sample" action="<?php echo base_url('song/add/auth')?>" method="post" enctype="multipart/form-data">
+							<?php if(validation_errors()||$this->session->flashdata('failed')){ ?>
+								<div class="alert alert-danger">
+									<button type="button" class="close" data-dismiss="alert">&times;</button>
+									<strong>Warning</strong><br>
+									<?php echo validation_errors(); ?><br>
+									<?php echo $this->session->flashdata('failed'); ?>
+								</div>
+							<?php }?>
 							<div class="form-group">
 								<label for="judul_lagu">Judul Lagu</label>
 								<input type="text" class="form-control" id="judul_lagu" placeholder="Judul Lagu" name="judul_lagu">
@@ -67,21 +75,17 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 							<div class="form-group">
 								<label for="album">Album</label>
 								<select class="form-control" id="album" name="album">
-									<option>1</option>
-									<option>2</option>
-									<option>3</option>
-									<option>4</option>
-									<option>5</option>
+									<?php foreach ($getAlbum as $a){?>
+									<option value="<?php echo $a->id_album?>"><?php echo $a->nama_album?></option>
+									<?php }?>
 								</select>
 							</div>
 							<div class="form-group">
 								<label for="genre">Genre</label>
 								<select class="form-control" id="genre" name="genre">
-									<option>1</option>
-									<option>2</option>
-									<option>3</option>
-									<option>4</option>
-									<option>5</option>
+									<?php foreach ($getGenre as $g){?>
+									<option value="<?php echo $g->id?>"><?php echo $g->genre?></option>
+									<?php }?>
 								</select>
 							</div>
 							<button type="submit" class="btn btn-primary mr-2">Submit</button>

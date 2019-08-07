@@ -54,6 +54,11 @@ class M_Music extends CI_Model
 	{
 		$this->db->insert('t_genre',$data);
 	}
+
+	function add_new_song($data)
+	{
+		$this->db->insert('t_lagu',$data);
+	}
 	function add_new_album($data)
 	{
 		$this->db->insert('t_album',$data);

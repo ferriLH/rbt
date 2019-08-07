@@ -84,6 +84,7 @@ $route['song/add'] 				= 'C_Music/addSong';
 $route['album/add'] 			= 'C_Music/addAlbum';
 $route['genre/add/auth']      	= 'C_Music/addGenreAuth';
 $route['album/add/auth']      	= 'C_Music/addAlbumAuth';
+$route['song/add/auth'] 		= 'C_Music/addSongAuth';
 
 $route['promo']             	= 'C_Promo';
 $route['promo/addpromo']       	= 'C_Promo/addpromo';
