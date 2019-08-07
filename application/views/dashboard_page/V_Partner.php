@@ -30,6 +30,13 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 				</div>
 			</div>
 		</div>
+		<?php if($this->session->flashdata('sukses')){ ?>
+			<div class="alert alert-success">
+				<button type="button" class="close" data-dismiss="alert">&times;</button>
+				<strong>Information</strong><br>
+				<?php echo $this->session->flashdata('sukses'); ?>
+			</div>
+		<?php }?>
 		<div class="row">
 			<div class="col-md-12 stretch-card">
 				<div class="card">

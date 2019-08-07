@@ -35,7 +35,15 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 				<div class="card">
 					<div class="card-body">
 						<h4 class="card-title"> Form Add <?php echo $title?></h4>
-						<form class="forms-sample" action="" method="post" enctype="multipart/form-data">
+						<form class="forms-sample" action="<?php echo base_url('partner/add/auth')?>" method="post" enctype="multipart/form-data">
+							<?php if(validation_errors()||$this->session->flashdata('failed')){ ?>
+								<div class="alert alert-danger">
+									<button type="button" class="close" data-dismiss="alert">&times;</button>
+									<strong>Warning</strong><br>
+									<?php echo validation_errors(); ?>
+									<?php echo $this->session->flashdata('failed'); ?>
+								</div>
+							<?php }?>
 							<div class="form-group">
 								<label for="nomor_induk">Nomor Induk</label>
 								<input type="text" class="form-control" id="nomor_induk" placeholder="Nomor Induk" name="nomor_induk">

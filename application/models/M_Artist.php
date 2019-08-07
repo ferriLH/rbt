@@ -12,7 +12,8 @@ class M_Artist extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('t_artist');
-        return $this->db->get();
+		$this->db->where('aktif',TRUE);
+		return $this->db->get();
     }
 
 

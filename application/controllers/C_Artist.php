@@ -65,8 +65,7 @@ class C_Artist extends CI_Controller
 		if ($this->session->userdata('isLogin') == TRUE) {
 			$photo_name = $this->M_Artist->getPhotoArtist($id);
 			$this->M_Artist->setDeleteArtist($id);
-			echo $photo_name;
-			unlink( FCPATH . "assets/foto_artis/" .$photo_name  );
+			unlink( FCPATH . "assets/foto_artis/" .$photo_name);
 			$data = array(
 				"title" 		=> "Artist",
 				"getNewInbox"		=> $this->M_Dashboard->getNewInbox(),

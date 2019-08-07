@@ -59,7 +59,7 @@ class C_Partner extends CI_Controller
 			);
 
 			//form validation
-			$this->form_validation->set_rules('nomor_induk', 	'Nomor Induuk',	'required');
+			$this->form_validation->set_rules('nomor_induk', 	'Nomor Induk',	'required');
 			$this->form_validation->set_rules('nama_partner', 	'Nama Partner',	'required');
 			$this->form_validation->set_rules('email_partner', 	'Email Partner','required');
 			$this->form_validation->set_rules('no_telpon', 		'Nomor Telpon',	'required');
@@ -70,10 +70,17 @@ class C_Partner extends CI_Controller
 				$this->session->set_flashdata('failed', 'gagal');
 				$this->load->view('dashboard_page/V_Add_Partner',$data);
 			} else {
+				$d['nomor_induk'] 		= ($this->input->post('nomor_induk'));
+				$d['nama_partner'] 		= ($this->input->post('nama_partner'));
+				$d['email_partner'] 	= ($this->input->post('email_partner'));
+				$d['no_telpon']			= ($this->input->post('no_telpon'));
+				$d['jk'] 				= ($this->input->post('jk'));
+				$d['alamat']			= ($this->input->post('alamat'));
+				$d['aktif'] 			= true;
 
-				$this->M_Partner->add_new_partner();
+				$this->M_Partner->add_new_partner($d);
 				$this->session->set_flashdata('sukses', 'sukses');
-				redirect('data-partner');
+				redirect('partner');
 			}
 		}else{
 			redirect('login');

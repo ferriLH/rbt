@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 06, 2019 at 06:44 AM
+-- Generation Time: Aug 07, 2019 at 06:33 AM
 -- Server version: 10.3.16-MariaDB
 -- PHP Version: 7.3.7
 
@@ -53,7 +53,7 @@ CREATE TABLE `t_album` (
   `id_album` int(11) NOT NULL,
   `artist_id` int(11) NOT NULL,
   `nama_album` varchar(25) NOT NULL,
-  `picture_album` varchar(30) NOT NULL,
+  `picture_album` varchar(100) NOT NULL,
   `aktif` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -77,7 +77,7 @@ CREATE TABLE `t_artist` (
   `partner_id` int(11) NOT NULL,
   `nama_artist` varchar(25) NOT NULL,
   `bio` text NOT NULL,
-  `picture_artist` varchar(30) NOT NULL,
+  `picture_artist` varchar(100) NOT NULL,
   `aktif` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -116,7 +116,8 @@ INSERT INTO `t_genre` (`id`, `genre`) VALUES
 (1, 'Pop'),
 (2, 'Rock'),
 (3, 'Dangdut'),
-(4, 'Indie');
+(4, 'Indie'),
+(11, 'punk');
 
 -- --------------------------------------------------------
 
@@ -130,7 +131,7 @@ CREATE TABLE `t_lagu` (
   `genre_id` int(11) NOT NULL,
   `judul` varchar(30) NOT NULL,
   `harga` float NOT NULL,
-  `file` varchar(25) NOT NULL,
+  `file` varchar(50) NOT NULL,
   `ketik` varchar(10) NOT NULL,
   `aktif` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -165,7 +166,8 @@ CREATE TABLE `t_partner` (
 --
 
 INSERT INTO `t_partner` (`id_partner`, `nomor_induk`, `nama_partner`, `email_partner`, `no_telpon`, `jk`, `alamat`, `aktif`) VALUES
-(1, '3203232506980005', 'Director Ferri', 'ferrilasmi@gmail.com', '081220979733', 'pria', 'Dolor Sit Amet, Dolor Amet', 1);
+(1, '3203232506980005', 'Director Ferri', 'ferrilasmi@gmail.com', '081220979733', 'pria', 'Dolor Sit Amet, Dolor Amet', 1),
+(3, '13123123', 'sdad', 'eea@sf.csc', '342234', 'pria', 'sadasdsad', 0);
 
 -- --------------------------------------------------------
 
@@ -204,9 +206,9 @@ CREATE TABLE `t_promo` (
 --
 
 INSERT INTO `t_promo` (`id_promo`, `nama_promo`, `mekanisme`, `periode`, `file_promo`, `aktif`) VALUES
-(1, 'Promo 1', 'Lorem Ipsum', '06 Agustus 2019 - Selamanya', 'Promo_test.jpg', 0),
-(2, 'Promo 2', 'Lorem Ipsum', 'Kemarin Sore - Besok Siang', 'Promo_test.jpg', 0),
-(3, 'Promo 3', 'Lorem Ipsum', 'Zaman Jahiliyah - Zaman Pelangi', 'Promo_test.jpg', 0);
+(1, 'Promo 1', 'Lorem Ipsum', '06 Agustus 2019 - Selamanya', 'Promo_test.jpg', 1),
+(2, 'Promo 2', 'Lorem Ipsum', 'Kemarin Sore - Besok Siang', 'Promo_test.jpg', 1),
+(3, 'Promo 3', 'Lorem Ipsum', 'Zaman Jahiliyah - Zaman Pelangi', 'Promo_test.jpg', 1);
 
 --
 -- Indexes for dumped tables
@@ -278,19 +280,19 @@ ALTER TABLE `t_admin`
 -- AUTO_INCREMENT for table `t_album`
 --
 ALTER TABLE `t_album`
-  MODIFY `id_album` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_album` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `t_artist`
 --
 ALTER TABLE `t_artist`
-  MODIFY `id_artists` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_artists` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `t_genre`
 --
 ALTER TABLE `t_genre`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `t_lagu`
@@ -302,7 +304,7 @@ ALTER TABLE `t_lagu`
 -- AUTO_INCREMENT for table `t_partner`
 --
 ALTER TABLE `t_partner`
-  MODIFY `id_partner` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_partner` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `t_pesan`

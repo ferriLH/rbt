@@ -9,6 +9,7 @@ class C_Music extends CI_Controller
 		parent::__construct();
 		$this->load->model('M_Music');
 		$this->load->model('M_Dashboard');
+		$this->load->model('M_Artist');
 	}
 	public function index($flag)
 	{
@@ -45,7 +46,9 @@ class C_Music extends CI_Controller
 	public function deleteAlbum($id)
 	{
 		if ($this->session->userdata('isLogin') == TRUE) {
+			$photo_name = $this->M_Music->getPhotoAlbum($id);
 			$this->M_Music->setDeleteAlbum($id);
+			unlink( FCPATH . "assets/foto_album/" .$photo_name);
 			$data = array(
 				"title" => "Music",
 				"getNewInbox"	=> $this->M_Dashboard->getNewInbox(),
@@ -99,6 +102,7 @@ class C_Music extends CI_Controller
 				"getSong"		=> $this->M_Music->getSong(),
 				"getAlbum"		=> $this->M_Music->getAlbum(),
 				"getGenre"		=> $this->M_Music->getGenre(),
+				"getArtist"		=> $this->M_Artist->get_data_artist()->result(),
 			);
 			$this->load->view('dashboard_page/V_Add_Album',$data);
 		}else{
@@ -139,6 +143,53 @@ class C_Music extends CI_Controller
 				$this->M_Music->add_new_genre($d);
 				$this->session->set_flashdata('sukses', 'sukses');
 				redirect('music/genre');
+			}
+		}else{
+			redirect('login');
+		}
+	}
+	function addAlbumAuth()
+	{
+		if ($this->session->userdata('isLogin') == TRUE) {
+			$data = array(
+				"title" => "Album",
+				"getNewInbox" => $this->M_Dashboard->getNewInbox()
+			);
+
+			//form validation
+			$this->form_validation->set_rules('nama_album', 'Nama Album', 	'required');
+			$this->form_validation->set_rules('artist', 	'Artist', 		'required');
+
+			if ($this->form_validation->run() == FALSE) {
+				$this->session->set_flashdata('failed', 'gagal');
+				$this->load->view('dashboard_page/V_Add_Album',$data);
+			} else {
+				$d['artist_id'] 	= ($this->input->post('artist'));
+				$d['nama_album'] 	= ($this->input->post('nama_album'));
+				//upload protocol
+				if(!empty($_FILES['photo_album']['name'])){
+					$config['upload_path'] 		= 'assets/foto_album/';
+					$config['allowed_types'] 	= 'jpg|jpeg|png|gif';
+					$config['file_name'] 		= $_FILES['photo_album']['name'];
+					$config_u['max_size']       = 2000;
+					//Load upload library and initialize configuration
+					$this->load->library('upload',$config);
+					$this->upload->initialize($config);
+					if($this->upload->do_upload('photo_album')){
+						$uploadData = $this->upload->data();
+						$picture = $uploadData['file_name'];
+					}else{
+						$picture = '';
+					}
+				}else{
+					$picture = '';
+				}
+				$d['picture_album'] 	= $picture;
+				$d['aktif'] 			= true;
+
+				$this->M_Music->add_new_album($d);
+				$this->session->set_flashdata('sukses', 'sukses');
+				redirect('music/album');
 			}
 		}else{
 			redirect('login');

@@ -41,7 +41,15 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 				<div class="card">
 					<div class="card-body">
 						<h4 class="card-title"> Form Add <?php echo $title?></h4>
-						<form class="forms-sample" method="post" action="" enctype="multipart/form-data">
+						<form class="forms-sample" enctype="multipart/form-data" method="post" action="<?php echo base_url('album/add/auth')?>">
+							<?php if(validation_errors()||$this->session->flashdata('failed')){ ?>
+								<div class="alert alert-danger">
+									<button type="button" class="close" data-dismiss="alert">&times;</button>
+									<strong>Warning</strong><br>
+									<?php echo validation_errors(); ?><br>
+									<?php echo $this->session->flashdata('failed'); ?>
+								</div>
+							<?php }?>
 							<div class="form-group">
 								<label for="nama_album">Nama Album</label>
 								<input type="text" class="form-control" id="nama_album" placeholder="Nama Album" name="nama_album">
@@ -59,11 +67,16 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 							<div class="form-group">
 								<label for="artist">Artist</label>
 								<select class="form-control" id="artist" name="artist">
-									<option>1</option>
-									<option>2</option>
-									<option>3</option>
-									<option>4</option>
-									<option>5</option>
+									<option value="0">- choose -</option>
+									<?php
+									foreach ($getArtist as $a){
+										?>
+										<option
+											value="<?php echo $a->id_artists;?>"
+											label="<?php echo $a->nama_artist;?>"
+										>
+										</option>
+									<?php } ?>
 								</select>
 							</div>
 							<button type="submit" class="btn btn-primary mr-2">Submit</button>

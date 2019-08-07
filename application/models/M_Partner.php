@@ -29,5 +29,8 @@ class M_Partner extends CI_Model
 		$this->db->where('id_partner',$id);
 		$this->db->update('t_partner',$data);
 	}
-
+	function add_new_partner($data)
+	{
+		$this->db->insert('t_partner',$data);
+	}
 }

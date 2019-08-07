@@ -40,6 +40,7 @@ class M_Music extends CI_Model
 	}
 	function setDeleteAlbum($id){
 		$data = array(
+			'picture_album'=>'',
 			'aktif'=>0,
 		);
 		$this->db->where('id_album',$id);
@@ -52,5 +53,17 @@ class M_Music extends CI_Model
 	function add_new_genre($data)
 	{
 		$this->db->insert('t_genre',$data);
+	}
+	function add_new_album($data)
+	{
+		$this->db->insert('t_album',$data);
+	}
+	function getPhotoAlbum($id)
+	{
+		$this->db->select('picture_album');
+		$this->db->from('t_album');
+		$this->db->where('id_album',$id);
+		$query = $this->db->get();
+		return $query->row('picture_album');
 	}
 }
