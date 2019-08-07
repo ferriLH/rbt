@@ -20,8 +20,12 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 						</div>
 					</div>
 					<div class="d-flex justify-content-between align-items-end flex-wrap">
-						<button class="btn btn-primary mt-2 mt-xl-0"><i class="mdi mdi-album"></i> Add New Partner</button>&nbsp;
-						<button class="btn btn-primary mt-2 mt-xl-0"><i class="mdi mdi-music-circle"></i> Add New Artist</button>&nbsp;
+						<a href="<?php echo base_url('')."partner/add"?>">
+							<button class="btn btn-primary mt-2 mt-xl-0"><i class="mdi mdi-plus-circle"></i> Add New Partner</button>&nbsp;
+						</a>
+						<a href="<?php echo base_url('')."artist/add"?>">
+							<button class="btn btn-primary mt-2 mt-xl-0"><i class="mdi mdi-plus-circle"></i> Add New Artist</button>&nbsp;
+						</a>
 					</div>
 				</div>
 			</div>

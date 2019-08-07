@@ -20,8 +20,9 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 							</div>
 						</div>
 						<div class="d-flex justify-content-between align-items-end flex-wrap">
-
-							<button class="btn btn-primary mt-2 mt-xl-0"> <a href="<?php echo base_url('promo/addpromo')?>"><i class="mdi mdi-plus-circle"></i> Add New <?php echo $title?></a></button>
+							<a href="<?php echo base_url('promo/addpromo')?>">
+								<button class="btn btn-primary mt-2 mt-xl-0"> <i class="mdi mdi-plus-circle"></i> Add New <?php echo $title?></button>
+							</a>
 						</div>
 					</div>
 				</div>
@@ -32,7 +33,7 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 						<div class="card-body">
 							<p class="card-title">Data <?php echo $title?></p>
 							<div class="table-responsive">
-								<table id="recent-purchases-listing" class="table">
+								<table id="data-promo" class="table table-hover table-striped">
 									<thead>
 									<tr>
 										<th>Nama Promo</th>
@@ -43,26 +44,58 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 									</tr>
 									</thead>
 									<tbody>
-									<tr>
-										<td>Jeremy Ortega</td>
-										<td>Levelled up</td>
-										<td>Catalinaborough</td>
-										<td>$790</td>
-										<td>
-											<a href="<?php echo base_url('');echo "";?>" class="btn btn-warning btn-icon-split">
-                                            <span class="icon text-white">
-                                                <i class="mdi mdi-playlist-edit"></i>
-                                            </span>
-												<span class="text">Edit</span>
-											</a>
-											<a href="<?php echo base_url('');echo "";?>" class="btn btn-danger btn-icon-split">
-                                            <span class="icon text-white">
-                                                <i class="mdi mdi-delete"></i>
-                                            </span>
-												<span class="text">Hapus</span>
-											</a>
-										</td>
-									</tr>
+									<?php
+									foreach ($getPromo as $p){?>
+										<tr>
+											<td><?php echo $p->nama_promo?></td>
+											<td><?php echo mb_strimwidth($p->mekanisme,0,15,'...')?></td>
+											<td><?php echo mb_strimwidth($p->periode,0,15,'...')?></td>
+											<td><img src="<?php echo base_url('assets/foto_promo/').$p->file_promo?>" alt="Photo Promo"></td>
+											<td>
+												<a href="<?php echo base_url('');echo "";?>" class="btn btn-warning btn-icon-split">
+													<span class="icon text-white">
+														<i class="mdi mdi-playlist-edit"></i>
+													</span>
+													<span class="text">Edit</span>
+												</a>
+												<button data-target="<?php echo base_url('delete-promo/');echo $p->id_promo;?>"
+														class="btn btn-danger btn-icon-split delete-promo">
+													<span class="icon text-white">
+														<i class="mdi mdi-delete"></i>
+													</span>
+													<span class="text">Hapus</span>
+												</button>
+											</td>
+										</tr>
+										<?php
+									}
+									?>
+									<script>
+                                        $(function() {
+                                            $('.delete-promo').click(function(e) {
+                                                e.preventDefault();
+                                                var href = $(this).attr('data-target');
+                                                Swal.fire({
+                                                    title: 'Are you sure?',
+                                                    text: "You will delete this forever!",
+                                                    type: 'warning',
+                                                    showCancelButton: true,
+                                                    confirmButtonColor: '#3085d6',
+                                                    cancelButtonColor: '#d33',
+                                                    confirmButtonText: "Yes, i'm sure!"
+                                                }).then((result) => {
+                                                    if (result.value) {
+                                                        Swal.fire(
+                                                            'Deleted!',
+                                                            'Your file has been deleted.',
+                                                            'success'
+                                                        )
+                                                        document.location.href = href;
+                                                    }
+                                                })
+                                            });
+                                        });
+									</script>
 									</tbody>
 								</table>
 							</div>

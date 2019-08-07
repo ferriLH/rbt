@@ -20,14 +20,26 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 							</div>
 						</div>
 						<div class="d-flex justify-content-between align-items-end flex-wrap">
-							<button class="btn btn-primary mt-2 mt-xl-0"><i class="mdi mdi-album"></i> Add New Album</button>&nbsp;
-							<button class="btn btn-primary mt-2 mt-xl-0"><i class="mdi mdi-music-circle"></i> Add New Song</button>&nbsp;
-							<button class="btn btn-primary mt-2 mt-xl-0"><i class="mdi mdi-plus-circle"></i> Add New Genre</button>
-
+							<a href="<?php echo base_url('')."song/add"?>">
+								<button class="btn btn-primary mt-2 mt-xl-0"><i class="mdi mdi-music-circle"></i> Add New Song</button>&nbsp;
+							</a>
+							<a href="<?php echo base_url('')."album/add"?>">
+								<button class="btn btn-primary mt-2 mt-xl-0"><i class="mdi mdi-album"></i> Add New Album</button>&nbsp;
+							</a>
+							<a href="<?php echo base_url('')."genre/add"?>">
+								<button class="btn btn-primary mt-2 mt-xl-0"><i class="mdi mdi-plus-circle"></i> Add New Genre</button>
+							</a>
 						</div>
 					</div>
 				</div>
 			</div>
+			<?php if($this->session->flashdata('sukses')){ ?>
+				<div class="alert alert-success">
+					<button type="button" class="close" data-dismiss="alert">&times;</button>
+					<strong>Information</strong><br>
+					<?php echo $this->session->flashdata('sukses'); ?>
+				</div>
+			<?php }?>
 			<div class="row">
 				<div class="col-md-12 grid-margin stretch-card">
 					<div class="card">

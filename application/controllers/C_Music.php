@@ -74,4 +74,74 @@ class C_Music extends CI_Controller
 			redirect('login');
 		}
 	}
+	public function addGenre()
+	{
+		if ($this->session->userdata('isLogin') == TRUE) {
+//			$this->M_Music->addGenre();
+			$data = array(
+				"title" => "Genre",
+				"getNewInbox"	=> $this->M_Dashboard->getNewInbox(),
+				"getSong"		=> $this->M_Music->getSong(),
+				"getAlbum"		=> $this->M_Music->getAlbum(),
+				"getGenre"		=> $this->M_Music->getGenre(),
+			);
+			$this->load->view('dashboard_page/V_Add_Genre',$data);
+		}else{
+			redirect('login');
+		}
+	}
+	public function addAlbum()
+	{
+		if ($this->session->userdata('isLogin') == TRUE) {
+			$data = array(
+				"title" => "Album",
+				"getNewInbox"	=> $this->M_Dashboard->getNewInbox(),
+				"getSong"		=> $this->M_Music->getSong(),
+				"getAlbum"		=> $this->M_Music->getAlbum(),
+				"getGenre"		=> $this->M_Music->getGenre(),
+			);
+			$this->load->view('dashboard_page/V_Add_Album',$data);
+		}else{
+			redirect('login');
+		}
+	}
+	public function addSong()
+	{
+		if ($this->session->userdata('isLogin') == TRUE) {
+			$data = array(
+				"title" => "Song",
+				"getNewInbox"	=> $this->M_Dashboard->getNewInbox(),
+				"getSong"		=> $this->M_Music->getSong(),
+				"getAlbum"		=> $this->M_Music->getAlbum(),
+				"getGenre"		=> $this->M_Music->getGenre(),
+			);
+			$this->load->view('dashboard_page/V_Add_Song',$data);
+		}else{
+			redirect('login');
+		}
+	}
+	function addGenreAuth()
+	{
+		if ($this->session->userdata('isLogin') == TRUE) {
+			$data = array(
+				"title" => "Genre",
+				"getNewInbox" => $this->M_Dashboard->getNewInbox()
+			);
+
+			//form validation
+			$this->form_validation->set_rules('nama_genre', 'Nama Genre', 'required');
+
+			if ($this->form_validation->run() == FALSE) {
+				$this->session->set_flashdata('failed', 'gagal');
+				$this->load->view('dashboard_page/V_Add_Genre',$data);
+			} else {
+				$d['genre'] = ($this->input->post('nama_genre'));
+				$this->M_Music->add_new_genre($d);
+				$this->session->set_flashdata('sukses', 'sukses');
+				redirect('music/genre');
+			}
+		}else{
+			redirect('login');
+		}
+	}
 }

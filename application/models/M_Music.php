@@ -49,4 +49,8 @@ class M_Music extends CI_Model
 		$this->db->where('id',$id);
 		$this->db->delete('t_genre');
 	}
+	function add_new_genre($data)
+	{
+		$this->db->insert('t_genre',$data);
+	}
 }

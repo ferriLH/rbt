@@ -138,7 +138,7 @@ $name = $this->session->userdata('nama_admin');
 				</li>
 				<!--Navbar CRUD Music-->
 				<li class="nav-item <?php if($this->uri->segment(1)=="music"){echo "active";}?>">
-					<a class="nav-link" href="<?php echo base_url()?>music/">
+					<a class="nav-link" href="<?php echo base_url()?>music/song">
 						<i class="mdi mdi-music menu-icon"></i>
 						<span class="menu-title">Music Pages</span>
 					</a>

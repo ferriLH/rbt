@@ -66,8 +66,7 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 										<textarea class="form-control" id="mekanisme_promo" rows="5" name="mekanisme_promo" placeholder="Tata Cara Klaim Promo
 - cara 1
 - cara 2
-- cara 3
-"></textarea>
+- cara 3"></textarea>
 									</div>
 										<div class="form-group">
 											<label for="periode_promo">Periode Promo</label>
@@ -81,12 +80,14 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 										</select>
 									</div>
 									<div class="form-group">
-										<label for="file_promo">Upload Foto Promo</label>
-										<br>
-										<span class="input-group-append">
-                          				<input type="file" name="file_promo">
-                        				</span>
-
+										<label>Upload Photo Promo</label>
+										<input type="file" name="file_promo" class="file-upload-default">
+										<div class="input-group col-xs-12">
+											<input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image">
+											<span class="input-group-append">
+												<button class="file-upload-browse btn btn-primary" type="button">Upload</button>
+											</span>
+										</div>
 									</div>
 									<button type="submit" class="btn btn-primary mr-2">Submit</button>
 									</form>
@@ -94,8 +95,7 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 						</div>
 					</div>
 		</div>
-
-
+		<script src="<?php echo base_url('assets/dashboard_page/')?>js/file-upload.js"></script>
 <?php
 $this->load->view('dashboard_page/parts/V_Footer');
 ?>

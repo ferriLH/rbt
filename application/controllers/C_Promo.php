@@ -16,6 +16,7 @@ class C_Promo extends CI_Controller
 			$data = array(
 				"title" => "Promo",
 				"getNewInbox"	=> $this->M_Dashboard->getNewInbox(),
+				"getPromo"		=> $this->M_Promo->getPromo(),
 
 			);
 			$this->load->view('dashboard_page/V_Promo',$data);
@@ -77,6 +78,19 @@ class C_Promo extends CI_Controller
 			redirect('promo/addpromo');
 		}
 	}
-
+	public function deletePromo($id)
+	{
+		if ($this->session->userdata('isLogin') == TRUE) {
+			$this->M_Promo->setDeletePromo($id);
+			$data = array(
+				"title" 		=> "Promo",
+				"getNewInbox"	=> $this->M_Dashboard->getNewInbox(),
+				"getPromo"		=> $this->M_Promo->getPromo(),
+			);
+			redirect('promo');
+		}else{
+			redirect('login');
+		}
+	}
 
 }
