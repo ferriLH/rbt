@@ -67,7 +67,7 @@ class C_Artist extends CI_Controller
 			$this->M_Artist->setDeleteArtist($id);
 			unlink( FCPATH . "assets/foto_artis/" .$photo_name);
 			$data = array(
-				"title" 		=> "Artist",
+				"title" 			=> "Artist",
 				"getNewInbox"		=> $this->M_Dashboard->getNewInbox(),
 				"getArtistPartner"	=> $this->M_Artist->getArtistPartner($id),
 			);
@@ -134,6 +134,76 @@ class C_Artist extends CI_Controller
 				$this->M_Artist->add_new_artist($d);
 				$this->session->set_flashdata('sukses', 'sukses');
 				redirect('data-artist/'.$this->input->post('partner'));
+			}
+		}else{
+			redirect('login');
+		}
+	}
+	public function editArtist($id)
+	{
+		if ($this->session->userdata('isLogin') == TRUE) {
+			$data = array(
+				"title" => "Artist",
+				"getNewInbox"	=> $this->M_Dashboard->getNewInbox(),
+				"getArtistEdit" => $this->M_Artist->getArtistEdit($id),
+				"getPartner"=> $this->M_Partner->getPartner(),
+			);
+			$this->load->view('dashboard_page/V_Edit_Artist',$data);
+		}else{
+			redirect('login');
+		}
+	}
+	function editArtistAuth($id,$idp)
+	{
+		if ($this->session->userdata('isLogin') == TRUE) {
+			$data = array(
+				"title" => "Artist",
+				"getNewInbox" 	=> $this->M_Dashboard->getNewInbox(),
+				"getArtistPartner"	=> $this->M_Artist->getArtistPartner($id),
+			);
+			//form validation
+			$this->form_validation->set_rules('nama_artist', 	'Nama Artist', 	'required');
+			$this->form_validation->set_rules('bio', 			'Bio', 			'required');
+			$this->form_validation->set_rules('partner', 		'Partner', 		'required');
+
+			if ($this->form_validation->run() == FALSE) {
+				$this->session->set_flashdata('failed', 'gagal');
+				$this->load->view('dashboard_page/V_Edit_Partner',$data);
+			} else {
+				$photo_old = $this->M_Artist->getPhotoArtist($id);
+				//upload protocol
+				if(!empty($_FILES['photo_artist']['name'])){
+					$config['upload_path'] 		= 'assets/foto_artis/';
+					$config['allowed_types'] 	= 'jpg|jpeg|png|gif';
+					$config['file_name'] 		= $_FILES['photo_artist']['name'];
+					$config_u['max_size']       = 2000;
+					//Load upload library and initialize configuration
+					$this->load->library('upload',$config);
+					$this->upload->initialize($config);
+					if($this->upload->do_upload('photo_artist')){
+						$uploadData = $this->upload->data();
+						$picture = $uploadData['file_name'];
+						unlink( FCPATH . "assets/foto_artis/" .$photo_old);
+					}else{
+						$picture = '';
+					}
+				}else{
+					$picture = '';
+				}
+
+				if($picture==''){
+					$d['partner_id'] 		= ($this->input->post('partner'));
+					$d['nama_artist'] 		= ($this->input->post('nama_artist'));
+					$d['bio'] 				= ($this->input->post('bio'));
+				}if($picture!=''){
+					$d['partner_id'] 		= ($this->input->post('partner'));
+					$d['nama_artist'] 		= ($this->input->post('nama_artist'));
+					$d['bio'] 				= ($this->input->post('bio'));
+					$d['picture_artist'] 	= $picture;
+				}
+				$this->M_Artist->update_artist($id,$d);
+				$this->session->set_flashdata('sukses', 'sukses');
+				redirect('data-artist/'.$idp);
 			}
 		}else{
 			redirect('login');

@@ -63,6 +63,8 @@ $route['dashboard/bio/(:any)']  	= 'C_Dashboard/bio/$1';
 $route['partner']             		= 'C_Partner';
 $route['artist/add']            	= 'C_Artist/addArtist';
 $route['artist/add/auth']       	= 'C_Artist/addArtistAuth';
+$route['artist/edit/(:any)']   		= 'C_Artist/editArtist/$1';
+$route['artist/edit/auth/(:any)/(:any)']= 'C_Artist/editArtistAuth/$1/$2';
 $route['partner/add']           	= 'C_Partner/addPartner';
 $route['partner/add/auth']      	= 'C_Partner/addPartnerAuth';
 $route['partner/edit/(:any)']   	= 'C_Partner/editPartner/$1';
@@ -99,7 +101,6 @@ $route['contact']             		= 'C_Contact';
 $route['artist']             		= 'C_Artist';
 $route['artist/page/(:any)']    	= 'C_Artist';
 $route['artist/page']      	    	= 'C_Artist';
-
 
 $route['album']             		= 'C_Album';
 $route['album/page/(:any)']    		= 'C_Album';

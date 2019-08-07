@@ -74,4 +74,18 @@ class M_Artist extends CI_Model
 	{
 		$this->db->insert('t_artist',$data);
 	}
+	function getArtistEdit($id){
+		$this->db->select("*");
+		$this->db->from("t_artist");
+		$this->db->join('t_partner','t_partner.id_partner=t_artist.partner_id');
+		$this->db->where("id_artists",$id);
+		$this->db->where("t_artist.aktif",true);
+		$query = $this->db->get();
+		return $query->result_array();
+	}
+	function update_artist($id,$data)
+	{
+		$this->db->where('id_artists',$id);
+		$this->db->update('t_artist',$data);
+	}
 }

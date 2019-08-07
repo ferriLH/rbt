@@ -67,7 +67,7 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 											<img class="img-responsive center-block" src="<?php echo base_url('assets/foto_artis/').$a->picture_artist?>" alt="Pucture Artist">
 										</td>
 										<td>
-											<a href="<?php echo base_url('');echo "";?>" class="btn btn-warning btn-icon-split">
+											<a href="<?php echo base_url('artist/edit/');echo $a->id_artists;?>" class="btn btn-warning btn-icon-split">
                                             <span class="icon text-white">
                                                 <i class="mdi mdi-playlist-edit"></i>
                                             </span>
