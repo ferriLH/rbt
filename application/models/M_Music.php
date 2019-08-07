@@ -71,4 +71,16 @@ class M_Music extends CI_Model
 		$query = $this->db->get();
 		return $query->row('picture_album');
 	}
+	function getGenreEdit($id){
+		$this->db->select("*");
+		$this->db->from("t_genre");
+		$this->db->where("id",$id);
+		$query = $this->db->get();
+		return $query->result_array();
+	}
+	function update_genre($id,$data)
+	{
+		$this->db->where('id',$id);
+		$this->db->update('t_genre',$data);
+	}
 }

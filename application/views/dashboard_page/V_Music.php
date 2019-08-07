@@ -207,7 +207,7 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 												<tr>
 													<td><?php echo $g->genre?></td>
 													<td>
-														<a href="<?php echo base_url('');echo "";?>" class="btn btn-warning btn-icon-split">
+														<a href="<?php echo base_url('update-genre/');echo $g->id;?>" class="btn btn-warning btn-icon-split">
 															<span class="icon text-white">
 																<i class="mdi mdi-playlist-edit"></i>
 															</span>

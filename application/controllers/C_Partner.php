@@ -118,7 +118,7 @@ class C_Partner extends CI_Controller
 
 			if ($this->form_validation->run() == FALSE) {
 				$this->session->set_flashdata('failed', 'gagal');
-				$this->load->view('dashboard_page/V_Add_Partner',$data);
+				$this->load->view('dashboard_page/V_Edit_Partner',$data);
 			} else {
 				$d['nomor_induk'] 		= ($this->input->post('nomor_induk'));
 				$d['nama_partner'] 		= ($this->input->post('nama_partner'));
