@@ -76,8 +76,8 @@ $route['promo/confirm']       	= 'C_Promo/confirm';
 
 $route['contact']             	= 'C_Contact';
 $route['artist']             	= 'C_Artist';
-$route['paging/(:any)']         = 'C_Artist';
-$route['paging']                = 'C_Artist';
+$route['artist/paging/(:any)']  = 'C_Artist';
+$route['artist/paging']         = 'C_Artist';
 $route['album']             	= 'C_Album';
 $route['contact/kirim']         = 'C_Contact/kirim';
 $route['inbox']             	= 'C_Inbox';

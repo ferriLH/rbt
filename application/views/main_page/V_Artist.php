@@ -68,14 +68,17 @@
                                 }
                                 ?>
                             </ul>
-                            <?php if (isset($pagination)) { ?>
-                                <?php echo $pagination ?>
-                            <?php } ?>
                                     <div class="clearfix"> </div>
 
                                 </div>
                             </div>
                         </div>
+					<div class="container">
+						<div class="row">
+							<?php if (isset($pagination)) { ?>
+								<?php echo $pagination ?>
+							<?php } ?>
+						</div>
 
 
 <!--                            <div role="tabpanel" class="tab-pane fade" id="profile" aria-labelledby="profile-tab">-->
