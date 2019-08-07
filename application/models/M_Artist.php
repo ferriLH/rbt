@@ -56,4 +56,14 @@ class M_Artist extends CI_Model
 		$this->db->where('id_artists',$id);
 		$this->db->update('t_artist',$data);
 	}
+
+	function get_new_artist()
+	{
+		$this->db->select('*');
+		$this->db->from('t_artist');
+		$this->db->join('t_partner','t_partner.id_partner=t_artist.partner_id');
+		$this->db->order_by('id_artists','DESC');
+		$this->db->limit('10');
+		return $this->db->get()->result();
+	}
 }

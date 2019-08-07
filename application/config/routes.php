@@ -89,9 +89,14 @@ $route['delete-promo/(:any)'] 	= 'C_Promo/deletePromo/$1';
 
 $route['contact']             	= 'C_Contact';
 $route['artist']             	= 'C_Artist';
-$route['artist/paging/(:any)']  = 'C_Artist';
-$route['artist/paging']         = 'C_Artist';
+$route['artist/page/(:any)']    = 'C_Artist';
+$route['artist/page']      	    = 'C_Artist';
+
+
 $route['album']             	= 'C_Album';
+$route['album/page/(:any)']    	= 'C_Album';
+$route['album/page']    	    = 'C_Album';
+
 $route['contact/kirim']         = 'C_Contact/kirim';
 
 $route['inbox']             	= 'C_Inbox';

@@ -17,7 +17,7 @@ class C_Artist extends CI_Controller
             "title" => "Artist",
         );
         //config pagination
-        $config['base_url'] = 'http://localhost/rbt/artist/paging';  //site url
+        $config['base_url'] = base_url('artist/page');  //site url
         $config['total_rows'] = $this->db->count_all('t_artist'); //total row
         $config['per_page'] = 12;  //show record per halaman
         $config['uri_segment'] = 3;
@@ -47,6 +47,7 @@ class C_Artist extends CI_Controller
         $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
         $data['data'] = $this->M_Artist->get_artist($config['per_page'], $page);
         $data['pagination'] = $this->pagination->create_links();
+		$data['new_a'] = $this->M_Artist->get_new_artist();
         $this->load->view('main_page/V_Artist',$data);
     }
 	function dataArtist($id)

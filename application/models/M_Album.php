@@ -15,4 +15,15 @@ class M_Album extends CI_Model
         $this->db->where('t_album.aktif',TRUE);
         return $this->db->get()->result();
     }
+
+    function get_album_new()
+	{
+		$this->db->select('*');
+		$this->db->from('t_album');
+		$this->db->join('t_artist','t_artist.id_artists=t_album.artist_id');
+		$this->db->order_by('id_album','DESC');
+		$this->db->limit('10');
+		return $this->db->get()->result();
+
+	}
 }
