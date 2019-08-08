@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 07, 2019 at 06:33 AM
+-- Generation Time: Aug 08, 2019 at 08:24 AM
 -- Server version: 10.3.16-MariaDB
 -- PHP Version: 7.3.7
 
@@ -63,7 +63,7 @@ CREATE TABLE `t_album` (
 
 INSERT INTO `t_album` (`id_album`, `artist_id`, `nama_album`, `picture_album`, `aktif`) VALUES
 (1, 7, 'Album 1', 'v6.jpeg', 1),
-(2, 8, 'Album Krisna Set', 'v9.jpg', 1),
+(2, 8, 'Album Krisna Setiyadi', 'IMG_3066.JPG', 1),
 (3, 5, 'Dangdut Pantura', 'v21.jpg', 1);
 
 -- --------------------------------------------------------
@@ -87,7 +87,7 @@ CREATE TABLE `t_artist` (
 
 INSERT INTO `t_artist` (`id_artists`, `partner_id`, `nama_artist`, `bio`, `picture_artist`, `aktif`) VALUES
 (5, 1, 'Via Vallen', 'Dolor Sit Amet, Dolor Amet sit amet sit dolor, dolor sit amet Dolor Sit Amet, Dolor Amet sit amet sit dolor, dolor sit amet. Dolor Sit Amet, Dolor Amet sit amet sit dolor, dolor sit amet', 'a7.jpg', 1),
-(6, 1, 'Mahatma Ghandi', 'Dolor Sit Amet, Dolor Amet sit amet sit dolor, dolor sit amet Dolor Sit Amet, Dolor Amet sit amet sit dolor, dolor sit amet. Dolor Sit Amet, Dolor Amet sit amet sit dolor, dolor sit amet', 'a8.jpg', 1),
+(6, 1, 'Mahatma Ghandi aaaa', 'Dolor Sit Amet, Dolor Amet sit amet sit dolor, dolor sit amet Dolor Sit Amet, Dolor Amet sit amet sit dolor, dolor sit amet. Dolor Sit Amet, Dolor Amet sit amet sit dolor, dolor sit amet', 'aboutus.jpg', 1),
 (7, 1, 'Dr. Ken Jeong', 'Dolor Sit Amet, Dolor Amet sit amet sit dolor, dolor sit amet Dolor Sit Amet, Dolor Amet sit amet sit dolor, dolor sit amet. Dolor Sit Amet, Dolor Amet sit amet sit dolor, dolor sit amet', 'a9.jpg', 1),
 (8, 1, 'Krisna Setiadi', 'Dolor Sit Amet, Dolor Amet sit amet sit dolor, dolor sit amet Dolor Sit Amet, Dolor Amet sit amet sit dolor, dolor sit amet. Dolor Sit Amet, Dolor Amet sit amet sit dolor, dolor sit amet', 'a11.jpg', 1),
 (9, 1, 'Jajang Kesbor', 'Lorem Ipsum', 'a11.jpg', 1),
@@ -117,7 +117,7 @@ INSERT INTO `t_genre` (`id`, `genre`) VALUES
 (2, 'Rock'),
 (3, 'Dangdut'),
 (4, 'Indie'),
-(11, 'punk');
+(11, 'Punk');
 
 -- --------------------------------------------------------
 
@@ -132,7 +132,9 @@ CREATE TABLE `t_lagu` (
   `judul` varchar(30) NOT NULL,
   `harga` float NOT NULL,
   `file` varchar(50) NOT NULL,
-  `ketik` varchar(10) NOT NULL,
+  `kode_xl` varchar(10) NOT NULL,
+  `kode_tsel` varchar(10) NOT NULL,
+  `kode_indosat` varchar(10) NOT NULL,
   `aktif` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -140,9 +142,9 @@ CREATE TABLE `t_lagu` (
 -- Dumping data for table `t_lagu`
 --
 
-INSERT INTO `t_lagu` (`id_lagu`, `album_id`, `genre_id`, `judul`, `harga`, `file`, `ketik`, `aktif`) VALUES
-(1, 3, 3, 'Aselole 2019', 2000, 'Georgia.mp3', 'REG_K', 1),
-(3, 1, 1, 'Senja Dimalam Hari', 40000, 'Georigia.mp3', 'REG_S', 1);
+INSERT INTO `t_lagu` (`id_lagu`, `album_id`, `genre_id`, `judul`, `harga`, `file`, `kode_xl`, `kode_tsel`, `kode_indosat`, `aktif`) VALUES
+(3, 1, 1, 'Senja Dimalam Hari', 40000, 'Georigia.mp3', 'REG_XL', 'REG_TSEL', 'REG_IND', 1),
+(6, 2, 2, 'Kau yang cari', 1000, 'Jason_Ranti_-_Kau_Yang_Cari_(lirikliryc_video).mp3', 'XL_KC', 'SEL_KC', 'IND_KC', 1);
 
 -- --------------------------------------------------------
 
@@ -167,7 +169,7 @@ CREATE TABLE `t_partner` (
 
 INSERT INTO `t_partner` (`id_partner`, `nomor_induk`, `nama_partner`, `email_partner`, `no_telpon`, `jk`, `alamat`, `aktif`) VALUES
 (1, '3203232506980005', 'Director Ferri', 'ferrilasmi@gmail.com', '081220979733', 'pria', 'Dolor Sit Amet, Dolor Amet', 1),
-(3, '13123123', 'sdad', 'eea@sf.csc', '342234', 'pria', 'sadasdsad', 0);
+(3, '1312312389', 'sdadsax', 'eea@sf.cscc', '34223422', 'wanita', 'sadasdsadsdsadsa', 1);
 
 -- --------------------------------------------------------
 
@@ -185,6 +187,13 @@ CREATE TABLE `t_pesan` (
   `baca` tinyint(1) NOT NULL,
   `hapus` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `t_pesan`
+--
+
+INSERT INTO `t_pesan` (`id_pesan`, `nama_pengirim`, `email_pengirim`, `kontak_pengirim`, `isi_pesan`, `waktu_kirim`, `baca`, `hapus`) VALUES
+(1, 'Krisna Setiabudi', 'krisna.setiabudi@anak.setiyadi', '089754657812', 'Jl. Kuningan Barat No.8 Cyber Building (Gedung Elektrindo) 5th Floor, Jakarta Selatan 12710', '2019-08-08 09:21:50', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -206,7 +215,7 @@ CREATE TABLE `t_promo` (
 --
 
 INSERT INTO `t_promo` (`id_promo`, `nama_promo`, `mekanisme`, `periode`, `file_promo`, `aktif`) VALUES
-(1, 'Promo 1', 'Lorem Ipsum', '06 Agustus 2019 - Selamanya', 'Promo_test.jpg', 1),
+(1, 'Promo 1', 'Lorem Ipsum', '06 Agustus 2019 - Selamanya', 'Result_Day_21.jpeg', 1),
 (2, 'Promo 2', 'Lorem Ipsum', 'Kemarin Sore - Besok Siang', 'Promo_test.jpg', 1),
 (3, 'Promo 3', 'Lorem Ipsum', 'Zaman Jahiliyah - Zaman Pelangi', 'Promo_test.jpg', 1);
 
@@ -298,7 +307,7 @@ ALTER TABLE `t_genre`
 -- AUTO_INCREMENT for table `t_lagu`
 --
 ALTER TABLE `t_lagu`
-  MODIFY `id_lagu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_lagu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `t_partner`
@@ -310,13 +319,13 @@ ALTER TABLE `t_partner`
 -- AUTO_INCREMENT for table `t_pesan`
 --
 ALTER TABLE `t_pesan`
-  MODIFY `id_pesan` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_pesan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `t_promo`
 --
 ALTER TABLE `t_promo`
-  MODIFY `id_promo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_promo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Constraints for dumped tables
