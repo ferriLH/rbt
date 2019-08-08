@@ -144,7 +144,7 @@ $this->load->view('main_page/parts/V_Navigation');
 				$id_r = $new->id_album;
 				?>
                 <li>
-                    <a href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/<?php echo $new->picture_album;?>" alt=""/></a>
+                    <a href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>foto_album/<?php echo $new->picture_album;?>" alt=""/></a>
                     <div class="slide-title"><h4><?php echo $new->nama_album?></div>
                     <div class="date-city">
                         <h5><?php echo $new->nama_artist?></h5>
