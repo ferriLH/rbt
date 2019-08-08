@@ -75,6 +75,7 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 							<div class="form-group">
 								<label for="album">Album</label>
 								<select class="form-control" id="album" name="album">
+									<option value="0">- choose -</option>
 									<?php foreach ($getAlbum as $a){?>
 									<option value="<?php echo $a->id_album?>"><?php echo $a->nama_album?></option>
 									<?php }?>
@@ -83,6 +84,7 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 							<div class="form-group">
 								<label for="genre">Genre</label>
 								<select class="form-control" id="genre" name="genre">
+									<option value="0">- choose -</option>
 									<?php foreach ($getGenre as $g){?>
 									<option value="<?php echo $g->id?>"><?php echo $g->genre?></option>
 									<?php }?>

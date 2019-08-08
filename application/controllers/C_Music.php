@@ -32,7 +32,9 @@ class C_Music extends CI_Controller
 	public function deleteSong($id)
 	{
 		if ($this->session->userdata('isLogin') == TRUE) {
+			$song_old = $this->M_Music->getSongOld($id);
 			$this->M_Music->setDeleteSong($id);
+			unlink( FCPATH . "assets/file_lagu/" .$song_old);
 			$data = array(
 				"title" => "Music",
 				"getNewInbox" => $this->M_Dashboard->getNewInbox(),
@@ -217,10 +219,11 @@ class C_Music extends CI_Controller
 			);
 		}
 		//form validation
-		$this->form_validation->set_rules('judul_lagu', 'Judul Lagu', 'required');
-		$this->form_validation->set_rules('harga', 'Harga', 'required');
-		$this->form_validation->set_rules('kode_registrasi', 'Harga', 'required');
-		$this->form_validation->set_rules('kode_registrasi', 'Harga', 'required');
+		$this->form_validation->set_rules('judul_lagu', 	'Judul Lagu', 		'required');
+		$this->form_validation->set_rules('harga', 			'Harga', 			'required');
+		$this->form_validation->set_rules('kode_registrasi','Kode Registrasi',	'required');
+		$this->form_validation->set_rules('album', 			'album', 			'required');
+		$this->form_validation->set_rules('genre', 			'genre', 			'required');
 		if ($this->form_validation->run() == FALSE) {
 			$this->session->set_flashdata('failed', 'gagal');
 			$this->load->view('dashboard_page/V_Add_Song', $data);
@@ -236,7 +239,7 @@ class C_Music extends CI_Controller
 				$config['upload_path'] = 'assets/file_lagu/';
 				$config['allowed_types'] = 'mp3';
 				$config['file_name'] = $_FILES['file_lagu']['name'];
-				//$config['max_size'] = 5000;
+				$config['max_size'] = 10000;
 				//load library
 				$this->load->library('upload', $config);
 				$this->upload->initialize($config);
@@ -360,6 +363,85 @@ class C_Music extends CI_Controller
 				$this->M_Music->update_album($id,$d);
 				$this->session->set_flashdata('sukses', 'sukses');
 				redirect('music/album');
+			}
+		}else{
+			redirect('login');
+		}
+	}
+	public function updateSong($id)
+	{
+		if ($this->session->userdata('isLogin') == TRUE) {
+			$data = array(
+				"title" => "Song",
+				"getNewInbox"	=> $this->M_Dashboard->getNewInbox(),
+				"getSongEdit"	=> $this->M_Music->getSongEdit($id),
+				"getAlbum" => $this->M_Music->getAlbum(),
+				"getGenre" => $this->M_Music->getGenre(),
+			);
+			$this->load->view('dashboard_page/V_Edit_Song',$data);
+		}else{
+			redirect('login');
+		}
+	}
+	function updateSongAuth($id)
+	{
+		if ($this->session->userdata('isLogin') == TRUE) {
+			$data = array(
+				"title" => "Album",
+				"getNewInbox" => $this->M_Dashboard->getNewInbox(),
+				"getSong" => $this->M_Music->getSong(),
+				"getAlbum" => $this->M_Music->getAlbum(),
+				"getGenre" => $this->M_Music->getGenre(),
+			);
+
+			//form validation
+			$this->form_validation->set_rules('judul_lagu', 	'Judul Lagu', 		'required');
+			$this->form_validation->set_rules('harga', 			'Harga', 			'required');
+			$this->form_validation->set_rules('kode_registrasi','Kode Registrasi',	'required');
+			$this->form_validation->set_rules('album', 			'album', 			'required');
+			$this->form_validation->set_rules('genre', 			'genre', 			'required');
+			if ($this->form_validation->run() == FALSE) {
+				$this->session->set_flashdata('failed', 'gagal');
+				$this->load->view('dashboard_page/V_Edit_Song',$data);
+			} else {
+				$song_old = $this->M_Music->getSongOld($id);
+				//upload protocol
+				if (!empty($_FILES['file_lagu']['name'])) {
+					$config['upload_path'] = 'assets/file_lagu/';
+					$config['allowed_types'] = 'mp3';
+					$config['file_name'] = $_FILES['file_lagu']['name'];
+					$config['max_size'] = 10000;
+					//load library
+					$this->load->library('upload', $config);
+					$this->upload->initialize($config);
+					if ($this->upload->do_upload('file_lagu')) {
+						$uploadData = $this->upload->data();
+						$namalagu = $uploadData['file_name'];
+						unlink( FCPATH . "assets/file_lagu/" .$song_old);
+					} else {
+						$namalagu = '';
+					}
+				} else {
+					$namalagu = '';
+				}
+
+				if($namalagu==''){
+					$d['album_id'] 		= ($this->input->post('album'));
+					$d['genre_id'] 		= ($this->input->post('genre'));
+					$d['judul'] 		= ($this->input->post('judul_lagu'));
+					$d['harga'] 		= ($this->input->post('harga'));
+					$d['ketik'] 		= ($this->input->post('kode_registrasi'));
+				}if($namalagu!=''){
+					$d['album_id'] 		= ($this->input->post('album'));
+					$d['genre_id'] 		= ($this->input->post('genre'));
+					$d['judul'] 		= ($this->input->post('judul_lagu'));
+					$d['harga'] 		= ($this->input->post('harga'));
+					$d['file'] 			= $namalagu;
+					$d['ketik'] 		= ($this->input->post('kode_registrasi'));
+				}
+				$this->M_Music->update_song($id,$d);
+				$this->session->set_flashdata('sukses', 'sukses');
+				redirect('music/song');
 			}
 		}else{
 			redirect('login');

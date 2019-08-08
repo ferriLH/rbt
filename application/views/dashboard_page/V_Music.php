@@ -81,7 +81,7 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 													<td><?php echo $s->genre?></td>
 													<td><?php echo $s->ketik?></td>
 													<td>
-														<a href="<?php echo base_url('');echo "";?>" class="btn btn-warning btn-icon-split">
+														<a href="<?php echo base_url('update-song/');echo $s->id_lagu;?>" class="btn btn-warning btn-icon-split">
 															<span class="icon text-white">
 																<i class="mdi mdi-playlist-edit"></i>
 															</span>

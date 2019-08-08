@@ -33,6 +33,7 @@ class M_Music extends CI_Model
 	}
 	function setDeleteSong($id){
 		$data = array(
+			'file' =>'',
 			'aktif'=>0,
 		);
 		$this->db->where('id_lagu',$id);
@@ -96,5 +97,28 @@ class M_Music extends CI_Model
 	{
 		$this->db->where('id_album',$id);
 		$this->db->update('t_album',$data);
+	}
+	function getSongEdit($id){
+		$this->db->select("*");
+		$this->db->from("t_lagu l");
+		$this->db->join('t_album a','a.id_album=l.album_id');
+		$this->db->join('t_genre g','g.id=l.genre_id');
+		$this->db->where("id_lagu",$id);
+		$this->db->where("l.aktif",true);
+		$query = $this->db->get();
+		return $query->result_array();
+	}
+	function update_song($id,$data)
+	{
+		$this->db->where('id_lagu',$id);
+		$this->db->update('t_lagu',$data);
+	}
+	function getSongOld($id)
+	{
+		$this->db->select('file');
+		$this->db->from('t_lagu');
+		$this->db->where('id_lagu',$id);
+		$query = $this->db->get();
+		return $query->row('file');
 	}
 }
