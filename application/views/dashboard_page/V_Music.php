@@ -146,7 +146,7 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 													<td><?php echo $a->nama_album?></td>
 													<td><img src="<?php echo base_url('assets/foto_album/').$a->picture_album?>" alt="Picture Album"></td>
 													<td>
-														<a href="<?php echo base_url('');echo "";?>" class="btn btn-warning btn-icon-split">
+														<a href="<?php echo base_url('update-album/');echo $a->id_album;?>" class="btn btn-warning btn-icon-split">
 															<span class="icon text-white">
 																<i class="mdi mdi-playlist-edit"></i>
 															</span>

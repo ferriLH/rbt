@@ -84,6 +84,8 @@ $route['delete-album/(:any)'] 		= 'C_Music/deleteAlbum/$1';
 $route['delete-genre/(:any)'] 		= 'C_Music/deleteGenre/$1';
 $route['update-genre/(:any)'] 		= 'C_Music/updateGenre/$1';
 $route['update-genre-auth/(:any)'] 	= 'C_Music/updateGenreAuth/$1';
+$route['update-album/(:any)'] 		= 'C_Music/updateAlbum/$1';
+$route['update-album-auth/(:any)'] 	= 'C_Music/updateAlbumAuth/$1';
 
 $route['genre/add'] 				= 'C_Music/addGenre';
 $route['song/add'] 					= 'C_Music/addSong';

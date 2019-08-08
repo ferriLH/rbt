@@ -273,7 +273,7 @@ class C_Music extends CI_Controller
 	{
 		if ($this->session->userdata('isLogin') == TRUE) {
 			$data = array(
-				"title" => "Partner",
+				"title" => "Genre",
 				"getNewInbox" => $this->M_Dashboard->getNewInbox(),
 				"getSong" => $this->M_Music->getSong(),
 				"getAlbum" => $this->M_Music->getAlbum(),
@@ -291,6 +291,75 @@ class C_Music extends CI_Controller
 				$this->M_Music->update_genre($id,$d);
 				$this->session->set_flashdata('sukses', 'sukses');
 				redirect('music/genre');
+			}
+		}else{
+			redirect('login');
+		}
+	}
+	public function updateAlbum($id)
+	{
+		if ($this->session->userdata('isLogin') == TRUE) {
+			$data = array(
+				"title" => "Album",
+				"getNewInbox"	=> $this->M_Dashboard->getNewInbox(),
+				"getAlbumEdit"	=> $this->M_Music->getAlbumEdit($id),
+				"getArtist" 	=> $this->M_Artist->get_data_artist()->result(),
+			);
+			$this->load->view('dashboard_page/V_Edit_Album',$data);
+		}else{
+			redirect('login');
+		}
+	}
+	function updateAlbumAuth($id)
+	{
+		if ($this->session->userdata('isLogin') == TRUE) {
+			$data = array(
+				"title" => "Album",
+				"getNewInbox" => $this->M_Dashboard->getNewInbox(),
+				"getSong" => $this->M_Music->getSong(),
+				"getAlbum" => $this->M_Music->getAlbum(),
+				"getGenre" => $this->M_Music->getGenre(),
+			);
+
+			//form validation
+			$this->form_validation->set_rules('nama_album',	'Nama Aalbum',	'required');
+			$this->form_validation->set_rules('artist',		'Nama Artist',	'required');
+			if ($this->form_validation->run() == FALSE) {
+				$this->session->set_flashdata('failed', 'gagal');
+				$this->load->view('dashboard_page/V_Edit_Album',$data);
+			} else {
+				$photo_old = $this->M_Music->getPhotoAlbum($id);
+				//upload protocol
+				if(!empty($_FILES['photo_album']['name'])){
+					$config['upload_path'] 		= 'assets/foto_album/';
+					$config['allowed_types'] 	= 'jpg|jpeg|png|gif';
+					$config['file_name'] 		= $_FILES['photo_album']['name'];
+					$config_u['max_size']       = 2000;
+					//Load upload library and initialize configuration
+					$this->load->library('upload',$config);
+					$this->upload->initialize($config);
+					if($this->upload->do_upload('photo_album')){
+						$uploadData = $this->upload->data();
+						$picture = $uploadData['file_name'];
+						unlink( FCPATH . "assets/foto_album/" .$photo_old);
+					}else{
+						$picture = '';
+					}
+				}else{
+					$picture = '';
+				}
+
+				if($picture==''){
+					$d['nama_album'] 		= ($this->input->post('nama_album'));
+					$d['artist_id'] 		= ($this->input->post('artist'));
+				}if($picture!=''){
+					$d['nama_album'] 		= ($this->input->post('nama_album'));
+					$d['artist_id'] 		= ($this->input->post('artist'));
+					$d['picture_album'] 	= $picture;
+				}
+				$this->M_Music->update_album($id,$d);
+				$this->session->set_flashdata('sukses', 'sukses');
+				redirect('music/album');
 			}
 		}else{
 			redirect('login');

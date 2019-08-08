@@ -40,8 +40,8 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 			<div class="col-12 grid-margin stretch-card">
 				<div class="card">
 					<div class="card-body">
-						<h4 class="card-title"> Form Add <?php echo $title?></h4>
-						<form class="forms-sample" enctype="multipart/form-data" method="post" action="<?php echo base_url('album/add/auth')?>">
+						<h4 class="card-title"> Form Edit <?php echo $title?></h4>
+						<form class="forms-sample" enctype="multipart/form-data" method="post" action="<?php echo base_url('update-album-auth/').$getAlbumEdit[0]['id_album']?>">
 							<?php if(validation_errors()||$this->session->flashdata('failed')){ ?>
 								<div class="alert alert-danger">
 									<button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -52,7 +52,8 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 							<?php }?>
 							<div class="form-group">
 								<label for="nama_album">Nama Album</label>
-								<input type="text" class="form-control" id="nama_album" placeholder="Nama Album" name="nama_album">
+								<input value="<?php echo $getAlbumEdit[0]['nama_album']?>"
+									type="text" class="form-control" id="nama_album" placeholder="Nama Album" name="nama_album">
 							</div>
 							<div class="form-group">
 								<label>File upload</label>
@@ -67,7 +68,7 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 							<div class="form-group">
 								<label for="artist">Artist</label>
 								<select class="form-control" id="artist" name="artist">
-									<option value="0">- choose -</option>
+									<option value="<?php echo $getAlbumEdit[0]['artist_id']?>"><?php echo $getAlbumEdit[0]['nama_artist']?></option>
 									<?php
 									foreach ($getArtist as $a){
 										?>
