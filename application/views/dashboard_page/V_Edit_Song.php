@@ -61,9 +61,19 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 									type="number" placeholder="Harga" class="form-control" id="harga" name="harga">
 							</div>
 							<div class="form-group">
-								<label for="kode_registration">Kode Registrasi</label>
-								<input value="<?php echo $getSongEdit[0]['ketik']?>"
-									type="text" placeholder="Kode Registrasi" class="form-control" id="kode_registration" name="kode_registrasi">
+								<label for="kode_registration">Kode Registrasi XL</label>
+								<input value="<?php echo $getSongEdit[0]['kode_xl']?>"
+									type="text" placeholder="Kode Registrasi" class="form-control" id="kode_registration" name="xl">
+							</div>
+							<div class="form-group">
+								<label for="kode_registration">Kode Registrasi TSEL</label>
+								<input value="<?php echo $getSongEdit[0]['kode_tsel']?>"
+									   type="text" placeholder="Kode Registrasi" class="form-control" id="kode_registration" name="tsel">
+							</div>
+							<div class="form-group">
+								<label for="kode_registration">Kode Registrasi INDOSAT</label>
+								<input value="<?php echo $getSongEdit[0]['kode_indosat']?>"
+									   type="text" placeholder="Kode Registrasi" class="form-control" id="kode_registration" name="indosat">
 							</div>
 							<div class="form-group">
 								<label>Upload Music</label>

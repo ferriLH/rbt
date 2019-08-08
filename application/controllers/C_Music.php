@@ -222,18 +222,22 @@ class C_Music extends CI_Controller
 		//form validation
 		$this->form_validation->set_rules('judul_lagu', 	'Judul Lagu', 		'required');
 		$this->form_validation->set_rules('harga', 			'Harga', 			'required');
-		$this->form_validation->set_rules('kode_registrasi','Kode Registrasi',	'required');
+		$this->form_validation->set_rules('xl',				'Kode Registrasi XL',	'required');
+		$this->form_validation->set_rules('tsel',			'Kode Registrasi TSEL',	'required');
+		$this->form_validation->set_rules('indosat',		'Kode Registrasi INDOSAT',	'required');
 		$this->form_validation->set_rules('album', 			'album', 			'required');
 		$this->form_validation->set_rules('genre', 			'genre', 			'required');
 		if ($this->form_validation->run() == FALSE) {
 			$this->session->set_flashdata('failed', 'gagal');
 			$this->load->view('dashboard_page/V_Add_Song', $data);
 		} else {
-			$d['judul'] 	= ($this->input->post('judul_lagu'));
-			$d['harga'] 	= ($this->input->post('harga'));
-			$d['ketik'] 	= ($this->input->post('kode_registrasi'));
-			$d['album_id'] 	= ($this->input->post('album'));
-			$d['genre_id'] 	= ($this->input->post('genre'));
+			$d['judul'] 		= ($this->input->post('judul_lagu'));
+			$d['harga'] 		= ($this->input->post('harga'));
+			$d['kode_xl'] 		= ($this->input->post('xl'));
+			$d['kode_tsel'] 	= ($this->input->post('tsel'));
+			$d['kode_indosat'] 	= ($this->input->post('indosat'));
+			$d['album_id'] 		= ($this->input->post('album'));
+			$d['genre_id'] 		= ($this->input->post('genre'));
 
 			//upload protocol
 			if (!empty($_FILES['file_lagu']['name'])) {
@@ -398,7 +402,9 @@ class C_Music extends CI_Controller
 			//form validation
 			$this->form_validation->set_rules('judul_lagu', 	'Judul Lagu', 		'required');
 			$this->form_validation->set_rules('harga', 			'Harga', 			'required');
-			$this->form_validation->set_rules('kode_registrasi','Kode Registrasi',	'required');
+			$this->form_validation->set_rules('xl',				'Kode Registrasi XL',	'required');
+			$this->form_validation->set_rules('tsel',			'Kode Registrasi TSEL',	'required');
+			$this->form_validation->set_rules('indosat',		'Kode Registrasi INDOSAT',	'required');
 			$this->form_validation->set_rules('album', 			'album', 			'required');
 			$this->form_validation->set_rules('genre', 			'genre', 			'required');
 			if ($this->form_validation->run() == FALSE) {
@@ -431,14 +437,18 @@ class C_Music extends CI_Controller
 					$d['genre_id'] 		= ($this->input->post('genre'));
 					$d['judul'] 		= ($this->input->post('judul_lagu'));
 					$d['harga'] 		= ($this->input->post('harga'));
-					$d['ketik'] 		= ($this->input->post('kode_registrasi'));
+					$d['kode_xl'] 		= ($this->input->post('xl'));
+					$d['kode_tsel']		= ($this->input->post('tsel'));
+					$d['kode_indosat']	= ($this->input->post('indosat'));
 				}if($namalagu!=''){
 					$d['album_id'] 		= ($this->input->post('album'));
 					$d['genre_id'] 		= ($this->input->post('genre'));
 					$d['judul'] 		= ($this->input->post('judul_lagu'));
 					$d['harga'] 		= ($this->input->post('harga'));
 					$d['file'] 			= $namalagu;
-					$d['ketik'] 		= ($this->input->post('kode_registrasi'));
+					$d['kode_xl'] 		= ($this->input->post('xl'));
+					$d['kode_tsel']		= ($this->input->post('tsel'));
+					$d['kode_indosat']	= ($this->input->post('indosat'));
 				}
 				$this->M_Music->update_song($id,$d);
 				$this->session->set_flashdata('sukses', 'sukses');

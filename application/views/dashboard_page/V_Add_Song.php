@@ -59,8 +59,16 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 								<input type="number" placeholder="Harga" class="form-control" id="harga" name="harga">
 							</div>
 							<div class="form-group">
-								<label for="kode_registration">Kode Registrasi</label>
-								<input type="text" placeholder="Kode Registrasi" class="form-control" id="kode_registration" name="kode_registrasi">
+								<label for="kode_registration">Kode Registrasi XL</label>
+								<input type="text" placeholder="Kode Registrasi" class="form-control" id="xl" name="xl">
+							</div>
+							<div class="form-group">
+								<label for="kode_registration">Kode Registrasi TSEL</label>
+								<input type="text" placeholder="Kode Registrasi" class="form-control" id="tsel" name="tsel">
+							</div>
+							<div class="form-group">
+								<label for="kode_registration">Kode Registrasi INDOSAT</label>
+								<input type="text" placeholder="Kode Registrasi" class="form-control" id="indosat" name="indosat">
 							</div>
 							<div class="form-group">
 								<label>Upload Music</label>

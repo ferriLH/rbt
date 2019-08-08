@@ -66,7 +66,9 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 												<th>Judul</th>
 												<th>Harga</th>
 												<th>Genre</th>
-												<th>Kode Registrasi</th>
+												<th>XL</th>
+												<th>TSEL</th>
+												<th>INDOSAT</th>
 												<th>Action</th>
 											</tr>
 											</thead>
@@ -79,7 +81,9 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 													<td><?php echo $s->judul?></td>
 													<td><?php echo "Rp. ".$s->harga?></td>
 													<td><?php echo $s->genre?></td>
-													<td><?php echo $s->ketik?></td>
+													<td><?php echo $s->kode_xl?></td>
+													<td><?php echo $s->kode_tsel?></td>
+													<td><?php echo $s->kode_indosat?></td>
 													<td>
 														<a href="<?php echo base_url('update-song/');echo $s->id_lagu;?>" class="btn btn-warning btn-icon-split">
 															<span class="icon text-white">
