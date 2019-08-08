@@ -29,6 +29,7 @@ class C_Music extends CI_Controller
 		}
 	}
 
+
 	public function deleteSong($id)
 	{
 		if ($this->session->userdata('isLogin') == TRUE) {

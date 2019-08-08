@@ -1,25 +1,25 @@
 <?php
 
 
-class C_Album extends CI_Controller
+class C_Song extends CI_Controller
 {
-
-    function __construct()
-    {
-        parent::__construct();
-        $this->load->model('M_Album');
+	function __construct()
+	{
+		parent::__construct();
+		$this->load->model('M_Song');
 		$this->load->library('pagination');
-    }
+	}
 
-    function index()
-    {
-        $data = array(
-            "title" => "Album List",
-            "album" => $this->M_Album->get_album()
-        );
+	function index()
+	{
+		$data = array(
+			"title" => "All Song",
+			"allsong" => $this->M_Song->get_all_song()
+		);
+
 		//config pagination
-		$config['base_url'] = base_url('album/page');  //site url
-		$config['total_rows'] = $this->db->count_all('t_album'); //total row
+		$config['base_url'] = base_url('allsong/page');  //site url
+		$config['total_rows'] = $this->db->count_all('t_lagu'); //total row
 		$config['per_page'] = 12;
 		$config['uri_segment'] = 3;
 		$choice = $config["total_rows"] / $config["per_page"];
@@ -46,10 +46,9 @@ class C_Album extends CI_Controller
 
 		$this->pagination->initialize($config);
 		$page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
-		$data['data'] = $this->M_Album->get_album($config['per_page'], $page);
+		$data['data'] = $this->M_Song->get_all_song($config['per_page'], $page);
 		$data['pagination'] = $this->pagination->create_links();
-		$data['new_r'] = $this->M_Album->get_album_new();
-		$this->load->view('main_page/V_Album',$data);
-    }
-
+		$data['new_s'] = $this->M_Song->get_new_song();
+		$this->load->view('main_page/V_All_Song',$data);
+	}
 }

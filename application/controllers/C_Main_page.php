@@ -13,7 +13,10 @@ class C_Main_page extends CI_Controller
     {
 		$data = array(
 			"title" => "TitTatTut Main",
-			"getPromo"		=> $this->M_Main_page->get_datapromo()
+			"getPromo"		=> $this->M_Main_page->get_datapromo(),
+			"getDiscover"	=> $this->M_Main_page->discover(),
+			"getnewrelease"	=> $this->M_Main_page->new_release(),
+			"featured"  	=> $this->M_Main_page->featured_album(),
 		);
         $this->load->view('main_page/V_Main',$data);
     }

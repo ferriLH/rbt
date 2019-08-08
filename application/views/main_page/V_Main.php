@@ -95,7 +95,7 @@ $this->load->view('main_page/parts/V_Navigation');
                     <div class="albums">
                         <div class="tittle-head">
                             <h3 class="tittle">New Releases <span class="new">New</span></h3>
-                            <a href="<?php echo base_url()?>"><h4 class="tittle">See all</h4></a>
+                            <a href="<?php echo base_url('allsong')?>"><h4 class="tittle">See all</h4></a>
                             <div class="clearfix"> </div>
                         </div>
                         <div class="col-md-3 content-grid">
@@ -106,87 +106,52 @@ $this->load->view('main_page/parts/V_Navigation');
                             <iframe src="https://player.vimeo.com/video/12985622"></iframe>
 
                         </div>
+
+						<?php if (isset($getnewrelease)) {
+						foreach ($getnewrelease as $dat) {
+						$id = $dat->id_lagu;
+							?>
                         <div class="col-md-3 content-grid">
-                            <a class="play-icon popup-with-zoom-anim" href="#small-dialog"><img src="<?php echo base_url()?>assets/main_page/images/v2.jpg" title="allbum-name"></a>
+                            <a class="play-icon popup-with-zoom-anim" href="#small-dialog"><img src="<?php echo base_url('assets/foto_album/')?><?php echo $dat->picture_album?>" title="<?php echo $dat->judul?>"></a>
 
                             <a class="button play-icon popup-with-zoom-anim" href="#small-dialog">Listen now</a>
                         </div>
-                        <div class="col-md-3 content-grid">
-                            <a class="play-icon popup-with-zoom-anim" href="#small-dialog"><img src="<?php echo base_url()?>assets/main_page/images/v3.jpg" title="allbum-name"></a>
 
-                            <a class="button play-icon popup-with-zoom-anim" href="#small-dialog">Listen now</a>
-                        </div>
-                        <div class="col-md-3 content-grid last-grid">
-                            <a class="play-icon popup-with-zoom-anim" href="#small-dialog"><img src="<?php echo base_url()?>assets/main_page/images/v4.jpg" title="allbum-name"></a>
+						<?php }?>
+							<?php
+							//if (++$x == 5) break;
+						}
+						else {
+							echo "<div>Kosong.</div>";
+						}
+						?>
 
-                            <a class="button play-icon popup-with-zoom-anim" href="#small-dialog">Listen now</a>
-                        </div>
-                        <div class="col-md-3 content-grid">
-                            <a class="play-icon popup-with-zoom-anim" href="#small-dialog"><img src="<?php echo base_url()?>assets/main_page/images/v5.jpg" title="allbum-name"></a>
-
-                            <a class="button play-icon popup-with-zoom-anim" href="#small-dialog">Listen now</a>
-                        </div>
-                        <div id="small-dialog" class="mfp-hide">
-                            <iframe src="https://player.vimeo.com/video/12985622"></iframe>
-
-                        </div>
-                        <div class="col-md-3 content-grid">
-                            <a class="play-icon popup-with-zoom-anim" href="#small-dialog"><img src="<?php echo base_url()?>assets/main_page/images/v6.jpg" title="allbum-name"></a>
-
-                            <a class="button play-icon popup-with-zoom-anim" href="#small-dialog">Listen now</a>
-                        </div>
-                        <div class="col-md-3 content-grid">
-                            <a class="play-icon popup-with-zoom-anim" href="#small-dialog"><img src="<?php echo base_url()?>assets/main_page/images/v7.jpg" title="allbum-name"></a>
-
-                            <a class="button play-icon popup-with-zoom-anim" href="#small-dialog">Listen now</a>
-                        </div>
-                        <div class="col-md-3 content-grid last-grid">
-                            <a class="play-icon popup-with-zoom-anim" href="#small-dialog"><img src="<?php echo base_url()?>assets/main_page/images/v8.jpg" title="allbum-name"></a>
-                            <a class="button play-icon popup-with-zoom-anim" href="#small-dialog">Listen now</a>
-                        </div>
                         <div class="clearfix"> </div>
                     </div>
+
                     <!--//End-albums-->
                     <!--//discover-view-->
 
                     <div class="albums second">
                         <div class="tittle-head">
                             <h3 class="tittle">Discover <span class="new">View</span></h3>
-                            <a href="<?php echo base_url()?>assets/main_page/index.html"><h4 class="tittle two">See all</h4></a>
+                            <a href="<?php echo base_url('allsong')?>"><h4 class="tittle two">See all</h4></a>
                             <div class="clearfix"> </div>
                         </div>
+				<?php if (isset($getDiscover)) {
+					foreach ($getDiscover as $dis) {
+							$id = $dis->id_lagu; ?>
                         <div class="col-md-3 content-grid">
-                            <a href="<?php echo base_url()?>assets/main_page/single.html"><img src="<?php echo base_url()?>assets/main_page/images/v11.jpg" title="allbum-name"></a>
-                            <div class="inner-info"><a href="<?php echo base_url()?>assets/main_page/single.html"><h5>Pop</h5></a></div>
+                            <a href="<?php echo base_url()?>assets/main_page/single.html"><img src="<?php echo base_url('assets/foto_album/')?><?php echo $dis->picture_album?>" title="allbum-name"></a>
+                            <div class="inner-info"><a href="<?php echo base_url()?>assets/main_page/single.html"><h5><?php echo $dis->genre?></h5></a></div>
                         </div>
-                        <div class="col-md-3 content-grid">
-                            <a href="<?php echo base_url()?>assets/main_page/single.html"><img src="<?php echo base_url()?>assets/main_page/images/v22.jpg" title="allbum-name"></a>
-                            <div class="inner-info"><a href="<?php echo base_url()?>assets/main_page/single.html"><h5>Pop</h5></a></div>
-                        </div>
-                        <div class="col-md-3 content-grid">
-                            <a href="<?php echo base_url()?>assets/main_page/single.html"><img src="<?php echo base_url()?>assets/main_page/images/v33.jpg" title="allbum-name"></a>
-                            <div class="inner-info"><a href="<?php echo base_url()?>assets/main_page/single.html"><h5>Pop</h5></a></div>
-                        </div>
-                        <div class="col-md-3 content-grid last-grid">
-                            <a href="<?php echo base_url()?>assets/main_page/single.html"><img src="<?php echo base_url()?>assets/main_page/images/v44.jpg" title="allbum-name"></a>
-                            <div class="inner-info"><a href="<?php echo base_url()?>assets/main_page/single.html"><h5>Pop</h5></a></div>
-                        </div>
-                        <div class="col-md-3 content-grid">
-                            <a href="<?php echo base_url()?>assets/main_page/single.html"><img src="<?php echo base_url()?>assets/main_page/images/v55.jpg" title="allbum-name"></a>
-                            <div class="inner-info"><a href="<?php echo base_url()?>assets/main_page/single.html"><h5>Pop</h5></a></div>
-                        </div>
-                        <div class="col-md-3 content-grid">
-                            <a href="<?php echo base_url()?>assets/main_page/single.html"><img src="<?php echo base_url()?>assets/main_page/images/v66.jpg" title="allbum-name"></a>
-                            <div class="inner-info"><a href="<?php echo base_url()?>assets/main_page/single.html"><h5>Pop</h5></a></div>
-                        </div>
-                        <div class="col-md-3 content-grid">
-                            <a href="<?php echo base_url()?>assets/main_page/single.html"><img src="<?php echo base_url()?>assets/main_page/images/v11.jpg" title="allbum-name"></a>
-                            <div class="inner-info"><a href="<?php echo base_url()?>assets/main_page/single.html"><h5>Pop</h5></a></div>
-                        </div>
-                        <div class="col-md-3 content-grid last-grid">
-                            <a href="<?php echo base_url()?>assets/main_page/single.html"><img src="<?php echo base_url()?>assets/main_page/images/v22.jpg" title="allbum-name"></a>
-                            <div class="inner-info"><a href="<?php echo base_url()?>assets/main_page/single.html"><h5>Pop</h5></a></div>
-                        </div>
+					<?php }?>
+					<?php
+				}
+				else {
+					echo "<div>Kosong.</div>";
+				}
+				?>
                         <div class="clearfix"> </div>
                     </div>
                     <!--//discover-view-->
@@ -454,84 +419,36 @@ $this->load->view('main_page/parts/V_Navigation');
             </div>
             <!--body wrapper start-->
 
-            <div class="review-slider">
-                <div class="tittle-head">
-                    <h3 class="tittle">Featured Albums <span class="new"> New</span></h3>
-                    <div class="clearfix"> </div>
-                </div>
-                <ul id="flexiselDemo1">
-                    <li>
-                        <a href="<?php echo base_url()?>assets/main_page/single.html"><img src="<?php echo base_url()?>assets/main_page/images/v1.jpg" alt=""/></a>
-                        <div class="slide-title"><h4>Adele21 </div>
-                        <div class="date-city">
-                            <h5>Jan-02-16</h5>
-                            <div class="buy-tickets">
-                                <a href="<?php echo base_url()?>assets/main_page/single.html">READ MORE</a>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="<?php echo base_url()?>assets/main_page/single.html"><img src="<?php echo base_url()?>assets/main_page/images/v2.jpg" alt=""/></a>
-                        <div class="slide-title"><h4>Adele21</h4></div>
-                        <div class="date-city">
-                            <h5>Jan-02-16</h5>
-                            <div class="buy-tickets">
-                                <a href="<?php echo base_url()?>assets/main_page/single.html">READ MORE</a>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="<?php echo base_url()?>assets/main_page/single.html"><img src="<?php echo base_url()?>assets/main_page/images/v3.jpg" alt=""/></a>
-                        <div class="slide-title"><h4>Shomlock</h4></div>
-                        <div class="date-city">
-                            <h5>Jan-02-16</h5>
-                            <div class="buy-tickets">
-                                <a href="<?php echo base_url()?>assets/main_page/single.html">READ MORE</a>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="<?php echo base_url()?>assets/main_page/single.html"><img src="<?php echo base_url()?>assets/main_page/images/v4.jpg" alt=""/></a>
-                        <div class="slide-title"><h4>Stuck on a feeling</h4></div>
-                        <div class="date-city">
-                            <h5>Jan-02-16</h5>
-                            <div class="buy-tickets">
-                                <a href="<?php echo base_url()?>assets/main_page/single.html">READ MORE</a>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="<?php echo base_url()?>assets/main_page/single.html"><img src="<?php echo base_url()?>assets/main_page/images/v5.jpg" alt=""/></a>
-                        <div class="slide-title"><h4>Ricky Martine </h4></div>
-                        <div class="date-city">
-                            <h5>Jan-02-16</h5>
-                            <div class="buy-tickets">
-                                <a href="<?php echo base_url()?>assets/main_page/single.html">READ MORE</a>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="<?php echo base_url()?>assets/main_page/single.html"><img src="<?php echo base_url()?>assets/main_page/images/v6.jpg" alt=""/></a>
-                        <div class="slide-title"><h4>Ellie Goluding </h4></div>
-                        <div class="date-city">
-                            <h5>Jan-02-16</h5>
-                            <div class="buy-tickets">
-                                <a href="<?php echo base_url()?>assets/main_page/single.html">READ MORE</a>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="<?php echo base_url()?>assets/main_page/single.html"><img src="<?php echo base_url()?>assets/main_page/images/v6.jpeg" alt=""/></a>
-                        <div class="slide-title"><h4>Fifty Shades </h4></div>
-                        <div class="date-city">
-                            <h5>Jan-02-16</h5>
-                            <div class="buy-tickets">
-                                <a href="<?php echo base_url()?>assets/main_page/single.html">READ MORE</a>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-                <script type="text/javascript">
+			<div class="review-slider">
+				<div class="tittle-head">
+					<h3 class="tittle">Featured Albums <span class="new"> New</span></h3>
+					<div class="clearfix"> </div>
+				</div>
+				<ul id="flexiselDemo1">
+					<?php if (isset($featured)) {
+						foreach ($featured as $alb) {
+							$id_r = $alb->id_album;
+							?>
+							<li>
+								<a href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/foto_album/')?><?php echo $alb->picture_album;?>" alt=""/></a>
+								<div class="slide-title"><h4><?php echo $alb->nama_album?></div>
+								<div class="date-city">
+									<h5><?php echo $alb->nama_artist?></h5>
+									<div class="buy-tickets">
+										<a href="<?php echo base_url('assets/main_page/')?>single.html">READ MORE</a>
+									</div>
+								</div>
+							</li>
+						<?php }?>
+						<?php
+						//if (++$x == 5) break;
+					}
+					else {
+						echo "<div>Kosong.</div>";
+					}
+					?>
+				</ul>
+				<script type="text/javascript">
                     $(window).load(function() {
 
                         $("#flexiselDemo1").flexisel({
@@ -557,14 +474,14 @@ $this->load->view('main_page/parts/V_Navigation');
                             }
                         });
                     });
-                </script>
-                <script type="text/javascript" src="<?php echo base_url()?>assets/main_page/js/jquery.flexisel.js"></script>
-            </div>
-        </div>
-        <div class="clearfix"></div>
-        <!--body wrapper end-->
-        <!-- /w3l-agile -->
-    </div>
+				</script>
+				<script type="text/javascript" src="<?php echo base_url('assets/main_page/')?>js/jquery.flexisel.js"></script>
+			</div>
+		</div>
+	<div class="clearfix"></div>
+	<!--body wrapper end-->
+	<!-- /w3l-agile-info -->
+	</div>
     <!--body wrapper end-->
 <?php
 $this->load->view('main_page/parts/V_Footer');

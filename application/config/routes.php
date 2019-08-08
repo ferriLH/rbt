@@ -110,6 +110,11 @@ $route['album']             		= 'C_Album';
 $route['album/page/(:any)']    		= 'C_Album';
 $route['album/page']    	    	= 'C_Album';
 
+$route['allsong']					= 'C_Song';
+$route['allsong/page/(:any)']		= 'C_Song';
+$route['allsong/page']				= 'C_Song';
+
+
 $route['contact/kirim']         	= 'C_Contact/kirim';
 
 $route['inbox']             		= 'C_Inbox';

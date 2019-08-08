@@ -23,8 +23,14 @@ $islogin =  $this->session->userdata('isLogin');
 <!--                <li><a href="--><?php //echo base_url()?><!--assets/main_page/radio.html"><i class="camera"></i> <span>Radio</span></a></li>-->
                 <li><a href="#" data-toggle="modal" data-target="#myModal1"><i class="fa fa-th"></i><span>Apps</span></a></li>
                 <li><a href="<?php echo base_url('artist')?>"><i class="lnr lnr-users"></i> <span>Artists</span></a></li>
-                <li><a href="<?php echo base_url('album')?>"><i class="lnr lnr-music-note"></i> <span>Albums</span></a></li>
-                <li class="menu-list"><a href="<?php echo base_url('album')?>"><i class="lnr lnr-indent-increase"></i> <span>Browser</span></a>
+                <li class="menu-list"><a href="<?php echo base_url('album')?>"><i class="lnr lnr-music-note"></i> <span>Song</span></a>
+					<ul class="sub-menu-list">
+						<li><a href="<?php echo base_url('allsong')?>">All Song</a></li>
+						<li><a href="<?php echo base_url('album')?>">Album</a></li>
+					</ul>
+				</li>
+
+				<li class="menu-list"><a href="<?php echo base_url('album')?>"><i class="lnr lnr-indent-increase"></i> <span>Browser</span></a>
                     <ul class="sub-menu-list">
                         <li><a href="<?php echo base_url()?>assets/main_page/browse.html">Artists</a> </li>
                         <li><a href="<?php echo base_url()?>assets/main_page/404.html">Services</a> </li>
