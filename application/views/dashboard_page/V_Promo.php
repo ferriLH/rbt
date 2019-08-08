@@ -2,6 +2,16 @@
 $this->load->view('dashboard_page/parts/V_Header');
 $this->load->view('dashboard_page/parts/V_Navigation');
 ?>
+<?php if($this->session->flashdata('sukses')){?>
+	<script>
+        Swal.fire(
+            'Berhasil !',
+            'You clicked the button!',
+            'success'
+        )
+	</script>
+<?php }?>
+
 	<!-- partial -->
 	<div class="main-panel">
 		<div class="content-wrapper">
@@ -52,7 +62,7 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 											<td><?php echo mb_strimwidth($p->periode,0,15,'...')?></td>
 											<td><img src="<?php echo base_url('assets/foto_promo/').$p->file_promo?>" alt="Photo Promo"></td>
 											<td>
-												<a href="<?php echo base_url('');echo "";?>" class="btn btn-warning btn-icon-split">
+												<a href="<?php echo base_url('update-promo/');echo $p->id_promo;?>" class="btn btn-warning btn-icon-split">
 													<span class="icon text-white">
 														<i class="mdi mdi-playlist-edit"></i>
 													</span>
