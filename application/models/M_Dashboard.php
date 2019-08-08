@@ -19,6 +19,11 @@ class M_Dashboard extends CI_Model
 		$this->db->from("t_admin");
 		$this->db->where("aktif",true);
 		$query = $this->db->get();
-		return $query->result();
+		return $query->result_array();
+	}
+	function update_bio($id,$data)
+	{
+		$this->db->where('id_admin',$id);
+		$this->db->update('t_admin',$data);
 	}
 }

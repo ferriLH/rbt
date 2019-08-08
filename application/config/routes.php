@@ -59,6 +59,7 @@ $route['signup/confirm']        	= 'C_Signup/confirm';
 
 $route['dashboard']             	= 'C_Dashboard';
 $route['dashboard/bio/(:any)']  	= 'C_Dashboard/bio/$1';
+$route['dashboard/bioAuth/(:any)']  = 'C_Dashboard/bioAuth/$1';
 
 $route['partner']             		= 'C_Partner';
 $route['artist/add']            	= 'C_Artist/addArtist';

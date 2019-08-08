@@ -98,13 +98,12 @@ $this->load->view('main_page/parts/V_Navigation');
                             <a href="<?php echo base_url('allsong')?>"><h4 class="tittle">See all</h4></a>
                             <div class="clearfix"> </div>
                         </div>
-                        <div class="col-md-3 content-grid">
-                            <a class="play-icon popup-with-zoom-anim" href="#small-dialog"><img src="<?php echo base_url()?>assets/main_page/images/v1.jpg" title="allbum-name"></a>
-                            <a class="button play-icon popup-with-zoom-anim" href="#small-dialog">Listen now</a>
-                        </div>
                         <div id="small-dialog" class="mfp-hide">
-                            <iframe src="https://player.vimeo.com/video/12985622"></iframe>
-
+							<audio controls>
+								<source src="horse.ogg" type="audio/ogg">
+								<source src="<?php echo base_url('assets/file_lagu/Blue Browne.mp3')?>" type="audio/mpeg">
+								Your browser does not support the audio element.
+							</audio>
                         </div>
 
 						<?php if (isset($getnewrelease)) {
