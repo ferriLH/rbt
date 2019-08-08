@@ -30,12 +30,12 @@ $islogin =  $this->session->userdata('isLogin');
 					</ul>
 				</li>
 
-				<li class="menu-list"><a href="<?php echo base_url('album')?>"><i class="lnr lnr-indent-increase"></i> <span>Browser</span></a>
-                    <ul class="sub-menu-list">
-                        <li><a href="<?php echo base_url()?>assets/main_page/browse.html">Artists</a> </li>
-                        <li><a href="<?php echo base_url()?>assets/main_page/404.html">Services</a> </li>
-                    </ul>
-                </li>
+<!--				<li class="menu-list"><a href="--><?php //echo base_url('album')?><!--"><i class="lnr lnr-indent-increase"></i> <span>Browser</span></a>-->
+<!--                    <ul class="sub-menu-list">-->
+<!--                        <li><a href="--><?php //echo base_url()?><!--assets/main_page/browse.html">Artists</a> </li>-->
+<!--                        <li><a href="--><?php //echo base_url()?><!--assets/main_page/404.html">Services</a> </li>-->
+<!--                    </ul>-->
+<!--                </li>-->
 <!--                <li><a href="--><?php //echo base_url()?><!--assets/main_page/blog.html"><i class="lnr lnr-book"></i><span>Blog</span></a></li>-->
 <!--                <li><a href="--><?php //echo base_url()?><!--assets/main_page/typography.html"><i class="lnr lnr-pencil"></i> <span>Typography</span></a></li>-->
                 <li class="menu-list"><a href="#"><i class="lnr lnr-heart"></i>  <span>My Favourities</span></a>
