@@ -14,4 +14,11 @@ class M_Dashboard extends CI_Model
 		$query = $this->db->get('t_pesan');
 		return $query->result();
 	}
+	function getBio($id){
+		$this->db->select("*");
+		$this->db->from("t_admin");
+		$this->db->where("aktif",true);
+		$query = $this->db->get();
+		return $query->result();
+	}
 }

@@ -21,12 +21,13 @@ class C_Dashboard extends CI_Controller
             redirect('login');
         }
     }
-    public function bio()
+    public function bio($id)
 	{
 		if ($this->session->userdata('isLogin') == TRUE) {
 			$data = array(
 				"title" => "Bio",
 				"getNewInbox"	=> $this->M_Dashboard->getNewInbox(),
+				"getBio" 		=> $this->M_Dashboard->getBio($id),
 			);
 			$this->load->view('dashboard_page/V_Bio',$data);
 		}else{

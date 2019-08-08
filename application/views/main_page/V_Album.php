@@ -38,7 +38,7 @@ $this->load->view('main_page/parts/V_Navigation');
 					$id = $dat->id_album;
 					?>
                 <div class="col-md-3 browse-grid">
-                    <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/foto_album')?><?php echo $dat->picture_album?>" title="allbum-name"></a>
+                    <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/foto_album/')?><?php echo $dat->picture_album?>" title="allbum-name"></a>
                     <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
                     <a class="sing" href="<?php echo base_url('assets/main_page/')?>single.html"><?php echo $dat->nama_album?></a>
                 </div>

@@ -27,7 +27,7 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 			<div class="col-md-12 stretch-card">
 				<div class="card">
 					<div class="card-header">
-						<h3>Biodata</h3>
+						<h3>Profile</h3>
 					</div>
 					<div class="card-body">
 
