@@ -45,6 +45,7 @@ class M_Main_page extends CI_Model
 		$this->db->select('*');
 		$this->db->from('t_album');
 		$this->db->join('t_artist','t_artist.id_artists=t_album.artist_id');
+		$this->db->where('t_album.aktif',TRUE);
 		$this->db->order_by('id_album','DESC');
 		$this->db->limit('10');
 		return $this->db->get()->result();

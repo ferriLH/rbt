@@ -220,19 +220,23 @@ class C_Music extends CI_Controller
 			);
 		}
 		//form validation
-		$this->form_validation->set_rules('judul_lagu', 	'Judul Lagu', 		'required');
-		$this->form_validation->set_rules('harga', 			'Harga', 			'required');
-		$this->form_validation->set_rules('xl',				'Kode Registrasi XL',	'required');
-		$this->form_validation->set_rules('tsel',			'Kode Registrasi TSEL',	'required');
+		$this->form_validation->set_rules('judul_lagu', 	'Judul Lagu', 				'required');
+		$this->form_validation->set_rules('harga_xl', 		'Harga XL', 				'required');
+		$this->form_validation->set_rules('harga_tsel', 	'Harga TSEL', 				'required');
+		$this->form_validation->set_rules('harga_indosat', 	'Harga INDOSAT', 			'required');
+		$this->form_validation->set_rules('xl',				'Kode Registrasi XL',		'required');
+		$this->form_validation->set_rules('tsel',			'Kode Registrasi TSEL',		'required');
 		$this->form_validation->set_rules('indosat',		'Kode Registrasi INDOSAT',	'required');
-		$this->form_validation->set_rules('album', 			'album', 			'required');
-		$this->form_validation->set_rules('genre', 			'genre', 			'required');
+		$this->form_validation->set_rules('album', 			'album', 					'required');
+		$this->form_validation->set_rules('genre', 			'genre', 					'required');
 		if ($this->form_validation->run() == FALSE) {
 			$this->session->set_flashdata('failed', 'gagal');
 			$this->load->view('dashboard_page/V_Add_Song', $data);
 		} else {
 			$d['judul'] 		= ($this->input->post('judul_lagu'));
-			$d['harga'] 		= ($this->input->post('harga'));
+			$d['harga_xl'] 		= ($this->input->post('harga_xl'));
+			$d['harga_tsel']	= ($this->input->post('harga_tsel'));
+			$d['harga_indosat'] = ($this->input->post('harga_indosat'));
 			$d['kode_xl'] 		= ($this->input->post('xl'));
 			$d['kode_tsel'] 	= ($this->input->post('tsel'));
 			$d['kode_indosat'] 	= ($this->input->post('indosat'));
@@ -240,17 +244,19 @@ class C_Music extends CI_Controller
 			$d['genre_id'] 		= ($this->input->post('genre'));
 
 			//upload protocol
-			if (!empty($_FILES['file_lagu']['name'])) {
-				$config['upload_path'] = 'assets/file_lagu/';
-				$config['allowed_types'] = 'mp3';
-				$config['file_name'] = $_FILES['file_lagu']['name'];
+			if (!empty($_FILES["file_lagu"]["name"])) {
+				$config['upload_path'] = "assets/file_lagu/";
+				$config['allowed_types'] = "mp3";
+				$remove_these = array(' ','`','"','\'','\\','/');
+				$newname = str_replace($remove_these, '_', $_FILES['file_lagu']['name']);
+				$config['file_name'] = $newname;
 				$config['max_size'] = 10000;
 				//load library
 				$this->load->library('upload', $config);
 				$this->upload->initialize($config);
-				if ($this->upload->do_upload('file_lagu')) {
+				if ($this->upload->do_upload("file_lagu")) {
 					$uploadData = $this->upload->data();
-					$namalagu = $uploadData['file_name'];
+					$namalagu = $uploadData["file_name"];
 				} else {
 					$namalagu = '';
 				}
@@ -401,7 +407,9 @@ class C_Music extends CI_Controller
 
 			//form validation
 			$this->form_validation->set_rules('judul_lagu', 	'Judul Lagu', 		'required');
-			$this->form_validation->set_rules('harga', 			'Harga', 			'required');
+			$this->form_validation->set_rules('harga_xl', 		'Harga', 			'required');
+			$this->form_validation->set_rules('harga_tsel', 	'Harga', 			'required');
+			$this->form_validation->set_rules('harga_isat', 	'Harga', 			'required');
 			$this->form_validation->set_rules('xl',				'Kode Registrasi XL',	'required');
 			$this->form_validation->set_rules('tsel',			'Kode Registrasi TSEL',	'required');
 			$this->form_validation->set_rules('indosat',		'Kode Registrasi INDOSAT',	'required');
@@ -413,17 +421,19 @@ class C_Music extends CI_Controller
 			} else {
 				$song_old = $this->M_Music->getSongOld($id);
 				//upload protocol
-				if (!empty($_FILES['file_lagu']['name'])) {
-					$config['upload_path'] = 'assets/file_lagu/';
-					$config['allowed_types'] = 'mp3';
-					$config['file_name'] = $_FILES['file_lagu']['name'];
+				if (!empty($_FILES["file_lagu"]["name"])) {
+					$config['upload_path'] = "assets/file_lagu/";
+					$config['allowed_types'] = "mp3";
+					$remove_these = array(' ','`','"','\'','\\','/');
+					$newname = str_replace($remove_these, '_', $_FILES['file_lagu']['name']);
+					$config['file_name'] = $newname;
 					$config['max_size'] = 10000;
 					//load library
 					$this->load->library('upload', $config);
 					$this->upload->initialize($config);
-					if ($this->upload->do_upload('file_lagu')) {
+					if ($this->upload->do_upload("file_lagu")) {
 						$uploadData = $this->upload->data();
-						$namalagu = $uploadData['file_name'];
+						$namalagu = $uploadData["file_name"];
 						unlink( FCPATH . "assets/file_lagu/" .$song_old);
 					} else {
 						$namalagu = '';
@@ -431,12 +441,13 @@ class C_Music extends CI_Controller
 				} else {
 					$namalagu = '';
 				}
-
 				if($namalagu==''){
 					$d['album_id'] 		= ($this->input->post('album'));
 					$d['genre_id'] 		= ($this->input->post('genre'));
 					$d['judul'] 		= ($this->input->post('judul_lagu'));
-					$d['harga'] 		= ($this->input->post('harga'));
+					$d['harga_xl'] 		= ($this->input->post('harga_xl'));
+					$d['harga_tsel'] 	= ($this->input->post('harga_tsel'));
+					$d['harga_indosat'] = ($this->input->post('harga_isat'));
 					$d['kode_xl'] 		= ($this->input->post('xl'));
 					$d['kode_tsel']		= ($this->input->post('tsel'));
 					$d['kode_indosat']	= ($this->input->post('indosat'));
@@ -444,7 +455,9 @@ class C_Music extends CI_Controller
 					$d['album_id'] 		= ($this->input->post('album'));
 					$d['genre_id'] 		= ($this->input->post('genre'));
 					$d['judul'] 		= ($this->input->post('judul_lagu'));
-					$d['harga'] 		= ($this->input->post('harga'));
+					$d['harga_xl'] 		= ($this->input->post('harga_xl'));
+					$d['harga_tsel'] 	= ($this->input->post('harga_tsel'));
+					$d['harga_indosat'] = ($this->input->post('harga_isat'));
 					$d['file'] 			= $namalagu;
 					$d['kode_xl'] 		= ($this->input->post('xl'));
 					$d['kode_tsel']		= ($this->input->post('tsel'));

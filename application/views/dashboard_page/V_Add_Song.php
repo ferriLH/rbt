@@ -55,8 +55,16 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 								<input type="text" class="form-control" id="judul_lagu" placeholder="Judul Lagu" name="judul_lagu">
 							</div>
 							<div class="form-group">
-								<label for="bio">harga</label>
-								<input type="number" placeholder="Harga" class="form-control" id="harga" name="harga">
+								<label for="bio">Harga XL</label>
+								<input type="number" placeholder="Harga XL" class="form-control" id="harga_xl" name="harga_xl">
+							</div>
+							<div class="form-group">
+								<label for="bio">Harga TSEL</label>
+								<input type="number" placeholder="Harga TSEL" class="form-control" id="harga_tsel" name="harga_tsel">
+							</div>
+							<div class="form-group">
+								<label for="bio">Harga INDOSAT</label>
+								<input type="number" placeholder="Harga INDOSAT" class="form-control" id="harga_indosat" name="harga_indosat">
 							</div>
 							<div class="form-group">
 								<label for="kode_registration">Kode Registrasi XL</label>

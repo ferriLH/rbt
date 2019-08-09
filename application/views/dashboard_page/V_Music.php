@@ -58,203 +58,213 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 							<div class="tab-content py-0 px-0">
 								<div class="tab-pane fade <?php if ($flag=='song'||empty($flag)) {echo 'show active';}else{echo '';}?>" id="song" role="tabpanel" aria-labelledby="unread-tab">
 									<div class="d-flex flex-wrap justify-content-xl-between" style="padding: 10px 10px">
-										<table id="table-song" class="table table-hover table-striped" >
-											<thead>
-											<tr>
-												<th>Artist</th>
-												<th>Album</th>
-												<th>Judul</th>
-												<th>Harga</th>
-												<th>Genre</th>
-												<th>XL</th>
-												<th>TSEL</th>
-												<th>INDOSAT</th>
-												<th>Action</th>
-											</tr>
-											</thead>
-											<tbody>
-											<?php
-											foreach ($getSong as $s){?>
+										<div class="table-responsive">
+											<table id="table-song" class="table table-hover table-striped" >
+												<thead>
 												<tr>
-													<td><?php echo $s->nama_artist?></td>
-													<td><?php echo $s->nama_album?></td>
-													<td><?php echo $s->judul?></td>
-													<td><?php echo "Rp. ".$s->harga?></td>
-													<td><?php echo $s->genre?></td>
-													<td><?php echo $s->kode_xl?></td>
-													<td><?php echo $s->kode_tsel?></td>
-													<td><?php echo $s->kode_indosat?></td>
-													<td>
-														<a href="<?php echo base_url('update-song/');echo $s->id_lagu;?>" class="btn btn-warning btn-icon-split">
+													<th>Artist</th>
+													<th>Album</th>
+													<th>Judul</th>
+													<th>Harga XL</th>
+													<th>Harga TSEL</th>
+													<th>Harga INDOSAT</th>
+													<th>Genre</th>
+													<th>XL</th>
+													<th>TSEL</th>
+													<th>INDOSAT</th>
+													<th>Action</th>
+												</tr>
+												</thead>
+												<tbody>
+												<?php
+												foreach ($getSong as $s){?>
+													<tr>
+														<td><?php echo $s->nama_artist?></td>
+														<td><?php echo $s->nama_album?></td>
+														<td><?php echo $s->judul?></td>
+														<td><?php echo "Rp. ".$s->harga_xl?></td>
+														<td><?php echo "Rp. ".$s->harga_tsel?></td>
+														<td><?php echo "Rp. ".$s->harga_indosat?></td>
+														<td><?php echo $s->genre?></td>
+														<td><?php echo $s->kode_xl?></td>
+														<td><?php echo $s->kode_tsel?></td>
+														<td><?php echo $s->kode_indosat?></td>
+														<td>
+															<a href="<?php echo base_url('update-song/');echo $s->id_lagu;?>" class="btn btn-warning btn-icon-split">
 															<span class="icon text-white">
 																<i class="mdi mdi-playlist-edit"></i>
 															</span>
-															<span class="text">Edit</span>
-														</a>
-														<button data-target="<?php echo base_url('');echo "delete-song/".$s->id_lagu;?>"
-																class="btn btn-danger btn-icon-split delete-song">
-															<span class="icon text-white"><i class="mdi mdi-delete"></i></span>
-															<span class="text">Hapus</span>
-														</button>
-													</td>
-												</tr>
-												<?php
-											}
-											?>
-											<script>
-                                                $(function() {
-                                                    $('.delete-song').click(function(e) {
-                                                        e.preventDefault();
-                                                        var href = $(this).attr('data-target');
-                                                        Swal.fire({
-                                                            title: 'Are you sure?',
-                                                            text: "You will delete this forever!",
-                                                            type: 'warning',
-                                                            showCancelButton: true,
-                                                            confirmButtonColor: '#3085d6',
-                                                            cancelButtonColor: '#d33',
-                                                            confirmButtonText: "Yes, i'm sure!"
-                                                        }).then((result) => {
-                                                            if (result.value) {
-                                                                Swal.fire(
-                                                                    'Deleted!',
-                                                                    'Your file has been deleted.',
-                                                                    'success'
-                                                                )
-                                                                document.location.href = href;
-                                                            }
-                                                        })
+																<span class="text">Edit</span>
+															</a>
+															<button data-target="<?php echo base_url('');echo "delete-song/".$s->id_lagu;?>"
+																	class="btn btn-danger btn-icon-split delete-song">
+																<span class="icon text-white"><i class="mdi mdi-delete"></i></span>
+																<span class="text">Hapus</span>
+															</button>
+														</td>
+													</tr>
+													<?php
+												}
+												?>
+												<script>
+                                                    $(function() {
+                                                        $('.delete-song').click(function(e) {
+                                                            e.preventDefault();
+                                                            var href = $(this).attr('data-target');
+                                                            Swal.fire({
+                                                                title: 'Are you sure?',
+                                                                text: "You will delete this forever!",
+                                                                type: 'warning',
+                                                                showCancelButton: true,
+                                                                confirmButtonColor: '#3085d6',
+                                                                cancelButtonColor: '#d33',
+                                                                confirmButtonText: "Yes, i'm sure!"
+                                                            }).then((result) => {
+                                                                if (result.value) {
+                                                                    Swal.fire(
+                                                                        'Deleted!',
+                                                                        'Your file has been deleted.',
+                                                                        'success'
+                                                                    )
+                                                                    document.location.href = href;
+                                                                }
+                                                            })
+                                                        });
                                                     });
-                                                });
-											</script>
-											</tbody>
-										</table>
+												</script>
+												</tbody>
+											</table>
+										</div>
 									</div>
 								</div>
 								<div class="tab-pane fade <?php if ($flag=='album') {echo 'show active';}else{echo '';}?>" id="album" role="tabpanel" aria-labelledby="read-tab">
 									<div class="d-flex flex-wrap justify-content-xl-between" style="padding: 10px 10px">
-										<table id="table-album" class="table table-hover table-striped" >
-											<thead>
-											<tr>
-												<th>Artist</th>
-												<th>Nama Album</th>
-												<th>Picture Album</th>
-												<th>Action</th>
-											</tr>
-											</thead>
-											<tbody>
-											<?php
-											foreach ($getAlbum as $a){?>
+										<div class="table-responsive">
+											<table id="table-album" class="table table-hover table-striped" >
+												<thead>
 												<tr>
-													<td><?php echo $a->nama_artist?></td>
-													<td><?php echo $a->nama_album?></td>
-													<td><img src="<?php echo base_url('assets/foto_album/').$a->picture_album?>" alt="Picture Album"></td>
-													<td>
-														<a href="<?php echo base_url('update-album/');echo $a->id_album;?>" class="btn btn-warning btn-icon-split">
+													<th>Artist</th>
+													<th>Nama Album</th>
+													<th>Picture Album</th>
+													<th>Action</th>
+												</tr>
+												</thead>
+												<tbody>
+												<?php
+												foreach ($getAlbum as $a){?>
+													<tr>
+														<td><?php echo $a->nama_artist?></td>
+														<td><?php echo $a->nama_album?></td>
+														<td><img src="<?php echo base_url('assets/foto_album/').$a->picture_album?>" alt="Picture Album"></td>
+														<td>
+															<a href="<?php echo base_url('update-album/');echo $a->id_album;?>" class="btn btn-warning btn-icon-split">
 															<span class="icon text-white">
 																<i class="mdi mdi-playlist-edit"></i>
 															</span>
-															<span class="text">Edit</span>
-														</a>
-														<button data-target="<?php echo base_url('');echo "delete-album/".$a->id_album;?>"
-																class="btn btn-danger btn-icon-split delete-album">
-															<span class="icon text-white"><i class="mdi mdi-delete"></i></span>
-															<span class="text">Hapus</span>
-														</button>
-													</td>
-												</tr>
-												<?php
-											}
-											?>
-											<script>
-                                                $(function() {
-                                                    $('.delete-album').click(function(e) {
-                                                        e.preventDefault();
-                                                        var href = $(this).attr('data-target');
-                                                        Swal.fire({
-                                                            title: 'Are you sure?',
-                                                            text: "You will delete this forever!",
-                                                            type: 'warning',
-                                                            showCancelButton: true,
-                                                            confirmButtonColor: '#3085d6',
-                                                            cancelButtonColor: '#d33',
-                                                            confirmButtonText: "Yes, i'm sure!"
-                                                        }).then((result) => {
-                                                            if (result.value) {
-                                                                Swal.fire(
-                                                                    'Deleted!',
-                                                                    'Your file has been deleted.',
-                                                                    'success'
-                                                                )
-                                                                document.location.href = href;
-                                                            }
-                                                        })
+																<span class="text">Edit</span>
+															</a>
+															<button data-target="<?php echo base_url('');echo "delete-album/".$a->id_album;?>"
+																	class="btn btn-danger btn-icon-split delete-album">
+																<span class="icon text-white"><i class="mdi mdi-delete"></i></span>
+																<span class="text">Hapus</span>
+															</button>
+														</td>
+													</tr>
+													<?php
+												}
+												?>
+												<script>
+                                                    $(function() {
+                                                        $('.delete-album').click(function(e) {
+                                                            e.preventDefault();
+                                                            var href = $(this).attr('data-target');
+                                                            Swal.fire({
+                                                                title: 'Are you sure?',
+                                                                text: "You will delete this forever!",
+                                                                type: 'warning',
+                                                                showCancelButton: true,
+                                                                confirmButtonColor: '#3085d6',
+                                                                cancelButtonColor: '#d33',
+                                                                confirmButtonText: "Yes, i'm sure!"
+                                                            }).then((result) => {
+                                                                if (result.value) {
+                                                                    Swal.fire(
+                                                                        'Deleted!',
+                                                                        'Your file has been deleted.',
+                                                                        'success'
+                                                                    )
+                                                                    document.location.href = href;
+                                                                }
+                                                            })
+                                                        });
                                                     });
-                                                });
-											</script>
-											</tbody>
-										</table>
+												</script>
+												</tbody>
+											</table>
+										</div>
 									</div>
 								</div>
 								<div class="tab-pane fade <?php if ($flag=='genre') {echo 'show active';}else{echo '';}?>" id="genre" role="tabpanel" aria-labelledby="read-tab">
 									<div class="d-flex flex-wrap justify-content-xl-between" style="padding: 10px 10px">
-										<table id="table-genre" class="table table-hover table-striped" >
-											<thead>
-											<tr>
-												<th>Genre</th>
-												<th>Action</th>
-											</tr>
-											</thead>
-											<tbody>
-											<?php
-											foreach ($getGenre as $g){?>
+										<div class="table-responsive">
+											<table id="table-genre" class="table table-hover table-striped" >
+												<thead>
 												<tr>
-													<td><?php echo $g->genre?></td>
-													<td>
-														<a href="<?php echo base_url('update-genre/');echo $g->id;?>" class="btn btn-warning btn-icon-split">
+													<th>Genre</th>
+													<th>Action</th>
+												</tr>
+												</thead>
+												<tbody>
+												<?php
+												foreach ($getGenre as $g){?>
+													<tr>
+														<td><?php echo $g->genre?></td>
+														<td>
+															<a href="<?php echo base_url('update-genre/');echo $g->id;?>" class="btn btn-warning btn-icon-split">
 															<span class="icon text-white">
 																<i class="mdi mdi-playlist-edit"></i>
 															</span>
-															<span class="text">Edit</span>
-														</a>
-														<button data-target="<?php echo base_url('');echo "delete-genre/".$g->id;?>"
-																class="btn btn-danger btn-icon-split delete-genre">
-															<span class="icon text-white"><i class="mdi mdi-delete"></i></span>
-															<span class="text">Hapus</span>
-														</button>
-													</td>
-												</tr>
-												<?php
-											}
-											?>
-											<script>
-                                                $(function() {
-                                                    $('.delete-genre').click(function(e) {
-                                                        e.preventDefault();
-                                                        var href = $(this).attr('data-target');
-                                                        Swal.fire({
-                                                            title: 'Are you sure?',
-                                                            text: "You will delete this forever!",
-                                                            type: 'warning',
-                                                            showCancelButton: true,
-                                                            confirmButtonColor: '#3085d6',
-                                                            cancelButtonColor: '#d33',
-                                                            confirmButtonText: "Yes, i'm sure!"
-                                                        }).then((result) => {
-                                                            if (result.value) {
-                                                                Swal.fire(
-                                                                    'Deleted!',
-                                                                    'Your file has been deleted.',
-                                                                    'success'
-                                                                )
-                                                                document.location.href = href;
-                                                            }
-                                                        })
+																<span class="text">Edit</span>
+															</a>
+															<button data-target="<?php echo base_url('');echo "delete-genre/".$g->id;?>"
+																	class="btn btn-danger btn-icon-split delete-genre">
+																<span class="icon text-white"><i class="mdi mdi-delete"></i></span>
+																<span class="text">Hapus</span>
+															</button>
+														</td>
+													</tr>
+													<?php
+												}
+												?>
+												<script>
+                                                    $(function() {
+                                                        $('.delete-genre').click(function(e) {
+                                                            e.preventDefault();
+                                                            var href = $(this).attr('data-target');
+                                                            Swal.fire({
+                                                                title: 'Are you sure?',
+                                                                text: "You will delete this forever!",
+                                                                type: 'warning',
+                                                                showCancelButton: true,
+                                                                confirmButtonColor: '#3085d6',
+                                                                cancelButtonColor: '#d33',
+                                                                confirmButtonText: "Yes, i'm sure!"
+                                                            }).then((result) => {
+                                                                if (result.value) {
+                                                                    Swal.fire(
+                                                                        'Deleted!',
+                                                                        'Your file has been deleted.',
+                                                                        'success'
+                                                                    )
+                                                                    document.location.href = href;
+                                                                }
+                                                            })
+                                                        });
                                                     });
-                                                });
-											</script>
-											</tbody>
-										</table>
+												</script>
+												</tbody>
+											</table>
+										</div>
 									</div>
 								</div>
 							</div>
