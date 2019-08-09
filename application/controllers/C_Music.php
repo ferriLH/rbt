@@ -397,14 +397,6 @@ class C_Music extends CI_Controller
 	function updateSongAuth($id)
 	{
 		if ($this->session->userdata('isLogin') == TRUE) {
-			$data = array(
-				"title" => "Album",
-				"getNewInbox" => $this->M_Dashboard->getNewInbox(),
-				"getSong" => $this->M_Music->getSong(),
-				"getAlbum" => $this->M_Music->getAlbum(),
-				"getGenre" => $this->M_Music->getGenre(),
-			);
-
 			//form validation
 			$this->form_validation->set_rules('judul_lagu', 	'Judul Lagu', 		'required');
 			$this->form_validation->set_rules('harga_xl', 		'Harga', 			'required');
@@ -427,7 +419,7 @@ class C_Music extends CI_Controller
 					$remove_these = array(' ','`','"','\'','\\','/');
 					$newname = str_replace($remove_these, '_', $_FILES['file_lagu']['name']);
 					$config['file_name'] = $newname;
-					$config['max_size'] = 10000;
+					$config['max_size'] = 12000;
 					//load library
 					$this->load->library('upload', $config);
 					$this->upload->initialize($config);
@@ -441,6 +433,7 @@ class C_Music extends CI_Controller
 				} else {
 					$namalagu = '';
 				}
+				echo $newname;
 				if($namalagu==''){
 					$d['album_id'] 		= ($this->input->post('album'));
 					$d['genre_id'] 		= ($this->input->post('genre'));
@@ -465,6 +458,13 @@ class C_Music extends CI_Controller
 				}
 				$this->M_Music->update_song($id,$d);
 				$this->session->set_flashdata('sukses', 'sukses');
+				$data = array(
+					"title" => "Album",
+					"getNewInbox" => $this->M_Dashboard->getNewInbox(),
+					"getSong" => $this->M_Music->getSong(),
+					"getAlbum" => $this->M_Music->getAlbum(),
+					"getGenre" => $this->M_Music->getGenre(),
+				);
 				redirect('music/song');
 			}
 		}else{

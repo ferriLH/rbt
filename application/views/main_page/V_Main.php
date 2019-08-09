@@ -108,32 +108,45 @@ $this->load->view('main_page/parts/V_Navigation');
 							<div id="<?php echo $id?>" class="modal fade" role="dialog" tabindex="-1">
 								<div class="modal-dialog">
 									<div class="modal-content">
-									<div class="modal-header">
-									<div class="modal-body">
-										<div class="col-sm-4"style="min-height: 200px">
-											<img src="<?php echo base_url('assets/foto_album/')?><?php echo $dat->picture_album;?>" style="width: 100%; height: 100%; max-width: 150px; max-height: 150px;">
+										<div class="modal-header">
 										</div>
-										<div class="col-sm-8">
-											<p style="text-align: left; width: 100%; font-size: large; font-weight: bold"><?php echo $dat->judul?></p>
-											<p style="text-align: left; width: 100%; font-size: medium; font-style: italic;"><?php echo $dat->nama_artist?></p>
+										<div class="modal-body">
+											<div class="col-sm-4"style="min-height: 150px;max-height: 150px;">
+												<img src="<?php echo base_url('assets/foto_album/')?><?php echo $dat->picture_album;?>" style="width: 100%; height: 100%; max-width: 150px; max-height: 150px;">
+											</div>
+											<div class="col-sm-8">
+												<p style="text-align: left; width: 100%; font-size: large; font-weight: bold"><?php echo $dat->judul?></p>
+												<p style="text-align: left; width: 100%; font-size: medium; font-style: italic;"><?php echo $dat->nama_artist?></p>
+												<audio controls>
+													<source src="<?php echo base_url('assets/file_lagu/')?><?php echo $dat->file?>" type="audio/mpeg">
+													Your browser does not support the audio element.
+												</audio>
+												<h3 style="text-align: left; font-style: italic">Cara Registrasi:</h3>
+											</div>
+											<div class="col-sm-4">
+												<p style="text-align: left">XL</p>
+												<p><?php echo "Kode : ".$dat->kode_xl?></p>
+												<p style="text-align: left">Harga : Rp. <?php echo $dat->harga_xl?></p>
 
-											<audio controls>
-												<source src="<?php echo base_url('assets/file_lagu/')?><?php echo $dat->file?>" type="audio/mpeg">
-												Your browser does not support the audio element.
-											</audio>
-											<h3 style="text-align: left; font-style: italic">Cara Registrasi:</h3>
-											<p style="text-align: left">Kode Registrasi XL 			: <?php echo $dat->kode_xl?></p>
-											<p style="text-align: left">Kode Registrasi Telkomsel 	: <?php echo $dat->kode_tsel?></p>
-											<p style="text-align: left">Kode Registrasi Indosat 	: <?php echo $dat->kode_indosat?></p>
-											<h3 style="text-align: left">Harga : Rp. <?php echo $dat->harga?></h3>
+											</div>
+											<div class="col-sm-4">
+												<p style="text-align: left">Telkomsel </p>
+												<p><?php echo "Kode : ".$dat->kode_tsel?></p>
+												<p style="text-align: left">Harga : Rp. <?php echo $dat->harga_tsel?></p>
+
+											</div>
+											<div class="col-sm-4">
+												<p style="text-align: left">Indosat</p>
+												<p><?php echo "Kode : ".$dat->kode_indosat?></p>
+												<p style="text-align: left">Harga : Rp. <?php echo $dat->harga_indosat?></p>
+
+											</div>
 										</div>
-									</div>
-									<div class="modal-footer">
-										<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+										</div>
 									</div>
 								</div>
-									</div>
-							</div>
 							</div>
 						<!--end Modal-->
                         <div class="col-md-3 content-grid">

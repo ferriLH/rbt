@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 09, 2019 at 09:03 AM
+-- Generation Time: Aug 09, 2019 at 10:13 AM
 -- Server version: 10.3.16-MariaDB
 -- PHP Version: 7.3.7
 
@@ -63,7 +63,8 @@ CREATE TABLE `t_album` (
 
 INSERT INTO `t_album` (`id_album`, `artist_id`, `nama_album`, `picture_album`, `aktif`) VALUES
 (8, 20, 'Yes!', 'jason_mraz-yes.jpg', 1),
-(9, 21, 'As You Were', 'as_you_were.jpg', 1);
+(9, 21, 'As You Were', 'as_you_were.jpg', 1),
+(10, 22, 'In A Perfect World', 'in-a-perfect-world.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -86,7 +87,8 @@ CREATE TABLE `t_artist` (
 
 INSERT INTO `t_artist` (`id_artists`, `partner_id`, `nama_artist`, `bio`, `picture_artist`, `aktif`) VALUES
 (20, 1, 'Jason Mraz', 'Jason Mraz adalah penyanyi dan penulis lagu Amerika Serikat. Ia lahir dan dibesarkan di Mechanicsville, Virginia.', 'jason_mraz.jpg', 1),
-(21, 1, 'Liam Gallagher', 'William \"John Paul\" Gallagher di Burnage, Manchester merupakan vokalis dari Grup Musik Inggris Oasis. Saat kecil Liam adalah anak yang mengalami kekerasan dalam rumah tangga oleh ayahnya, begitu pula dengan kakaknya Noel Gallagher dan Paul. Karena inilah sikapnya hingga sekarang kadang-kadang suka meresahkan.', 'liam.jpg', 1);
+(21, 1, 'Liam Gallagher', 'William \"John Paul\" Gallagher di Burnage, Manchester merupakan vokalis dari Grup Musik Inggris Oasis. Saat kecil Liam adalah anak yang mengalami kekerasan dalam rumah tangga oleh ayahnya, begitu pula dengan kakaknya Noel Gallagher dan Paul. Karena inilah sikapnya hingga sekarang kadang-kadang suka meresahkan.', 'liam.jpg', 1),
+(22, 1, 'Kodaline', 'Kodaline adalah grup musik asal Irlandia. Grup musik ini dikenal sebagai 21 Demands, sebelum diganti menjadi Kodaline pada tahun 2012. Steve Garrigan dan Mark Prendergast dibesarkan di Swords, Dublin dan telah berteman sejak kecil.', 'kodaline.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -567,8 +569,11 @@ INSERT INTO `t_lagu` (`id_lagu`, `album_id`, `genre_id`, `judul`, `harga_xl`, `h
 (38, 8, 299, 'Shine', 1000, 1100, 1200, 'Shine.mp3', 'JM14_XL', 'JM14_TSEL', 'JM14_ISAT', 1),
 (49, 9, 348, 'Paper Crown', 1500, 1300, 1000, '04_Paper_Crown.mp3', 'LG4_XL', 'LG4_TSEL', 'LG4_ISAT', 1),
 (50, 9, 348, 'Greedy Soul', 1500, 1400, 1300, '03_Greedy_Soul.mp3', 'LG3_XL', 'LG3_TSEL', 'LG3_ISAT', 1),
-(51, 9, 348, 'For What It\'s Worth', 1100, 1200, 1300, '', 'LG5_XL', 'LG5_TSEL', 'LG5_ISAT', 1),
-(52, 9, 348, 'Wall Of Glass', 1200, 1300, 1400, '02_Bold.mp3', 'LG2_XL', 'LG2_TSEL', 'LG2_ISAT', 1);
+(51, 9, 348, 'When I\'m Need', 1100, 1200, 1300, '06__When_I_m_In_Need_-_(www_SongsLover_club).mp3', 'LG6_XL', 'LG6_TSEL', 'LG6_ISAT', 1),
+(52, 9, 348, 'Wall Of Glass', 1200, 1300, 1400, '02_Bold.mp3', 'LG2_XL', 'LG2_TSEL', 'LG2_ISAT', 1),
+(53, 10, 209, 'High Hopes', 1200, 1300, 1100, 'Kodaline_-_High_Hopes_(Official_Music_Video).mp3', 'KDL1_XL', 'KDL1_TSEL', 'KDL1_ISAT', 1),
+(54, 10, 209, 'All I Want', 1500, 1200, 1000, 'Kodaline_-_All_I_Want.mp3', 'KDL2_XL', 'KDL2_TSEL', 'KDL2_ISAT', 1),
+(55, 9, 348, 'I\'ve All I Need', 1500, 1200, 1000, '12__I_ve_All_I_Need_-_(www_SongsLover_club).mp3', 'LG12_XL', 'LG12_TSEL', 'LG12_ISAT', 1);
 
 -- --------------------------------------------------------
 
@@ -713,13 +718,13 @@ ALTER TABLE `t_admin`
 -- AUTO_INCREMENT for table `t_album`
 --
 ALTER TABLE `t_album`
-  MODIFY `id_album` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_album` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `t_artist`
 --
 ALTER TABLE `t_artist`
-  MODIFY `id_artists` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id_artists` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `t_genre`
@@ -731,7 +736,7 @@ ALTER TABLE `t_genre`
 -- AUTO_INCREMENT for table `t_lagu`
 --
 ALTER TABLE `t_lagu`
-  MODIFY `id_lagu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
+  MODIFY `id_lagu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT for table `t_partner`

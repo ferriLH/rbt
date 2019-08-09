@@ -92,7 +92,7 @@
 										$id_a = $a->id_artists;
 										?>
 										<li>
-											<a href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/<?php echo $a->picture_artist;?>" alt=""/></a>
+											<a href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/foto_artis/')?><?php echo $a->picture_artist;?>" alt=""/></a>
 											<div class="slide-title"><h4><?php echo $a->nama_artist?></div>
 											<div class="date-city">
 												<h5><?php echo $a->nama_partner?></h5>
