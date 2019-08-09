@@ -62,74 +62,7 @@ $this->load->view('main_page/parts/V_Navigation');
 			<?php } ?>
 		</div>
 
-            <!--//End-albums-->
 
-<!--            <div class="browse">-->
-<!--                <div class="col-md-3 browse-grid">-->
-<!--                    <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/v10.jpg" title="allbum-name"></a>-->
-<!--                    <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
-<!--                    <a class="sing" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Fifty Shades</a>-->
-<!--                </div>-->
-<!--                <div class="col-md-3 browse-grid">-->
-<!--                    <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/v9.jpg" title="allbum-name"></a>-->
-<!--                    <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
-<!--                    <a class="sing" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Alan Jackson</a>-->
-<!--                </div>-->
-<!--                <div class="col-md-3 browse-grid">-->
-<!--                    <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/v77.jpg" title="allbum-name"></a>-->
-<!--                    <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
-<!--                    <a class="sing" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Cheristina aguilera</a>-->
-<!--                </div>-->
-<!--                <div class="col-md-3 browse-grid">-->
-<!--                    <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/v88.jpg" title="allbum-name"></a>-->
-<!--                    <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
-<!--                    <a class="sing" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Samsmith</a>-->
-<!--                </div>-->
-<!--                <div class="col-md-3 browse-grid">-->
-<!--                    <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/v1.jpg" title="allbum-name"></a>-->
-<!--                    <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
-<!--                    <a class="sing" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Adele21</a>-->
-<!--                </div>-->
-<!--                <div class="col-md-3 browse-grid">-->
-<!--                    <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/v99.jpg" title="allbum-name"></a>-->
-<!--                    <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
-<!--                    <a class="sing" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Big Duty</a>-->
-<!--                </div>-->
-<!--                <div class="col-md-3 browse-grid">-->
-<!--                    <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/v6.jpg" title="allbum-name"></a>-->
-<!--                    <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
-<!--                    <a class="sing" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Ellie Goluding</a>-->
-<!--                </div>-->
-<!--                <div class="col-md-3 browse-grid">-->
-<!--                    <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/v66.jpg" title="allbum-name"></a>-->
-<!--                    <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
-<!--                    <a class="sing" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Diana</a>-->
-<!--                </div>-->
-<!--                <div class="col-md-3 browse-grid">-->
-<!--                    <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/v6.jpeg" title="allbum-name"></a>-->
-<!--                    <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
-<!--                    <a class="sing" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Fifty Shades</a>-->
-<!--                </div>-->
-<!--                <div class="col-md-3 browse-grid">-->
-<!--                    <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/v21.jpg" title="allbum-name"></a>-->
-<!--                    <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
-<!--                    <a class="sing" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Joe</a>-->
-<!--                </div>-->
-<!--                <div class="col-md-3 browse-grid">-->
-<!--                    <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/v3.jpg" title="allbum-name"></a>-->
-<!--                    <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
-<!--                    <a class="sing" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Lootera</a>-->
-<!--                </div>-->
-<!--                <div class="col-md-3 browse-grid">-->
-<!--                    <a  href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><img src="--><?php //echo base_url('assets/main_page/')?><!--images/v4.jpg" title="allbum-name"></a>-->
-<!--                    <a href="--><?php //echo base_url('assets/main_page/')?><!--single.html"><i class="glyphicon glyphicon-play-circle"></i></a>-->
-<!--                    <a class="sing" href="--><?php //echo base_url('assets/main_page/')?><!--single.html">Stuck on a feeling</a>-->
-<!--                </div>-->
-<!--                <div class="clearfix"> </div>-->
-<!--            </div>-->
-            <!--//End-albums-->
-            <!--//discover-view-->
-            <!--//music-left-->
         </div>
 
         <!--body wrapper start-->

@@ -98,23 +98,48 @@ $this->load->view('main_page/parts/V_Navigation');
                             <a href="<?php echo base_url('allsong')?>"><h4 class="tittle">See all</h4></a>
                             <div class="clearfix"> </div>
                         </div>
-                        <div id="small-dialog" class="mfp-hide">
-							<audio controls>
-								<source src="horse.ogg" type="audio/ogg">
-								<source src="<?php echo base_url('assets/file_lagu/Blue Browne.mp3')?>" type="audio/mpeg">
-								Your browser does not support the audio element.
-							</audio>
-                        </div>
+
 
 						<?php if (isset($getnewrelease)) {
 						foreach ($getnewrelease as $dat) {
 						$id = $dat->id_lagu;
 							?>
-                        <div class="col-md-3 content-grid">
-                            <a class="play-icon popup-with-zoom-anim" href="#small-dialog"><img src="<?php echo base_url('assets/foto_album/')?><?php echo $dat->picture_album?>" title="<?php echo $dat->judul?>"></a>
+						<!--modal music-->
+							<div id="<?php echo $id?>" class="modal fade" role="dialog" tabindex="-1">
+								<div class="modal-dialog">
+									<div class="modal-content">
+									<div class="modal-header">
+									<div class="modal-body">
+										<div class="col-sm-4"style="min-height: 200px">
+											<img src="<?php echo base_url('assets/foto_album/')?><?php echo $dat->picture_album;?>" style="width: 100%; height: 100%; max-width: 150px; max-height: 150px;">
+										</div>
+										<div class="col-sm-8">
+											<p style="text-align: left; width: 100%; font-size: large; font-weight: bold"><?php echo $dat->judul?></p>
+											<p style="text-align: left; width: 100%; font-size: medium; font-style: italic;"><?php echo $dat->nama_artist?></p>
 
-                            <a class="button play-icon popup-with-zoom-anim" href="#small-dialog">Listen now</a>
-                        </div>
+											<audio controls>
+												<source src="<?php echo base_url('assets/file_lagu/')?><?php echo $dat->file?>" type="audio/mpeg">
+												Your browser does not support the audio element.
+											</audio>
+											<h3 style="text-align: left; font-style: italic">Cara Registrasi:</h3>
+											<p style="text-align: left">Kode Registrasi XL 			: <?php echo $dat->kode_xl?></p>
+											<p style="text-align: left">Kode Registrasi Telkomsel 	: <?php echo $dat->kode_tsel?></p>
+											<p style="text-align: left">Kode Registrasi Indosat 	: <?php echo $dat->kode_indosat?></p>
+											<h3 style="text-align: left">Harga : Rp. <?php echo $dat->harga?></h3>
+										</div>
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+									</div>
+								</div>
+									</div>
+							</div>
+							</div>
+						<!--end Modal-->
+                        <div class="col-md-3 content-grid">
+								<a class="play-icon popup-with-zoom-anim"  data-toggle="modal" data-target="#<?php echo $id?>"><img src="<?php echo base_url('assets/foto_album/')?><?php echo $dat->picture_album?>" title="<?php echo $dat->judul?>"></a>
+								<a class="button play-icon popup-with-zoom-anim" href="" data-toggle="modal" data-target="#<?php echo $id?>">Listen now</a>
+							</div>
 
 						<?php }?>
 							<?php
