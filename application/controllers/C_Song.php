@@ -20,10 +20,10 @@ class C_Song extends CI_Controller
 		//config pagination
 		$config['base_url'] = base_url('allsong/page');  //site url
 		$config['total_rows'] = $this->db->count_all('t_lagu'); //total row
-		$config['per_page'] = 12;
+		$config['per_page'] = 18;
 		$config['uri_segment'] = 3;
 		$choice = $config["total_rows"] / $config["per_page"];
-		// $config['num_links'] = floor($choice);
+		$config['num_links'] = floor($choice);
 		//style pagination
 		$config['first_link']       = 'First';
 		$config['last_link']        = 'Last';
@@ -46,7 +46,7 @@ class C_Song extends CI_Controller
 
 		$this->pagination->initialize($config);
 		$page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
-		$data['data'] = $this->M_Song->get_all_song($config['per_page'], $page);
+		$data['curent_result'] = $this->M_Song->get_current_page($config['per_page'], $page);
 		$data['pagination'] = $this->pagination->create_links();
 		$data['new_s'] = $this->M_Song->get_new_song();
 		$this->load->view('main_page/V_All_Song',$data);

@@ -33,8 +33,8 @@ $this->load->view('main_page/parts/V_Navigation');
 					<a href="<?php echo base_url('assets/main_page/')?>browse.html"><h4 class="tittle third">See all</h4></a>
 					<div class="clearfix"> </div>
 				</div>
-				<?php if (isset($data)) {
-					foreach ($data as $dat) {
+				<?php if (isset($curent_result)) {
+					foreach ($curent_result as $dat) {
 						$id = $dat->id_lagu;
 						?>
 						<!--modal music-->
@@ -76,13 +76,11 @@ $this->load->view('main_page/parts/V_Navigation');
 						</div>
 					<?php }?>
 					<?php
-					//if (++$x == 5) break;
 				}
 				else {
 					echo "<div>Kosong.</div>";
 				}
 				?>
-
 				<div class="clearfix"> </div>
 			</div>
 		</div>
@@ -102,7 +100,7 @@ $this->load->view('main_page/parts/V_Navigation');
 			<div class="clearfix"> </div>
 		</div>
 		<ul id="flexiselDemo1">
-			<?php if (isset($data)) {
+			<?php if (isset($new_s)) {
 				foreach ($new_s as $new) {
 					$id_r = $new->id_lagu;
 					?>
