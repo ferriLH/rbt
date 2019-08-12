@@ -109,6 +109,7 @@ $this->load->view('main_page/parts/V_Navigation');
 								<div class="modal-dialog">
 									<div class="modal-content">
 										<div class="modal-header">
+
 										</div>
 										<div class="modal-body">
 											<div class="row">
@@ -137,7 +138,19 @@ $this->load->view('main_page/parts/V_Navigation');
 														<?php echo "Ketik : <b>GIFT</b> (spasi) <b> Nomor XL teman </b>(spasi)<b>".$dat->kode_xl."</b>"?>
 													</small><br>
 													<small><?php echo "Kirim ke : <b>1818</b>"?></small> <br><br>
-													<a href="sms:1818?body=<?php echo $dat->kode_xl;?>"><button class="btn btn-default">Kirim SMS</button></a>
+													<?php
+													if ($this->agent->is_mobile('iphone')||$this->agent->is_mobile('ipod')||$this->agent->is_mobile('ipad'))
+													{
+														echo "<a href='sms:1818&body=".$dat->kode_xl."'><button class='btn btn-default'>Kirim SMS</button></a>";
+													}elseif ($this->agent->is_mobile('android'))
+													{
+														echo "<a href='sms:1818?body=".$dat->kode_xl."'><button class='btn btn-default'>Kirim SMS</button></a>";
+													}else
+													{
+														echo "<a href='sms:1818?body=".$dat->kode_xl."'><button class='btn btn-default'>Kirim SMS</button></a>";
+													}
+													?>
+
 												</div>
 												<div class="col-sm-4">
 													<img style="max-height: 25px;" src="<?php echo base_url('assets/main_page/images/telkom.png')?>" alt="TELKOMSEL">
@@ -150,7 +163,18 @@ $this->load->view('main_page/parts/V_Navigation');
 														<?php echo "Ketik : <b>RING</b> (spasi)<b> GIFT</b> (spasi) <b>".$dat->kode_tsel."</b> (spasi)<b> Nomor HP teman</b>"?>
 													</small><br>
 													<small><?php echo "Kirim ke : <b>1212</b>"?></small> <br>
-													<a href="sms:1212?body=<?php echo "RING SUB ".$dat->kode_tsel;?>"><button class="btn btn-default">Kirim SMS</button></a>
+													<?php
+													if ($this->agent->is_mobile('iphone')||$this->agent->is_mobile('ipod')||$this->agent->is_mobile('ipad'))
+													{
+														echo "<a href='sms:1212&body=RING SUB ".$dat->kode_tsel."'><button class='btn btn-default'>Kirim SMS</button></a>";
+													}elseif ($this->agent->is_mobile('android'))
+													{
+														echo "<a href='sms:1212?body=RING SUB ".$dat->kode_tsel."'><button class='btn btn-default'>Kirim SMS</button></a>";
+													}else
+													{
+														echo "<a href='sms:1212?body=RING SUB ".$dat->kode_tsel."'><button class='btn btn-default'>Kirim SMS</button></a>";
+													}
+													?>
 
 												</div>
 												<div class="col-sm-4">
@@ -164,7 +188,18 @@ $this->load->view('main_page/parts/V_Navigation');
 														<?php echo "Ketik : GIFT</b> (spasi) <b>".$dat->kode_indosat."</b> (spasi)<b> Nomor HP teman</b>"?>
 													</small><br>
 													<small><?php echo "Kirim ke : <b>808</b>"?></small> <br>
-													<a href="sms:808?body=<?php echo "SET ".$dat->kode_indosat;?>"><button class="btn btn-default">Kirim SMS</button></a>
+													<?php
+													if ($this->agent->is_mobile('iphone')||$this->agent->is_mobile('ipod')||$this->agent->is_mobile('ipad'))
+													{
+														echo "<a href='sms:808&body=SET ".$dat->kode_indosat."'><button class='btn btn-default'>Kirim SMS</button></a>";
+													}elseif ($this->agent->is_mobile('android'))
+													{
+														echo "<a href='sms:808?body=SET ".$dat->kode_indosat."'><button class='btn btn-default'>Kirim SMS</button></a>";
+													}else
+													{
+														echo "<a href='sms:808?body=SET ".$dat->kode_indosat."'><button class='btn btn-default'>Kirim SMS</button></a>";
+													}
+													?>
 
 												</div>
 											</div>

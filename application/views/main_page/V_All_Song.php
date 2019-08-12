@@ -51,7 +51,7 @@ $this->load->view('main_page/parts/V_Navigation');
 											<div class="col-sm-8">
 												<p style="text-align: left; width: 100%; font-size: large; font-weight: bold"><?php echo $dat->judul?></p>
 												<p style="text-align: left; width: 100%; font-size: medium; font-style: italic;"><?php echo $dat->nama_artist?></p>
-												<audio controls  controlsList="nodownload">
+												<audio controls controlsList="nodownload" id="audio<?php echo $id;?>">
 													<source src="<?php echo base_url('assets/file_lagu/')?><?php echo $dat->file?>" type="audio/mpeg">
 													Your browser does not support the audio element.
 												</audio>
@@ -70,7 +70,19 @@ $this->load->view('main_page/parts/V_Navigation');
 													<?php echo "Ketik : <b>GIFT</b> (spasi) <b> Nomor XL teman </b>(spasi)<b>".$dat->kode_xl."</b>"?>
 												</small><br>
 												<small><?php echo "Kirim ke : <b>1818</b>"?></small> <br><br>
-												<a href="sms:1818?body=<?php echo $dat->kode_xl;?>"><button class="btn btn-default">Kirim SMS</button></a>
+												<?php
+												if ($this->agent->is_mobile('iphone')||$this->agent->is_mobile('ipod')||$this->agent->is_mobile('ipad'))
+												{
+													echo "<a href='sms:1818&body=".$dat->kode_xl."'><button class='btn btn-default'>Kirim SMS</button></a>";
+												}elseif ($this->agent->is_mobile('android'))
+												{
+													echo "<a href='sms:1818?body=".$dat->kode_xl."'><button class='btn btn-default'>Kirim SMS</button></a>";
+												}else
+												{
+													echo "<a href='sms:1818?body=".$dat->kode_xl."'><button class='btn btn-default'>Kirim SMS</button></a>";
+												}
+												?>
+
 											</div>
 											<div class="col-sm-4">
 												<img style="max-height: 25px;" src="<?php echo base_url('assets/main_page/images/telkom.png')?>" alt="TELKOMSEL">
@@ -83,7 +95,18 @@ $this->load->view('main_page/parts/V_Navigation');
 													<?php echo "Ketik : <b>RING</b> (spasi)<b> GIFT</b> (spasi) <b>".$dat->kode_tsel."</b> (spasi)<b> Nomor HP teman</b>"?>
 												</small><br>
 												<small><?php echo "Kirim ke : <b>1212</b>"?></small> <br>
-												<a href="sms:1212?body=<?php echo "RING SUB ".$dat->kode_tsel;?>"><button class="btn btn-default">Kirim SMS</button></a>
+												<?php
+												if ($this->agent->is_mobile('iphone')||$this->agent->is_mobile('ipod')||$this->agent->is_mobile('ipad'))
+												{
+													echo "<a href='sms:1212&body=RING SUB ".$dat->kode_tsel."'><button class='btn btn-default'>Kirim SMS</button></a>";
+												}elseif ($this->agent->is_mobile('android'))
+												{
+													echo "<a href='sms:1212?body=RING SUB ".$dat->kode_tsel."'><button class='btn btn-default'>Kirim SMS</button></a>";
+												}else
+												{
+													echo "<a href='sms:1212?body=RING SUB ".$dat->kode_tsel."'><button class='btn btn-default'>Kirim SMS</button></a>";
+												}
+												?>
 
 											</div>
 											<div class="col-sm-4">
@@ -97,13 +120,37 @@ $this->load->view('main_page/parts/V_Navigation');
 													<?php echo "Ketik : GIFT</b> (spasi) <b>".$dat->kode_indosat."</b> (spasi)<b> Nomor HP teman</b>"?>
 												</small><br>
 												<small><?php echo "Kirim ke : <b>808</b>"?></small> <br>
-												<a href="sms:808?body=<?php echo "SET ".$dat->kode_indosat;?>"><button class="btn btn-default">Kirim SMS</button></a>
+												<?php
+												if ($this->agent->is_mobile('iphone')||$this->agent->is_mobile('ipod')||$this->agent->is_mobile('ipad'))
+												{
+													echo "<a href='sms:808&body=SET ".$dat->kode_indosat."'><button class='btn btn-default'>Kirim SMS</button></a>";
+												}elseif ($this->agent->is_mobile('android'))
+												{
+													echo "<a href='sms:808?body=SET ".$dat->kode_indosat."'><button class='btn btn-default'>Kirim SMS</button></a>";
+												}else
+												{
+													echo "<a href='sms:808?body=SET ".$dat->kode_indosat."'><button class='btn btn-default'>Kirim SMS</button></a>";
+												}
+												?>
 
 											</div>
 										</div>
 									</div>
 									<div class="modal-footer">
-										<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+										<button type="button" onclick="stopAudio<?php echo $id?>()" class="btn btn-default" data-dismiss="modal">Close</button>
+										<script>
+                                            function stopAudio<?php echo $id?>() {
+                                                var audioPlayer = document.getElementById("audio<?php echo $id;?>");
+                                                audioPlayer.pause();
+                                                audioPlayer.currentTime = 0;
+                                            }
+                                            $('#<?php echo $id;?>').on('hide.bs.modal', function () {
+                                                $('audio').each(function(){
+                                                    this.pause(); // Stop playing
+                                                    this.currentTime = 0; // Reset time
+                                                });
+                                            })
+										</script>
 									</div>
 								</div>
 							</div>
