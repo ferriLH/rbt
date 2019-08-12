@@ -42,28 +42,64 @@ $this->load->view('main_page/parts/V_Navigation');
 							<div class="modal-dialog">
 								<div class="modal-content">
 									<div class="modal-header">
-										<div class="modal-body">
-											<div class="col-sm-4"style="min-height: 200px">
+									</div>
+									<div class="modal-body">
+										<div class="row">
+											<div class="col-sm-4"style="min-height: 150px;max-height: 150px;">
 												<img src="<?php echo base_url('assets/foto_album/')?><?php echo $dat->picture_album;?>" style="width: 100%; height: 100%; max-width: 150px; max-height: 150px;">
 											</div>
 											<div class="col-sm-8">
 												<p style="text-align: left; width: 100%; font-size: large; font-weight: bold"><?php echo $dat->judul?></p>
 												<p style="text-align: left; width: 100%; font-size: medium; font-style: italic;"><?php echo $dat->nama_artist?></p>
-
 												<audio controls>
 													<source src="<?php echo base_url('assets/file_lagu/')?><?php echo $dat->file?>" type="audio/mpeg">
 													Your browser does not support the audio element.
 												</audio>
 												<h3 style="text-align: left; font-style: italic">Cara Registrasi:</h3>
-												<p style="text-align: left">Kode Registrasi XL 			: <?php echo $dat->kode_xl?></p>
-												<p style="text-align: left">Kode Registrasi Telkomsel 	: <?php echo $dat->kode_tsel?></p>
-												<p style="text-align: left">Kode Registrasi Indosat 	: <?php echo $dat->kode_indosat?></p>
-												<h3 style="text-align: left">Harga : Rp. <?php echo $dat->harga?></h3>
 											</div>
 										</div>
-										<div class="modal-footer">
-											<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+										<div class="row">
+											<div class="col-sm-4">
+												<img style="max-height: 25px;" src="<?php echo base_url('assets/main_page/images/xlaxiata.png');?>" alt="XL">
+												<br>
+												<small><?php echo "Ketik : <b>".$dat->kode_xl."</b>"?></small><br>
+												<small><?php echo "Kirim ke : <b>1818</b>"?></small> <br>
+												<small><?php echo "Tarif : ".$dat->harga_xl."/lagu"?></small> <br><br><br>
+												<small>Untuk Memberikan nada sambung ke teman,</small> <br>
+												<small>
+													<?php echo "Ketik : <b>GIFT</b> (spasi) <b> Nomor XL teman </b>(spasi)<b>".$dat->kode_xl."</b>"?>
+												</small><br>
+												<small><?php echo "Kirim ke : <b>1818</b>"?></small> <br>
+											</div>
+											<div class="col-sm-4">
+												<img style="max-height: 25px;" src="<?php echo base_url('assets/main_page/images/telkom.png')?>" alt="TELKOMSEL">
+												<br>
+												<small><?php echo "Ketik : <b>RING</b> (spasi)<b> SUB</b> (spasi) <b>".$dat->kode_tsel."</b>"?></small><br>
+												<small><?php echo "Kirim ke : <b>1212</b>"?></small> <br>
+												<small><?php echo "Tarif : ".$dat->harga_tsel."/lagu"?></small> <br><br>
+												<small>Untuk Memberikan nada sambung ke teman,</small> <br>
+												<small>
+													<?php echo "Ketik : <b>RING</b> (spasi)<b> GIFT</b> (spasi) <b>".$dat->kode_tsel."</b> (spasi)<b> Nomor HP teman</b>"?>
+												</small><br>
+												<small><?php echo "Kirim ke : <b>1212</b>"?></small> <br>
+											</div>
+											<div class="col-sm-4">
+												<img style="max-height: 25px;" src="<?php echo base_url('assets/main_page/images/isat.png')?>" alt="INDOSAT">
+												<br>
+												<small><?php echo "Ketik : <b>SET</b> (spasi) <b>".$dat->kode_tsel."</b>"?></small><br>
+												<small><?php echo "Kirim ke : <b>808</b>"?></small> <br>
+												<small><?php echo "Tarif : ".$dat->harga_tsel."/lagu"?></small> <br><br>
+												<small>Untuk Memberikan nada sambung ke teman,</small> <br>
+												<small>
+													<?php echo "Ketik : GIFT</b> (spasi) <b>".$dat->kode_tsel."</b> (spasi)<b> Nomor HP teman</b>"?>
+												</small><br>
+												<small><?php echo "Kirim ke : <b>808</b>"?></small> <br>
+
+											</div>
 										</div>
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 									</div>
 								</div>
 							</div>

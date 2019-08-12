@@ -246,7 +246,7 @@ class C_Music extends CI_Controller
 			//upload protocol
 			if (!empty($_FILES["file_lagu"]["name"])) {
 				$config['upload_path'] = "assets/file_lagu/";
-				$config['allowed_types'] = "mp3";
+				$config['allowed_types'] = "mp3|wav";
 				$remove_these = array(' ','`','"','\'','\\','/');
 				$newname = str_replace($remove_these, '_', $_FILES['file_lagu']['name']);
 				$config['file_name'] = $newname;
@@ -415,7 +415,7 @@ class C_Music extends CI_Controller
 				//upload protocol
 				if (!empty($_FILES["file_lagu"]["name"])) {
 					$config['upload_path'] = "assets/file_lagu/";
-					$config['allowed_types'] = "mp3";
+					$config['allowed_types'] = "mp3|wav";
 					$remove_these = array(' ','`','"','\'','\\','/');
 					$newname = str_replace($remove_these, '_', $_FILES['file_lagu']['name']);
 					$config['file_name'] = $newname;
