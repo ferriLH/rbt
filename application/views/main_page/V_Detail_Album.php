@@ -148,125 +148,26 @@ $this->load->view('main_page/parts/V_Navigation');
 				<!-- /agileinfo -->
 			</div>
 			<div class="response">
-				<h4>Responses</h4>
-				<div class="media response-info">
-					<div class="media-left response-text-left">
-						<a href="#">
-							<img class="media-object" src="<?php echo base_url('assets/main_page/')?>images/c1.jpg" alt="">
-						</a>
-						<h5><a href="#">Username</a></h5>
-					</div>
-					<div class="media-body response-text-right">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,There are many variations of passages of Lorem Ipsum available,
-							sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-						<ul>
-							<li>Sep 21, 2015</li>
-							<li><a href="<?php echo base_url('assets/main_page/')?>single.html">Reply</a></li>
-						</ul>
-						<div class="media response-info">
-							<div class="media-left response-text-left">
-								<a href="#">
-									<img class="media-object" src="<?php echo base_url('assets/main_page/')?>images/c2.jpg" alt="">
-								</a>
-								<h5><a href="#">Username</a></h5>
-							</div>
-							<div class="media-body response-text-right">
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,There are many variations of passages of Lorem Ipsum available,
-									sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-								<ul>
-									<li>Apr 17, 2016</li>
-									<li><a href="<?php echo base_url('assets/main_page/')?>single.html">Reply</a></li>
-								</ul>
-							</div>
-							<div class="clearfix"> </div>
-						</div>
-					</div>
-					<div class="clearfix"> </div>
+				<h4>Judul Album</h4>
+			<div class="row">
+				<div class="col-md-4">
+					<img src="<?php echo base_url('assets/foto_album/as_you_were.jpg')?>" style="max-height: 300px">
 				</div>
-				<div class="media response-info">
-					<div class="media-left response-text-left">
-						<a href="#">
-							<img class="media-object" src="<?php echo base_url('assets/main_page/')?>images/c3.jpg" alt="">
-						</a>
-						<h5><a href="#">Username</a></h5>
-					</div>
-					<div class="media-body response-text-right">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,There are many variations of passages of Lorem Ipsum available,
-							sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-						<ul>
-							<li>May 21,2016</li>
-							<li><a href="<?php echo base_url('assets/main_page/')?>single.html">Reply</a></li>
-						</ul>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="media response-info">
-					<div class="media-left response-text-left">
-						<a href="#">
-							<img class="media-object" src="<?php echo base_url('assets/main_page/')?>images/c4.jpg" alt="">
-						</a>
-						<h5><a href="#">Username</a></h5>
-					</div>
-					<div class="media-body response-text-right">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,There are many variations of passages of Lorem Ipsum available,
-							sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-						<ul>
-							<li>Mar 28, 2016</li>
-							<li><a href="<?php echo base_url('assets/main_page/')?>single.html">Reply</a></li>
-						</ul>
-						<div class="media response-info">
-							<div class="media-left response-text-left">
-								<a href="#">
-									<img class="media-object" src="<?php echo base_url('assets/main_page/')?>images/c5.jpg" alt="">
-								</a>
-								<h5><a href="#">Username</a></h5>
-							</div>
-							<div class="media-body response-text-right">
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,There are many variations of passages of Lorem Ipsum available,
-									sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-								<ul>
-									<li>Feb 19, 2016</li>
-									<li><a href="<?php echo base_url('assets/main_page/')?>single.html">Reply</a></li>
-								</ul>
-							</div>
-							<div class="clearfix"> </div>
-						</div>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="media response-info">
-					<div class="media-left response-text-left">
-						<a href="#">
-							<img class="media-object" src="<?php echo base_url('assets/main_page/')?>images/c6.jpg" alt="">
-						</a>
-						<h5><a href="#">Username</a></h5>
-					</div>
-					<div class="media-body response-text-right">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,There are many variations of passages of Lorem Ipsum available,
-							sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-						<ul>
-							<li>Jan 20, 2016</li>
-							<li><a href="<?php echo base_url('assets/main_page/')?>single.html">Reply</a></li>
-						</ul>
-					</div>
-					<div class="clearfix"> </div>
+				<div class="col-md-6">
+					<h3 style="font-weight: bold; padding-bottom: 1px">Nama Penyanyi :<text style="color: #2d4278">JUDUL ALBUM</text></h3>
+					<h3 style="padding-bottom: 1px; font-weight: bold">Provider</h3>
+					<p>Nama Produser</p>
+					<h3 style="font-weight: bold; padding-bottom: 1px">genre</h3>
+					<h3 style="font-weight: bold">Bio Artis</h3>
+					<p>lorem ipsum lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum</p>
 				</div>
 			</div>
 			<!-- /agileits -->
 			<div class="clearfix"> </div>
 			<!--//music-right-->
-
-			<div class="coment-form">
-				<h4>Leave your comment</h4>
-				<form action="#" method="post">
-					<input type="text" value="Name " onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}" required="">
-					<input type="email" value="Email (will not be published)*" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email (will not be published)*';}" required="">
-					<input type="text" value="Website" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Website';}" required="">
-					<textarea onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Your Comment...';}" required="">Your Comment...</textarea>
-					<input type="submit" value="Submit Comment">
-				</form>
 			</div>
 		</div>
+		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 		<!-- /w3l-agileits-->
 		<!--body wrapper start-->
 		<div class="review-slider">
