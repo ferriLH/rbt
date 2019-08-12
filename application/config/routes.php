@@ -112,6 +112,8 @@ $route['artist/page']      	    	= 'C_Artist';
 $route['album']             		= 'C_Album';
 $route['album/page/(:any)']    		= 'C_Album';
 $route['album/page']    	    	= 'C_Album';
+$route['album/detail']				= 'C_Detail_Album';
+$route['album/detail/(:any)']		= 'C_Detail_Album';
 
 $route['allsong']					= 'C_Song';
 $route['allsong/page/(:any)']		= 'C_Song';

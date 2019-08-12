@@ -124,6 +124,7 @@ $this->load->view('main_page/parts/V_Navigation');
 			</div>
 		</div>
 	</div>
+
 	<div class="container">
 		<div class="row">
 			<?php if (isset($pagination)) { ?>

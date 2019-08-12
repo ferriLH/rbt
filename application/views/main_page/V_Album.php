@@ -38,9 +38,9 @@ $this->load->view('main_page/parts/V_Navigation');
 					$id = $dat->id_album;
 					?>
                 <div class="col-md-3 browse-grid">
-                    <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/foto_album/')?><?php echo $dat->picture_album?>" title="allbum-name"></a>
-                    <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                    <a class="sing" href="<?php echo base_url('assets/main_page/')?>single.html"><?php echo $dat->nama_album?></a>
+                    <a  href="<?php echo base_url('album/detail/').$id?>"><img src="<?php echo base_url('assets/foto_album/')?><?php echo $dat->picture_album?>" title="allbum-name"></a>
+                    <a href="<?php echo base_url('album/detail/').$id?>"><i class="glyphicon glyphicon-play-circle"></i></a>
+                    <a class="sing" href="<?php echo base_url('album/detail/').$id?>"><?php echo $dat->nama_album?></a>
                 </div>
 				<?php }?>
 					<?php
@@ -77,12 +77,12 @@ $this->load->view('main_page/parts/V_Navigation');
 				$id_r = $new->id_album;
 				?>
                 <li>
-                    <a href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/foto_album/')?><?php echo $new->picture_album;?>" alt=""/></a>
+                    <a href="<?php echo base_url('album/detail/').$id_r?>"><img src="<?php echo base_url('assets/foto_album/')?><?php echo $new->picture_album;?>" alt=""/></a>
                     <div class="slide-title"><h4><?php echo $new->nama_album?></div>
                     <div class="date-city">
                         <h5><?php echo $new->nama_artist?></h5>
                         <div class="buy-tickets">
-                            <a href="<?php echo base_url('assets/main_page/')?>single.html">READ MORE</a>
+                            <a href="<?php echo base_url('album/detail/').$id_r?>">READ MORE</a>
                         </div>
                     </div>
                 </li>
