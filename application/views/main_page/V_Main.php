@@ -106,12 +106,12 @@ $this->load->view('main_page/parts/V_Navigation');
 							?>
 						<!--modal music-->
 							<div id="<?php echo $id?>" class="modal fade" role="dialog" tabindex="-1">
-								<div class="modal-dialog">
+								<div class="modal-dialog-centered">
 									<div class="modal-content">
 										<div class="modal-header">
 
 										</div>
-										<div class="modal-body">
+										<div class="modal-body" style="padding: 15px 15px;">
 											<div class="row">
 												<div class="col-sm-4"style="min-height: 150px;max-height: 150px;">
 													<img src="<?php echo base_url('assets/foto_album/')?><?php echo $dat->picture_album;?>" style="width: 100%; height: 100%; max-width: 150px; max-height: 150px;">
