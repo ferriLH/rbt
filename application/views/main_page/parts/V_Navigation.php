@@ -126,6 +126,15 @@ $islogin =  $this->session->userdata('isLogin');
     <!-- /w3l-agile -->
     <!-- left side end-->
     <!-- main content start-->
+	<script>
+        function ComingSoon() {
+            Swal.fire(
+                'Coming Soon!',
+                'we hope we can launch soon',
+                'info'
+            )
+        }
+	</script>
     <div class="main-content">
         <!-- header-starts -->
         <div class="header-section">

@@ -74,24 +74,24 @@ $this->load->view('main_page/parts/V_Navigation');
                     <!--//End-banner-->
                     <!--albums-->
                     <!-- pop-up-box -->
-                    <link href="<?php echo base_url()?>assets/main_page/css/popuo-box.css" rel="stylesheet" type="text/css" media="all">
-                    <script src="<?php echo base_url()?>assets/main_page/js/jquery.magnific-popup.js" type="text/javascript"></script>
-                    <script>
-                        $(document).ready(function() {
-                            $('.popup-with-zoom-anim').magnificPopup({
-                                type: 'inline',
-                                fixedContentPos: false,
-                                fixedBgPos: true,
-                                overflowY: 'auto',
-                                closeBtnInside: true,
-                                preloader: false,
-                                midClick: true,
-                                removalDelay: 300,
-                                mainClass: 'my-mfp-zoom-in'
-                            });
-                        });
-                    </script>
-                    <!--//pop-up-box -->
+<!--                    <link href="--><?php //echo base_url()?><!--assets/main_page/css/popuo-box.css" rel="stylesheet" type="text/css" media="all">-->
+<!--                    <script src="--><?php //echo base_url()?><!--assets/main_page/js/jquery.magnific-popup.js" type="text/javascript"></script>-->
+<!--                    <script>-->
+<!--                        $(document).ready(function() {-->
+<!--                            $('.popup-with-zoom-anim').magnificPopup({-->
+<!--                                type: 'inline',-->
+<!--                                fixedContentPos: false,-->
+<!--                                fixedBgPos: true,-->
+<!--                                overflowY: 'auto',-->
+<!--                                closeBtnInside: true,-->
+<!--                                preloader: false,-->
+<!--                                midClick: true,-->
+<!--                                removalDelay: 300,-->
+<!--                                mainClass: 'my-mfp-zoom-in'-->
+<!--                            });-->
+<!--                        });-->
+<!--                    </script>-->
+<!--                    //pop-up-box -->
                     <div class="albums">
                         <div class="tittle-head">
                             <h3 class="tittle">New Releases <span class="new">New</span></h3>
@@ -136,7 +136,8 @@ $this->load->view('main_page/parts/V_Navigation');
 													<small>
 														<?php echo "Ketik : <b>GIFT</b> (spasi) <b> Nomor XL teman </b>(spasi)<b>".$dat->kode_xl."</b>"?>
 													</small><br>
-													<small><?php echo "Kirim ke : <b>1818</b>"?></small> <br>
+													<small><?php echo "Kirim ke : <b>1818</b>"?></small> <br><br>
+													<a href="sms:1818?body=<?php echo $dat->kode_xl;?>"><button class="btn btn-default">Kirim SMS</button></a>
 												</div>
 												<div class="col-sm-4">
 													<img style="max-height: 25px;" src="<?php echo base_url('assets/main_page/images/telkom.png')?>" alt="TELKOMSEL">
@@ -149,18 +150,21 @@ $this->load->view('main_page/parts/V_Navigation');
 														<?php echo "Ketik : <b>RING</b> (spasi)<b> GIFT</b> (spasi) <b>".$dat->kode_tsel."</b> (spasi)<b> Nomor HP teman</b>"?>
 													</small><br>
 													<small><?php echo "Kirim ke : <b>1212</b>"?></small> <br>
+													<a href="sms:1212?body=<?php echo "RING SUB ".$dat->kode_tsel;?>"><button class="btn btn-default">Kirim SMS</button></a>
+
 												</div>
 												<div class="col-sm-4">
 													<img style="max-height: 25px;" src="<?php echo base_url('assets/main_page/images/isat.png')?>" alt="INDOSAT">
 													<br>
-													<small><?php echo "Ketik : <b>SET</b> (spasi) <b>".$dat->kode_tsel."</b>"?></small><br>
+													<small><?php echo "Ketik : <b>SET</b> (spasi) <b>".$dat->kode_indosat."</b>"?></small><br>
 													<small><?php echo "Kirim ke : <b>808</b>"?></small> <br>
-													<small><?php echo "Tarif : ".$dat->harga_tsel."/lagu"?></small> <br><br>
+													<small><?php echo "Tarif : ".$dat->harga_indosat."/lagu"?></small> <br><br>
 													<small>Untuk Memberikan nada sambung ke teman,</small> <br>
 													<small>
-														<?php echo "Ketik : GIFT</b> (spasi) <b>".$dat->kode_tsel."</b> (spasi)<b> Nomor HP teman</b>"?>
+														<?php echo "Ketik : GIFT</b> (spasi) <b>".$dat->kode_indosat."</b> (spasi)<b> Nomor HP teman</b>"?>
 													</small><br>
 													<small><?php echo "Kirim ke : <b>808</b>"?></small> <br>
+													<a href="sms:808?body=<?php echo "SET ".$dat->kode_indosat;?>"><button class="btn btn-default">Kirim SMS</button></a>
 
 												</div>
 											</div>
@@ -414,15 +418,15 @@ $this->load->view('main_page/parts/V_Navigation');
                     <!--//video-main-->
                     <!--/app_store-->
                     <!-- Modal -->
-                    <script>
-                        function ComingSoon() {
-                            Swal.fire(
-                                'Coming Soon!',
-                                'we hope we can launch soon',
-                                'info'
-                            )
-                        }
-                    </script>
+<!--                    <script>-->
+<!--                        function ComingSoon() {-->
+<!--                            Swal.fire(-->
+<!--                                'Coming Soon!',-->
+<!--                                'we hope we can launch soon',-->
+<!--                                'info'-->
+<!--                            )-->
+<!--                        }-->
+<!--                    </script>-->
                     <div class="apps">
                         <h3 class="hd-tittle">Our Apps </h3>
                         <div class="banner-button">

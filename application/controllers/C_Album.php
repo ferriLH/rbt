@@ -20,10 +20,10 @@ class C_Album extends CI_Controller
 		//config pagination
 		$config['base_url'] = base_url('album/page');  //site url
 		$config['total_rows'] = $this->db->count_all('t_album'); //total row
-		$config['per_page'] = 12;
+		$config['per_page'] = 6;
 		$config['uri_segment'] = 3;
 		$choice = $config["total_rows"] / $config["per_page"];
-		// $config['num_links'] = floor($choice);
+		$config['num_links'] = is_int($choice);
 		//style pagination
 		$config['first_link']       = 'First';
 		$config['last_link']        = 'Last';
