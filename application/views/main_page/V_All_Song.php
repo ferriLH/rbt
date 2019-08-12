@@ -51,7 +51,7 @@ $this->load->view('main_page/parts/V_Navigation');
 											<div class="col-sm-8">
 												<p style="text-align: left; width: 100%; font-size: large; font-weight: bold"><?php echo $dat->judul?></p>
 												<p style="text-align: left; width: 100%; font-size: medium; font-style: italic;"><?php echo $dat->nama_artist?></p>
-												<audio controls>
+												<audio controls  controlsList="nodownload">
 													<source src="<?php echo base_url('assets/file_lagu/')?><?php echo $dat->file?>" type="audio/mpeg">
 													Your browser does not support the audio element.
 												</audio>

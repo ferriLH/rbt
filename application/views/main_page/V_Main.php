@@ -118,7 +118,7 @@ $this->load->view('main_page/parts/V_Navigation');
 												<div class="col-sm-8">
 													<p style="text-align: left; width: 100%; font-size: large; font-weight: bold"><?php echo $dat->judul?></p>
 													<p style="text-align: left; width: 100%; font-size: medium; font-style: italic;"><?php echo $dat->nama_artist?></p>
-													<audio controls>
+													<audio controls controlsList="nodownload" id="audio<?php echo $id;?>">
 														<source src="<?php echo base_url('assets/file_lagu/')?><?php echo $dat->file?>" type="audio/mpeg">
 														Your browser does not support the audio element.
 													</audio>
@@ -170,15 +170,30 @@ $this->load->view('main_page/parts/V_Navigation');
 											</div>
 										</div>
 										<div class="modal-footer">
-											<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+											<button type="button" onclick="stopAudio<?php echo $id?>()" class="btn btn-default" data-dismiss="modal">Close</button>
+											<script>
+                                                function stopAudio<?php echo $id?>() {
+                                                    var audioPlayer = document.getElementById("audio<?php echo $id;?>");
+                                                    audioPlayer.pause();
+                                                    audioPlayer.currentTime = 0;
+                                                }
+                                                $('#<?php echo $id;?>').on('hide.bs.modal', function () {
+                                                    $('audio').each(function(){
+                                                        this.pause(); // Stop playing
+                                                        this.currentTime = 0; // Reset time
+                                                    });
+                                                })
+											</script>
 										</div>
 									</div>
 								</div>
 							</div>
 						<!--end Modal-->
-                        <div class="col-md-3 content-grid">
-								<a class="play-icon popup-with-zoom-anim"  data-toggle="modal" data-target="#<?php echo $id?>"><img src="<?php echo base_url('assets/foto_album/')?><?php echo $dat->picture_album?>" title="<?php echo $dat->judul?>"></a>
+                        	<div class="col-md-3 content-grid">
+								<a class="play-icon popup-with-zoom-anim"  data-toggle="modal" data-target="#<?php echo $id?>"><img src="<?php echo base_url('assets/foto_album/')?><?php echo $dat->picture_album?>" title="<?php echo $dat->nama_album?>"></a>
 								<a class="button play-icon popup-with-zoom-anim" href="" data-toggle="modal" data-target="#<?php echo $id?>">Listen now</a>
+								<div class="inner-info"><a href="" data-toggle="modal" data-target="#<?php echo $id?>"><h4><?php echo $dat->judul?></h4></a></div>
+
 							</div>
 
 						<?php }?>
@@ -206,8 +221,8 @@ $this->load->view('main_page/parts/V_Navigation');
 					foreach ($getDiscover as $dis) {
 							$id = $dis->id_lagu; ?>
                         <div class="col-md-3 content-grid">
-                            <a href="<?php echo base_url()?>assets/main_page/single.html"><img src="<?php echo base_url('assets/foto_album/')?><?php echo $dis->picture_album?>" title="allbum-name"></a>
-                            <div class="inner-info"><a href="<?php echo base_url()?>assets/main_page/single.html"><h5><?php echo $dis->genre?></h5></a></div>
+                            <a href="<?php echo base_url()?>assets/main_page/single.html"><img src="<?php echo base_url('assets/foto_album/')?><?php echo $dis->picture_album?>" title="<?php echo $dis->nama_album;?>"></a>
+                            <div class="inner-info"><a href="<?php echo base_url()?>assets/main_page/single.html"><h5><?php echo $dis->judul?></h5></a></div>
                         </div>
 					<?php }?>
 					<?php
