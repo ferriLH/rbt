@@ -1,7 +1,7 @@
 <?php
 $islogin =  $this->session->userdata('isLogin');
 ?>
-<body class="sticky-header left-side-collapsed" onload="initMap()">
+<body class="sticky-header left-side-collapsed"> <!--onload="initMap()">-->
 <section>
     <!-- left side start-->
     <div class="left-side sticky-left-side">

@@ -39,10 +39,12 @@ $this->load->view('main_page/parts/V_Navigation');
 						?>
 						<!--modal music-->
 						<div id="<?php echo $id?>" class="modal fade" role="dialog" tabindex="-1">
-							<div class="modal-dialog-centered">
+							<div class="modal-dialog-scrollable">
 								<div class="modal-content">
 									<div class="modal-header">
-
+										<div class="row">
+											<button type="button" onclick="stopAudio<?php echo $id?>()" class="close btn btn-default" data-dismiss="modal">Close &times;</button>
+										</div>
 									</div>
 									<div class="modal-body" style="padding: 15px 15px;">
 										<div class="row">
@@ -52,8 +54,7 @@ $this->load->view('main_page/parts/V_Navigation');
 											<div class="col-sm-8">
 												<p style="text-align: left; width: 100%; font-size: large; font-weight: bold"><?php echo $dat->judul?></p>
 												<p style="text-align: left; width: 100%; font-size: medium; font-style: italic;"><?php echo $dat->nama_artist?></p>
-												<audio controls controlsList="nodownload" id="audio<?php echo $id;?>">
-													<source src="<?php echo base_url('assets/file_lagu/')?><?php echo $dat->file?>" type="audio/mpeg">
+												<audio controls controlsList="nodownload" id="audio<?php echo $id;?>" preload="none">
 													Your browser does not support the audio element.
 												</audio>
 												<h3 style="text-align: left; font-style: italic">Cara Registrasi:</h3>
@@ -138,7 +139,7 @@ $this->load->view('main_page/parts/V_Navigation');
 										</div>
 									</div>
 									<div class="modal-footer">
-										<button type="button" onclick="stopAudio<?php echo $id?>()" class="btn btn-default" data-dismiss="modal">Close</button>
+										<button type="button" onclick="stopAudio<?php echo $id?>()" class="close btn btn-default" data-dismiss="modal">Close &times;</button>
 										<script>
                                             function stopAudio<?php echo $id?>() {
                                                 var audioPlayer = document.getElementById("audio<?php echo $id;?>");
@@ -150,7 +151,13 @@ $this->load->view('main_page/parts/V_Navigation');
                                                     this.pause(); // Stop playing
                                                     this.currentTime = 0; // Reset time
                                                 });
-                                            })
+                                            });
+                                            $('#<?php echo $id;?>').on('show.bs.modal', function () {
+                                                $('audio').each(function(){
+                                                    document.getElementById("audio<?php echo $id;?>").innerHTML = "<source src='<?php echo base_url('assets/file_lagu/')?><?php echo $dat->file?>' type='audio/mpeg'>";
+
+                                                });
+                                            });
 										</script>
 									</div>
 								</div>
