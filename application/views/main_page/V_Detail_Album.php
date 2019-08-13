@@ -74,66 +74,29 @@ $this->load->view('main_page/parts/V_Navigation');
                             jPlayer: "#jquery_jplayer_1",
                             cssSelectorAncestor: "#jp_container_1"
                         }, [
-
+                            <?php if (isset($detail_album)){?>
+							<?php foreach ($detail_album as $detail){?>
                             {
-                                title:"1. Ellie-Goulding",
-                                artist:"",
-                                mp4: "video/Ellie-Goulding.mp4",
-                                ogv: "video/Ellie-Goulding.ogv",
-                                webmv: "video/Ellie-Goulding.webm",
-                                poster:"video/play1.png"
+                                title: "<?php echo $detail->judul?>",
+                                artist: "",
+                                mp3: "<?php echo base_url('assets/file_lagu/'),$detail->file?>",
+                                wav: "<?php echo base_url('assets/file_lagu/'),$detail->file?>",
+                                poster: "<?php echo base_url('assets/foto_album/'),$detail->picture_album?>"
                             },
+							<?php }
+							} else {?>
                             {
-                                title:"2. Mark-Ronson-Uptown",
-                                artist:"",
-                                mp4: "video/Mark-Ronson-Uptown.mp4",
-                                ogv: "video/Mark-Ronson-Uptown.ogv",
-                                webmv: "video/Mark-Ronson-Uptown.webm",
-                                poster:"video/play2.png"
-                            },
-                            {
-                                title:"3. Ellie-Goulding",
-                                artist:"",
-                                mp4: "video/Ellie-Goulding.mp4",
-                                ogv: "video/Ellie-Goulding.ogv",
-                                webmv: "video/Ellie-Goulding.webm",
-                                poster:"video/play1.png"
-                            },
-                            {
-                                title:"4. Maroon-Sugar",
-                                artist:"",
-                                mp4: "video/Maroon-Sugar.mp4",
-                                ogv: "video/Maroon-Sugar.ogv",
-                                webmv: "video/Maroon-Sugar.webm",
-                                poster:"video/play4.png"
-                            },
-                            {
-                                title:"5. Pharrell-Williams",
-                                artist:"",
-                                mp4: "video/Pharrell-Williams.mp4",
-                                ogv: "video/Pharrell-Williams.ogv",
-                                webmv: "video/Pharrell-Williams.webm",
-                                poster:"video/play5.png"
-                            },
-                            {
-                                title:"6. Ellie-Goulding",
-                                artist:"",
-                                mp4: "video/Ellie-Goulding.mp4",
-                                ogv: "video/Ellie-Goulding.ogv",
-                                webmv: "video/Ellie-Goulding.webm",
-                                poster:"video/play1.png"
-                            },
-                            {
-                                title:"7. Pharrell-Williams",
-                                artist:"",
-                                mp4: "video/Pharrell-Williams.mp4",
-                                ogv: "video/Pharrell-Williams.ogv",
-                                webmv: "video/Pharrell-Williams.webm",
-                                poster:"video/play5.png"
+                                title: "<<KOSONG>>",
+                                artist: "",
+                                mp4: "",
+                                ogv: "",
+                                webmv: "",
+                                poster: ""
                             }
+                            <?php }?>
                         ], {
                             swfPath: "../../dist/jplayer",
-                            supplied: "webmv,ogv,mp4",
+                            supplied: "mp3,wav",
                             useStateClassSkin: true,
                             autoBlur: false,
                             smoothPlayBar: true,
@@ -151,15 +114,19 @@ $this->load->view('main_page/parts/V_Navigation');
 				<h4>Judul Album</h4>
 			<div class="row">
 				<div class="col-md-4">
-					<img src="<?php echo base_url('assets/foto_album/as_you_were.jpg')?>" style="max-height: 300px">
+					<img src="<?php echo base_url('assets/foto_album/'),$detail->picture_album?>" style="max-height: 300px">
 				</div>
 				<div class="col-md-6">
-					<h3 style="font-weight: bold; padding-bottom: 1px">Nama Penyanyi :<text style="color: #2d4278">JUDUL ALBUM</text></h3>
-					<h3 style="padding-bottom: 1px; font-weight: bold">Provider</h3>
-					<p>Nama Produser</p>
-					<h3 style="font-weight: bold; padding-bottom: 1px">genre</h3>
+					<?php if(isset($detail_artist)){?>
+					<?php foreach ($detail_artist as $det){?>
+					<h3 style="font-weight: bold; padding-bottom: 1px"><?php echo $det->nama_artist?> :<text style="color: #2d4278"><?php echo $det->nama_album?></text></h3>
+					<h3 style="padding-bottom: 1px; font-weight: bold">Producer</h3>
+					<p><?php echo $det->nama_partner?></p>
+					<h3 style="font-weight: bold; padding-bottom: 1px">Genre</h3>
+					<p><?php echo $det->genre?></p>
 					<h3 style="font-weight: bold">Bio Artis</h3>
-					<p>lorem ipsum lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum</p>
+					<p><?php echo $det->bio?></p>
+					<?php } } ?>
 				</div>
 			</div>
 			<!-- /agileits -->
@@ -167,7 +134,7 @@ $this->load->view('main_page/parts/V_Navigation');
 			<!--//music-right-->
 			</div>
 		</div>
-		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+		<div class="clearfix"></div>
 		<!-- /w3l-agileits-->
 		<!--body wrapper start-->
 		<div class="review-slider">
@@ -177,76 +144,28 @@ $this->load->view('main_page/parts/V_Navigation');
 				<div class="clearfix"> </div>
 			</div>
 			<ul id="flexiselDemo1">
-				<li>
-					<a href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/v1.jpg" alt=""/></a>
-					<div class="slide-title"><h4>Adele21 </div>
-					<div class="date-city">
-						<h5>Jan-02-16</h5>
-						<div class="buy-tickets">
-							<a href="<?php echo base_url('assets/main_page/')?>single.html">READ MORE</a>
-						</div>
-					</div>
-				</li>
-				<li>
-					<a href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/v2.jpg" alt=""/></a>
-					<div class="slide-title"><h4>Adele21</h4></div>
-					<div class="date-city">
-						<h5>Jan-02-16</h5>
-						<div class="buy-tickets">
-							<a href="<?php echo base_url('assets/main_page/')?>single.html">READ MORE</a>
-						</div>
-					</div>
-				</li>
-				<li>
-					<a href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/v3.jpg" alt=""/></a>
-					<div class="slide-title"><h4>Shomlock</h4></div>
-					<div class="date-city">
-						<h5>Jan-02-16</h5>
-						<div class="buy-tickets">
-							<a href="<?php echo base_url('assets/main_page/')?>single.html">READ MORE</a>
-						</div>
-					</div>
-				</li>
-				<li>
-					<a href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/v4.jpg" alt=""/></a>
-					<div class="slide-title"><h4>Stuck on a feeling</h4></div>
-					<div class="date-city">
-						<h5>Jan-02-16</h5>
-						<div class="buy-tickets">
-							<a href="<?php echo base_url('assets/main_page/')?>single.html">READ MORE</a>
-						</div>
-					</div>
-				</li>
-				<li>
-					<a href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/v5.jpg" alt=""/></a>
-					<div class="slide-title"><h4>Ricky Martine </h4></div>
-					<div class="date-city">
-						<h5>Jan-02-16</h5>
-						<div class="buy-tickets">
-							<a href="<?php echo base_url('assets/main_page/')?>single.html">READ MORE</a>
-						</div>
-					</div>
-				</li>
-				<li>
-					<a href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/v6.jpg" alt=""/></a>
-					<div class="slide-title"><h4>Ellie Goluding </h4></div>
-					<div class="date-city">
-						<h5>Jan-02-16</h5>
-						<div class="buy-tickets">
-							<a href="<?php echo base_url('assets/main_page/')?>single.html">READ MORE</a>
-						</div>
-					</div>
-				</li>
-				<li>
-					<a href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/main_page/')?>images/v6.jpeg" alt=""/></a>
-					<div class="slide-title"><h4>Fifty Shades </h4></div>
-					<div class="date-city">
-						<h5>Jan-02-16</h5>
-						<div class="buy-tickets">
-							<a href="<?php echo base_url('assets/main_page/')?>single.html">READ MORE</a>
-						</div>
-					</div>
-				</li>
+				<?php if (isset($featured)) {
+					foreach ($featured as $alb) {
+						$id_r = $alb->id_album;
+						?>
+						<li>
+							<a href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/foto_album/')?><?php echo $alb->picture_album;?>" alt=""/></a>
+							<div class="slide-title"><h4><?php echo $alb->nama_album?></div>
+							<div class="date-city">
+								<h5><?php echo $alb->nama_artist?></h5>
+								<div class="buy-tickets">
+									<a href="<?php echo base_url('assets/main_page/')?>single.html">READ MORE</a>
+								</div>
+							</div>
+						</li>
+					<?php }?>
+					<?php
+					//if (++$x == 5) break;
+				}
+				else {
+					echo "<div>Kosong.</div>";
+				}
+				?>
 			</ul>
 			<script type="text/javascript">
                 $(window).load(function() {
