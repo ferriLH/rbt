@@ -17,6 +17,7 @@ class C_Main_page extends CI_Controller
 			"getDiscover"	=> $this->M_Main_page->discover(),
 			"getnewrelease"	=> $this->M_Main_page->new_release(),
 			"featured"  	=> $this->M_Main_page->featured_album(),
+			"charts"		=> $this->M_Main_page->get_charts()
 		);
         $this->load->view('main_page/V_Main',$data);
     }

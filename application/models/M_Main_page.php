@@ -52,5 +52,14 @@ class M_Main_page extends CI_Model
 		$this->db->limit('10');
 		return $this->db->get()->result();
 	}
+	function get_charts()
+	{
+		$this->db->select('*');
+		$this->db->from('t_lagu');
+		$this->db->order_by('t_lagu.id_lagu','RANDOM');
+		$this->db->limit(7);
+		$this->db->where('t_lagu.aktif',TRUE);
+		return $this->db->get()->result();
+	}
 
 }

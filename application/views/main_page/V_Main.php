@@ -372,7 +372,7 @@ $this->load->view('main_page/parts/V_Navigation');
                     <link href="<?php echo base_url()?>assets/main_page/css/jplayer.blue.monday.min.css" rel="stylesheet" type="text/css">
                     <script type="text/javascript" src="<?php echo base_url()?>assets/main_page/js/jquery.jplayer.min.js"></script>
                     <script type="text/javascript" src="<?php echo base_url()?>assets/main_page/js/jplayer.playlist.min.js"></script>
-                    <script type="text/javascript">
+					<script type="text/javascript">
                         //<![CDATA[
                         $(document).ready(function(){
 
@@ -380,66 +380,29 @@ $this->load->view('main_page/parts/V_Navigation');
                                 jPlayer: "#jquery_jplayer_1",
                                 cssSelectorAncestor: "#jp_container_1"
                             }, [
-
+								<?php if (isset($charts)){?>
+								<?php foreach ($charts as $detail){?>
                                 {
-                                    title:"1. Ellie-Goulding",
-                                    artist:"",
-                                    mp4: "<?php echo base_url()?>assets/main_page/video/Ellie-Goulding.mp4",
-                                    ogv: "<?php echo base_url()?>assets/main_page/video/Ellie-Goulding.ogv",
-                                    //webmv: "<?php //echo base_url()?>//assets/main_page/video/Ellie-Goulding.webm",
-                                    poster:"<?php echo base_url()?>assets/main_page/video/play1.png"
+                                    title: "<?php echo $detail->judul?>",
+                                    artist: "",
+                                    mp3: "<?php echo base_url('assets/file_lagu/'),$detail->file?>",
+                                    wav: "<?php echo base_url('assets/file_lagu/'),$detail->file?>",
+                                    poster: "<?php echo base_url('assets/foto_album/')?>"
                                 },
+								<?php }
+								} else {?>
                                 {
-                                    title:"2. Mark-Ronson-Uptown",
-                                    artist:"",
-                                    mp4: "<?php echo base_url()?>assets/main_page/video/Mark-Ronson-Uptown.mp4",
-                                    ogv: "<?php echo base_url()?>assets/main_page/video/Mark-Ronson-Uptown.ogv",
-                                    webmv: "<?php echo base_url()?>assets/main_page/video/Mark-Ronson-Uptown.webm",
-                                    poster:"<?php echo base_url()?>assets/main_page/video/play2.png"
-                                },
-                                {
-                                    title:"3. Ellie-Goulding",
-                                    artist:"",
-                                    mp4: "<?php echo base_url()?>assets/main_page/video/Ellie-Goulding.mp4",
-                                    ogv: "<?php echo base_url()?>assets/main_page/video/Ellie-Goulding.ogv",
-                                    webmv: "<?php echo base_url()?>assets/main_page/video/Ellie-Goulding.webm",
-                                    poster:"<?php echo base_url()?>assets/main_page/video/play1.png"
-                                },
-                                {
-                                    title:"4. Maroon-Sugar",
-                                    artist:"",
-                                    mp4: "<?php echo base_url()?>assets/main_page/video/Maroon-Sugar.mp4",
-                                    ogv: "<?php echo base_url()?>assets/main_page/video/Maroon-Sugar.ogv",
-                                    webmv: "<?php echo base_url()?>assets/main_page/video/Maroon-Sugar.webm",
-                                    poster:"<?php echo base_url()?>assets/main_page/video/play4.png"
-                                },
-                                {
-                                    title:"5. Pharrell-Williams",
-                                    artist:"",
-                                    mp4: "<?php echo base_url()?>assets/main_page/video/Pharrell-Williams.mp4",
-                                    ogv: "<?php echo base_url()?>assets/main_page/video/Pharrell-Williams.ogv",
-                                    webmv: "<?php echo base_url()?>assets/main_page/video/Pharrell-Williams.webm",
-                                    poster:"<?php echo base_url()?>assets/main_page/video/play5.png"
-                                },
-                                {
-                                    title:"6. Ellie-Goulding",
-                                    artist:"",
-                                    mp4: "<?php echo base_url()?>assets/main_page/video/Ellie-Goulding.mp4",
-                                    ogv: "<?php echo base_url()?>assets/main_page/video/Ellie-Goulding.ogv",
-                                    webmv: "<?php echo base_url()?>assets/main_page/video/Ellie-Goulding.webm",
-                                    poster:"<?php echo base_url()?>assets/main_page/video/play1.png"
-                                },
-                                {
-                                    title:"7. Pharrell-Williams",
-                                    artist:"",
-                                    mp4: "<?php echo base_url()?>assets/main_page/video/Pharrell-Williams.mp4",
-                                    ogv: "<?php echo base_url()?>assets/main_page/video/Pharrell-Williams.ogv",
-                                    webmv: "<?php echo base_url()?>assets/main_page/video/Pharrell-Williams.webm",
-                                    poster:"<?php echo base_url()?>assets/main_page/video/play5.png"
+                                    title: "<<KOSONG>>",
+                                    artist: "",
+                                    mp4: "",
+                                    ogv: "",
+                                    webmv: "",
+                                    poster: ""
                                 }
+								<?php }?>
                             ], {
                                 swfPath: "../../dist/jplayer",
-                                supplied: "webmv,ogv,mp4",
+                                supplied: "mp3,wav",
                                 useStateClassSkin: true,
                                 autoBlur: false,
                                 smoothPlayBar: true,
@@ -448,7 +411,7 @@ $this->load->view('main_page/parts/V_Navigation');
 
                         });
                         //]]>
-                    </script>
+					</script>
 
                     <div class="apps">
                         <h3 class="hd-tittle">Our Apps </h3>
