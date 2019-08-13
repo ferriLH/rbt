@@ -3,15 +3,15 @@
 
     // custom scrollbar
 
-    $("html").niceScroll({styler:"fb",cursorcolor:"#33E1ED", cursorwidth: '5', cursorborderradius: '10px', background: '#444', spacebarenabled:false, cursorborder: '0',  zindex: '1000'});
+    // $("html").niceScroll({styler:"fb",cursorcolor:"#33E1ED", cursorwidth: '5', cursorborderradius: '10px', background: '#444', spacebarenabled:false, cursorborder: '0',  zindex: '1000'});
+	//
+    // $(".left-side").niceScroll({styler:"fb",cursorcolor:"#33E1ED", cursorwidth: '3', cursorborderradius: '10px', background: '#444', spacebarenabled:false, cursorborder: '0'});
 
-    $(".left-side").niceScroll({styler:"fb",cursorcolor:"#33E1ED", cursorwidth: '3', cursorborderradius: '10px', background: '#444', spacebarenabled:false, cursorborder: '0'});
 
-
-    $(".left-side").getNiceScroll();
-    if ($('body').hasClass('left-side-collapsed')) {
-        $(".left-side").getNiceScroll().hide();
-    }
+    // $(".left-side").getNiceScroll();
+    // if ($('body').hasClass('left-side-collapsed')) {
+    //     $(".left-side").getNiceScroll().hide();
+    // }
 
 
 
@@ -140,23 +140,22 @@
 	
      
   /************** Search ****************/
-		$(function() {
-	    var button = $('#loginButton');
-	    var box = $('#loginBox');
-	    var form = $('#loginForm');
-	    button.removeAttr('href');
-	    button.mouseup(function(login) {
-	        box.toggle();
-	        button.toggleClass('active');
-	    });
-	    form.mouseup(function() { 
-	        return false;
-	    });
-	    $(this).mouseup(function(login) {
-	        if(!($(login.target).parent('#loginButton').length > 0)) {
-	            button.removeClass('active');
-	            box.hide();
-	        }
-	    });
-	});
-	
+	// 	$(function() {
+	//     var button = $('#loginButton');
+	//     var box = $('#loginBox');
+	//     var form = $('#loginForm');
+	//     button.removeAttr('href');
+	//     button.mouseup(function(login) {
+	//         box.toggle();
+	//         button.toggleClass('active');
+	//     });
+	//     form.mouseup(function() {
+	//         return false;
+	//     });
+	//     $(this).mouseup(function(login) {
+	//         if(!($(login.target).parent('#loginButton').length > 0)) {
+	//             button.removeClass('active');
+	//             box.hide();
+	//         }
+	//     });
+	// });

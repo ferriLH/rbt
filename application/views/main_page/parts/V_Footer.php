@@ -58,8 +58,8 @@ $login = $this->session->userdata('isLogin');
 <!-- main content end-->
 </section>
 
-<!--<script src="--><?php //echo base_url()?><!--assets/main_page/js/jquery.nicescroll.js"></script>-->
-<!--<script src="--><?php //echo base_url()?><!--assets/main_page/js/scripts.js"></script>-->
+<script src="<?php echo base_url()?>assets/main_page/js/jquery.nicescroll.js"></script>
+<script src="<?php echo base_url()?>assets/main_page/js/scripts.js"></script>
 <!-- Bootstrap Core JavaScript -->
 <script src="<?php echo base_url()?>assets/main_page/js/bootstrap.js"></script>
 </body>
