@@ -23,7 +23,7 @@ class M_Main_page extends CI_Model
 		$this->db->join('t_genre','t_lagu.genre_id=t_genre.id');
 		$this->db->join('t_album','t_lagu.album_id=t_album.id_album');
 		$this->db->join('t_artist','t_album.artist_id=t_artist.id_artists');
-		$this->db->join('t_partner','t_partner.id_partner=t_artist.partner_id');
+		//$this->db->join('t_partner','t_partner.id_partner=t_artist.partner_id');
 		$this->db->order_by('t_lagu.id_lagu','RANDOM');
 		$this->db->limit(16);
 		$this->db->where('t_lagu.aktif',TRUE);
@@ -34,6 +34,7 @@ class M_Main_page extends CI_Model
 	{
 		$this->db->select('*');
 		$this->db->from('t_lagu');
+		$this->db->join('t_genre','t_lagu.genre_id=t_genre.id');
 		$this->db->join('t_album','t_lagu.album_id=t_album.id_album');
 		$this->db->join('t_artist','t_album.artist_id=t_artist.id_artists');
 		$this->db->order_by('id_lagu','DESC');
@@ -57,7 +58,7 @@ class M_Main_page extends CI_Model
 		$this->db->select('*');
 		$this->db->from('t_lagu');
 		$this->db->order_by('t_lagu.id_lagu','RANDOM');
-		$this->db->limit(7);
+		$this->db->limit(16);
 		$this->db->where('t_lagu.aktif',TRUE);
 		return $this->db->get()->result();
 	}

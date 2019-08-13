@@ -66,12 +66,12 @@ $this->load->view('main_page/parts/V_Navigation');
 												<br>
 												<small><?php echo "Ketik : <b>".$dat->kode_xl."</b>"?></small><br>
 												<small><?php echo "Kirim ke : <b>1818</b>"?></small> <br>
-												<small><?php echo "Tarif : ".$dat->harga_xl."/lagu"?></small> <br><br><br>
+												<small><?php echo "Tarif : ".$dat->harga_xl."/lagu"?></small> <br><br>
 												<small>Untuk Memberikan nada sambung ke teman,</small> <br>
 												<small>
 													<?php echo "Ketik : <b>GIFT</b> (spasi) <b> Nomor XL teman </b>(spasi)<b>".$dat->kode_xl."</b>"?>
 												</small><br>
-												<small><?php echo "Kirim ke : <b>1818</b>"?></small> <br><br>
+												<small><?php echo "Kirim ke : <b>1818</b>"?></small> <br>
 												<?php
 												if ($this->agent->is_mobile('iphone')||$this->agent->is_mobile('ipod')||$this->agent->is_mobile('ipad'))
 												{
@@ -84,7 +84,7 @@ $this->load->view('main_page/parts/V_Navigation');
 													echo "<a href='sms:1818?body=".$dat->kode_xl."'><button class='btn btn-default'>Kirim SMS</button></a>";
 												}
 												?>
-
+												<br><br>
 											</div>
 											<div class="col-sm-4">
 												<img style="max-height: 25px;" src="<?php echo base_url('assets/main_page/images/telkom.png')?>" alt="TELKOMSEL">
@@ -109,7 +109,7 @@ $this->load->view('main_page/parts/V_Navigation');
 													echo "<a href='sms:1212?body=RING SUB ".$dat->kode_tsel."'><button class='btn btn-default'>Kirim SMS</button></a>";
 												}
 												?>
-
+												<br><br>
 											</div>
 											<div class="col-sm-4">
 												<img style="max-height: 25px;" src="<?php echo base_url('assets/main_page/images/isat.png')?>" alt="INDOSAT">
@@ -134,7 +134,7 @@ $this->load->view('main_page/parts/V_Navigation');
 													echo "<a href='sms:808?body=SET ".$dat->kode_indosat."'><button class='btn btn-default'>Kirim SMS</button></a>";
 												}
 												?>
-
+												<br><br>
 											</div>
 										</div>
 									</div>

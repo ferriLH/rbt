@@ -112,12 +112,12 @@ $this->load->view('main_page/parts/V_Navigation');
 													<br>
 													<small><?php echo "Ketik : <b>".$dat->kode_xl."</b>"?></small><br>
 													<small><?php echo "Kirim ke : <b>1818</b>"?></small> <br>
-													<small><?php echo "Tarif : ".$dat->harga_xl."/lagu"?></small> <br><br><br>
+													<small><?php echo "Tarif : ".$dat->harga_xl."/lagu"?></small> <br><br>
 													<small>Untuk Memberikan nada sambung ke teman,</small> <br>
 													<small>
 														<?php echo "Ketik : <b>GIFT</b> (spasi) <b> Nomor XL teman </b>(spasi)<b>".$dat->kode_xl."</b>"?>
 													</small><br>
-													<small><?php echo "Kirim ke : <b>1818</b>"?></small> <br><br>
+													<small><?php echo "Kirim ke : <b>1818</b>"?></small> <br>
 													<?php
 													if ($this->agent->is_mobile('iphone')||$this->agent->is_mobile('ipod')||$this->agent->is_mobile('ipad'))
 													{
@@ -130,7 +130,7 @@ $this->load->view('main_page/parts/V_Navigation');
 														echo "<a href='sms:1818?body=".$dat->kode_xl."'><button class='btn btn-default'>Kirim SMS</button></a>";
 													}
 													?>
-
+													<br><br>
 												</div>
 												<div class="col-sm-4">
 													<img style="max-height: 25px;" src="<?php echo base_url('assets/main_page/images/telkom.png')?>" alt="TELKOMSEL">
@@ -155,7 +155,7 @@ $this->load->view('main_page/parts/V_Navigation');
 														echo "<a href='sms:1212?body=RING SUB ".$dat->kode_tsel."'><button class='btn btn-default'>Kirim SMS</button></a>";
 													}
 													?>
-
+													<br><br>
 												</div>
 												<div class="col-sm-4">
 													<img style="max-height: 25px;" src="<?php echo base_url('assets/main_page/images/isat.png')?>" alt="INDOSAT">
@@ -180,7 +180,7 @@ $this->load->view('main_page/parts/V_Navigation');
 														echo "<a href='sms:808?body=SET ".$dat->kode_indosat."'><button class='btn btn-default'>Kirim SMS</button></a>";
 													}
 													?>
-
+													<br><br>
 												</div>
 											</div>
 										</div>
@@ -194,8 +194,8 @@ $this->load->view('main_page/parts/V_Navigation');
                                                 }
                                                 $('#<?php echo $id;?>').on('hide.bs.modal', function () {
                                                     $('audio').each(function(){
-                                                        this.pause(); // Stop playing
-                                                        this.currentTime = 0; // Reset time
+                                                        this.pause();
+                                                        this.currentTime = 0;
                                                     });
                                                 });
                                                 $('#<?php echo $id;?>').on('show.bs.modal', function () {
@@ -241,9 +241,136 @@ $this->load->view('main_page/parts/V_Navigation');
 				<?php if (isset($getDiscover)) {
 					foreach ($getDiscover as $dis) {
 							$id = $dis->id_lagu; ?>
+						<!--modal music-->
+						<div id="<?php echo "discover".$id?>" class="modal fade" role="dialog" tabindex="-1">
+							<div class="modal-dialog-scrollable">
+								<div class="modal-content">
+									<div class="modal-header">
+										<div class="row">
+											<button type="button" onclick="stopAudioDisc<?php echo $id?>()" class="close btn btn-default" data-dismiss="modal">Close &times;</button>
+										</div>
+									</div>
+									<div class="modal-body" style="padding: 15px 15px;">
+										<div class="row">
+											<div class="col-sm-4"style="min-height: 150px;max-height: 150px;">
+												<img src="<?php echo base_url('assets/foto_album/')?><?php echo $dis->picture_album;?>" style="width: 100%; height: 100%; max-width: 150px; max-height: 150px;">
+											</div>
+											<div class="col-sm-8">
+												<p style="text-align: left; width: 100%; font-size: large; font-weight: bold"><?php echo $dis->judul?></p>
+												<p style="text-align: left; width: 100%; font-size: medium; font-style: italic;"><?php echo $dis->nama_artist?></p>
+												<audio controls controlsList="nodownload" id="audioDisc<?php echo $id;?>" preload="none">
+													Your browser does not support the audio element.
+												</audio>
+												<h3 style="text-align: left; font-style: italic">Cara Registrasi:</h3>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-sm-4">
+												<img style="max-height: 25px;" src="<?php echo base_url('assets/main_page/images/xlaxiata.png');?>" alt="XL">
+												<br>
+												<small><?php echo "Ketik : <b>".$dis->kode_xl."</b>"?></small><br>
+												<small><?php echo "Kirim ke : <b>1818</b>"?></small> <br>
+												<small><?php echo "Tarif : ".$dis->harga_xl."/lagu"?></small> <br><br>
+												<small>Untuk Memberikan nada sambung ke teman,</small> <br>
+												<small>
+													<?php echo "Ketik : <b>GIFT</b> (spasi) <b> Nomor XL teman </b>(spasi)<b>".$dis->kode_xl."</b>"?>
+												</small><br>
+												<small><?php echo "Kirim ke : <b>1818</b>"?></small> <br>
+												<?php
+												if ($this->agent->is_mobile('iphone')||$this->agent->is_mobile('ipod')||$this->agent->is_mobile('ipad'))
+												{
+													echo "<a href='sms:1818&body=".$dis->kode_xl."'><button class='btn btn-default'>Kirim SMS</button></a>";
+												}elseif ($this->agent->is_mobile('android'))
+												{
+													echo "<a href='sms:1818?body=".$dis->kode_xl."'><button class='btn btn-default'>Kirim SMS</button></a>";
+												}else
+												{
+													echo "<a href='sms:1818?body=".$dis->kode_xl."'><button class='btn btn-default'>Kirim SMS</button></a>";
+												}
+												?>
+												<br><br>
+											</div>
+											<div class="col-sm-4">
+												<img style="max-height: 25px;" src="<?php echo base_url('assets/main_page/images/telkom.png')?>" alt="TELKOMSEL">
+												<br>
+												<small><?php echo "Ketik : <b>RING</b> (spasi)<b> SUB</b> (spasi) <b>".$dis->kode_tsel."</b>"?></small><br>
+												<small><?php echo "Kirim ke : <b>1212</b>"?></small> <br>
+												<small><?php echo "Tarif : ".$dis->harga_tsel."/lagu"?></small> <br><br>
+												<small>Untuk Memberikan nada sambung ke teman,</small> <br>
+												<small>
+													<?php echo "Ketik : <b>RING</b> (spasi)<b> GIFT</b> (spasi) <b>".$dis->kode_tsel."</b> (spasi)<b> Nomor HP teman</b>"?>
+												</small><br>
+												<small><?php echo "Kirim ke : <b>1212</b>"?></small> <br>
+												<?php
+												if ($this->agent->is_mobile('iphone')||$this->agent->is_mobile('ipod')||$this->agent->is_mobile('ipad'))
+												{
+													echo "<a href='sms:1212&body=RING SUB ".$dis->kode_tsel."'><button class='btn btn-default'>Kirim SMS</button></a>";
+												}elseif ($this->agent->is_mobile('android'))
+												{
+													echo "<a href='sms:1212?body=RING SUB ".$dis->kode_tsel."'><button class='btn btn-default'>Kirim SMS</button></a>";
+												}else
+												{
+													echo "<a href='sms:1212?body=RING SUB ".$dis->kode_tsel."'><button class='btn btn-default'>Kirim SMS</button></a>";
+												}
+												?>
+												<br><br>
+											</div>
+											<div class="col-sm-4">
+												<img style="max-height: 25px;" src="<?php echo base_url('assets/main_page/images/isat.png')?>" alt="INDOSAT">
+												<br>
+												<small><?php echo "Ketik : <b>SET</b> (spasi) <b>".$dis->kode_indosat."</b>"?></small><br>
+												<small><?php echo "Kirim ke : <b>808</b>"?></small> <br>
+												<small><?php echo "Tarif : ".$dis->harga_indosat."/lagu"?></small> <br><br>
+												<small>Untuk Memberikan nada sambung ke teman,</small> <br>
+												<small>
+													<?php echo "Ketik : GIFT</b> (spasi) <b>".$dis->kode_indosat."</b> (spasi)<b> Nomor HP teman</b>"?>
+												</small><br>
+												<small><?php echo "Kirim ke : <b>808</b>"?></small> <br>
+												<?php
+												if ($this->agent->is_mobile('iphone')||$this->agent->is_mobile('ipod')||$this->agent->is_mobile('ipad'))
+												{
+													echo "<a href='sms:808&body=SET ".$dis->kode_indosat."'><button class='btn btn-default'>Kirim SMS</button></a>";
+												}elseif ($this->agent->is_mobile('android'))
+												{
+													echo "<a href='sms:808?body=SET ".$dis->kode_indosat."'><button class='btn btn-default'>Kirim SMS</button></a>";
+												}else
+												{
+													echo "<a href='sms:808?body=SET ".$dis->kode_indosat."'><button class='btn btn-default'>Kirim SMS</button></a>";
+												}
+												?>
+												<br><br>
+											</div>
+										</div>
+									</div>
+									<div class="modal-footer">
+										<button type="button" onclick="stopAudioDisc<?php echo $id?>()" class="close btn btn-default" data-dismiss="modal">Close &times;</button>
+										<script>
+                                            function stopAudioDisc<?php echo $id?>() {
+                                                var audioPlayer = document.getElementById("audioDisc<?php echo $id;?>");
+                                                audioPlayer.pause();
+                                                audioPlayer.currentTime = 0;
+                                            }
+                                            $('#<?php echo "discover".$id;?>').on('hide.bs.modal', function () {
+                                                $('audio').each(function(){
+                                                    this.pause(); // Stop playing
+                                                    this.currentTime = 0; // Reset time
+                                                });
+                                            });
+                                            $('#<?php echo "discover".$id;?>').on('show.bs.modal', function () {
+                                                $('audio').each(function(){
+                                                    document.getElementById("audioDisc<?php echo $id;?>").innerHTML = "<source src='<?php echo base_url('assets/file_lagu/')?><?php echo $dis->file?>' type='audio/mpeg'>";
+
+                                                });
+                                            });
+										</script>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--end Modal-->
                         <div class="col-md-3 content-grid">
-                            <a href="<?php echo base_url()?>assets/main_page/single.html"><img src="<?php echo base_url('assets/foto_album/')?><?php echo $dis->picture_album?>" title="<?php echo $dis->nama_album;?>"></a>
-                            <div class="inner-info"><a href="<?php echo base_url()?>assets/main_page/single.html"><h5><?php echo $dis->judul?></h5></a></div>
+							<a data-toggle="modal" data-target="#<?php echo "discover".$id?>"><img src="<?php echo base_url('assets/foto_album/')?><?php echo $dis->picture_album?>" title="<?php echo $dis->nama_album;?>"></a>
+                            <div class="inner-info"><a href="" data-toggle="modal" data-target="#<?php echo "discover".$id?>"><h4><?php echo $dis->judul?></h4></a></div>
                         </div>
 					<?php }?>
 					<?php
@@ -264,7 +391,12 @@ $this->load->view('main_page/parts/V_Navigation');
                         <div class="video-record-list">
                             <div id="jp_container_1" class="jp-video jp-video-270p" role="application" aria-label="media player">
                                 <div class="jp-type-playlist">
-                                    <div id="jquery_jplayer_1" class="jp-jplayer" style="width: 480px; height: 270px;"><img id="jp_poster_0" src="<?php echo base_url()?>assets/main_page/video/play1.png" style="width: 480px; height: 270px; display: inline;"><video id="jp_video_0" preload="metadata" src="http://192.168.30.9/vijayaa/2015/Dec/mosaic/web/video/Ellie-Goulding.webm" title="1. Ellie-Goulding" style="width: 0px; height: 0px;"></video></div>
+                                    <div id="jquery_jplayer_1" class="jp-jplayer" style="width: 480px; height: 270px;">
+<!--										<img id="jp_poster_0" src="--><?php //echo base_url()?><!--assets/main_page/video/play1.png" style="width: 480px; height: 270px; display: inline;">-->
+<!--										<video id="jp_video_0" preload="metadata" src="http://192.168.30.9/vijayaa/2015/Dec/mosaic/web/video/Ellie-Goulding.webm" title="1. Ellie-Goulding" style="width: 0px; height: 0px;">-->
+<!--											-->
+<!--										</video>-->
+									</div>
                                     <div class="jp-gui">
                                         <div class="jp-video-play" style="display: block;">
                                             <button class="jp-video-play-icon" role="button" tabindex="0">play</button>
@@ -294,70 +426,70 @@ $this->load->view('main_page/parts/V_Navigation');
                                                     <button class="jp-full-screen" role="button" tabindex="0">full screen</button>
                                                 </div>
                                             </div>
-                                            <div class="jp-details" style="display: none;">
-                                                <div class="jp-title" aria-label="title">1. Ellie-Goulding</div>
-                                            </div>
+<!--                                            <div class="jp-details" style="display: none;">-->
+<!--                                                <div class="jp-title" aria-label="title">1. Ellie-Goulding</div>-->
+<!--                                            </div>-->
                                         </div>
                                     </div>
                                     <div class="jp-playlist">
                                         <ul style="display: block;">
-                                            <li class="jp-playlist-current">
-                                                <div>
-                                                    <a href="javascript:;" class="jp-playlist-item-remove" style="display: none;">×</a>
-                                                    <a href="javascript:;" class="jp-playlist-item jp-playlist-current" tabindex="0">1. Ellie-Goulding
-                                                        <span class="jp-artist">by Pixar</span>
-                                                    </a>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div>
-                                                    <a href="javascript:;" class="jp-playlist-item-remove" style="display: none;">×</a>
-                                                    <a href="javascript:;" class="jp-playlist-item" tabindex="0">2. Mark-Ronson-Uptown
-                                                        <span class="jp-artist">by Pixar</span>
-                                                    </a>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div>
-                                                    <a href="javascript:;" class="jp-playlist-item-remove" style="display: none;">×</a>
-                                                    <a href="javascript:;" class="jp-playlist-item" tabindex="0">3. Ellie-Goulding
-                                                        <span class="jp-artist">by Pixar</span>
-                                                    </a>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div>
-                                                    <a href="javascript:;" class="jp-playlist-item-remove" style="display: none;">×</a>
-                                                    <a href="javascript:;" class="jp-playlist-item" tabindex="0">4. Maroon-Sugar
-                                                        <span class="jp-artist">by Pixar</span>
-                                                    </a>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div>
-                                                    <a href="javascript:;" class="jp-playlist-item-remove" style="display: none;">×</a>
-                                                    <a href="javascript:;" class="jp-playlist-item" tabindex="0">5. Pharrell-Williams
-                                                        <span class="jp-artist">by Pixar
-                                                        </span>
-                                                    </a>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div>
-                                                    <a href="javascript:;" class="jp-playlist-item-remove" style="display: none;">×</a>
-                                                    <a href="javascript:;" class="jp-playlist-item" tabindex="0">6. Ellie-Goulding
-                                                        <span class="jp-artist">by Pixar</span>
-                                                    </a>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div>
-                                                    <a href="javascript:;" class="jp-playlist-item-remove" style="display: none;">×</a>
-                                                    <a href="javascript:;" class="jp-playlist-item" tabindex="0">7. Pharrell-Williams
-                                                        <span class="jp-artist">by Pixar</span>
-                                                    </a>
-                                                </div>
-                                            </li>
+<!--                                            <li class="jp-playlist-current">-->
+<!--                                                <div>-->
+<!--                                                    <a href="javascript:;" class="jp-playlist-item-remove" style="display: none;">×</a>-->
+<!--                                                    <a href="javascript:;" class="jp-playlist-item jp-playlist-current" tabindex="0">1. Ellie-Goulding-->
+<!--                                                        <span class="jp-artist">by Pixar</span>-->
+<!--                                                    </a>-->
+<!--                                                </div>-->
+<!--                                            </li>-->
+<!--                                            <li>-->
+<!--                                                <div>-->
+<!--                                                    <a href="javascript:;" class="jp-playlist-item-remove" style="display: none;">×</a>-->
+<!--                                                    <a href="javascript:;" class="jp-playlist-item" tabindex="0">2. Mark-Ronson-Uptown-->
+<!--                                                        <span class="jp-artist">by Pixar</span>-->
+<!--                                                    </a>-->
+<!--                                                </div>-->
+<!--                                            </li>-->
+<!--                                            <li>-->
+<!--                                                <div>-->
+<!--                                                    <a href="javascript:;" class="jp-playlist-item-remove" style="display: none;">×</a>-->
+<!--                                                    <a href="javascript:;" class="jp-playlist-item" tabindex="0">3. Ellie-Goulding-->
+<!--                                                        <span class="jp-artist">by Pixar</span>-->
+<!--                                                    </a>-->
+<!--                                                </div>-->
+<!--                                            </li>-->
+<!--                                            <li>-->
+<!--                                                <div>-->
+<!--                                                    <a href="javascript:;" class="jp-playlist-item-remove" style="display: none;">×</a>-->
+<!--                                                    <a href="javascript:;" class="jp-playlist-item" tabindex="0">4. Maroon-Sugar-->
+<!--                                                        <span class="jp-artist">by Pixar</span>-->
+<!--                                                    </a>-->
+<!--                                                </div>-->
+<!--                                            </li>-->
+<!--                                            <li>-->
+<!--                                                <div>-->
+<!--                                                    <a href="javascript:;" class="jp-playlist-item-remove" style="display: none;">×</a>-->
+<!--                                                    <a href="javascript:;" class="jp-playlist-item" tabindex="0">5. Pharrell-Williams-->
+<!--                                                        <span class="jp-artist">by Pixar-->
+<!--                                                        </span>-->
+<!--                                                    </a>-->
+<!--                                                </div>-->
+<!--                                            </li>-->
+<!--                                            <li>-->
+<!--                                                <div>-->
+<!--                                                    <a href="javascript:;" class="jp-playlist-item-remove" style="display: none;">×</a>-->
+<!--                                                    <a href="javascript:;" class="jp-playlist-item" tabindex="0">6. Ellie-Goulding-->
+<!--                                                        <span class="jp-artist">by Pixar</span>-->
+<!--                                                    </a>-->
+<!--                                                </div>-->
+<!--                                            </li>-->
+<!--                                            <li>-->
+<!--                                                <div>-->
+<!--                                                    <a href="javascript:;" class="jp-playlist-item-remove" style="display: none;">×</a>-->
+<!--                                                    <a href="javascript:;" class="jp-playlist-item" tabindex="0">7. Pharrell-Williams-->
+<!--                                                        <span class="jp-artist">by Pixar</span>-->
+<!--                                                    </a>-->
+<!--                                                </div>-->
+<!--                                            </li>-->
                                         </ul>
                                     </div>
                                     <div class="jp-no-solution" style="display: none;">
