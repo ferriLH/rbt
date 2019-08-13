@@ -55,9 +55,9 @@
                                         $id = $dat->id_artists;
                                         ?>
                                     <div class="col-md-3 artist-grid">
-                                        <a  href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/foto_artis/');echo $dat->picture_artist;?>" title="allbum-name"></a>
-                                        <a href="<?php echo base_url('assets/main_page/')?>single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                                        <a class="art" href="<?php echo base_url('assets/main_page/')?>single.html"><?php echo $dat->nama_artist;?></a>
+                                        <a  href="<?php echo base_url('artist/detail/'),$id?>"><img src="<?php echo base_url('assets/foto_artis/');echo $dat->picture_artist;?>" title="allbum-name"></a>
+                                        <a href="<?php echo base_url('artist/detail/'),$id?>"><i class="glyphicon glyphicon-play-circle"></i></a>
+                                        <a class="art" href="<?php echo base_url('artist/detail/'),$id?>single.html"><?php echo $dat->nama_artist;?></a>
                                     </div>
                                     <?php }?>
                                     <?php
@@ -92,7 +92,7 @@
 										$id_a = $a->id_artists;
 										?>
 										<li>
-											<a href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/foto_artis/')?><?php echo $a->picture_artist;?>" alt=""/></a>
+											<a href="<?php echo base_url('artist/detail/'),$id_a?>"><img src="<?php echo base_url('assets/foto_artis/')?><?php echo $a->picture_artist;?>" alt=""/></a>
 											<div class="slide-title"><h4><?php echo $a->nama_artist?></div>
 											<div class="date-city">
 												<h5><?php echo $a->nama_partner?></h5>

@@ -108,6 +108,12 @@ $route['contact']             		= 'C_Contact';
 $route['artist']             		= 'C_Artist';
 $route['artist/page/(:any)']    	= 'C_Artist';
 $route['artist/page']      	    	= 'C_Artist';
+$route['artist/detail']      	    = 'C_Detail_Artist';
+$route['artist/detail/(:any)']	    = 'C_Detail_Artist';
+
+$route['artist/detail/(:any)']		= 'C_Detail_Artist';
+$route['artist/detail/(:any)/page/(:any)']	= 'C_Detail_Artist';
+
 
 $route['album']             		= 'C_Album';
 $route['album/page/(:any)']    		= 'C_Album';

@@ -113,7 +113,7 @@ $this->load->view('main_page/parts/V_Navigation');
 				<!-- /agileinfo -->
 			</div>
 			<div class="response">
-				<h4>Judul Album</h4>
+				<h4>Album</h4>
 			<div class="row">
 				<div class="col-md-4">
 					<img src="<?php echo base_url('assets/foto_album/'),$detail->picture_album?>" style="max-height: 300px">
