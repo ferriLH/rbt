@@ -71,27 +71,6 @@ $this->load->view('main_page/parts/V_Navigation');
                             <div class="clearfix"> </div>
                         </div>
                     </div>
-                    <!--//End-banner-->
-                    <!--albums-->
-                    <!-- pop-up-box -->
-<!--                    <link href="--><?php //echo base_url()?><!--assets/main_page/css/popuo-box.css" rel="stylesheet" type="text/css" media="all">-->
-<!--                    <script src="--><?php //echo base_url()?><!--assets/main_page/js/jquery.magnific-popup.js" type="text/javascript"></script>-->
-<!--                    <script>-->
-<!--                        $(document).ready(function() {-->
-<!--                            $('.popup-with-zoom-anim').magnificPopup({-->
-<!--                                type: 'inline',-->
-<!--                                fixedContentPos: false,-->
-<!--                                fixedBgPos: true,-->
-<!--                                overflowY: 'auto',-->
-<!--                                closeBtnInside: true,-->
-<!--                                preloader: false,-->
-<!--                                midClick: true,-->
-<!--                                removalDelay: 300,-->
-<!--                                mainClass: 'my-mfp-zoom-in'-->
-<!--                            });-->
-<!--                        });-->
-<!--                    </script>-->
-<!--                    //pop-up-box -->
                     <div class="albums">
                         <div class="tittle-head">
                             <h3 class="tittle">New Releases <span class="new">New</span></h3>
@@ -538,12 +517,12 @@ $this->load->view('main_page/parts/V_Navigation');
 							$id_r = $alb->id_album;
 							?>
 							<li>
-								<a href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/foto_album/')?><?php echo $alb->picture_album;?>" alt=""/></a>
+								<a href="<?php echo base_url('album/detail/'),$id_r?>"><img src="<?php echo base_url('assets/foto_album/')?><?php echo $alb->picture_album;?>" alt=""/></a>
 								<div class="slide-title"><h4><?php echo $alb->nama_album?></div>
 								<div class="date-city">
 									<h5><?php echo $alb->nama_artist?></h5>
 									<div class="buy-tickets">
-										<a href="<?php echo base_url('assets/main_page/')?>single.html">READ MORE</a>
+										<a href="<?php echo base_url('album/detail/'),$id_r?>">READ MORE</a>
 									</div>
 								</div>
 							</li>

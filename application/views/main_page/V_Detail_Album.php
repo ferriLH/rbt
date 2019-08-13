@@ -149,12 +149,12 @@ $this->load->view('main_page/parts/V_Navigation');
 						$id_r = $alb->id_album;
 						?>
 						<li>
-							<a href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/foto_album/')?><?php echo $alb->picture_album;?>" alt=""/></a>
+							<a href="<?php echo base_url('album/detail/'),$id_r?>"><img src="<?php echo base_url('assets/foto_album/')?><?php echo $alb->picture_album;?>" alt=""/></a>
 							<div class="slide-title"><h4><?php echo $alb->nama_album?></div>
 							<div class="date-city">
 								<h5><?php echo $alb->nama_artist?></h5>
 								<div class="buy-tickets">
-									<a href="<?php echo base_url('assets/main_page/')?>single.html">READ MORE</a>
+									<a href="<?php echo base_url('album/detail/'),$id_r?>">READ MORE</a>
 								</div>
 							</div>
 						</li>
