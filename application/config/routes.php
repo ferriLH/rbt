@@ -133,7 +133,7 @@ $route['inbox/baca/(:any)']     	= 'C_Inbox/baca/$1';
 $route['inbox/delete/(:any)']   	= 'C_Inbox/delete/$1';
 
 $route['search']					= 'C_Result_Search';
-$route['search/(:any)']				= 'C_Result_Search/$1';
+$route['search/(:any)']				= 'C_Result_Search/';
 
 $route['404_override']          	= '';
 $route['translate_uri_dashes']  	= FALSE;

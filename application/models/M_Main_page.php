@@ -62,5 +62,21 @@ class M_Main_page extends CI_Model
 		$this->db->where('t_lagu.aktif',TRUE);
 		return $this->db->get()->result();
 	}
-
+	function search($key)
+	{
+		$this->db->select('*');
+		$this->db->from('t_lagu');
+		$this->db->join('t_genre','t_lagu.genre_id=t_genre.id');
+		$this->db->join('t_album','t_lagu.album_id=t_album.id_album');
+		$this->db->join('t_artist','t_album.artist_id=t_artist.id_artists');
+		if(!empty($key)) {
+			$this->db->group_start();
+			$this->db->like('judul', $key);
+			$this->db->or_like('nama_artist', $key);
+			$this->db->or_like('genre', $key);
+			$this->db->group_end();
+		}
+		$query = $this->db->get();
+		return $query->result();
+	}
 }
