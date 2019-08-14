@@ -30,7 +30,7 @@ $this->load->view('main_page/parts/V_Navigation');
 			<div class="browse">
 				<div class="tittle-head two">
 					<h3 class="tittle">All Song <span class="new">Realesed</span></h3>
-					<a href="<?php echo base_url('assets/main_page/')?>browse.html"><h4 class="tittle third">See all</h4></a>
+<!--					<a href="--><?php //echo base_url('assets/main_page/')?><!--browse.html"><h4 class="tittle third">See all</h4></a>-->
 					<div class="clearfix"> </div>
 				</div>
 				<?php if (isset($curent_result)) {
