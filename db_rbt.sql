@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 12, 2019 at 09:28 AM
+-- Generation Time: Aug 14, 2019 at 08:04 AM
 -- Server version: 10.3.16-MariaDB
 -- PHP Version: 7.3.7
 
@@ -64,7 +64,8 @@ CREATE TABLE `t_album` (
 INSERT INTO `t_album` (`id_album`, `artist_id`, `nama_album`, `picture_album`, `aktif`) VALUES
 (8, 20, 'Yes!', 'jason_mraz-yes.jpg', 1),
 (9, 21, 'As You Were', 'as_you_were.jpg', 1),
-(10, 22, 'In A Perfect World', 'in-a-perfect-world.jpg', 1);
+(10, 22, 'In A Perfect World', 'in-a-perfect-world.jpg', 1),
+(11, 23, 'single', 'Nindiani.jpeg', 1);
 
 -- --------------------------------------------------------
 
@@ -88,7 +89,8 @@ CREATE TABLE `t_artist` (
 INSERT INTO `t_artist` (`id_artists`, `partner_id`, `nama_artist`, `bio`, `picture_artist`, `aktif`) VALUES
 (20, 1, 'Jason Mraz', 'Jason Mraz adalah penyanyi dan penulis lagu Amerika Serikat. Ia lahir dan dibesarkan di Mechanicsville, Virginia.', 'jason_mraz.jpg', 1),
 (21, 1, 'Liam Gallagher', 'William \"John Paul\" Gallagher di Burnage, Manchester merupakan vokalis dari Grup Musik Inggris Oasis. Saat kecil Liam adalah anak yang mengalami kekerasan dalam rumah tangga oleh ayahnya, begitu pula dengan kakaknya Noel Gallagher dan Paul. Karena inilah sikapnya hingga sekarang kadang-kadang suka meresahkan.', 'liam.jpg', 1),
-(22, 1, 'Kodaline', 'Kodaline adalah grup musik asal Irlandia. Grup musik ini dikenal sebagai 21 Demands, sebelum diganti menjadi Kodaline pada tahun 2012. Steve Garrigan dan Mark Prendergast dibesarkan di Swords, Dublin dan telah berteman sejak kecil.', 'kodaline.jpg', 1);
+(22, 1, 'Kodaline', 'Kodaline adalah grup musik asal Irlandia. Grup musik ini dikenal sebagai 21 Demands, sebelum diganti menjadi Kodaline pada tahun 2012. Steve Garrigan dan Mark Prendergast dibesarkan di Swords, Dublin dan telah berteman sejak kecil.', 'kodaline.jpg', 1),
+(23, 4, 'Nindiani', '-', 'Nindiani.jpeg', 1);
 
 -- --------------------------------------------------------
 
@@ -573,7 +575,8 @@ INSERT INTO `t_lagu` (`id_lagu`, `album_id`, `genre_id`, `judul`, `harga_xl`, `h
 (52, 9, 348, 'Wall Of Glass', 1200, 1300, 1400, '02_Bold.mp3', 'LG2_XL', 'LG2_TSEL', 'LG2_ISAT', 1),
 (53, 10, 209, 'High Hopes', 1200, 1300, 1100, 'Kodaline_-_High_Hopes_(Official_Music_Video).mp3', 'KDL1_XL', 'KDL1_TSEL', 'KDL1_ISAT', 1),
 (54, 10, 209, 'All I Want', 1500, 1200, 1000, 'Kodaline_-_All_I_Want.mp3', 'KDL2_XL', 'KDL2_TSEL', 'KDL2_ISAT', 1),
-(55, 9, 348, 'I\'ve All I Need', 1500, 1200, 1000, '12__I_ve_All_I_Need_-_(www_SongsLover_club).mp3', 'LG12_XL', 'LG12_TSEL', 'LG12_ISAT', 1);
+(55, 9, 348, 'I\'ve All I Need', 1500, 1200, 1000, '12__I_ve_All_I_Need_-_(www_SongsLover_club).mp3', 'LG12_XL', 'LG12_TSEL', 'LG12_ISAT', 1),
+(56, 11, 299, 'Main Hape', 2000, 2000, 2000, 'song_Main_Hape_Nindiani.wav', 'MAINHPE1', 'MAINHPE1', 'MAINHPE1', 1);
 
 -- --------------------------------------------------------
 
@@ -598,7 +601,8 @@ CREATE TABLE `t_partner` (
 
 INSERT INTO `t_partner` (`id_partner`, `nomor_induk`, `nama_partner`, `email_partner`, `no_telpon`, `jk`, `alamat`, `aktif`) VALUES
 (1, '3203232506980005', 'Director Ferri', 'ferrilasmi@gmail.com', '081220979733', 'pria', 'Dolor Sit Amet, Dolor Amet', 1),
-(3, '1312312389', 'sdadsax', 'eea@sf.cscc', '34223422', 'wanita', 'sadasdsadsdsadsa', 1);
+(3, '1312312389', 'sdadsax', 'eea@sf.cscc', '34223422', 'wanita', 'sadasdsadsdsadsa', 1),
+(4, '1312312389', 'Nindiani', 'nindiani@yahoo.com', '012345678012', 'wanita', 'sadsadasdasd', 1);
 
 -- --------------------------------------------------------
 
@@ -718,13 +722,13 @@ ALTER TABLE `t_admin`
 -- AUTO_INCREMENT for table `t_album`
 --
 ALTER TABLE `t_album`
-  MODIFY `id_album` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_album` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `t_artist`
 --
 ALTER TABLE `t_artist`
-  MODIFY `id_artists` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id_artists` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `t_genre`
@@ -736,19 +740,19 @@ ALTER TABLE `t_genre`
 -- AUTO_INCREMENT for table `t_lagu`
 --
 ALTER TABLE `t_lagu`
-  MODIFY `id_lagu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `id_lagu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- AUTO_INCREMENT for table `t_partner`
 --
 ALTER TABLE `t_partner`
-  MODIFY `id_partner` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_partner` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `t_pesan`
 --
 ALTER TABLE `t_pesan`
-  MODIFY `id_pesan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_pesan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `t_promo`
