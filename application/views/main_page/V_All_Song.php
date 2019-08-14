@@ -199,13 +199,14 @@ $this->load->view('main_page/parts/V_Navigation');
 				foreach ($new_s as $new) {
 					$id_r = $new->id_lagu;
 					?>
+
 					<li>
-						<a href="<?php echo base_url('assets/main_page/')?>single.html"><img src="<?php echo base_url('assets/')?>foto_album/<?php echo $new->picture_album;?>" alt=""/></a>
+						<a href="<?php echo base_url('album/detail/').$new->id_album?>"><img src="<?php echo base_url('assets/')?>foto_album/<?php echo $new->picture_album;?>" alt=""/></a>
 						<div class="slide-title"><h4><?php echo $new->judul?></div>
 						<div class="date-city">
 							<h5><?php echo $new->nama_artist?></h5>
 							<div class="buy-tickets">
-								<a href="<?php echo base_url('assets/main_page/')?>single.html">READ MORE</a>
+								<a href="<?php echo base_url('album/detail/').$new->id_album ?>">READ MORE</a>
 							</div>
 						</div>
 					</li>

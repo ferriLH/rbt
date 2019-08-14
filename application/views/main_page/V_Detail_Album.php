@@ -7,7 +7,7 @@ $this->load->view('main_page/parts/V_Navigation');
 		<div class="inner-content single">
 			<!--/music-right-->
 			<div class="tittle-head">
-				<h3 class="tittle">Detail Album <span class="new">Page</span></h3>
+				<h3 class="tittle">Lagu Dalam Album <span class="new">Page</span></h3>
 				<div class="clearfix"> </div>
 			</div>
 			<div class="single_left">
