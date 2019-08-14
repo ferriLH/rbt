@@ -10,6 +10,9 @@ class C_Result_Search extends CI_Controller
 
 	function index()
 	{
-		$this->load->view('main_page/V_Result_Search');
+		$data = array(
+			"title" => "TitTatTut Search",
+		);
+		$this->load->view('main_page/V_Result_Search',$data);
 	}
 }

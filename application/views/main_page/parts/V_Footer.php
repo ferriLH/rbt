@@ -31,11 +31,21 @@ $login = $this->session->userdata('isLogin');
     <div class="footer-grid">
         <h3>Newsletter</h3>
         <p class="footer_desc">Jika anda ingin kabar terbaru tentang kami, maka silahkan masukan email anda dibawah ini</p>
-        <div class="search_footer">
-            <form>
-                <input type="text" placeholder="Email...." required="">
-                <input type="submit" value="Submit">
-            </form>
+        <div class="">
+			<form method="post" action="<?php echo base_url('contact/kirim')?>">
+				<div class="input-group">
+					<input name="nama" type="hidden" value="newsletter">
+					<input name="email" type="email" class="form-control" placeholder="your email">
+					<input name="notelp" type="hidden" value="newsletter">
+					<input type="hidden" name="pesan" value="newsletter">
+					<input type="hidden" name="baca" value="1">
+					<div class="input-group-btn">
+						<button class="btn btn-default" type="submit">
+							<i class="glyphicon glyphicon-search"></i>
+						</button>
+					</div>
+				</div>
+			</form>
         </div>
     </div>
     <div class="footer-grid footer-grid_last">

@@ -24,7 +24,7 @@ class C_Contact extends CI_Controller
         );
         $this->form_validation->set_rules('nama', 'Nama', 'required');
         $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
-        $this->form_validation->set_rules('notelp', 'No Handphone', 'required|min_length[12]|max_length[13]');
+        $this->form_validation->set_rules('notelp', 'No Handphone', 'required|min_length[10]|max_length[13]');
 
 
         if ($this->form_validation->run() == FALSE) {
@@ -36,7 +36,7 @@ class C_Contact extends CI_Controller
         $d['email_pengirim'] 	= $this->input->post('email');
         $d['kontak_pengirim'] 	= $this->input->post('notelp');
         $d['isi_pesan'] 		= $this->input->post('pesan');
-		$d['baca'] 				= false;
+		$d['baca'] 				= $this->input->post('baca');
 		$d['hapus'] 			= false;
 		$d['waktu_kirim'] 		= $t;
 		$this->M_Contact->feedback($d);

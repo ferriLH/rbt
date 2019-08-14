@@ -52,6 +52,7 @@ $this->load->view('main_page/parts/V_Navigation');
 						<textarea name="pesan" placeholder="" onfocus="this.value='';" onblur="if (this.value == '') {this.value = '';}" required=""></textarea>
 						<input type="submit" value="Submit">
 					</div>
+					<input type="hidden" name="baca" value="0">
 				</form>
 				<div class="clearfix"> </div>
                 <!-- //contact -->

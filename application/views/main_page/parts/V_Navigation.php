@@ -50,8 +50,8 @@ $islogin =  $this->session->userdata('isLogin');
                     <div class="app-grids">
                         <div class="app">
                             <div class="col-md-5 app-left mpl">
-                                <h3>Mosaic mobile app on your smartphone!</h3>
-                                <p>Download and Avail Special Songs Videos and Audios.</p>
+                                <h3>This mobile app on your smartphone!</h3>
+                                <p>Download and Avail Special RBT.</p>
                                 <div class="app-devices">
                                     <h5>Gets the app from</h5>
                                     <a onclick="ComingSoon()" href="#"><img src="<?php echo base_url()?>assets/main_page/images/1.png" alt=""></a>
@@ -132,9 +132,9 @@ $islogin =  $this->session->userdata('isLogin');
                 <div class="profile_details">
                     <div style="" class="col-md-4 serch-part">
                         <div  id="sb-search" class="sb-search">
-                            <form action="#" method="post">
+                            <form action="<?php echo base_url('search')?>" method="get">
 								<input class="sb-search-input" placeholder="Search" type="search" name="search" id="search">
-                                <input class="sb-search-submit" type="submit" value="">
+                                <input class="sb-search-submit" type="submit" value="submit">
                                 <span class="sb-icon-search"> </span>
                             </form>
                         </div>

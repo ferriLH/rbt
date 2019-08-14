@@ -122,8 +122,8 @@ $this->load->view('main_page/parts/V_Navigation');
 					<?php if(isset($detail_artist)){?>
 					<?php foreach ($detail_artist as $det){?>
 					<h3 style="font-weight: bold; padding-bottom: 1px"><?php echo $det->nama_artist?> :<text style="color: #2d4278"><?php echo $det->nama_album?></text></h3>
-					<h3 style="padding-bottom: 1px; font-weight: bold">Producer</h3>
-					<p><?php echo $det->nama_partner?></p>
+<!--					<h3 style="padding-bottom: 1px; font-weight: bold">Producer</h3>-->
+<!--					<p>--><?php //echo $det->nama_partner?><!--</p>-->
 					<h3 style="font-weight: bold; padding-bottom: 1px">Genre</h3>
 					<p><?php echo $det->genre?></p>
 					<h3 style="font-weight: bold">Bio Artis</h3>
