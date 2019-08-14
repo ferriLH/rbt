@@ -116,7 +116,7 @@ $this->load->view('main_page/parts/V_Navigation');
 				<h4>Album</h4>
 			<div class="row">
 				<div class="col-md-4">
-					<img src="<?php echo base_url('assets/foto_album/'),$detail->picture_album?>" style="max-height: 300px">
+					<img class="img-responsive" src="<?php echo base_url('assets/foto_album/'),$detail->picture_album?>" style="max-height: 300px">
 				</div>
 				<div class="col-md-6">
 					<?php if(isset($detail_artist)){?>
