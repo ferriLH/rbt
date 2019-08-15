@@ -79,6 +79,7 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 												<button class="file-upload-browse btn btn-primary" type="button">Upload</button>
 											</span>
 										</div>
+										<a class="btn-primary" type="button" href="<?php echo base_url('promo/addpromo/downloadtemplate')?>">Download Template Foto Promo</a>
 									</div>
 									<button type="submit" class="btn btn-primary mr-2">Submit</button>
 									</form>

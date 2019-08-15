@@ -8,6 +8,7 @@ class C_Main_page extends CI_Controller
     {
         parent::__construct();
         $this->load->model('M_Main_page');
+		$this->load->helper('download');
     }
     public function index()
     {
@@ -21,4 +22,20 @@ class C_Main_page extends CI_Controller
 		);
         $this->load->view('main_page/V_Main',$data);
     }
+
+    function download_TAC()
+	{
+		$data = array(
+			"title" => "TitTatTut Main",
+			"getPromo"		=> $this->M_Main_page->get_datapromo(),
+			"getDiscover"	=> $this->M_Main_page->discover(),
+			"getnewrelease"	=> $this->M_Main_page->new_release(),
+			"featured"  	=> $this->M_Main_page->featured_album(),
+			"charts"		=> $this->M_Main_page->get_charts()
+		);
+		$this->load->view('main_page/V_Main',$data);
+
+		force_download('assets/downloadable/template.pdf', NULL);
+
+	}
 }

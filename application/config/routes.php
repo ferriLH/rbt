@@ -50,6 +50,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['default_controller']    	= 'C_Main_page';
+$route['downloadtac']				= 'C_Main_page/download_TAC';
 
 $route['login']                 	= 'C_Login';
 $route['login/auth']            	= 'C_Login/auth';
@@ -103,6 +104,7 @@ $route['promo/confirm']       		= 'C_Promo/confirm';
 $route['delete-promo/(:any)'] 		= 'C_Promo/deletePromo/$1';
 $route['update-promo/(:any)'] 		= 'C_Promo/updatePromo/$1';
 $route['update-promo/auth/(:any)'] 	= 'C_Promo/updatePromoAuth/$1';
+$route['promo/addpromo/downloadtemplate'] = 'C_Promo/download';
 
 $route['contact']             		= 'C_Contact';
 $route['artist']             		= 'C_Artist';

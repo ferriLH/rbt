@@ -497,35 +497,35 @@ $this->load->view('main_page/parts/V_Navigation');
                     <!--/start-paricing-tables-->
                     <div class="price-section">
                         <div class="pricing-inner">
-                            <h3 class="hd-tittle">Side Banner</h3>
+							<h3 class="hd-tittle" style="text-align: center">Join Partnership With<br> Alpha-Omega</h3>
                             <div class="pricing">
                                 <div class="price-top">
-                                    <h3><span>$20</span></h3>
+                                    <h3><span>Harga</span></h3>
                                     <h4>per year</h4>
                                 </div>
                                 <div class="price-bottom">
                                     <ul>
-                                        <li><a class="icon" href="#"><i class="glyphicon glyphicon-ok"></i></a><a class="text" href="#">Download unlimited songs</a><div class="clearfix"></div></li>
-                                        <li><a class="icon" href="#"><i class="glyphicon glyphicon-ok"></i></a><a class="text" href="#">Stream songs in High Definition</a><div class="clearfix"></div></li>
-                                        <li><a class="icon" href="#"><i class="glyphicon glyphicon-ok"></i></a><a class="text" href="#">No ads unlimited Devices</a><div class="clearfix"></div></li>
-                                        <li><a class="icon" href="#"><i class="glyphicon glyphicon-ok"></i></a><a class="text" href="#">Stream songs in High Definition</a><div class="clearfix"></div></li>
+                                        <li><a class="icon" href="#"><i class="glyphicon glyphicon-ok"></i></a><a class="text" href="#">Penawaran 1</a><div class="clearfix"></div></li>
+                                        <li><a class="icon" href="#"><i class="glyphicon glyphicon-ok"></i></a><a class="text" href="#">penawaran 2</a><div class="clearfix"></div></li>
+                                        <li><a class="icon" href="#"><i class="glyphicon glyphicon-ok"></i></a><a class="text" href="#">penawaran 3</a><div class="clearfix"></div></li>
+                                        <li><a class="icon" href="#"><i class="glyphicon glyphicon-ok"></i></a><a class="text" href="#">penawaran 4</a><div class="clearfix"></div></li>
                                     </ul>
-                                    <a href="<?php echo base_url()?>assets/main_page/single.html" class="price">Upgrade</a>
+                                    <a href="<?php echo base_url('downloadtac')?>" class="price">Upgrade</a>
                                 </div>
                             </div>
                             <div class="pricing two">
                                 <div class="price-top">
-                                    <h3><span>$30</span></h3>
+                                    <h3><span>Harga</span></h3>
                                     <h4>per year</h4>
                                 </div>
                                 <div class="price-bottom">
                                     <ul>
-                                        <li><a class="icon" href="#"><i class="glyphicon glyphicon-ok"></i></a><a class="text" href="#">Download unlimited songs</a><div class="clearfix"></div></li>
-                                        <li><a class="icon" href="#"><i class="glyphicon glyphicon-ok"></i></a><a class="text" href="#">Stream songs in High Definition</a><div class="clearfix"></div></li>
-                                        <li><a class="icon" href="#"><i class="glyphicon glyphicon-ok"></i></a><a class="text" href="#">No ads unlimited Devices</a><div class="clearfix"></div></li>
-                                        <li><a class="icon" href="#"><i class="glyphicon glyphicon-ok"></i></a><a class="text" href="#">Stream songs in High Definition</a><div class="clearfix"></div></li>
+                                        <li><a class="icon" href="#"><i class="glyphicon glyphicon-ok"></i></a><a class="text" href="#">penawaran 2.1</a><div class="clearfix"></div></li>
+                                        <li><a class="icon" href="#"><i class="glyphicon glyphicon-ok"></i></a><a class="text" href="#">penawaran 2.2</a><div class="clearfix"></div></li>
+                                        <li><a class="icon" href="#"><i class="glyphicon glyphicon-ok"></i></a><a class="text" href="#">penawaran 2.3</a><div class="clearfix"></div></li>
+                                        <li><a class="icon" href="#"><i class="glyphicon glyphicon-ok"></i></a><a class="text" href="#">penawaran 2.4</a><div class="clearfix"></div></li>
                                     </ul>
-                                    <a href="<?php echo base_url()?>assets/main_page/single.html" class="price">Upgrade</a>
+                                    <a href="<?php echo base_url('downloadtac')?>" class="price">Upgrade</a>
                                 </div>
                             </div>
                             <div class="clearfix"></div>

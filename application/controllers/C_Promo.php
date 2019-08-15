@@ -9,6 +9,7 @@ class C_Promo extends CI_Controller
 		parent::__construct();
 		$this->load->model('M_Promo');
 		$this->load->model('M_Dashboard');
+		$this->load->helper('download');
 	}
 	public function index()
 	{
@@ -166,6 +167,21 @@ class C_Promo extends CI_Controller
 				$this->session->set_flashdata('sukses', 'sukses');
 				redirect('promo');
 			}
+		}else{
+			redirect('login');
+		}
+	}
+	function download()
+	{
+		if ($this->session->userdata('isLogin') == TRUE) {
+			$data = array(
+				"title" => "Promo",
+				"getNewInbox"	=> $this->M_Dashboard->getNewInbox(),
+				"getPromo"		=> $this->M_Promo->getPromo(),
+
+			);
+			$this->load->view('dashboard_page/V_Promo',$data);
+			force_download('assets/downloadable/mockups_promo.psd', NULL);
 		}else{
 			redirect('login');
 		}
