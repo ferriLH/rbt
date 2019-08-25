@@ -214,7 +214,6 @@ $this->load->view('main_page/parts/V_Navigation');
 								<a class="play-icon popup-with-zoom-anim"  data-toggle="modal" data-target="#<?php echo $id?>"><img src="<?php echo base_url('assets/foto_album/')?><?php echo $dat->picture_album?>" title="<?php echo $dat->nama_album?>"></a>
 								<a class="button play-icon popup-with-zoom-anim" href="" data-toggle="modal" data-target="#<?php echo $id?>">Listen now</a>
 								<div class="inner-info"><a href="" data-toggle="modal" data-target="#<?php echo $id?>"><h4><?php echo $dat->judul?></h4></a></div>
-
 							</div>
 
 						<?php }?>
@@ -495,44 +494,33 @@ $this->load->view('main_page/parts/V_Navigation');
                     </div>
                     <!--//app_store-->
                     <!--/start-paricing-tables-->
-                    <div class="price-section">
-                        <div class="pricing-inner">
-							<h3 class="hd-tittle" style="text-align: center">Join Partnership With<br> Alpha-Omega</h3>
-                            <div class="pricing">
-                                <div class="price-top">
-                                    <h3><span>Harga</span></h3>
-                                    <h4>per year</h4>
-                                </div>
-                                <div class="price-bottom">
-                                    <ul>
-                                        <li><a class="icon" href="#"><i class="glyphicon glyphicon-ok"></i></a><a class="text" href="#">Penawaran 1</a><div class="clearfix"></div></li>
-                                        <li><a class="icon" href="#"><i class="glyphicon glyphicon-ok"></i></a><a class="text" href="#">penawaran 2</a><div class="clearfix"></div></li>
-                                        <li><a class="icon" href="#"><i class="glyphicon glyphicon-ok"></i></a><a class="text" href="#">penawaran 3</a><div class="clearfix"></div></li>
-                                        <li><a class="icon" href="#"><i class="glyphicon glyphicon-ok"></i></a><a class="text" href="#">penawaran 4</a><div class="clearfix"></div></li>
-                                    </ul>
-                                    <a href="<?php echo base_url('downloadtac')?>" class="price">Upgrade</a>
-                                </div>
-                            </div>
-                            <div class="pricing two">
-                                <div class="price-top">
-                                    <h3><span>Harga</span></h3>
-                                    <h4>per year</h4>
-                                </div>
-                                <div class="price-bottom">
-                                    <ul>
-                                        <li><a class="icon" href="#"><i class="glyphicon glyphicon-ok"></i></a><a class="text" href="#">penawaran 2.1</a><div class="clearfix"></div></li>
-                                        <li><a class="icon" href="#"><i class="glyphicon glyphicon-ok"></i></a><a class="text" href="#">penawaran 2.2</a><div class="clearfix"></div></li>
-                                        <li><a class="icon" href="#"><i class="glyphicon glyphicon-ok"></i></a><a class="text" href="#">penawaran 2.3</a><div class="clearfix"></div></li>
-                                        <li><a class="icon" href="#"><i class="glyphicon glyphicon-ok"></i></a><a class="text" href="#">penawaran 2.4</a><div class="clearfix"></div></li>
-                                    </ul>
-                                    <a href="<?php echo base_url('downloadtac')?>" class="price">Upgrade</a>
-                                </div>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                        <!--//end-pricing-tables-->
-                    </div>
+<!--					<div class="container">-->
+						<div class="row">
+							<div class="col-md-13 ">
+								<div class="card">
+									<div class="card-image">
+										<div class="embed-responsive embed-responsive-16by9">
+											<iframe width="315" height="315" src="https://www.youtube.com/embed/playlist?list=PLaUv1040bw2gS19LfN4wWLu9kpeFdQCJl" frameborder="0" allowfullscreen></iframe>
+										</div>
+
+									</div><!-- card image -->
+
+									<div class="card-content">
+										<div class="apps">
+											<h3 class="hd-tittle">Judul Video</h3>
+											<div class="banner-button">
+												<textarea style="width: 400px; height: 180px;" disabled >Deskripsi Video</textarea>
+											</div>
+											<div class="clearfix"></div>
+										</div>
+									</div><!-- card content -->
+
+
+								</div>
+							</div>
                 </div>
+<!--					</div>-->
+				</div>
                 <!--//music-right-->
                 <div class="clearfix"></div>
                 <!-- /w3l-agile-its -->

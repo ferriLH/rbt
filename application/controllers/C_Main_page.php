@@ -36,6 +36,6 @@ class C_Main_page extends CI_Controller
 		$this->load->view('main_page/V_Main',$data);
 
 		force_download('assets/downloadable/template.pdf', NULL);
-
 	}
+
 }

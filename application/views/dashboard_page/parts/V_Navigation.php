@@ -150,6 +150,7 @@ $name = $this->session->userdata('nama_admin');
 						<span class="menu-title">Promo Pages</span>
 					</a>
 				</li>
+				<!--Navbar Add Video-->
 				<!--Navbar CRUD Pesan-->
 				<li class="nav-item <?php if($this->uri->segment(1)=="inbox"){echo "active";}?>">
 					<a class="nav-link" href="<?php echo base_url()?>inbox/">

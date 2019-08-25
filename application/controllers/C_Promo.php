@@ -179,6 +179,7 @@ class C_Promo extends CI_Controller
 				"getNewInbox"	=> $this->M_Dashboard->getNewInbox(),
 				"getPromo"		=> $this->M_Promo->getPromo(),
 
+
 			);
 			$this->load->view('dashboard_page/V_Promo',$data);
 			force_download('assets/downloadable/mockups_promo.psd', NULL);
