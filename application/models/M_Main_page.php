@@ -16,6 +16,14 @@ class M_Main_page extends CI_Model
 		return $this->db->get()->result();
 	}
 
+	function get_kode_tsel()
+	{
+		$this->db->select('*');
+		$this->db->from('t_lagu');
+		$this->db->where('aktif',TRUE);
+		return $this->db->get()->result();
+	}
+
 	function discover()
 	{
 		$this->db->select('*');
