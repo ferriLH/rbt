@@ -496,24 +496,15 @@ $this->load->view('main_page/parts/V_Navigation');
                     <!--/start-paricing-tables-->
 <!--					<div class="container">-->
 						<div class="row">
-							<div class="col-md-13 ">
+							<div class="col-md-12 ">
 								<div class="card">
 									<div class="card-image">
 										<div class="embed-responsive embed-responsive-16by9">
-											<iframe width="315" height="315" src="https://www.youtube.com/embed/playlist?list=PLaUv1040bw2gS19LfN4wWLu9kpeFdQCJl" frameborder="0" allowfullscreen></iframe>
+											<iframe width="200" height="200" src="https://www.youtube.com/embed/playlist?list=PLaUv1040bw2gS19LfN4wWLu9kpeFdQCJl" frameborder="0" allowfullscreen></iframe>
 										</div>
 
 									</div><!-- card image -->
-
-									<div class="card-content">
-										<div class="apps">
-											<h3 class="hd-tittle">Judul Video</h3>
-											<div class="banner-button">
-												<textarea style="width: 400px; height: 180px;" disabled >Deskripsi Video</textarea>
-											</div>
-											<div class="clearfix"></div>
-										</div>
-									</div><!-- card content -->
+									<!-- card content -->
 
 
 								</div>
