@@ -385,6 +385,19 @@ $this->load->view('main_page/parts/V_Navigation');
                 <!--//music-left-->
                 <!--/music-right-->
                 <div class="music-right">
+					<div class="row">
+						<div class="col-md-12 ">
+							<div class="card">
+								<div class="card-image">
+									<div class="embed-responsive embed-responsive-16by9">
+										<iframe width="200" height="200" src="https://www.youtube.com/embed/playlist?list=PLaUv1040bw2gS19LfN4wWLu9kpeFdQCJl" frameborder="0" allowfullscreen></iframe>
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+					<br><br>
                     <!--/video-main-->
                     <div class="video-main">
                         <div class="video-record-list">
@@ -495,21 +508,7 @@ $this->load->view('main_page/parts/V_Navigation');
                     <!--//app_store-->
                     <!--/start-paricing-tables-->
 <!--					<div class="container">-->
-						<div class="row">
-							<div class="col-md-12 ">
-								<div class="card">
-									<div class="card-image">
-										<div class="embed-responsive embed-responsive-16by9">
-											<iframe width="200" height="200" src="https://www.youtube.com/embed/playlist?list=PLaUv1040bw2gS19LfN4wWLu9kpeFdQCJl" frameborder="0" allowfullscreen></iframe>
-										</div>
 
-									</div><!-- card image -->
-									<!-- card content -->
-
-
-								</div>
-							</div>
-                </div>
 <!--					</div>-->
 				</div>
                 <!--//music-right-->
