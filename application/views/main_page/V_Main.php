@@ -133,83 +133,83 @@ $this->load->view('main_page/parts/V_Navigation');
 													<br><br>
 												</div>
 												<div class="col-sm-4">
-							<img style="max-height: 25px;" src="<?php echo base_url('assets/main_page/images/telkom.png')?>" alt="TELKOMSEL">
-							<br>
+													<img style="max-height: 25px;" src="<?php echo base_url('assets/main_page/images/telkom.png')?>" alt="TELKOMSEL">
+													<br>
 
-								<small><?php echo "Ketik : <b>RING</b> (spasi)<b> SUB</b> (spasi) <b>".$dat->kode_tsel1."</b>"?></small><br>
-								<small><?php echo "Kirim ke : <b>1212</b>"?></small> <br>
-								<small><?php echo "Tarif : ".$dat->harga_tsel1."/lagu"?></small> <br>
-								<?php
-								if ($this->agent->is_mobile('iphone')||$this->agent->is_mobile('ipod')||$this->agent->is_mobile('ipad'))
-								{
-									echo "<a href='sms:1212&body=RING SUB ".$dat->kode_tsel1."'><button class='btn btn-default'>Berlangganan 3 hari</button></a>";
-								}elseif ($this->agent->is_mobile('android'))
-								{
-									echo "<a href='sms:1212?body=RING SUB ".$dat->kode_tsel1."'><button class='btn btn-default'>Berlangganan 3 hari</button></a>";
-								}else
-								{
-									echo "<a href='sms:1212?body=RING SUB ".$dat->kode_tsel1."'><button class='btn btn-default'>Berlangganan 3 hari</button></a>";
-								}
-								?> <br><br>
+													<small><?php echo "Ketik : <b>RING</b> (spasi)<b> SUB</b> (spasi) <b>".$dat->kode_tsel1."</b>"?></small><br>
+													<small><?php echo "Kirim ke : <b>1212</b>"?></small> <br>
+													<small><?php echo "Tarif : ".$dat->harga_tsel1."/lagu"?></small> <br>
+													<?php
+													if ($this->agent->is_mobile('iphone')||$this->agent->is_mobile('ipod')||$this->agent->is_mobile('ipad'))
+													{
+														echo "<a href='sms:1212&body=RING SUB ".$dat->kode_tsel1."'><button class='btn btn-default'>Berlangganan 3 hari</button></a>";
+													}elseif ($this->agent->is_mobile('android'))
+													{
+														echo "<a href='sms:1212?body=RING SUB ".$dat->kode_tsel1."'><button class='btn btn-default'>Berlangganan 3 hari</button></a>";
+													}else
+													{
+														echo "<a href='sms:1212?body=RING SUB ".$dat->kode_tsel1."'><button class='btn btn-default'>Berlangganan 3 hari</button></a>";
+													}
+													?> <br><br>
 
-								<small><?php echo "Ketik : <b>RING</b> (spasi)<b> SUB</b> (spasi) <b>".$dat->kode_tsel3."</b>"?></small><br>
-								<small><?php echo "Kirim ke : <b>1212</b>"?></small> <br>
-								<small><?php echo "Tarif : ".$dat->harga_tsel2."/lagu"?></small><br>
+													<small><?php echo "Ketik : <b>RING</b> (spasi)<b> SUB</b> (spasi) <b>".$dat->kode_tsel3."</b>"?></small><br>
+													<small><?php echo "Kirim ke : <b>1212</b>"?></small> <br>
+													<small><?php echo "Tarif : ".$dat->harga_tsel2."/lagu"?></small><br>
 
-								<?php
-								if ($this->agent->is_mobile('iphone')||$this->agent->is_mobile('ipod')||$this->agent->is_mobile('ipad'))
-								{
-									echo "<a href='sms:1212&body=RING SUB ".$dat->kode_tsel2."'><button class='btn btn-default'>Berlangganan 7 hari</button></a>";
-								}elseif ($this->agent->is_mobile('android'))
-								{
-									echo "<a href='sms:1212?body=RING SUB ".$dat->kode_tsel2."'><button class='btn btn-default'>Berlangganan 7 hari</button></a>";
-								}else
-								{
-									echo "<a href='sms:1212?body=RING SUB ".$dat->kode_tsel2."'><button class='btn btn-default'>Berlangganan 7 hari</button></a>";
-								}
-								?><br><br>
+													<?php
+													if ($this->agent->is_mobile('iphone')||$this->agent->is_mobile('ipod')||$this->agent->is_mobile('ipad'))
+													{
+														echo "<a href='sms:1212&body=RING SUB ".$dat->kode_tsel2."'><button class='btn btn-default'>Berlangganan 7 hari</button></a>";
+													}elseif ($this->agent->is_mobile('android'))
+													{
+														echo "<a href='sms:1212?body=RING SUB ".$dat->kode_tsel2."'><button class='btn btn-default'>Berlangganan 7 hari</button></a>";
+													}else
+													{
+														echo "<a href='sms:1212?body=RING SUB ".$dat->kode_tsel2."'><button class='btn btn-default'>Berlangganan 7 hari</button></a>";
+													}
+													?><br><br>
 
-								<small><?php echo "Ketik : <b>RING</b> (spasi)<b> SUB</b> (spasi) <b>".$dat->kode_tsel3."</b>"?></small><br>
-								<small><?php echo "Kirim ke : <b>1212</b>"?></small> <br>
-								<small><?php echo "Tarif : ".$dat->harga_tsel3."/lagu"?></small> <br>
-								<?php
-								if ($this->agent->is_mobile('iphone')||$this->agent->is_mobile('ipod')||$this->agent->is_mobile('ipad'))
-								{
-									echo "<a href='sms:1212&body=RING SUB ".$dat->kode_tsel3."'><button class='btn btn-default'>Berlangganan 14 hari</button></a>";
-								}elseif ($this->agent->is_mobile('android'))
-								{
-									echo "<a href='sms:1212?body=RING SUB ".$dat->kode_tsel3."'><button class='btn btn-default'>Berlangganan 14 hari</button></a>";
-								}else
-								{
-									echo "<a href='sms:1212?body=RING SUB ".$dat->kode_tsel3."'><button class='btn btn-default'>Berlangganan 14 hari</button></a>";
-								}
-								?><br><br>
+													<small><?php echo "Ketik : <b>RING</b> (spasi)<b> SUB</b> (spasi) <b>".$dat->kode_tsel3."</b>"?></small><br>
+													<small><?php echo "Kirim ke : <b>1212</b>"?></small> <br>
+													<small><?php echo "Tarif : ".$dat->harga_tsel3."/lagu"?></small> <br>
+													<?php
+													if ($this->agent->is_mobile('iphone')||$this->agent->is_mobile('ipod')||$this->agent->is_mobile('ipad'))
+													{
+														echo "<a href='sms:1212&body=RING SUB ".$dat->kode_tsel3."'><button class='btn btn-default'>Berlangganan 14 hari</button></a>";
+													}elseif ($this->agent->is_mobile('android'))
+													{
+														echo "<a href='sms:1212?body=RING SUB ".$dat->kode_tsel3."'><button class='btn btn-default'>Berlangganan 14 hari</button></a>";
+													}else
+													{
+														echo "<a href='sms:1212?body=RING SUB ".$dat->kode_tsel3."'><button class='btn btn-default'>Berlangganan 14 hari</button></a>";
+													}
+													?><br><br>
 
-								<small><?php echo "Ketik : <b>RING</b> (spasi)<b> SUB</b> (spasi) <b>".$dat->kode_tsel3."</b>"?></small><br>
-								<small><?php echo "Kirim ke : <b>1212</b>"?></small> <br>
-								<small><?php echo "Tarif : ".$dat->harga_tsel3."/lagu"?></small> <br>
+													<small><?php echo "Ketik : <b>RING</b> (spasi)<b> SUB</b> (spasi) <b>".$dat->kode_tsel3."</b>"?></small><br>
+													<small><?php echo "Kirim ke : <b>1212</b>"?></small> <br>
+													<small><?php echo "Tarif : ".$dat->harga_tsel3."/lagu"?></small> <br>
 
 
-								<?php
-								if ($this->agent->is_mobile('iphone')||$this->agent->is_mobile('ipod')||$this->agent->is_mobile('ipad'))
-								{
-									echo "<a href='sms:1212&body=RING SUB ".$dat->kode_tsel4."'><button class='btn btn-default'>Berlangganan 30 hari</button></a>";
-								}elseif ($this->agent->is_mobile('android'))
-								{
-									echo "<a href='sms:1212?body=RING SUB ".$dat->kode_tsel4."'><button class='btn btn-default'>Berlangganan 30 hari</button></a>";
-								}else
-								{
-									echo "<a href='sms:1212?body=RING SUB ".$dat->kode_tsel4."'><button class='btn btn-default'>Berlangganan 30 hari</button></a>";
-								}
-								?><br><br>
+													<?php
+													if ($this->agent->is_mobile('iphone')||$this->agent->is_mobile('ipod')||$this->agent->is_mobile('ipad'))
+													{
+														echo "<a href='sms:1212&body=RING SUB ".$dat->kode_tsel4."'><button class='btn btn-default'>Berlangganan 30 hari</button></a>";
+													}elseif ($this->agent->is_mobile('android'))
+													{
+														echo "<a href='sms:1212?body=RING SUB ".$dat->kode_tsel4."'><button class='btn btn-default'>Berlangganan 30 hari</button></a>";
+													}else
+													{
+														echo "<a href='sms:1212?body=RING SUB ".$dat->kode_tsel4."'><button class='btn btn-default'>Berlangganan 30 hari</button></a>";
+													}
+													?><br><br>
 
-								<small>Untuk Memberikan nada sambung ke teman,</small> <br>
-								<small>
-									<?php echo "Ketik : <b>RING</b> (spasi)<b> GIFT</b> (spasi) <b>Kode Berlangganan Diatas</b> (spasi)<b> Nomor HP teman</b>"?>
-								</small><br>
-								<small><?php echo "Kirim ke : <b>1212</b>"?></small> <br>
+													<small>Untuk Memberikan nada sambung ke teman,</small> <br>
+													<small>
+														<?php echo "Ketik : <b>RING</b> (spasi)<b> GIFT</b> (spasi) <b>Kode Berlangganan Diatas</b> (spasi)<b> Nomor HP teman</b>"?>
+													</small><br>
+													<small><?php echo "Kirim ke : <b>1212</b>"?></small> <br>
 
-								<br><br>
+													<br><br>
 												</div>
 												<div class="col-sm-4">
 													<img style="max-height: 25px;" src="<?php echo base_url('assets/main_page/images/isat.png')?>" alt="INDOSAT">
