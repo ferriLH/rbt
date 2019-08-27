@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 14, 2019 at 08:04 AM
--- Server version: 10.3.16-MariaDB
--- PHP Version: 7.3.7
+-- Waktu pembuatan: 27 Agu 2019 pada 04.59
+-- Versi server: 10.1.38-MariaDB
+-- Versi PHP: 7.3.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `t_admin`
+-- Struktur dari tabel `t_admin`
 --
 
 CREATE TABLE `t_admin` (
@@ -37,7 +37,7 @@ CREATE TABLE `t_admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `t_admin`
+-- Dumping data untuk tabel `t_admin`
 --
 
 INSERT INTO `t_admin` (`id_admin`, `nama_admin`, `email_admin`, `password`, `aktif`) VALUES
@@ -46,7 +46,7 @@ INSERT INTO `t_admin` (`id_admin`, `nama_admin`, `email_admin`, `password`, `akt
 -- --------------------------------------------------------
 
 --
--- Table structure for table `t_album`
+-- Struktur dari tabel `t_album`
 --
 
 CREATE TABLE `t_album` (
@@ -58,19 +58,18 @@ CREATE TABLE `t_album` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `t_album`
+-- Dumping data untuk tabel `t_album`
 --
 
 INSERT INTO `t_album` (`id_album`, `artist_id`, `nama_album`, `picture_album`, `aktif`) VALUES
 (8, 20, 'Yes!', 'jason_mraz-yes.jpg', 1),
 (9, 21, 'As You Were', 'as_you_were.jpg', 1),
-(10, 22, 'In A Perfect World', 'in-a-perfect-world.jpg', 1),
-(11, 23, 'single', 'Nindiani.jpeg', 1);
+(10, 22, 'In A Perfect World', 'in-a-perfect-world.jpg', 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `t_artist`
+-- Struktur dari tabel `t_artist`
 --
 
 CREATE TABLE `t_artist` (
@@ -79,23 +78,22 @@ CREATE TABLE `t_artist` (
   `nama_artist` varchar(25) NOT NULL,
   `bio` text NOT NULL,
   `picture_artist` varchar(100) NOT NULL,
-  `aktif` tinyint(1) NOT NULL DEFAULT 0
+  `aktif` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `t_artist`
+-- Dumping data untuk tabel `t_artist`
 --
 
 INSERT INTO `t_artist` (`id_artists`, `partner_id`, `nama_artist`, `bio`, `picture_artist`, `aktif`) VALUES
 (20, 1, 'Jason Mraz', 'Jason Mraz adalah penyanyi dan penulis lagu Amerika Serikat. Ia lahir dan dibesarkan di Mechanicsville, Virginia.', 'jason_mraz.jpg', 1),
 (21, 1, 'Liam Gallagher', 'William \"John Paul\" Gallagher di Burnage, Manchester merupakan vokalis dari Grup Musik Inggris Oasis. Saat kecil Liam adalah anak yang mengalami kekerasan dalam rumah tangga oleh ayahnya, begitu pula dengan kakaknya Noel Gallagher dan Paul. Karena inilah sikapnya hingga sekarang kadang-kadang suka meresahkan.', 'liam.jpg', 1),
-(22, 1, 'Kodaline', 'Kodaline adalah grup musik asal Irlandia. Grup musik ini dikenal sebagai 21 Demands, sebelum diganti menjadi Kodaline pada tahun 2012. Steve Garrigan dan Mark Prendergast dibesarkan di Swords, Dublin dan telah berteman sejak kecil.', 'kodaline.jpg', 1),
-(23, 4, 'Nindiani', '-', 'Nindiani.jpeg', 1);
+(22, 1, 'Kodaline', 'Kodaline adalah grup musik asal Irlandia. Grup musik ini dikenal sebagai 21 Demands, sebelum diganti menjadi Kodaline pada tahun 2012. Steve Garrigan dan Mark Prendergast dibesarkan di Swords, Dublin dan telah berteman sejak kecil.', 'kodaline.jpg', 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `t_genre`
+-- Struktur dari tabel `t_genre`
 --
 
 CREATE TABLE `t_genre` (
@@ -104,7 +102,7 @@ CREATE TABLE `t_genre` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `t_genre`
+-- Dumping data untuk tabel `t_genre`
 --
 
 INSERT INTO `t_genre` (`id`, `genre`) VALUES
@@ -532,7 +530,7 @@ INSERT INTO `t_genre` (`id`, `genre`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `t_lagu`
+-- Struktur dari tabel `t_lagu`
 --
 
 CREATE TABLE `t_lagu` (
@@ -541,47 +539,52 @@ CREATE TABLE `t_lagu` (
   `genre_id` int(11) NOT NULL,
   `judul` varchar(30) NOT NULL,
   `harga_xl` float NOT NULL,
-  `harga_tsel` float NOT NULL,
+  `harga_tsel1` float NOT NULL,
+  `harga_tsel2` float NOT NULL,
+  `harga_tsel3` float NOT NULL,
+  `harga_tsel4` float NOT NULL,
   `harga_indosat` float NOT NULL,
   `file` varchar(100) NOT NULL,
   `kode_xl` varchar(10) NOT NULL,
-  `kode_tsel` varchar(10) NOT NULL,
+  `kode_tsel1` varchar(10) NOT NULL,
+  `kode_tsel2` varchar(10) NOT NULL,
+  `kode_tsel3` varchar(10) NOT NULL,
+  `kode_tsel4` varchar(10) NOT NULL,
   `kode_indosat` varchar(10) NOT NULL,
   `aktif` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `t_lagu`
+-- Dumping data untuk tabel `t_lagu`
 --
 
-INSERT INTO `t_lagu` (`id_lagu`, `album_id`, `genre_id`, `judul`, `harga_xl`, `harga_tsel`, `harga_indosat`, `file`, `kode_xl`, `kode_tsel`, `kode_indosat`, `aktif`) VALUES
-(10, 8, 299, '3 Things', 1200, 1100, 1000, '3_Things.mp3', 'JM1_XL', 'JM1_TSEL', 'JM1_ISAT', 1),
-(26, 8, 299, 'Rise', 1000, 1100, 1200, 'Rise.mp3', 'JM2_XL', 'JM2_TSEL', 'JM2_ISAT', 1),
-(27, 8, 299, 'Love Someone', 1000, 1100, 1200, 'Love_Someone.mp3', 'JM3_XL', 'JM3_TSEL', 'JM3_ISAT', 1),
-(28, 8, 299, 'Hello, You Beautiful Thing', 1000, 1100, 1200, 'Hello,You_Beautiful_Thing.mp3', 'JM4_XL', 'JM4_TSEL', 'JM4_ISAT', 1),
-(29, 8, 299, 'Long Drive', 1000, 1100, 1200, 'Long_Drive.mp3', 'JM5_XL', 'JM5_TSEL', 'JM5_ISAT', 1),
-(30, 8, 299, 'Everywhere', 1000, 1100, 1200, 'Everywhere.mp3', 'JM6_XL', 'JM6_TSEL', 'JM6_ISAT', 1),
-(31, 8, 299, 'Best Friend', 1000, 1100, 1200, 'Best_Friend.mp3', 'JM7_XL', 'JM7_TSEL', 'JM7_ISAT', 1),
-(32, 8, 299, 'Quiet', 1000, 1100, 1200, 'Quiet.mp3', 'JM8_XL', 'JM8_TSEL', 'JM8_ISAT', 1),
-(33, 8, 299, 'Out Of My Hands', 1000, 1100, 1200, 'Out_Of_My_Hands.mp3', 'JM9_XL', 'JM9_TSEL', 'JM9_ISAT', 1),
-(34, 8, 299, 'It\'s So Hard To Say Goodbye To', 1000, 1100, 1200, 'It\'s_So_Hard_To_Say_Goodbye_To_Yesterday.mp3', 'JM10_XL', 'JM10_TSEL', 'JM10_ISAT', 1),
-(35, 8, 299, 'You Can Rely On Me', 1000, 1100, 1200, 'You_Can_Rely_On_Me.mp3', 'JM11_XL', 'JM11_TSEL', 'JM11_ISAT', 1),
-(36, 8, 299, 'Back To The Earth', 1000, 1100, 1200, 'Back_To_The_Earth.mp3', 'JM12_XL', 'JM12_TSEL', 'JM12_ISAT', 1),
-(37, 8, 299, 'A World With You', 1000, 1100, 1200, 'A_World_With_You.mp3', 'JM13_XL', 'JM13_TSEL', 'JM13_ISAT', 1),
-(38, 8, 299, 'Shine', 1000, 1100, 1200, 'Shine.mp3', 'JM14_XL', 'JM14_TSEL', 'JM14_ISAT', 1),
-(49, 9, 348, 'Paper Crown', 1500, 1300, 1000, '04_Paper_Crown.mp3', 'LG4_XL', 'LG4_TSEL', 'LG4_ISAT', 1),
-(50, 9, 348, 'Greedy Soul', 1500, 1400, 1300, '03_Greedy_Soul.mp3', 'LG3_XL', 'LG3_TSEL', 'LG3_ISAT', 1),
-(51, 9, 348, 'When I\'m Need', 1100, 1200, 1300, '06__When_I_m_In_Need_-_(www_SongsLover_club).mp3', 'LG6_XL', 'LG6_TSEL', 'LG6_ISAT', 1),
-(52, 9, 348, 'Wall Of Glass', 1200, 1300, 1400, '02_Bold.mp3', 'LG2_XL', 'LG2_TSEL', 'LG2_ISAT', 1),
-(53, 10, 209, 'High Hopes', 1200, 1300, 1100, 'Kodaline_-_High_Hopes_(Official_Music_Video).mp3', 'KDL1_XL', 'KDL1_TSEL', 'KDL1_ISAT', 1),
-(54, 10, 209, 'All I Want', 1500, 1200, 1000, 'Kodaline_-_All_I_Want.mp3', 'KDL2_XL', 'KDL2_TSEL', 'KDL2_ISAT', 1),
-(55, 9, 348, 'I\'ve All I Need', 1500, 1200, 1000, '12__I_ve_All_I_Need_-_(www_SongsLover_club).mp3', 'LG12_XL', 'LG12_TSEL', 'LG12_ISAT', 1),
-(56, 11, 299, 'Main Hape', 2000, 2000, 2000, 'song_Main_Hape_Nindiani.wav', 'MAINHPE1', 'MAINHPE1', 'MAINHPE1', 1);
+INSERT INTO `t_lagu` (`id_lagu`, `album_id`, `genre_id`, `judul`, `harga_xl`, `harga_tsel1`, `harga_tsel2`, `harga_tsel3`, `harga_tsel4`, `harga_indosat`, `file`, `kode_xl`, `kode_tsel1`, `kode_tsel2`, `kode_tsel3`, `kode_tsel4`, `kode_indosat`, `aktif`) VALUES
+(10, 8, 299, '3 Things', 1200, 1100, 1100, 1100, 1100, 1000, '3_Things.mp3', 'JM1_XL', 'JM1_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM1_ISAT', 1),
+(26, 8, 299, 'Rise', 1000, 1100, 1100, 1100, 1100, 1200, 'Rise.mp3', 'JM2_XL', 'JM2_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM2_ISAT', 1),
+(27, 8, 299, 'Love Someone', 1000, 1100, 1100, 1100, 1100, 1200, 'Love_Someone.mp3', 'JM3_XL', 'JM3_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM3_ISAT', 1),
+(28, 8, 299, 'Hello, You Beautiful Thing', 1000, 1100, 1100, 1100, 1100, 1200, 'Hello,You_Beautiful_Thing.mp3', 'JM4_XL', 'JM4_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM4_ISAT', 1),
+(29, 8, 299, 'Long Drive', 1000, 1100, 1100, 1100, 1100, 1200, 'Long_Drive.mp3', 'JM5_XL', 'JM5_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM5_ISAT', 1),
+(30, 8, 299, 'Everywhere', 1000, 1100, 1100, 1100, 1100, 1200, 'Everywhere.mp3', 'JM6_XL', 'JM6_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM6_ISAT', 1),
+(31, 8, 299, 'Best Friend', 1000, 1100, 1100, 1100, 1100, 1200, 'Best_Friend.mp3', 'JM7_XL', 'JM7_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM7_ISAT', 1),
+(32, 8, 299, 'Quiet', 1000, 1100, 1100, 1100, 1100, 1200, 'Quiet.mp3', 'JM8_XL', 'JM8_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM8_ISAT', 1),
+(33, 8, 299, 'Out Of My Hands', 1000, 1100, 1100, 1100, 1100, 1200, 'Out_Of_My_Hands.mp3', 'JM9_XL', 'JM9_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM9_ISAT', 1),
+(34, 8, 299, 'It\'s So Hard To Say Goodbye To', 1000, 1100, 1100, 1100, 1100, 1200, 'It\'s_So_Hard_To_Say_Goodbye_To_Yesterday.mp3', 'JM10_XL', 'JM10_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM10_ISAT', 1),
+(35, 8, 299, 'You Can Rely On Me', 1000, 1100, 1100, 1100, 1100, 1200, 'You_Can_Rely_On_Me.mp3', 'JM11_XL', 'JM11_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM11_ISAT', 1),
+(36, 8, 299, 'Back To The Earth', 1000, 1100, 1100, 1100, 1100, 1200, 'Back_To_The_Earth.mp3', 'JM12_XL', 'JM12_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM12_ISAT', 1),
+(37, 8, 299, 'A World With You', 1000, 1100, 1100, 1100, 1100, 1200, 'A_World_With_You.mp3', 'JM13_XL', 'JM13_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM13_ISAT', 1),
+(38, 8, 299, 'Shine', 1000, 1100, 1100, 1100, 1100, 1200, 'Shine.mp3', 'JM14_XL', 'JM14_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM14_ISAT', 1),
+(49, 9, 348, 'Paper Crown', 1500, 1300, 1100, 1100, 1100, 1000, '04_Paper_Crown.mp3', 'LG4_XL', 'LG4_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'LG4_ISAT', 1),
+(50, 9, 348, 'Greedy Soul', 1500, 1400, 1100, 1100, 1100, 1300, '03_Greedy_Soul.mp3', 'LG3_XL', 'LG3_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'LG3_ISAT', 1),
+(51, 9, 348, 'When I\'m Need', 1100, 1200, 1100, 1100, 1100, 1300, '06__When_I_m_In_Need_-_(www_SongsLover_club).mp3', 'LG6_XL', 'LG6_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'LG6_ISAT', 1),
+(52, 9, 348, 'Wall Of Glass', 1200, 1300, 1100, 1100, 1100, 1400, '02_Bold.mp3', 'LG2_XL', 'LG2_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'LG2_ISAT', 1),
+(53, 10, 209, 'High Hopes', 1200, 1300, 1100, 1100, 1100, 1100, 'Kodaline_-_High_Hopes_(Official_Music_Video).mp3', 'KDL1_XL', 'KDL1_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'KDL1_ISAT', 1),
+(54, 10, 209, 'All I Want', 1500, 1200, 1100, 1100, 1100, 1000, 'Kodaline_-_All_I_Want.mp3', 'KDL2_XL', 'KDL2_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'KDL2_ISAT', 1),
+(55, 9, 348, 'I\'ve All I Need', 1500, 1200, 1100, 1100, 1100, 1000, '12__I_ve_All_I_Need_-_(www_SongsLover_club).mp3', 'LG12_XL', 'LG12_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'LG12_ISAT', 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `t_partner`
+-- Struktur dari tabel `t_partner`
 --
 
 CREATE TABLE `t_partner` (
@@ -592,22 +595,21 @@ CREATE TABLE `t_partner` (
   `no_telpon` varchar(13) NOT NULL,
   `jk` enum('pria','wanita') NOT NULL,
   `alamat` varchar(150) NOT NULL,
-  `aktif` tinyint(1) NOT NULL DEFAULT 0
+  `aktif` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `t_partner`
+-- Dumping data untuk tabel `t_partner`
 --
 
 INSERT INTO `t_partner` (`id_partner`, `nomor_induk`, `nama_partner`, `email_partner`, `no_telpon`, `jk`, `alamat`, `aktif`) VALUES
 (1, '3203232506980005', 'Director Ferri', 'ferrilasmi@gmail.com', '081220979733', 'pria', 'Dolor Sit Amet, Dolor Amet', 1),
-(3, '1312312389', 'sdadsax', 'eea@sf.cscc', '34223422', 'wanita', 'sadasdsadsdsadsa', 1),
-(4, '1312312389', 'Nindiani', 'nindiani@yahoo.com', '012345678012', 'wanita', 'sadsadasdasd', 1);
+(3, '1312312389', 'sdadsax', 'eea@sf.cscc', '34223422', 'wanita', 'sadasdsadsdsadsa', 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `t_pesan`
+-- Struktur dari tabel `t_pesan`
 --
 
 CREATE TABLE `t_pesan` (
@@ -622,7 +624,7 @@ CREATE TABLE `t_pesan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `t_pesan`
+-- Dumping data untuk tabel `t_pesan`
 --
 
 INSERT INTO `t_pesan` (`id_pesan`, `nama_pengirim`, `email_pengirim`, `kontak_pengirim`, `isi_pesan`, `waktu_kirim`, `baca`, `hapus`) VALUES
@@ -631,7 +633,7 @@ INSERT INTO `t_pesan` (`id_pesan`, `nama_pengirim`, `email_pengirim`, `kontak_pe
 -- --------------------------------------------------------
 
 --
--- Table structure for table `t_promo`
+-- Struktur dari tabel `t_promo`
 --
 
 CREATE TABLE `t_promo` (
@@ -644,7 +646,7 @@ CREATE TABLE `t_promo` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `t_promo`
+-- Dumping data untuk tabel `t_promo`
 --
 
 INSERT INTO `t_promo` (`id_promo`, `nama_promo`, `mekanisme`, `periode`, `file_promo`, `aktif`) VALUES
@@ -657,33 +659,33 @@ INSERT INTO `t_promo` (`id_promo`, `nama_promo`, `mekanisme`, `periode`, `file_p
 --
 
 --
--- Indexes for table `t_admin`
+-- Indeks untuk tabel `t_admin`
 --
 ALTER TABLE `t_admin`
   ADD PRIMARY KEY (`id_admin`);
 
 --
--- Indexes for table `t_album`
+-- Indeks untuk tabel `t_album`
 --
 ALTER TABLE `t_album`
   ADD PRIMARY KEY (`id_album`),
   ADD KEY `artist_id` (`artist_id`);
 
 --
--- Indexes for table `t_artist`
+-- Indeks untuk tabel `t_artist`
 --
 ALTER TABLE `t_artist`
   ADD PRIMARY KEY (`id_artists`),
   ADD KEY `partner_id` (`partner_id`);
 
 --
--- Indexes for table `t_genre`
+-- Indeks untuk tabel `t_genre`
 --
 ALTER TABLE `t_genre`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `t_lagu`
+-- Indeks untuk tabel `t_lagu`
 --
 ALTER TABLE `t_lagu`
   ADD PRIMARY KEY (`id_lagu`),
@@ -691,93 +693,93 @@ ALTER TABLE `t_lagu`
   ADD KEY `genre_id` (`genre_id`);
 
 --
--- Indexes for table `t_partner`
+-- Indeks untuk tabel `t_partner`
 --
 ALTER TABLE `t_partner`
   ADD PRIMARY KEY (`id_partner`);
 
 --
--- Indexes for table `t_pesan`
+-- Indeks untuk tabel `t_pesan`
 --
 ALTER TABLE `t_pesan`
   ADD PRIMARY KEY (`id_pesan`);
 
 --
--- Indexes for table `t_promo`
+-- Indeks untuk tabel `t_promo`
 --
 ALTER TABLE `t_promo`
   ADD PRIMARY KEY (`id_promo`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `t_admin`
+-- AUTO_INCREMENT untuk tabel `t_admin`
 --
 ALTER TABLE `t_admin`
   MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `t_album`
+-- AUTO_INCREMENT untuk tabel `t_album`
 --
 ALTER TABLE `t_album`
-  MODIFY `id_album` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_album` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `t_artist`
+-- AUTO_INCREMENT untuk tabel `t_artist`
 --
 ALTER TABLE `t_artist`
-  MODIFY `id_artists` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id_artists` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
--- AUTO_INCREMENT for table `t_genre`
+-- AUTO_INCREMENT untuk tabel `t_genre`
 --
 ALTER TABLE `t_genre`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=422;
 
 --
--- AUTO_INCREMENT for table `t_lagu`
+-- AUTO_INCREMENT untuk tabel `t_lagu`
 --
 ALTER TABLE `t_lagu`
-  MODIFY `id_lagu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `id_lagu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
--- AUTO_INCREMENT for table `t_partner`
+-- AUTO_INCREMENT untuk tabel `t_partner`
 --
 ALTER TABLE `t_partner`
-  MODIFY `id_partner` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_partner` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `t_pesan`
+-- AUTO_INCREMENT untuk tabel `t_pesan`
 --
 ALTER TABLE `t_pesan`
-  MODIFY `id_pesan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_pesan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `t_promo`
+-- AUTO_INCREMENT untuk tabel `t_promo`
 --
 ALTER TABLE `t_promo`
-  MODIFY `id_promo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_promo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- Constraints for dumped tables
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Constraints for table `t_album`
+-- Ketidakleluasaan untuk tabel `t_album`
 --
 ALTER TABLE `t_album`
   ADD CONSTRAINT `t_album_ibfk_1` FOREIGN KEY (`artist_id`) REFERENCES `t_artist` (`id_artists`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `t_artist`
+-- Ketidakleluasaan untuk tabel `t_artist`
 --
 ALTER TABLE `t_artist`
   ADD CONSTRAINT `t_artist_ibfk_1` FOREIGN KEY (`partner_id`) REFERENCES `t_partner` (`id_partner`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `t_lagu`
+-- Ketidakleluasaan untuk tabel `t_lagu`
 --
 ALTER TABLE `t_lagu`
   ADD CONSTRAINT `t_lagu_ibfk_1` FOREIGN KEY (`album_id`) REFERENCES `t_album` (`id_album`) ON DELETE CASCADE ON UPDATE CASCADE,
