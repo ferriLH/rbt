@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 27 Agu 2019 pada 04.59
+-- Waktu pembuatan: 29 Agu 2019 pada 08.30
 -- Versi server: 10.1.38-MariaDB
 -- Versi PHP: 7.3.3
 
@@ -559,27 +559,28 @@ CREATE TABLE `t_lagu` (
 --
 
 INSERT INTO `t_lagu` (`id_lagu`, `album_id`, `genre_id`, `judul`, `harga_xl`, `harga_tsel1`, `harga_tsel2`, `harga_tsel3`, `harga_tsel4`, `harga_indosat`, `file`, `kode_xl`, `kode_tsel1`, `kode_tsel2`, `kode_tsel3`, `kode_tsel4`, `kode_indosat`, `aktif`) VALUES
-(10, 8, 299, '3 Things', 1200, 1100, 1100, 1100, 1100, 1000, '3_Things.mp3', 'JM1_XL', 'JM1_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM1_ISAT', 1),
-(26, 8, 299, 'Rise', 1000, 1100, 1100, 1100, 1100, 1200, 'Rise.mp3', 'JM2_XL', 'JM2_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM2_ISAT', 1),
-(27, 8, 299, 'Love Someone', 1000, 1100, 1100, 1100, 1100, 1200, 'Love_Someone.mp3', 'JM3_XL', 'JM3_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM3_ISAT', 1),
-(28, 8, 299, 'Hello, You Beautiful Thing', 1000, 1100, 1100, 1100, 1100, 1200, 'Hello,You_Beautiful_Thing.mp3', 'JM4_XL', 'JM4_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM4_ISAT', 1),
-(29, 8, 299, 'Long Drive', 1000, 1100, 1100, 1100, 1100, 1200, 'Long_Drive.mp3', 'JM5_XL', 'JM5_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM5_ISAT', 1),
-(30, 8, 299, 'Everywhere', 1000, 1100, 1100, 1100, 1100, 1200, 'Everywhere.mp3', 'JM6_XL', 'JM6_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM6_ISAT', 1),
-(31, 8, 299, 'Best Friend', 1000, 1100, 1100, 1100, 1100, 1200, 'Best_Friend.mp3', 'JM7_XL', 'JM7_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM7_ISAT', 1),
-(32, 8, 299, 'Quiet', 1000, 1100, 1100, 1100, 1100, 1200, 'Quiet.mp3', 'JM8_XL', 'JM8_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM8_ISAT', 1),
-(33, 8, 299, 'Out Of My Hands', 1000, 1100, 1100, 1100, 1100, 1200, 'Out_Of_My_Hands.mp3', 'JM9_XL', 'JM9_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM9_ISAT', 1),
-(34, 8, 299, 'It\'s So Hard To Say Goodbye To', 1000, 1100, 1100, 1100, 1100, 1200, 'It\'s_So_Hard_To_Say_Goodbye_To_Yesterday.mp3', 'JM10_XL', 'JM10_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM10_ISAT', 1),
-(35, 8, 299, 'You Can Rely On Me', 1000, 1100, 1100, 1100, 1100, 1200, 'You_Can_Rely_On_Me.mp3', 'JM11_XL', 'JM11_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM11_ISAT', 1),
-(36, 8, 299, 'Back To The Earth', 1000, 1100, 1100, 1100, 1100, 1200, 'Back_To_The_Earth.mp3', 'JM12_XL', 'JM12_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM12_ISAT', 1),
-(37, 8, 299, 'A World With You', 1000, 1100, 1100, 1100, 1100, 1200, 'A_World_With_You.mp3', 'JM13_XL', 'JM13_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM13_ISAT', 1),
-(38, 8, 299, 'Shine', 1000, 1100, 1100, 1100, 1100, 1200, 'Shine.mp3', 'JM14_XL', 'JM14_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM14_ISAT', 1),
-(49, 9, 348, 'Paper Crown', 1500, 1300, 1100, 1100, 1100, 1000, '04_Paper_Crown.mp3', 'LG4_XL', 'LG4_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'LG4_ISAT', 1),
-(50, 9, 348, 'Greedy Soul', 1500, 1400, 1100, 1100, 1100, 1300, '03_Greedy_Soul.mp3', 'LG3_XL', 'LG3_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'LG3_ISAT', 1),
-(51, 9, 348, 'When I\'m Need', 1100, 1200, 1100, 1100, 1100, 1300, '06__When_I_m_In_Need_-_(www_SongsLover_club).mp3', 'LG6_XL', 'LG6_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'LG6_ISAT', 1),
-(52, 9, 348, 'Wall Of Glass', 1200, 1300, 1100, 1100, 1100, 1400, '02_Bold.mp3', 'LG2_XL', 'LG2_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'LG2_ISAT', 1),
-(53, 10, 209, 'High Hopes', 1200, 1300, 1100, 1100, 1100, 1100, 'Kodaline_-_High_Hopes_(Official_Music_Video).mp3', 'KDL1_XL', 'KDL1_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'KDL1_ISAT', 1),
-(54, 10, 209, 'All I Want', 1500, 1200, 1100, 1100, 1100, 1000, 'Kodaline_-_All_I_Want.mp3', 'KDL2_XL', 'KDL2_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'KDL2_ISAT', 1),
-(55, 9, 348, 'I\'ve All I Need', 1500, 1200, 1100, 1100, 1100, 1000, '12__I_ve_All_I_Need_-_(www_SongsLover_club).mp3', 'LG12_XL', 'LG12_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'LG12_ISAT', 1);
+(10, 8, 299, '3 Things', 1200, 1100, 4000, 7000, 12000, 1000, '3_Things.mp3', 'JM1_XL', 'JM1_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM1_ISAT', 1),
+(26, 8, 299, 'Rise', 1000, 1100, 4000, 7000, 12000, 1200, 'Rise.mp3', 'JM2_XL', 'JM2_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM2_ISAT', 1),
+(27, 8, 299, 'Love Someone', 1000, 1100, 4000, 7000, 12000, 1200, 'Love_Someone.mp3', 'JM3_XL', 'JM3_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM3_ISAT', 1),
+(28, 8, 299, 'Hello, You Beautiful Thing', 1000, 1100, 4000, 7000, 12000, 1200, 'Hello,You_Beautiful_Thing.mp3', 'JM4_XL', 'JM4_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM4_ISAT', 1),
+(29, 8, 299, 'Long Drive', 1000, 1100, 4000, 7000, 12000, 1200, 'Long_Drive.mp3', 'JM5_XL', 'JM5_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM5_ISAT', 1),
+(30, 8, 299, 'Everywhere', 1000, 1100, 4000, 7000, 12000, 1200, 'Everywhere.mp3', 'JM6_XL', 'JM6_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM6_ISAT', 1),
+(31, 8, 299, 'Best Friend', 1000, 1100, 4000, 7000, 12000, 1200, 'Best_Friend.mp3', 'JM7_XL', 'JM7_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM7_ISAT', 1),
+(32, 8, 299, 'Quiet', 1000, 1100, 4000, 7000, 12000, 1200, 'Quiet.mp3', 'JM8_XL', 'JM8_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM8_ISAT', 1),
+(33, 8, 299, 'Out Of My Hands', 1000, 1100, 4000, 7000, 12000, 1200, 'Out_Of_My_Hands.mp3', 'JM9_XL', 'JM9_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM9_ISAT', 1),
+(34, 8, 299, 'It\'s So Hard To Say Goodbye To', 1000, 1100, 4000, 7000, 12000, 1200, 'It\'s_So_Hard_To_Say_Goodbye_To_Yesterday.mp3', 'JM10_XL', 'JM10_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM10_ISAT', 1),
+(35, 8, 299, 'You Can Rely On Me', 1000, 1100, 4000, 7000, 12000, 1200, 'You_Can_Rely_On_Me.mp3', 'JM11_XL', 'JM11_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM11_ISAT', 1),
+(36, 8, 299, 'Back To The Earth', 1000, 1100, 4000, 7000, 12000, 1200, 'Back_To_The_Earth.mp3', 'JM12_XL', 'JM12_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM12_ISAT', 1),
+(37, 8, 299, 'A World With You', 1000, 1100, 4000, 7000, 12000, 1200, 'A_World_With_You.mp3', 'JM13_XL', 'JM13_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM13_ISAT', 1),
+(38, 8, 299, 'Shine', 1000, 1100, 4000, 7000, 12000, 1200, 'Shine.mp3', 'JM14_XL', 'JM14_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM14_ISAT', 1),
+(49, 9, 348, 'Paper Crown', 1500, 1300, 4000, 7000, 12000, 1000, '04_Paper_Crown.mp3', 'LG4_XL', 'LG4_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'LG4_ISAT', 1),
+(50, 9, 348, 'Greedy Soul', 1500, 1400, 4000, 7000, 12000, 1300, '03_Greedy_Soul.mp3', 'LG3_XL', 'LG3_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'LG3_ISAT', 1),
+(51, 9, 348, 'When I\'m Need', 1100, 1200, 4000, 7000, 12000, 1300, '06__When_I_m_In_Need_-_(www_SongsLover_club).mp3', 'LG6_XL', 'LG6_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'LG6_ISAT', 1),
+(52, 9, 348, 'Wall Of Glass', 1200, 1300, 4000, 7000, 12000, 1400, '02_Bold.mp3', 'LG2_XL', 'LG2_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'LG2_ISAT', 1),
+(53, 10, 209, 'High Hopes', 1200, 1300, 4000, 7000, 12000, 1100, 'Kodaline_-_High_Hopes_(Official_Music_Video).mp3', 'KDL1_XL', 'KDL1_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'KDL1_ISAT', 1),
+(54, 10, 209, 'All I Want', 1500, 1200, 4000, 7000, 12000, 1000, 'Kodaline_-_All_I_Want.mp3', 'KDL2_XL', 'KDL2_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'KDL2_ISAT', 1),
+(55, 9, 348, 'I\'ve All I Need', 1500, 1200, 4000, 7000, 12000, 1000, '12__I_ve_All_I_Need_-_(www_SongsLover_club).mp3', 'LG12_XL', 'LG12_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'JM1_TSEL', 'LG12_ISAT', 1),
+(57, 9, 12, 'Bojo Galak', 3000, 1100, 2000, 3000, 5000, 3000, '????DAOKO_×_????(Covered_by_????__??__???).mp3', 'XL0001', '', '', '', '', 'INDO001', 1);
 
 -- --------------------------------------------------------
 
@@ -742,7 +743,7 @@ ALTER TABLE `t_genre`
 -- AUTO_INCREMENT untuk tabel `t_lagu`
 --
 ALTER TABLE `t_lagu`
-  MODIFY `id_lagu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `id_lagu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 
 --
 -- AUTO_INCREMENT untuk tabel `t_partner`
