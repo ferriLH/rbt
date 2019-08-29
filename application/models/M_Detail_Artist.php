@@ -13,7 +13,7 @@ class M_Detail_Artist extends CI_Model
 		$this->db->select('*');
 		$this->db->from('t_artist');
 		$this->db->join('t_album','t_album.artist_id=t_artist.id_artists');
-		$this->db->join('t_partner','t_partner.id_partner=t_artist.partner_id');
+//		$this->db->join('t_partner','t_partner.id_partner=t_artist.partner_id');
 		$this->db->where('t_artist.id_artists=',$id);
 		return $this->db->get()->result();
 	}
@@ -22,7 +22,7 @@ class M_Detail_Artist extends CI_Model
 	{
 		$this->db->select('*');
 		$this->db->from('t_artist');
-		$this->db->join('t_partner','t_partner.id_partner=t_artist.partner_id');
+//		$this->db->join('t_partner','t_partner.id_partner=t_artist.partner_id');
 		$this->db->order_by('id_artists','DESC');
 		$this->db->limit('10');
 		return $this->db->get()->result();
