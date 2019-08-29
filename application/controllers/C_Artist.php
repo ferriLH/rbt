@@ -51,16 +51,16 @@ class C_Artist extends CI_Controller
 		$data['new_a'] = $this->M_Artist->get_new_artist();
         $this->load->view('main_page/V_Artist',$data);
     }
-	function dataArtist($id)
+	function dataArtist()
 	{
 		$data = array(
 			"title" => "Artist",
 			"getNewInbox"		=> $this->M_Dashboard->getNewInbox(),
-			"getArtistPartner"	=> $this->M_Artist->getArtistPartner($id),
+			"getArtist"	=> $this->M_Artist->get_data_artist()->result(),
 		);
 		$this->load->view('dashboard_page/V_Artist',$data);
 	}
-	public function deleteArtist($id,$idp)
+	public function deleteArtist($id)
 	{
 		if ($this->session->userdata('isLogin') == TRUE) {
 			$photo_name = $this->M_Artist->getPhotoArtist($id);
@@ -69,9 +69,9 @@ class C_Artist extends CI_Controller
 			$data = array(
 				"title" 			=> "Artist",
 				"getNewInbox"		=> $this->M_Dashboard->getNewInbox(),
-				"getArtistPartner"	=> $this->M_Artist->getArtistPartner($id),
+				"getArtist"	=> $this->M_Artist->get_data_artist()->result(),
 			);
-			redirect('data-artist/'.$idp);
+			redirect('data_artist');
 		}else{
 			redirect('login');
 		}

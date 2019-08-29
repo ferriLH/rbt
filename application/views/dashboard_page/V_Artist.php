@@ -49,7 +49,6 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 							<table id="data-artist" class="table table-hover table-striped">
 								<thead>
 								<tr>
-									<th>Nama Partner</th>
 									<th>Nama Artist</th>
 									<th>Bio</th>
 									<th>Picture Artist</th>
@@ -58,9 +57,8 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 								</thead>
 								<tbody>
 								<?php
-								foreach ($getArtistPartner as $a){?>
+								foreach ($getArtist as $a){?>
 									<tr>
-										<td><?php echo $a->nama_partner?></td>
 										<td><?php echo $a->nama_artist?></td>
 										<td><?php echo mb_strimwidth($a->bio, 0, 20, "...")?></td>
 										<td>
@@ -73,7 +71,7 @@ $this->load->view('dashboard_page/parts/V_Navigation');
                                             </span>
 												<span class="text">Edit</span>
 											</a>
-											<button data-target="<?php echo base_url('delete-artist/');echo $a->id_artists."/".$a->partner_id;?>"
+											<button data-target="<?php echo base_url('delete-artist/');echo $a->id_artists;?>"
 											   class="btn btn-danger btn-icon-split delete-artist">
                                             <span class="icon text-white">
                                                 <i class="mdi mdi-delete"></i>

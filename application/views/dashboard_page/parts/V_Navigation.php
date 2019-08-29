@@ -135,10 +135,10 @@ $name = $this->session->userdata('nama_admin');
 					</div>
 				</li>
 				<!--Navbar CRUD Partner-->
-				<li class="nav-item <?php if($this->uri->segment(1)=="partner"){echo "active";}?>">
-					<a class="nav-link" href="<?php echo base_url()?>partner/">
+				<li class="nav-item <?php if($this->uri->segment(1)=="data_artist"){echo "active";}?>">
+					<a class="nav-link" href="<?php echo base_url()?>data_artist">
 						<i class="mdi mdi-account menu-icon"></i>
-						<span class="menu-title">Partner Pages</span>
+						<span class="menu-title">Artist Pages</span>
 					</a>
 				</li>
 				<!--Navbar CRUD Music-->

@@ -72,8 +72,8 @@ $route['partner/add/auth']      	= 'C_Partner/addPartnerAuth';
 $route['partner/edit/(:any)']   	= 'C_Partner/editPartner/$1';
 $route['partner/edit/auth/(:any)']	= 'C_Partner/editPartnerAuth/$1';
 $route['delete-partner/(:any)'] 	= 'C_Partner/deletePartner/$1';
-$route['data-artist/(:any)']    	= 'C_Artist/dataArtist/$1';
-$route['delete-artist/(:any)/(:any)']  = 'C_Artist/deleteArtist/$1/$2';
+$route['data_artist']    			= 'C_Artist/dataArtist';
+$route['delete-artist/(:any)']  	= 'C_Artist/deleteArtist/$1';
 
 $route['music/(:any)']          	= 'C_Music/index/$1';
 $route['music']          			= 'C_Music/index/song';
