@@ -59,8 +59,20 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 								<input type="number" placeholder="Harga XL" class="form-control" id="harga_xl" name="harga_xl">
 							</div>
 							<div class="form-group">
-								<label for="bio">Harga TSEL</label>
-								<input type="number" placeholder="Harga TSEL" class="form-control" id="harga_tsel" name="harga_tsel">
+								<label for="bio">Harga TSEL 3 Hari</label>
+								<input type="number" placeholder="Harga TSEL 3 Hari" class="form-control" id="harga_tsel1" name="harga_tsel1">
+							</div>
+							<div class="form-group">
+								<label for="bio">Harga TSEL 7 Hari</label>
+								<input type="number" placeholder="Harga TSEL 7 Hari" class="form-control" id="harga_tsel2" name="harga_tsel2">
+							</div>
+							<div class="form-group">
+								<label for="bio">Harga TSEL 14 Hari</label>
+								<input type="number" placeholder="Harga TSEL 14 Hari" class="form-control" id="harga_tsel3" name="harga_tsel3">
+							</div>
+							<div class="form-group">
+								<label for="bio">Harga TSEL 30 Hari</label>
+								<input type="number" placeholder="Harga TSEL 30 Hari" class="form-control" id="harga_tsel4" name="harga_tsel4">
 							</div>
 							<div class="form-group">
 								<label for="bio">Harga INDOSAT</label>
@@ -71,8 +83,17 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 								<input type="text" placeholder="Kode Registrasi" class="form-control" id="xl" name="xl">
 							</div>
 							<div class="form-group">
-								<label for="kode_registration">Kode Registrasi TSEL</label>
-								<input type="text" placeholder="Kode Registrasi" class="form-control" id="tsel" name="tsel">
+								<label for="kode_registration">Kode Registrasi TSEL 3 Hari</label>
+								<input type="text" placeholder="Kode Registrasi Telkomsel 3 Hari" class="form-control" id="tsel1" name="tsel1">
+							</div><div class="form-group">
+								<label for="kode_registration">Kode Registrasi TSEL 7 Hari</label>
+								<input type="text" placeholder="Kode Registrasi" class="form-control" id="tsel2" name="tsel2">
+							</div><div class="form-group">
+								<label for="kode_registration">Kode Registrasi TSEL 14 Hari</label>
+								<input type="text" placeholder="Kode Registrasi" class="form-control" id="tsel3" name="tsel3">
+							</div><div class="form-group">
+								<label for="kode_registration">Kode Registrasi TSEL 30 Hari</label>
+								<input type="text" placeholder="Kode Registrasi" class="form-control" id="tsel4" name="tsel4">
 							</div>
 							<div class="form-group">
 								<label for="kode_registration">Kode Registrasi INDOSAT</label>

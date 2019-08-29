@@ -66,12 +66,18 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 													<th>Album</th>
 													<th>Judul</th>
 													<th>Harga XL</th>
-													<th>Harga TSEL</th>
+													<th>Harga TSEL 3 Hari</th>
+													<th>Harga TSEL 7 Hari</th>
+													<th>Harga TSEL 14 Hari</th>
+													<th>Harga TSEL 30 Hari</th>
 													<th>Harga INDOSAT</th>
 													<th>Genre</th>
 													<th>XL</th>
-													<th>TSEL</th>
-													<th>INDOSAT</th>
+													<th>Kode TSEL 3 Hari</th>
+													<th>Kode TSEL 7 Hari</th>
+													<th>Kode TSEL 14 Hari</th>
+													<th>Kode TSEL 30 Hari</th>
+													<th>Kode INDOSAT</th>
 													<th>Action</th>
 												</tr>
 												</thead>
@@ -83,11 +89,17 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 														<td><?php echo $s->nama_album?></td>
 														<td><?php echo $s->judul?></td>
 														<td><?php echo "Rp. ".$s->harga_xl?></td>
-														<td><?php echo "Rp. ".$s->harga_tsel?></td>
+														<td><?php echo "Rp. ".$s->harga_tsel1?></td>
+														<td><?php echo "Rp. ".$s->harga_tsel2?></td>
+														<td><?php echo "Rp. ".$s->harga_tsel3?></td>
+														<td><?php echo "Rp. ".$s->harga_tsel4?></td>
 														<td><?php echo "Rp. ".$s->harga_indosat?></td>
 														<td><?php echo $s->genre?></td>
 														<td><?php echo $s->kode_xl?></td>
-														<td><?php echo $s->kode_tsel?></td>
+														<td><?php echo $s->kode_tsel1?></td>
+														<td><?php echo $s->kode_tsel2?></td>
+														<td><?php echo $s->kode_tsel3?></td>
+														<td><?php echo $s->kode_tsel4?></td>
 														<td><?php echo $s->kode_indosat?></td>
 														<td>
 															<a href="<?php echo base_url('update-song/');echo $s->id_lagu;?>" class="btn btn-warning btn-icon-split">

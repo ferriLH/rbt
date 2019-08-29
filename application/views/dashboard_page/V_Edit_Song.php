@@ -61,12 +61,27 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 									type="number" placeholder="Harga" class="form-control" id="harga_xl" name="harga_xl">
 							</div>
 							<div class="form-group">
-								<label for="bio">Harga TSEL</label>
-								<input value="<?php echo $getSongEdit[0]['harga_tsel']?>"
-									   type="number" placeholder="Harga" class="form-control" id="harga_tsel" name="harga_tsel">
+								<label for="bio">Harga TSEL 3 Hari</label>
+								<input value="<?php echo $getSongEdit[0]['harga_tsel1']?>"
+									   type="number" placeholder="Harga" class="form-control" id="harga_tsel" name="harga_tsel1">
 							</div>
 							<div class="form-group">
-								<label for="bio">Harga INDOSAL</label>
+								<label for="bio">Harga TSEL 7 Hari</label>
+								<input value="<?php echo $getSongEdit[0]['harga_tsel2']?>"
+									   type="number" placeholder="Harga" class="form-control" id="harga_tsel" name="harga_tsel2">
+							</div>
+							<div class="form-group">
+								<label for="bio">Harga TSEL 14 Hari</label>
+								<input value="<?php echo $getSongEdit[0]['harga_tsel3']?>"
+									   type="number" placeholder="Harga" class="form-control" id="harga_tsel" name="harga_tsel3">
+							</div>
+							<div class="form-group">
+								<label for="bio">Harga TSEL 30 Hari</label>
+								<input value="<?php echo $getSongEdit[0]['harga_tsel4']?>"
+									   type="number" placeholder="Harga" class="form-control" id="harga_tsel" name="harga_tsel4">
+							</div>
+							<div class="form-group">
+								<label for="bio">Harga INDOSAt</label>
 								<input value="<?php echo $getSongEdit[0]['harga_indosat']?>"
 									   type="number" placeholder="Harga" class="form-control" id="harga_isat" name="harga_isat">
 							</div>
@@ -76,9 +91,24 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 									type="text" placeholder="Kode Registrasi" class="form-control" id="kode_registration" name="xl">
 							</div>
 							<div class="form-group">
-								<label for="kode_registration">Kode Registrasi TSEL</label>
-								<input value="<?php echo $getSongEdit[0]['kode_tsel']?>"
-									   type="text" placeholder="Kode Registrasi" class="form-control" id="kode_registration" name="tsel">
+								<label for="kode_registration">Kode Registrasi TSEL 3 Hari</label>
+								<input value="<?php echo $getSongEdit[0]['kode_tsel1']?>"
+									   type="text" placeholder="Kode Registrasi" class="form-control" id="kode_registration" name="tsel1">
+							</div>
+							<div class="form-group">
+								<label for="kode_registration">Kode Registrasi TSEL 7 Hari</label>
+								<input value="<?php echo $getSongEdit[0]['kode_tsel2']?>"
+									   type="text" placeholder="Kode Registrasi" class="form-control" id="kode_registration" name="tsel2">
+							</div>
+							<div class="form-group">
+								<label for="kode_registration">Kode Registrasi TSEL 14 Hari</label>
+								<input value="<?php echo $getSongEdit[0]['kode_tsel3']?>"
+									   type="text" placeholder="Kode Registrasi" class="form-control" id="kode_registration" name="tsel3">
+							</div>
+							<div class="form-group">
+								<label for="kode_registration">Kode Registrasi TSEL 30 Hari</label>
+								<input value="<?php echo $getSongEdit[0]['kode_tsel4']?>"
+									   type="text" placeholder="Kode Registrasi" class="form-control" id="kode_registration" name="tsel4">
 							</div>
 							<div class="form-group">
 								<label for="kode_registration">Kode Registrasi INDOSAT</label>

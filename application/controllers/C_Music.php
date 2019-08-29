@@ -222,10 +222,16 @@ class C_Music extends CI_Controller
 		//form validation
 		$this->form_validation->set_rules('judul_lagu', 	'Judul Lagu', 				'required');
 		$this->form_validation->set_rules('harga_xl', 		'Harga XL', 				'required');
-		$this->form_validation->set_rules('harga_tsel', 	'Harga TSEL', 				'required');
+		$this->form_validation->set_rules('harga_tsel1', 	'Harga TSEL  3 Hari', 				'required');
+		$this->form_validation->set_rules('harga_tsel2', 	'Harga TSEL  7 Hari', 				'required');
+		$this->form_validation->set_rules('harga_tsel3', 	'Harga TSEL  14 Hari', 				'required');
+		$this->form_validation->set_rules('harga_tsel4', 	'Harga TSEL  30 Hari', 				'required');
 		$this->form_validation->set_rules('harga_indosat', 	'Harga INDOSAT', 			'required');
 		$this->form_validation->set_rules('xl',				'Kode Registrasi XL',		'required');
-		$this->form_validation->set_rules('tsel',			'Kode Registrasi TSEL',		'required');
+		$this->form_validation->set_rules('tsel1',			'Kode Registrasi TSEL 3 Hari',		'required');
+		$this->form_validation->set_rules('tsel2',			'Kode Registrasi TSEL 7 Hari',		'required');
+		$this->form_validation->set_rules('tsel3',			'Kode Registrasi TSEL 14 Hari',		'required');
+		$this->form_validation->set_rules('tsel4',			'Kode Registrasi TSEL 30 Hari',		'required');
 		$this->form_validation->set_rules('indosat',		'Kode Registrasi INDOSAT',	'required');
 		$this->form_validation->set_rules('album', 			'album', 					'required');
 		$this->form_validation->set_rules('genre', 			'genre', 					'required');
@@ -235,10 +241,16 @@ class C_Music extends CI_Controller
 		} else {
 			$d['judul'] 		= ($this->input->post('judul_lagu'));
 			$d['harga_xl'] 		= ($this->input->post('harga_xl'));
-			$d['harga_tsel']	= ($this->input->post('harga_tsel'));
+			$d['harga_tsel1']	= ($this->input->post('harga_tsel1'));
+			$d['harga_tsel2']	= ($this->input->post('harga_tsel2'));
+			$d['harga_tsel3']	= ($this->input->post('harga_tsel3'));
+			$d['harga_tsel4']	= ($this->input->post('harga_tsel4'));
 			$d['harga_indosat'] = ($this->input->post('harga_indosat'));
 			$d['kode_xl'] 		= ($this->input->post('xl'));
-			$d['kode_tsel'] 	= ($this->input->post('tsel'));
+			$d['kode_tsel1'] 	= ($this->input->post('tsel1'));
+			$d['kode_tsel2'] 	= ($this->input->post('tsel2'));
+			$d['kode_tsel3'] 	= ($this->input->post('tsel3'));
+			$d['kode_tsel4'] 	= ($this->input->post('tsel4'));
 			$d['kode_indosat'] 	= ($this->input->post('indosat'));
 			$d['album_id'] 		= ($this->input->post('album'));
 			$d['genre_id'] 		= ($this->input->post('genre'));
@@ -396,17 +408,30 @@ class C_Music extends CI_Controller
 	}
 	function updateSongAuth($id)
 	{
+		$data = array(
+			"title" => "Song",
+			"getNewInbox"	=> $this->M_Dashboard->getNewInbox(),
+			"getSongEdit"	=> $this->M_Music->getSongEdit($id),
+			"getAlbum" => $this->M_Music->getAlbum(),
+			"getGenre" => $this->M_Music->getGenre(),
+		);
 		if ($this->session->userdata('isLogin') == TRUE) {
 			//form validation
-			$this->form_validation->set_rules('judul_lagu', 	'Judul Lagu', 		'required');
-			$this->form_validation->set_rules('harga_xl', 		'Harga', 			'required');
-			$this->form_validation->set_rules('harga_tsel', 	'Harga', 			'required');
-			$this->form_validation->set_rules('harga_isat', 	'Harga', 			'required');
-			$this->form_validation->set_rules('xl',				'Kode Registrasi XL',	'required');
-			$this->form_validation->set_rules('tsel',			'Kode Registrasi TSEL',	'required');
+			$this->form_validation->set_rules('judul_lagu', 	'Judul Lagu', 				'required');
+			$this->form_validation->set_rules('harga_xl', 		'Harga XL', 				'required');
+			$this->form_validation->set_rules('harga_tsel1', 	'Harga TSEL  3 Hari', 				'required');
+			$this->form_validation->set_rules('harga_tsel2', 	'Harga TSEL  7 Hari', 				'required');
+			$this->form_validation->set_rules('harga_tsel3', 	'Harga TSEL  14 Hari', 				'required');
+			$this->form_validation->set_rules('harga_tsel4', 	'Harga TSEL  30 Hari', 				'required');
+			$this->form_validation->set_rules('harga_isat', 	'Harga INDOSAT', 			'required');
+			$this->form_validation->set_rules('xl',				'Kode Registrasi XL',		'required');
+			$this->form_validation->set_rules('tsel1',			'Kode Registrasi TSEL 3 Hari',		'required');
+			$this->form_validation->set_rules('tsel2',			'Kode Registrasi TSEL 7 Hari',		'required');
+			$this->form_validation->set_rules('tsel3',			'Kode Registrasi TSEL 14 Hari',		'required');
+			$this->form_validation->set_rules('tsel4',			'Kode Registrasi TSEL 30 Hari',		'required');
 			$this->form_validation->set_rules('indosat',		'Kode Registrasi INDOSAT',	'required');
-			$this->form_validation->set_rules('album', 			'album', 			'required');
-			$this->form_validation->set_rules('genre', 			'genre', 			'required');
+			$this->form_validation->set_rules('album', 			'album', 					'required');
+			$this->form_validation->set_rules('genre', 			'genre', 					'required');
 			if ($this->form_validation->run() == FALSE) {
 				$this->session->set_flashdata('failed', 'gagal');
 				$this->load->view('dashboard_page/V_Edit_Song',$data);
@@ -439,21 +464,33 @@ class C_Music extends CI_Controller
 					$d['genre_id'] 		= ($this->input->post('genre'));
 					$d['judul'] 		= ($this->input->post('judul_lagu'));
 					$d['harga_xl'] 		= ($this->input->post('harga_xl'));
-					$d['harga_tsel'] 	= ($this->input->post('harga_tsel'));
+					$d['harga_tsel1'] 	= ($this->input->post('harga_tsel1'));
+					$d['harga_tsel2'] 	= ($this->input->post('harga_tsel2'));
+					$d['harga_tsel3'] 	= ($this->input->post('harga_tsel3'));
+					$d['harga_tsel4'] 	= ($this->input->post('harga_tsel4'));
 					$d['harga_indosat'] = ($this->input->post('harga_isat'));
 					$d['kode_xl'] 		= ($this->input->post('xl'));
-					$d['kode_tsel']		= ($this->input->post('tsel'));
+					$d['kode_tsel1']	= ($this->input->post('tsel'));
+					$d['kode_tsel2']	= ($this->input->post('tsel'));
+					$d['kode_tsel3']	= ($this->input->post('tsel'));
+					$d['kode_tsel4']	= ($this->input->post('tsel'));
 					$d['kode_indosat']	= ($this->input->post('indosat'));
 				}if($namalagu!=''){
 					$d['album_id'] 		= ($this->input->post('album'));
 					$d['genre_id'] 		= ($this->input->post('genre'));
 					$d['judul'] 		= ($this->input->post('judul_lagu'));
 					$d['harga_xl'] 		= ($this->input->post('harga_xl'));
-					$d['harga_tsel'] 	= ($this->input->post('harga_tsel'));
+					$d['harga_tsel1'] 	= ($this->input->post('harga_tsel1'));
+					$d['harga_tsel2'] 	= ($this->input->post('harga_tsel2'));
+					$d['harga_tsel3'] 	= ($this->input->post('harga_tsel3'));
+					$d['harga_tsel4'] 	= ($this->input->post('harga_tsel4'));
 					$d['harga_indosat'] = ($this->input->post('harga_isat'));
 					$d['file'] 			= $namalagu;
 					$d['kode_xl'] 		= ($this->input->post('xl'));
-					$d['kode_tsel']		= ($this->input->post('tsel'));
+					$d['kode_tsel1']	= ($this->input->post('tsel1'));
+					$d['kode_tsel2']	= ($this->input->post('tsel2'));
+					$d['kode_tsel3']	= ($this->input->post('tsel3'));
+					$d['kode_tsel4']	= ($this->input->post('tsel4'));
 					$d['kode_indosat']	= ($this->input->post('indosat'));
 				}
 				$this->M_Music->update_song($id,$d);
