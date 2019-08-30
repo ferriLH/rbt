@@ -18,18 +18,18 @@ $name = $this->session->userdata('nama_admin');
             </div>
         </div>
         <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
-            <ul class="navbar-nav mr-lg-4 w-100">
-                <li class="nav-item nav-search d-none d-lg-block w-100">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                <span class="input-group-text" id="search">
-                  <i class="mdi mdi-magnify"></i>
-                </span>
-                        </div>
-                        <input type="text" class="form-control" placeholder="Search now" aria-label="search" aria-describedby="search">
-                    </div>
-                </li>
-            </ul>
+<!--            <ul class="navbar-nav mr-lg-4 w-100">-->
+<!--				<li class="nav-item nav-search d-none d-lg-block w-100">-->
+<!--					<div class="input-group">-->
+<!--						<div class="input-group-prepend">-->
+<!--							<span class="input-group-text" id="search">-->
+<!--								<i class="mdi mdi-magnify"></i>-->
+<!--							</span>-->
+<!--						</div>-->
+<!--						<input type="text" class="form-control" placeholder="Search now" aria-label="search" aria-describedby="search">-->
+<!--                    </div>-->
+<!--                </li>-->
+<!--            </ul>-->
             <ul class="navbar-nav navbar-nav-right">
                 <li class="nav-item dropdown mr-4">
                     <a class="nav-link count-indicator dropdown-toggle d-flex align-items-center justify-content-center notification-dropdown" id="notificationDropdown" href="#" data-toggle="dropdown">

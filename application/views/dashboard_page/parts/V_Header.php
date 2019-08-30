@@ -22,4 +22,11 @@
     <script src="<?php echo base_url()?>assets/dashboard_page/js/sweetalert/sweetalert2.all.min.js"></script>
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
+	<script>
+        $.fn.selectpicker.Constructor.BootstrapVersion = '4';
+	</script>
 </head>

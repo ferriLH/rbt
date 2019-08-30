@@ -111,19 +111,19 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 							</div>
 							<div class="form-group">
 								<label for="album">Album</label>
-								<select class="form-control" id="album" name="album">
+								<select data-live-search="true" class="form-control selectpicker" id="album" name="album">
 									<option value="0">- choose -</option>
 									<?php foreach ($getAlbum as $a){?>
-									<option value="<?php echo $a->id_album?>"><?php echo $a->nama_album?></option>
+									<option data-tokens="<?php echo $a->nama_album?>" value="<?php echo $a->id_album?>"><?php echo $a->nama_album." - ".$a->nama_artist?></option>
 									<?php }?>
 								</select>
 							</div>
 							<div class="form-group">
 								<label for="genre">Genre</label>
-								<select class="form-control" id="genre" name="genre">
+								<select data-live-search="true" class="form-control selectpicker" id="genre" name="genre">
 									<option value="0">- choose -</option>
 									<?php foreach ($getGenre as $g){?>
-									<option value="<?php echo $g->id?>"><?php echo $g->genre?></option>
+									<option data-tokens="<?php echo $g->genre?>" value="<?php echo $g->id?>"><?php echo $g->genre?></option>
 									<?php }?>
 								</select>
 							</div>
