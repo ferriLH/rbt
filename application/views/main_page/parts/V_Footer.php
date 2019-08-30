@@ -38,10 +38,10 @@ $login = $this->session->userdata('isLogin');
 					<input name="email" type="email" class="form-control" placeholder="your email">
 					<input name="notelp" type="hidden" value="newsletter">
 					<input type="hidden" name="pesan" value="newsletter">
-					<input type="hidden" name="baca" value="1">
+					<input type="hidden" name="baca" value="0">
 					<div class="input-group-btn">
 						<button class="btn btn-default" type="submit">
-							<i class="glyphicon glyphicon-search"></i>
+							<i class="glyphicon glyphicon-send"></i>
 						</button>
 					</div>
 				</div>
