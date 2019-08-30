@@ -159,13 +159,13 @@ $this->load->view('main_page/parts/V_Navigation');
 					echo "<div>Kosong.</div>";
 				}
 				?>
-				<div class="container">
-					<div class="row">
-						<?php if (isset($pagination)) { ?>
-							<?php echo $pagination ?>
-						<?php } ?>
-					</div>
-				</div>
+<!--				<div class="container">-->
+<!--					<div class="row">-->
+<!--						--><?php //if (isset($pagination)) { ?>
+<!--							--><?php //echo $pagination ?>
+<!--						--><?php //} ?>
+<!--					</div>-->
+<!--				</div>-->
 			</div>
 		</div>
 	</div>
