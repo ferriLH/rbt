@@ -54,29 +54,77 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 								<label for="judul_lagu">Judul Lagu</label>
 								<input type="text" class="form-control" id="judul_lagu" placeholder="Judul Lagu" name="judul_lagu">
 							</div>
+<!--							<div class="form-group">-->
+<!--								<label for="bio">Harga XL</label>-->
+<!--								<input type="number" placeholder="Harga XL" class="form-control" id="harga_xl" name="harga_xl">-->
+<!--							</div>-->
 							<div class="form-group">
-								<label for="bio">Harga XL</label>
-								<input type="number" placeholder="Harga XL" class="form-control" id="harga_xl" name="harga_xl">
+								<label for="Harga TSEL">Harga XL</label>
+								<select data-live-search="true" class="form-control selectpicker" name="harga_xl" id="harga_xl">
+									<?php for ($i=500; $i <= 12000; $i=$i+50) {
+										echo "<option value='.$i.'>Rp.".$i."</option>";
+									} ?>
+								</select>
 							</div>
 							<div class="form-group">
-								<label for="bio">Harga TSEL 3 Hari</label>
-								<input type="number" placeholder="Harga TSEL 3 Hari" class="form-control" id="harga_tsel1" name="harga_tsel1">
+								<label for="Harga TSEL">Harga TSEL 1</label>
+								<select data-live-search="true" class="form-control selectpicker"  name="harga_tsel1" id="harga_tsel1">
+									<?php for ($i=500; $i <= 12000; $i=$i+50) {
+										echo "<option value='.$i.'>Rp.".$i."</option>";
+									} ?>
+								</select>
 							</div>
 							<div class="form-group">
-								<label for="bio">Harga TSEL 7 Hari</label>
-								<input type="number" placeholder="Harga TSEL 7 Hari" class="form-control" id="harga_tsel2" name="harga_tsel2">
+								<label for="Harga TSEL">Harga TSEL 2</label>
+								<select data-live-search="true" class="form-control selectpicker"  name="harga_tsel2" id="harga_tsel2">
+									<?php for ($i=500; $i <= 12000; $i=$i+50) {
+										echo "<option value='.$i.'>Rp.".$i."</option>";
+									} ?>
+								</select>
 							</div>
 							<div class="form-group">
-								<label for="bio">Harga TSEL 14 Hari</label>
-								<input type="number" placeholder="Harga TSEL 14 Hari" class="form-control" id="harga_tsel3" name="harga_tsel3">
+								<label for="Harga TSEL">Harga TSEL 3</label>
+								<select data-live-search="true" class="form-control selectpicker"  name="harga_tsel3" id="harga_tsel3">
+									<?php for ($i=500; $i <= 12000; $i=$i+50) {
+										echo "<option value='.$i.'>Rp.".$i."</option>";
+									} ?>
+								</select>
 							</div>
 							<div class="form-group">
-								<label for="bio">Harga TSEL 30 Hari</label>
-								<input type="number" placeholder="Harga TSEL 30 Hari" class="form-control" id="harga_tsel4" name="harga_tsel4">
+								<label for="Harga TSEL">Harga TSEL 4</label>
+								<select data-live-search="true" class="form-control selectpicker"  name="harga_tsel4" id="harga_tsel4">
+									<?php for ($i=500; $i <= 12000; $i=$i+50) {
+										echo "<option value='.$i.'>Rp.".$i."</option>";
+									} ?>
+								</select>
 							</div>
+<!--							<div class="form-group">-->
+<!--								<label for="bio">Harga TSEL 3 Hari</label>-->
+<!--								<input type="number" placeholder="Harga TSEL 3 Hari" class="form-control" id="harga_tsel1" name="harga_tsel1">-->
+<!--							</div>-->
+<!--							<div class="form-group">-->
+<!--								<label for="bio">Harga TSEL 7 Hari</label>-->
+<!--								<input type="number" placeholder="Harga TSEL 7 Hari" class="form-control" id="harga_tsel2" name="harga_tsel2">-->
+<!--							</div>-->
+<!--							<div class="form-group">-->
+<!--								<label for="bio">Harga TSEL 14 Hari</label>-->
+<!--								<input type="number" placeholder="Harga TSEL 14 Hari" class="form-control" id="harga_tsel3" name="harga_tsel3">-->
+<!--							</div>-->
+<!--							<div class="form-group">-->
+<!--								<label for="bio">Harga TSEL 30 Hari</label>-->
+<!--								<input type="number" placeholder="Harga TSEL 30 Hari" class="form-control" id="harga_tsel4" name="harga_tsel4">-->
+<!--							</div>-->
+<!--							<div class="form-group">-->
+<!--								<label for="bio">Harga INDOSAT</label>-->
+<!--								<input type="number" placeholder="Harga INDOSAT" class="form-control" id="harga_indosat" name="harga_indosat">-->
+<!--							</div>-->
 							<div class="form-group">
-								<label for="bio">Harga INDOSAT</label>
-								<input type="number" placeholder="Harga INDOSAT" class="form-control" id="harga_indosat" name="harga_indosat">
+								<label for="Harga INDOSAT">Harga INDOSAT</label>
+								<select data-live-search="true" class="form-control selectpicker"  id="harga_indosat" name="harga_indosat">
+									<?php for ($i=500; $i <= 12000; $i=$i+50) {
+										echo "<option value='.$i.'>Rp.".$i."</option>";
+									} ?>
+								</select>
 							</div>
 							<div class="form-group">
 								<label for="kode_registration">Kode Registrasi XL</label>
