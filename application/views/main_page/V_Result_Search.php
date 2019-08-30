@@ -86,7 +86,7 @@ $this->load->view('main_page/parts/V_Navigation');
 						}
 						?> <br><br>
 
-						<small><?php echo "Ketik : <b>RING</b> (spasi)<b> SUB</b> (spasi) <b>".$r->kode_tsel3."</b>"?></small><br>
+						<small><?php echo "Ketik : <b>RING</b> (spasi)<b> SUB</b> (spasi) <b>".$r->kode_tsel2."</b>"?></small><br>
 						<small><?php echo "Kirim ke : <b>1212</b>"?></small> <br>
 						<small><?php echo "Tarif : ".$r->harga_tsel2."/lagu"?></small><br>
 
@@ -119,9 +119,9 @@ $this->load->view('main_page/parts/V_Navigation');
 						}
 						?><br><br>
 
-						<small><?php echo "Ketik : <b>RING</b> (spasi)<b> SUB</b> (spasi) <b>".$r->kode_tsel3."</b>"?></small><br>
+						<small><?php echo "Ketik : <b>RING</b> (spasi)<b> SUB</b> (spasi) <b>".$r->kode_tsel4."</b>"?></small><br>
 						<small><?php echo "Kirim ke : <b>1212</b>"?></small> <br>
-						<small><?php echo "Tarif : ".$r->harga_tsel3."/lagu"?></small> <br>
+						<small><?php echo "Tarif : ".$r->harga_tsel4."/lagu"?></small> <br>
 
 
 						<?php
