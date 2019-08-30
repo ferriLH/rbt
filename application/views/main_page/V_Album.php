@@ -33,8 +33,8 @@ $this->load->view('main_page/parts/V_Navigation');
                     <a href="<?php echo base_url('assets/main_page/')?>browse.html"><h4 class="tittle third">See all</h4></a>
                     <div class="clearfix"> </div>
                 </div>
-				<?php if (isset($data)) {
-				foreach ($data as $dat) {
+				<?php if (isset($nani)) {
+				foreach ($nani as $dat) {
 					$id = $dat->id_album;
 					?>
                 <div class="col-md-3 browse-grid">

@@ -16,6 +16,14 @@ class M_Album extends CI_Model
         return $this->db->get()->result();
     }
 
+    function get_album_pagination($limit,$start)
+	{
+		$this->db->where('t_album.aktif',TRUE);
+		$query = $this->db->get('t_album',$limit,$start)->result();
+
+		return $query;
+	}
+
     function get_album_new()
 	{
 		$this->db->select('*');

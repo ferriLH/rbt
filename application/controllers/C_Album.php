@@ -18,12 +18,12 @@ class C_Album extends CI_Controller
             "album" => $this->M_Album->get_album()
         );
 		//config pagination
-		$config['base_url'] = base_url('album/page');  //site url
+		$config['base_url'] = base_url('album/page/');  //site url
 		$config['total_rows'] = $this->db->count_all('t_album'); //total row
 		$config['per_page'] = 6;
 		$config['uri_segment'] = 3;
-		$choice = $config["total_rows"] / $config["per_page"];
-		$config['num_links'] = is_int($choice);
+		$choice = //$config["total_rows"] / $config["per_page"];
+		//$config['num_links'] = is_int($choice);
 		//style pagination
 		$config['first_link']       = 'First';
 		$config['last_link']        = 'Last';
@@ -46,7 +46,7 @@ class C_Album extends CI_Controller
 
 		$this->pagination->initialize($config);
 		$page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
-		$data['data'] = $this->M_Album->get_album($config['per_page'], $page);
+		$data['nani'] = $this->M_Album->get_album_pagination($config['per_page'], $page);
 		$data['pagination'] = $this->pagination->create_links();
 		$data['new_r'] = $this->M_Album->get_album_new();
 		$this->load->view('main_page/V_Album',$data);
