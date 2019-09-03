@@ -18,6 +18,7 @@ class M_Dashboard extends CI_Model
 		$this->db->select("*");
 		$this->db->from("t_admin");
 		$this->db->where("aktif",true);
+		$this->db->where("id_admin",$id);
 		$query = $this->db->get();
 		return $query->result_array();
 	}
