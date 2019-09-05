@@ -82,7 +82,7 @@ class C_Artist extends CI_Controller
 			$data = array(
 				"title" => "Artist",
 				"getNewInbox"	=> $this->M_Dashboard->getNewInbox(),
-				"getPartner"	=> $this->M_Partner->getPartner(),
+//				"getPartner"	=> $this->M_Partner->getPartner(),
 			);
 			$this->load->view('dashboard_page/V_Add_Artist',$data);
 		}else{
@@ -101,13 +101,13 @@ class C_Artist extends CI_Controller
 			$this->form_validation->set_rules('nama_artist', 	'Nama Artist', 	'required');
 			$this->form_validation->set_rules('bio', 			'Bio', 			'required');
 			//$this->form_validation->set_rules('photo_artist', 	'Photo Artist', 'required');
-			$this->form_validation->set_rules('partner', 		'Partner', 		'required');
+//			$this->form_validation->set_rules('partner', 		'Partner', 		'required');
 
 			if ($this->form_validation->run() == FALSE) {
 				$this->session->set_flashdata('failed', 'gagal');
 				$this->load->view('dashboard_page/V_Add_Artist',$data);
 			} else {
-				$d['partner_id'] 		= ($this->input->post('partner'));
+//				$d['partner_id'] 		= ($this->input->post('partner'));
 				$d['nama_artist'] 		= ($this->input->post('nama_artist'));
 				$d['bio'] 				= ($this->input->post('bio'));
 				//upload protocol
@@ -133,7 +133,7 @@ class C_Artist extends CI_Controller
 
 				$this->M_Artist->add_new_artist($d);
 				$this->session->set_flashdata('sukses', 'sukses');
-				redirect('data-artist/'.$this->input->post('partner'));
+				redirect('data_artist');
 			}
 		}else{
 			redirect('login');
@@ -146,25 +146,26 @@ class C_Artist extends CI_Controller
 				"title" => "Artist",
 				"getNewInbox"	=> $this->M_Dashboard->getNewInbox(),
 				"getArtistEdit" => $this->M_Artist->getArtistEdit($id),
-				"getPartner"=> $this->M_Partner->getPartner(),
+//				"getPartner"=> $this->M_Partner->getPartner(),
 			);
 			$this->load->view('dashboard_page/V_Edit_Artist',$data);
 		}else{
 			redirect('login');
 		}
 	}
-	function editArtistAuth($id,$idp)
+	function editArtistAuth($id)
 	{
 		if ($this->session->userdata('isLogin') == TRUE) {
 			$data = array(
 				"title" => "Artist",
 				"getNewInbox" 	=> $this->M_Dashboard->getNewInbox(),
-				"getArtistPartner"	=> $this->M_Artist->getArtistPartner($id),
+//				"getArtistPartner"	=> $this->M_Artist->getArtistPartner($id),
+				"getArtistPartner"	=> $this->M_Artist->getArtistPartner(),
 			);
 			//form validation
 			$this->form_validation->set_rules('nama_artist', 	'Nama Artist', 	'required');
 			$this->form_validation->set_rules('bio', 			'Bio', 			'required');
-			$this->form_validation->set_rules('partner', 		'Partner', 		'required');
+//			$this->form_validation->set_rules('partner', 		'Partner', 		'required');
 
 			if ($this->form_validation->run() == FALSE) {
 				$this->session->set_flashdata('failed', 'gagal');
@@ -192,18 +193,18 @@ class C_Artist extends CI_Controller
 				}
 
 				if($picture==''){
-					$d['partner_id'] 		= ($this->input->post('partner'));
+//					$d['partner_id'] 		= ($this->input->post('partner'));
 					$d['nama_artist'] 		= ($this->input->post('nama_artist'));
 					$d['bio'] 				= ($this->input->post('bio'));
 				}if($picture!=''){
-					$d['partner_id'] 		= ($this->input->post('partner'));
+//					$d['partner_id'] 		= ($this->input->post('partner'));
 					$d['nama_artist'] 		= ($this->input->post('nama_artist'));
 					$d['bio'] 				= ($this->input->post('bio'));
 					$d['picture_artist'] 	= $picture;
 				}
 				$this->M_Artist->update_artist($id,$d);
 				$this->session->set_flashdata('sukses', 'sukses');
-				redirect('data-artist/'.$idp);
+				redirect('data_artist');
 			}
 		}else{
 			redirect('login');

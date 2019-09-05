@@ -30,13 +30,13 @@ class M_Artist extends CI_Model
 
         return $query;
     }
-	function getArtistPartner($id)
+	function getArtistPartner()//($id)
 	{
 		$this->db->select('*');
 		$this->db->from('t_artist');
-		$this->db->join('t_partner','t_artist.partner_id=t_partner.id_partner');
+//		$this->db->join('t_partner','t_artist.partner_id=t_partner.id_partner');
 		$this->db->where('t_artist.aktif',TRUE);
-		$this->db->where('t_artist.partner_id',$id);
+//		$this->db->where('t_artist.partner_id',$id);
 		return $this->db->get()->result();
 	}
     function getPhotoArtist($id)
@@ -77,7 +77,7 @@ class M_Artist extends CI_Model
 	function getArtistEdit($id){
 		$this->db->select("*");
 		$this->db->from("t_artist");
-		$this->db->join('t_partner','t_partner.id_partner=t_artist.partner_id');
+//		$this->db->join('t_partner','t_partner.id_partner=t_artist.partner_id');
 		$this->db->where("id_artists",$id);
 		$this->db->where("t_artist.aktif",true);
 		$query = $this->db->get();

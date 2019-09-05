@@ -14,18 +14,18 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 							<p class="text-muted mb-0 hover-cursor">
 								&nbsp;/&nbsp;<a href="<?php echo base_url('dashboard')?>"><?php echo "Dashboard";?></a>&nbsp;/&nbsp;
 							</p>
-							<p class="text-muted mb-0 hover-cursor">
-								<a href="<?php echo base_url('partner')?>"><?php echo "Partner";?></a>&nbsp;/&nbsp;
-							</p>
+<!--							<p class="text-muted mb-0 hover-cursor">-->
+<!--								<a href="--><?php //echo base_url('partner')?><!--">--><?php //echo "Partner";?><!--</a>&nbsp;/&nbsp;-->
+<!--							</p>-->
 							<p class="text-primary mb-0 hover-cursor">
 								<a href="<?php echo base_url().$this->uri->segment(1)?>"><?php echo $title;?></a>
 							</p>
 						</div>
 					</div>
 					<div class="d-flex justify-content-between align-items-end flex-wrap">
-						<a href="<?php echo base_url('')."partner/add"?>">
-							<button class="btn btn-primary mt-2 mt-xl-0"><i class="mdi mdi-plus-circle"></i> Add New Partner</button>&nbsp;
-						</a>
+<!--						<a href="--><?php //echo base_url('')."partner/add"?><!--">-->
+<!--							<button class="btn btn-primary mt-2 mt-xl-0"><i class="mdi mdi-plus-circle"></i> Add New Partner</button>&nbsp;-->
+<!--						</a>-->
 						<a href="<?php echo base_url('')."artist/add"?>">
 							<button class="btn btn-primary mt-2 mt-xl-0"><i class="mdi mdi-plus-circle"></i> Add New Artist</button>&nbsp;
 						</a>

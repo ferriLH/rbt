@@ -470,10 +470,10 @@ class C_Music extends CI_Controller
 					$d['harga_tsel4'] 	= ($this->input->post('harga_tsel4'));
 					$d['harga_indosat'] = ($this->input->post('harga_isat'));
 					$d['kode_xl'] 		= ($this->input->post('xl'));
-					$d['kode_tsel1']	= ($this->input->post('tsel'));
-					$d['kode_tsel2']	= ($this->input->post('tsel'));
-					$d['kode_tsel3']	= ($this->input->post('tsel'));
-					$d['kode_tsel4']	= ($this->input->post('tsel'));
+					$d['kode_tsel1']	= ($this->input->post('tsel1'));
+					$d['kode_tsel2']	= ($this->input->post('tsel2'));
+					$d['kode_tsel3']	= ($this->input->post('tsel3'));
+					$d['kode_tsel4']	= ($this->input->post('tsel4'));
 					$d['kode_indosat']	= ($this->input->post('indosat'));
 				}if($namalagu!=''){
 					$d['album_id'] 		= ($this->input->post('album'));

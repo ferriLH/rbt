@@ -14,19 +14,19 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 							<p class="text-muted mb-0 hover-cursor">
 								&nbsp;/&nbsp;<a href="<?php echo base_url('dashboard')?>"><?php echo "Dashboard";?></a>&nbsp;/&nbsp;
 							</p>
-							<p class="text-muted mb-0 hover-cursor">
-								<a href="<?php echo base_url('partner/')?>"><?php echo "Partner";?></a>&nbsp;/&nbsp;
-							</p>
+<!--							<p class="text-muted mb-0 hover-cursor">-->
+<!--								<a href="--><?php //echo base_url('partner/')?><!--">--><?php //echo "Partner";?><!--</a>&nbsp;/&nbsp;-->
+<!--							</p>-->
 							<p class="text-primary mb-0 hover-cursor">
-								<a href="<?php echo base_url().$this->uri->segment(1)."/add"?>"><?php echo $title;?></a>
+								<a href="<?php echo base_url('data_artist')?>"><?php echo $title;?></a>
 							</p>
 						</div>
 					</div>
 					<div class="d-flex justify-content-between align-items-end flex-wrap">
-						<a href="<?php echo base_url('')."partner/add"?>">
-							<button class="btn btn-primary mt-2 mt-xl-0"><i class="mdi mdi-plus-circle"></i> Add New Partner</button>&nbsp;
-						</a>
-						<a href="<?php echo base_url('partner')?>">
+<!--						<a href="--><?php //echo base_url('')."partner/add"?><!--">-->
+<!--							<button class="btn btn-primary mt-2 mt-xl-0"><i class="mdi mdi-plus-circle"></i> Add New Partner</button>&nbsp;-->
+<!--						</a>-->
+						<a href="<?php echo base_url('data_artist')?>">
 							<button class="btn btn-primary mt-2 mt-xl-0"><i class="mdi mdi-arrow-bottom-left"></i> Back</button>&nbsp;
 						</a>
 					</div>
@@ -65,21 +65,21 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 									</span>
 								</div>
 							</div>
-							<div class="form-group">
-								<label for="partner">Partner</label>
-								<select class="form-control" id="partner" name="partner">
-									<option value="0">- choose -</option>
-									<?php
-									foreach ($getPartner as $p){
-										?>
-										<option
-											value="<?php echo $p->id_partner;?>"
-											label="<?php echo $p->nama_partner;?>"
-										>
-										</option>
-									<?php } ?>
-								</select>
-							</div>
+<!--							<div class="form-group">-->
+<!--								<label for="partner">Partner</label>-->
+<!--								<select class="form-control" id="partner" name="partner">-->
+<!--									<option value="0">- choose -</option>-->
+<!--									--><?php
+//									foreach ($getPartner as $p){
+//										?>
+<!--										<option-->
+<!--											value="--><?php //echo $p->id_partner;?><!--"-->
+<!--											label="--><?php //echo $p->nama_partner;?><!--"-->
+<!--										>-->
+<!--										</option>-->
+<!--									--><?php //} ?>
+<!--								</select>-->
+<!--							</div>-->
 							<button type="submit" class="btn btn-primary mr-2">Submit</button>
 							<button type="reset" class="btn btn-light">Cancel</button>
 						</form>
