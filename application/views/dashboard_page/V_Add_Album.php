@@ -66,15 +66,15 @@ $this->load->view('dashboard_page/parts/V_Navigation');
 							</div>
 							<div class="form-group">
 								<label for="artist">Artist</label>
-								<select class="form-control" id="artist" name="artist">
+								<select data-live-search="true" class="form-control selectpicker" id="artist" name="artist">
 									<option value="0">- choose -</option>
 									<?php
 									foreach ($getArtist as $a){
 										?>
 										<option
-											value="<?php echo $a->id_artists;?>"
-											label="<?php echo $a->nama_artist;?>"
-										>
+											data-tokens="<?php echo $a->nama_artist?>"
+											value="<?php echo $a->id_artists;?>">
+											<?php echo $a->nama_artist;?>
 										</option>
 									<?php } ?>
 								</select>

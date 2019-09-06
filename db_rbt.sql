@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 29 Agu 2019 pada 19.56
+-- Waktu pembuatan: 06 Sep 2019 pada 10.32
 -- Versi server: 10.4.6-MariaDB
 -- Versi PHP: 7.3.8
 
@@ -41,7 +41,8 @@ CREATE TABLE `t_admin` (
 --
 
 INSERT INTO `t_admin` (`id_admin`, `nama_admin`, `email_admin`, `password`, `aktif`) VALUES
-(1, 'Ferri L H', 'ferrilasmihalim@gmail.com', 'd033e22ae348aeb5660fc2140aec35850c4da997', 1);
+(1, 'Ferri L Halim', 'ferrilasmihalim@gmail.com', 'd033e22ae348aeb5660fc2140aec35850c4da997', 1),
+(2, 'dick', 'andika@alpha-omega.co.id', '3ae6f43cf9a894824066a7d5b7b752b41d789889', 1);
 
 -- --------------------------------------------------------
 
@@ -120,7 +121,8 @@ INSERT INTO `t_album` (`id_album`, `artist_id`, `nama_album`, `picture_album`, `
 (56, 52, 'Single Hits', 'Timur_Priyono.jpg', 1),
 (57, 53, 'Single Hits', 'Ikhwan_Ubaidillah.jpg', 1),
 (58, 54, 'Single Hits', 'Thatu_Nagfa.png', 1),
-(59, 55, 'Single Hits', 'Ratu_Sukma.png', 1);
+(59, 55, 'Single Hits', 'Ratu_Sukma.png', 1),
+(60, 58, 'akibat pergaulan blues', 'liam-gallagher.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -196,7 +198,10 @@ INSERT INTO `t_artist` (`id_artists`, `partner_id`, `nama_artist`, `bio`, `pictu
 (52, 0, 'Timur Priyono', '-', 'Timur_Priyono.jpg', 1),
 (53, 0, 'Ikhwan Ubaidillah', '-', 'Ikhwan_Ubaidillah.jpg', 1),
 (54, 0, 'Thatu Nagfa', '-', 'Thatu_Nagfa.png', 1),
-(55, 0, 'Ratu Sukma', '-', 'Ratu_Sukma.png', 1);
+(55, 0, 'Ratu Sukma', '-', 'Ratu_Sukma.png', 1),
+(56, NULL, 'JJ', 'sasasa', '', 0),
+(57, NULL, 'JJ', '-', '', 0),
+(58, NULL, 'JJ', 'jejeBoi', 'don-hunstein-obit1.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -647,12 +652,12 @@ CREATE TABLE `t_lagu` (
   `album_id` int(11) NOT NULL,
   `genre_id` int(11) NOT NULL,
   `judul` varchar(30) NOT NULL,
-  `harga_xl` float NOT NULL,
-  `harga_tsel1` float NOT NULL,
-  `harga_tsel2` float NOT NULL,
-  `harga_tsel3` float NOT NULL,
-  `harga_tsel4` float NOT NULL,
-  `harga_indosat` float NOT NULL,
+  `harga_xl` int(11) NOT NULL,
+  `harga_tsel1` int(11) NOT NULL,
+  `harga_tsel2` int(11) NOT NULL,
+  `harga_tsel3` int(11) NOT NULL,
+  `harga_tsel4` int(11) NOT NULL,
+  `harga_indosat` int(11) NOT NULL,
   `file` varchar(100) NOT NULL,
   `kode_xl` varchar(10) NOT NULL,
   `kode_tsel1` varchar(10) NOT NULL,
@@ -668,7 +673,7 @@ CREATE TABLE `t_lagu` (
 --
 
 INSERT INTO `t_lagu` (`id_lagu`, `album_id`, `genre_id`, `judul`, `harga_xl`, `harga_tsel1`, `harga_tsel2`, `harga_tsel3`, `harga_tsel4`, `harga_indosat`, `file`, `kode_xl`, `kode_tsel1`, `kode_tsel2`, `kode_tsel3`, `kode_tsel4`, `kode_indosat`, `aktif`) VALUES
-(1, 1, 422, 'MEMETI', 0, 660, 3850, 6600, 9900, 2900, 'song_MEMETI (Song)_Aggrie M. Kell.wav', '', 'MMIJM', 'MMIJL', 'MMIJK', 'MMIJJ', '53092982', 1),
+(1, 1, 422, 'MEMETI', 5000, 660, 3850, 6600, 9900, 2900, 'song_MEMETI (Song)_Aggrie M. Kell.wav', '0', '', '', '', '', '53092982', 1),
 (2, 2, 422, 'Berita Dari Sebrang', 0, 660, 3850, 6600, 9900, 2900, 'song_Berita Dari Sebrang_Nenk Zahra.wav', '', 'BDSJM', 'BDSJL', 'BDSJK', 'BDSJJ', '53092985', 1),
 (3, 3, 299, 'Polisi Promoter', 0, 660, 3850, 6600, 9900, 2900, 'song_Polisi Promoter (Song)_Fadly Samad.wav', '', 'PPRGL', 'PPRGK', 'PPRGJ', 'PPRGI', '53092987', 1),
 (4, 4, 422, 'Bhakti Polisi', 0, 660, 3850, 6600, 9900, 2900, 'song_Bhakti Polisi (Song)_Kuswara.wav', '', 'BIPBM', 'BIPBL', 'BIPBK', 'BIPBJ', '53092989', 1),
@@ -683,7 +688,7 @@ INSERT INTO `t_lagu` (`id_lagu`, `album_id`, `genre_id`, `judul`, `harga_xl`, `h
 (13, 6, 346, 'RencanaMu Indah', 0, 660, 3850, 6600, 9900, 2900, 'song_RencanaMu Indah_Herlin Pirena.wav', '', 'RMIFH', 'RMIFG', 'RMIFF', 'RMIFE', '53093001', 1),
 (14, 6, 346, 'Satu Satunya', 0, 660, 3850, 6600, 9900, 2900, 'song_Satu Satunya_Herlin Pirena.wav', '', 'SSANH', 'SSANG', 'SSANF', 'SSANE', '53093002', 1),
 (15, 6, 346, 'Dia Jamah/He Touch Me', 0, 660, 3850, 6600, 9900, 2900, 'song_Dia Jamah He Touch Me_Herlin Pirena.wav', '', 'DJMFW', 'DJMFV', 'DJMFU', 'DJMFT', '53093006', 1),
-(16, 6, 346, 'Setia Sampai Akhir', 0, 660, 3850, 6600, 9900, 2900, 'song_Setia Sampai Akhir_Herlin Pirena.wav', '', 'SSANM', 'SSANL', 'SSANK', 'SSANJ', '53093003', 1),
+(16, 6, 346, 'Setia Sampai Akhir', 5000, 660, 3850, 6600, 9900, 2900, 'song_Setia Sampai Akhir_Herlin Pirena.wav', '-', '', '', '', '', '53093003', 1),
 (17, 7, 422, 'Keyakinan Hati', 0, 660, 3850, 6600, 9900, 2900, 'song_Keyakinan Hati_Fardhan Zee.wav', '', '', '', '', '', '', 1),
 (18, 8, 400, 'Timongoliyo Tagaga Da\'a', 0, 660, 3850, 6600, 9900, 2900, 'song_Timongoliyo Tagaga Da\'a_Mohamad Hasbullah Ishak.wav', '', '', '', '', '', '', 1),
 (19, 1, 422, 'Dangdut Is The Music', 0, 660, 3850, 6600, 9900, 2900, 'song_Dangdut Is The Music (Song)_Aggrie M. Kell.wav', '', '', '', '', '', '', 1),
@@ -864,7 +869,9 @@ INSERT INTO `t_lagu` (`id_lagu`, `album_id`, `genre_id`, `judul`, `harga_xl`, `h
 (194, 56, 400, 'Pas Pantas', 0, 660, 3850, 6600, 9900, 2900, 'song_Pas Pantas_Timur Priyono.wav', '', '', '', '', '', '', 1),
 (195, 56, 400, 'Yang Penting Pas', 0, 660, 3850, 6600, 9900, 2900, 'song_Yang Penting Pas_Timur Priyono.wav', '', '', '', '', '', '', 1),
 (196, 57, 400, 'Lindu Aji', 0, 660, 3850, 6600, 9900, 2900, 'song_Lindu Aji_Ikhwan Ubaidillah.wav', '', '', '', '', '', '', 1),
-(197, 9, 400, 'Discount C3 Carwash', 0, 660, 3850, 6600, 9900, 2900, 'song_Discount C3 Carwash_All Artist.wav', '', '', '', '', '', '', 1);
+(197, 9, 400, 'Discount C3 Carwash', 0, 660, 3850, 6600, 9900, 2900, 'song_Discount C3 Carwash_All Artist.wav', '', '', '', '', '', '', 1),
+(199, 60, 151, 'Kau yang cari', 500, 500, 5000, 7000, 9000, 5000, '', 'REG_XL', 'MMIJM', 'MMIJL', 'MMIJK', 'MMIJJ', 'LG5_ISAT', 1),
+(200, 60, 10, 'Kau yang cari2', 500, 500, 500, 500, 500, 500, '', 'REG_XL', 'MMIJM', 'MMIJL', 'MMIJK', 'MMIJJ', 'LG5_ISAT', 1);
 
 -- --------------------------------------------------------
 
@@ -899,6 +906,13 @@ CREATE TABLE `t_pesan` (
   `baca` tinyint(1) NOT NULL,
   `hapus` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `t_pesan`
+--
+
+INSERT INTO `t_pesan` (`id_pesan`, `nama_pengirim`, `email_pengirim`, `kontak_pengirim`, `isi_pesan`, `waktu_kirim`, `baca`, `hapus`) VALUES
+(3, 'newsletter', 'ferrilasmihalim@gmail.com', 'newsletter', 'newsletter', '2019-08-30 13:03:01', 1, 0);
 
 -- --------------------------------------------------------
 
@@ -988,19 +1002,19 @@ ALTER TABLE `t_promo`
 -- AUTO_INCREMENT untuk tabel `t_admin`
 --
 ALTER TABLE `t_admin`
-  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `t_album`
 --
 ALTER TABLE `t_album`
-  MODIFY `id_album` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+  MODIFY `id_album` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
 -- AUTO_INCREMENT untuk tabel `t_artist`
 --
 ALTER TABLE `t_artist`
-  MODIFY `id_artists` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `id_artists` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
 -- AUTO_INCREMENT untuk tabel `t_genre`
@@ -1012,7 +1026,7 @@ ALTER TABLE `t_genre`
 -- AUTO_INCREMENT untuk tabel `t_lagu`
 --
 ALTER TABLE `t_lagu`
-  MODIFY `id_lagu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=198;
+  MODIFY `id_lagu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=201;
 
 --
 -- AUTO_INCREMENT untuk tabel `t_partner`
@@ -1024,7 +1038,7 @@ ALTER TABLE `t_partner`
 -- AUTO_INCREMENT untuk tabel `t_pesan`
 --
 ALTER TABLE `t_pesan`
-  MODIFY `id_pesan` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_pesan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `t_promo`

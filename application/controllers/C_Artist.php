@@ -123,10 +123,10 @@ class C_Artist extends CI_Controller
 						$uploadData = $this->upload->data();
 						$picture = $uploadData['file_name'];
 					}else{
-						$picture = '';
+						$picture = 'default.jpeg';
 					}
 				}else{
-					$picture = '';
+					$picture = 'default.jpeg';
 				}
 				$d['picture_artist'] 	= $picture;
 				$d['aktif'] 			= true;
